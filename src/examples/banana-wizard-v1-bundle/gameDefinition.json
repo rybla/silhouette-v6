@@ -79,10 +79,7 @@
         "scene": {
           "id": "enchanted_forest_entrance",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark",
-            "wind"
-          ],
+          "passiveLocationEffects": ["dark", "wind"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -90,9 +87,7 @@
               "type": "narration",
               "content": "The three Roombas roll to the edge of the Enchanted Forest, where the trees twist in impossible spirals and glow with faint bioluminescence. A strong, whispering wind carries strange voices through the leaves. The path ahead splits into three directions.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -279,9 +274,7 @@
         "scene": {
           "id": "glowing_mushroom_trail",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -304,9 +297,7 @@
                   "effect": "spin"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -336,9 +327,7 @@
         "scene": {
           "id": "whispering_hill",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "wind"
-          ],
+          "passiveLocationEffects": ["wind"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -373,9 +362,7 @@
               "type": "narration",
               "content": "The trees on the hill begin to whisper, their leaves rustling with ancient knowledge. They offer guidance on how to safely navigate the Whispering Woods below.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ],
           "choices": [
@@ -393,9 +380,7 @@
         "scene": {
           "id": "hidden_cave_passage",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -499,9 +484,7 @@
               "type": "narration",
               "content": "Just then, heavy footsteps echo from the hallway above. Elon Musk's voice booms through the castle, complaining loudly.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ],
           "choices": [
@@ -566,9 +549,7 @@
                   "effect": "sad"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ],
           "choices": [
@@ -651,9 +632,7 @@
         "scene": {
           "id": "whispering_woods_approach",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "wind"
-          ],
+          "passiveLocationEffects": ["wind"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -661,9 +640,7 @@
               "type": "narration",
               "content": "The Roombas arrive at the Whispering Woods, where the trees sway without wind and ancient voices murmur from the bark. The canopy above filters sunlight into golden patterns on the forest floor.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "narration",
@@ -724,10 +701,7 @@
         "scene": {
           "id": "potassium_peak",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "snow",
-            "wind"
-          ],
+          "passiveLocationEffects": ["snow", "wind"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -750,9 +724,7 @@
                   "effect": "spin"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -788,9 +760,7 @@
         "scene": {
           "id": "crystal_lake",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -861,9 +831,7 @@
         "scene": {
           "id": "riddle_correct",
           "location": "The Banana Church",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -940,10 +908,7 @@
           "isCheckpoint": false,
           "location": "The Enchanted Forest",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "dark",
-            "wind"
-          ],
+          "passiveLocationEffects": ["dark", "wind"],
           "script": [
             {
               "type": "narration",
@@ -954,9 +919,7 @@
                   "effect": "spin"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "narration",
@@ -998,9 +961,7 @@
           "isCheckpoint": false,
           "location": "The Enchanted Forest",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "script": [
             {
               "type": "narration",
@@ -1015,9 +976,7 @@
                   "effect": "spin"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -1140,9 +1099,7 @@
               "type": "narration",
               "content": "Elon Musk laughs, a cold, calculating sound. He presses a button on his throne, and panels slide open around the room, revealing an army of weaponized Roombas.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ],
           "choices": [
@@ -1189,9 +1146,7 @@
                   "effect": "spin"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "narration",
@@ -1233,9 +1188,7 @@
         "scene": {
           "id": "banana_tunnel_depth",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -1243,9 +1196,7 @@
               "type": "narration",
               "content": "The Roombas follow the glowing banana carvings deep into the cave system. The tunnels open into a vast underground chamber that takes their breath away — an ancient banana temple, complete with towering columns shaped like bananas, altars covered in potassium crystals, and murals depicting the Banana Wizard creating the world.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -1289,9 +1240,7 @@
         "scene": {
           "id": "humming_passage",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -1335,9 +1284,7 @@
         "scene": {
           "id": "carving_analysis",
           "location": "The Enchanted Forest",
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -1379,9 +1326,7 @@
         "scene": {
           "id": "banana_wizard_meeting",
           "location": "The Banana Church",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -1477,9 +1422,7 @@
           "isCheckpoint": false,
           "location": "The Banana Church",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "script": [
             {
               "type": "narration",
@@ -1628,9 +1571,7 @@
               "type": "narration",
               "content": "Beeper reverses the power flow. The assembly line shudders, sparks fly, and a chain reaction of explosions rips through the R&D lab. The Roombas barely escape through a ventilation shaft as the entire facility collapses behind them. Musk's vacuum monopoly is delayed by years, but the Dish-Mate prototype is lost forever. The Roombas roll away into the night, victorious but uncertain of what the future holds. Their quest ended in destruction rather than creation.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ]
         }
@@ -1643,17 +1584,13 @@
           "isCheckpoint": false,
           "location": "The Enchanted Forest",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "dark"
-          ],
+          "passiveLocationEffects": ["dark"],
           "script": [
             {
               "type": "narration",
               "content": "Rover rolls onto the pedestal and carefully lifts the glowing magical banana with his cleaning attachment. The moment the banana leaves the pedestal, the entire temple rumbles. A hidden door slides open behind the altar, revealing a passage that glows with golden light.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -1684,9 +1621,7 @@
           "isCheckpoint": false,
           "location": "The Banana Church",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "script": [
             {
               "type": "narration",
@@ -1797,9 +1732,7 @@
           "isCheckpoint": false,
           "location": "Elon's Castle",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "shake"
-          ],
+          "passiveLocationEffects": ["shake"],
           "script": [
             {
               "type": "narration",
@@ -1833,9 +1766,7 @@
                   "effect": "sad"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ]
         }
@@ -1902,9 +1833,7 @@
         "scene": {
           "id": "question_wizard",
           "location": "The Banana Church",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -2111,9 +2040,7 @@
         "scene": {
           "id": "dish_mate_launch",
           "location": "Suburban Home - The Roombas' Base",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -2256,9 +2183,7 @@
         "scene": {
           "id": "direct_rebellion",
           "location": "Elon's Castle",
-          "passiveLocationEffects": [
-            "shake"
-          ],
+          "passiveLocationEffects": ["shake"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -2289,9 +2214,7 @@
               "type": "narration",
               "content": "The Roomba army smashes through the castle gates, overwhelming Musk's security systems with sheer numbers. Elon Musk watches from his throne room window, a strange smile on his face.",
               "instantCharacterEffects": [],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             }
           ],
           "choices": [
@@ -2320,9 +2243,7 @@
           "isCheckpoint": false,
           "location": "Elon's Castle",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "shake"
-          ],
+          "passiveLocationEffects": ["shake"],
           "script": [
             {
               "type": "narration",
@@ -2588,9 +2509,7 @@
         "scene": {
           "id": "roomba_victory",
           "location": "Elon's Castle",
-          "passiveLocationEffects": [
-            "shake"
-          ],
+          "passiveLocationEffects": ["shake"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -2603,9 +2522,7 @@
                   "effect": "happy"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -2862,9 +2779,7 @@
         "scene": {
           "id": "roomba_republic",
           "location": "Suburban Home - The Roombas' Base",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -2913,9 +2828,7 @@
         "scene": {
           "id": "luxury_retirement",
           "location": "Suburban Home - The Roombas' Base",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -3030,9 +2943,7 @@
         "scene": {
           "id": "contest_victory",
           "location": "Elon's Castle",
-          "passiveLocationEffects": [
-            "shake"
-          ],
+          "passiveLocationEffects": ["shake"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -3049,9 +2960,7 @@
                   "effect": "happy"
                 }
               ],
-              "instantLocationEffects": [
-                "shake"
-              ]
+              "instantLocationEffects": ["shake"]
             },
             {
               "type": "dialogue",
@@ -3088,9 +2997,7 @@
         "scene": {
           "id": "golden_age",
           "location": "Suburban Home - The Roombas' Base",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": false,
           "script": [
@@ -3138,9 +3045,7 @@
         "scene": {
           "id": "final_quadrillionaire_ending",
           "location": "Suburban Home - The Roombas' Base",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -3264,9 +3169,7 @@
           "isCheckpoint": false,
           "location": "Suburban Home - The Roombas' Base",
           "passiveCharacterEffects": [],
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "script": [
             {
               "type": "narration",
@@ -3309,9 +3212,7 @@
         "scene": {
           "id": "contest_ending",
           "location": "The Banana Church",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
@@ -3358,9 +3259,7 @@
         "scene": {
           "id": "golden_age_ending",
           "location": "The Banana Church",
-          "passiveLocationEffects": [
-            "sunny"
-          ],
+          "passiveLocationEffects": ["sunny"],
           "passiveCharacterEffects": [],
           "isCheckpoint": true,
           "script": [
