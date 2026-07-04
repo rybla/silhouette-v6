@@ -1,0 +1,4 @@
+{
+  "startDescription": "A detective meets their client to discuss a new case to investigate.",
+  "initialPrompt": "Using the tools available to you, design a choose-your-own adventure game based on the given scene descriptions."
+}

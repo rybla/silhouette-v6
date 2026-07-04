@@ -1,0 +1,2872 @@
+{
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "impl",
+          "scene": {
+            "id": "start",
+            "location": "The Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The emergency broadcast on your phone didn't end with instructions. It ended with a wet, choking scream that cut to static just as the power grid blew, plunging your apartment into an oppressive, heavy darkness. The familiar hum of the city outside has mutated into a chaotic symphony of screeching tires, distant explosions, and an underlying, rhythmic *scuffling* sound that makes the hairs on your arms stand up.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You fumble for your phone, using its dim light to scan the room. Shadows leap and twist across the walls. The single framed photo on your shelf—a beach sunset from a vacation you took two years ago—seems like a relic from another life entirely.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Then it comes: a frantic, heavy pounding rattles your front door, rattling the three deadbolts you've installed since living alone. A voice—your neighbor Alex from 3B—calls out, panicked and breathless.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "Please! Open up! You have to let me in! There's something... something *wrong* out here! They're—they're in the stairwell. Please!",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "But from the alleyway directly below your fire escape, you hear it: the unmistakable sound of breaking glass, followed by a guttural, distinctly *non-human* howl that echoes up through the night. Whatever is happening, it's closing in from all sides.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "Player",
+                "content": "Three choices, and seconds to decide. The door. The fire escape. Or hunker down and pray the walls hold.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Your hands move before your mind catches up. You slide the deadbolts back one by one, heart pounding in your ears. The hallway beyond is dark except for a single buzzing fluorescent light that casts sickly green shadows. Alex stands there, eyes wide, a bloody scratch on their forearm, clutching their phone. Behind them, the stairwell door groans—something is pushing against it from the other side.",
+                "label": "Open the door for Alex and face whatever's in the hallway",
+                "targetScene": "hallway_confrontation",
+                "targetSceneDescription": "The hallway of the third floor. Alex is injured and terrified. The stairwell door is bulging. You have seconds to decide your next move.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You press your back against the door, whispering an apology to Alex through the wood. Their pounding grows more desperate, then stops abruptly. The silence is worse. You cross to the fire escape window, prying it open. Cold night air hits your face. Below, in the alley, you see overturned trash and a dark shape moving near a shattered basement window.",
+                "label": "Apologize to Alex and escape through the fire escape into the alley",
+                "targetScene": "alley_descent",
+                "targetSceneDescription": "The dark alley behind the apartment building. Something is moving near a broken basement window. The fire escape ladder clangs above you.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You freeze. Every instinct screams at you to hide. You back away from the door, knocking over a chair. Alex's pounding turns to screaming, then to a wet gurgle, then silence. You scramble to the closet, pulling clothes over yourself, trying to become invisible as heavy footsteps approach your door.",
+                "label": "Hide in the closet and pray they don't find you",
+                "targetScene": "hiding_in_darkness",
+                "targetSceneDescription": "Inside the cramped apartment closet, surrounded by fabric and darkness. Footsteps approach. Something sniffs at the door.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "hallway_confrontation": {
+          "type": "impl",
+          "scene": {
+            "id": "hallway_confrontation",
+            "location": "The Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You throw open the door and grab Alex by the arm, pulling them inside. The scratch on their forearm is warm and wet under your fingers. Alex stumbles in, eyes wild, gasping for breath.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "Oh god oh god thank you—they're in the stairwell—Mrs. Vasquez from 3D—she just—she *attacked* Mr. Chen—I saw her—her eyes were all white and she was—",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A heavy *THUD* against the stairwell door cuts Alex off. The metal groans. Something on the other side is testing its strength. Then another thud. And another. A chorus of wet, hungry sounds seeps through the crack beneath the door.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "dialogue",
+                "character": "Player",
+                "content": "We can't stay here. That door won't hold long.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You slam your apartment door shut and throw the deadbolts back into place. Together, you and Alex drag the heavy bookshelf from your room in front of the door. The thudding against the stairwell door grows louder, more insistent—but the hallway door between you and them is solid. For now, you're safe. But for how long?",
+                "label": "Barricade yourselves in the apartment",
+                "targetScene": "barricaded_apartment",
+                "targetSceneDescription": "Inside the fortified apartment with Alex. The stairwell door is breaking. The infected are coming. Supplies are limited.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "There's a fire escape at the end of the hall, but more importantly—the rooftop access is through that door at the far end. Higher ground means more options. You grab Alex's hand and bolt down the hallway, past the groaning stairwell door, toward the rooftop ladder.",
+                "label": "Flee down the hall toward the rooftop access",
+                "targetScene": "rooftop_escape",
+                "targetSceneDescription": "Running down the hallway toward the rooftop ladder. The infected are breaking through behind you. Alex is injured and slowing down.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Your kitchen knife. The fire extinguisher. You scan the hallway for anything that could be a weapon. The stairwell door is going to break any second—but maybe you can get the drop on them. Ambush them as they come through.",
+                "label": "Arm yourself and prepare to fight whatever comes through",
+                "targetScene": "hallway_standoff",
+                "targetSceneDescription": "Standing your ground in the hallway, armed and ready. The stairwell door splinters. The infected pour through.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "alley_descent": {
+          "type": "impl",
+          "scene": {
+            "id": "alley_descent",
+            "location": "The Alleyway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You slip out the window onto the fire escape, the cold metal biting into your hands. The ladder descends with a rusty screech that sounds like a gunshot in the quiet. You freeze, listening. The howling from before has stopped. Nothing stirs—yet.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You climb down, your footsteps echoing on the metal grates. The alley below is a canyon of shadows. Trash bags are torn open, their contents strewn across the wet pavement. A dumpster lies on its side, leaking something dark. And there, at the far end—a basement window, shattered, its black mouth gaping open.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As your feet touch the ground, you hear a soft click behind you. A voice—low, female, urgent—hisses from the shadows.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "Don't. Move. There's one in the dumpster.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You freeze mid-step. The woman emerges from the shadow of a recessed doorway—Maya, as she'll later introduce herself. She gestures with her crowbar toward the overturned dumpster. A low, wet growl emanates from within. She whispers that she knows a safe route through the basement, but it means going into the dark.",
+                "label": "Trust the stranger and follow her lead through the basement",
+                "targetScene": "basement_passage",
+                "targetSceneDescription": "Following Maya into the dark basement through the shattered window. She knows the way. But trust is a luxury in times like these.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You shake your head at the stranger. You don't know her, and you don't trust easy. You spot the mouth of the main street at the end of the alley. If you can make it to the cars, maybe you can find one that still runs. You bolt for the street.",
+                "label": "Ignore the stranger and make a run for the main street",
+                "targetScene": "street_run",
+                "targetSceneDescription": "Running through the debris-choked alley toward the main street. The infected are everywhere. Cars are wrecked. The city has fallen.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You crouch low, peering into the darkness of the shattered basement window. If there's a safe route through the building, you'd rather take your chances alone than with a stranger. You slip through the window into the pitch-black basement below.",
+                "label": "Sneak into the basement alone through the broken window",
+                "targetScene": "basement_alone",
+                "targetSceneDescription": "The pitch-black basement of the apartment building. Unknown dangers lurk in the dark. You have only your phone's light.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "hiding_in_darkness": {
+          "type": "impl",
+          "scene": {
+            "id": "hiding_in_darkness",
+            "location": "The Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You scramble into the closet, pulling the door shut until it's just a crack. You bury yourself under a pile of winter coats, your heart pounding so loud it feels like a drum in your ears. The darkness is absolute, suffocating.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Outside, Alex's screams cut off with a wet, sickening sound. Then—silence. You hold your breath. Seconds stretch into eternities.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Heavy footsteps approach your door. They stop. You hear a wet sniffing sound—something *smelling* through the gap under the door. A low, guttural growl. Then the doorknob rattles.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The door swings open. Through the crack in the closet, you see a shape—tall, silhouetted against the dim light from the window. It tilts its head, scanning the room. Its eyes catch the moonlight: white, pupil-less, hungry.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You press a hand over your mouth, squeezing your eyes shut. You become a statue. The creature paces the room—you hear it knocking things over, sniffing, searching. It stops directly in front of the closet. The door creaks as it pulls it open. Your coats shift. Its breath, hot and fetid, washes over you... and then, slowly, it moves away. The front door creaks shut. It's gone. For now.",
+                "label": "Stay utterly silent and still, hoping it passes",
+                "targetScene": "survived_the_closet",
+                "targetSceneDescription": "Alone in the ransacked apartment. The creature has left, but you don't know if it's really gone. The city is quiet—too quiet.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Your hand closes around something solid—a heavy Maglite you keep in the closet for emergencies. The creature is still searching the room, its back half-turned. This is your only chance. You burst from the closet, swinging with all your strength.",
+                "label": "Attack the creature with the Maglite",
+                "targetScene": "closet_attack",
+                "targetSceneDescription": "A desperate fight in the dark apartment. You swing the Maglite at the infected creature. One chance to survive.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You remember the fire escape. The window in your bedroom is still open. If you can slip past the creature, dive through the window, and pull the ladder down... it's insane, but staying here is death. You wait for it to move toward the kitchen, then you explode out of the closet, diving for the bedroom.",
+                "label": "Make a break for the open fire escape window",
+                "targetScene": "dash_to_fire_escape",
+                "targetSceneDescription": "Dashing through the apartment toward the open bedroom window. The creature is right behind you. The fire escape is your only exit.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "barricaded_apartment": {
+          "type": "impl",
+          "scene": {
+            "id": "barricaded_apartment",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You slam the apartment door shut and throw the deadbolts. Alex helps you drag the heavy bookshelf across the entrance—a makeshift barricade. The three of them—you, Alex, the furniture—stand between you and the nightmare outside.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The stairwell door breaks with a splintering crash. You hear them spill into the hallway—dozens of footsteps, dragging, shuffling, *scuttling*. They converge on your door. The wood groans under their assault.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "It's not going to hold. Oh god, it's not going to hold—",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You look around the apartment. Your eyes land on the bathroom window. You remember the narrow ledge outside, the drop to the first-floor extension roof. It's a long way down, but the infected aren't climbing—they're just throwing themselves at the door.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "Player",
+                "content": "We have to move. Now. The door won't last five more minutes.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You and Alex drag every piece of furniture you can manage against the apartment door. The bookshelf, the couch, the kitchen table—a wall of wood and fabric. The stairwell door gives way with a crash, and you hear them pour into the hallway, scratching and clawing at your door. But the deadbolts hold. You slump against the wall, gasping. Alex is shaking, holding their wounded arm. You need supplies, a plan, and answers.",
+                "label": "Search the apartment for supplies and medical aid",
+                "targetScene": "apartment_supplies",
+                "targetSceneDescription": "Ransacking the apartment for anything useful—food, water, medicine, weapons. Alex needs their wound treated. Time is running out.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The infected are at the door. The apartment isn't safe. The bathroom window is small but just big enough to squeeze through—it opens onto the roof of the first-floor extension, a low drop to the alley. It's a gamble, but staying means waiting for the door to break.",
+                "label": "Escape through the bathroom window to the roof below",
+                "targetScene": "bathroom_escape",
+                "targetSceneDescription": "Squeezing through the tiny bathroom window onto a lower roof. Alex follows behind you. The alley below is dark and dangerous.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "rooftop_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "rooftop_escape",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab Alex's hand and run. The hallway blurs past as you sprint toward the far end, where a rusted ladder leads up to a heavy metal hatch—the rooftop access.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "run" },
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Behind you, the stairwell door EXPLODES open. A tide of pale, jerking figures pours into the hallway, their white eyes fixed on you. They move with that terrible, unnatural speed—scuttling like spiders, limbs bending at wrong angles.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You reach the ladder. You shove Alex up first, then climb, your fingers slipping on the cold metal rungs. A hand grabs your ankle—cold, strong fingers digging in. You kick wildly, connecting with something soft, and the grip releases. You haul yourself through the hatch and slam it shut, throwing the rusty bolt into place.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The hatch shudders as bodies slam against it from below. But it holds. You're on the rooftop now—a vast, open plane under a smoke-choked sky. The city burns around you, and the wind carries the sounds of a thousand screams.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The rooftop door slams behind you. Alex doubles over, gasping, the scratch on their arm looking worse—dark veins spiderwebbing from the wound. You spot a maintenance shed, some old furniture, and the ladder to the water tower. Maybe you can hold out here and treat Alex's wound.",
+                "label": "Barricade the rooftop and treat Alex's wound",
+                "targetScene": "rooftop_sanctuary",
+                "targetSceneDescription": "The exposed rooftop. Alex is deteriorating. The infected are trying to find a way up. You need to create a defensible position.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The city spreads out before you. From this height, you can see the fires, the dark streets, the distant bridge leading out of the city. It's a long way, but if you can get down from the building and find a vehicle, the bridge might be your only way out of this nightmare.",
+                "label": "Scope the city and plan a route to the bridge",
+                "targetScene": "city_overlook",
+                "targetSceneDescription": "Surveying the burning city from the rooftop. The bridge to the mainland is visible in the distance. Between you and it lies a gauntlet of chaos.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "hallway_standoff": {
+          "type": "impl",
+          "scene": {
+            "id": "hallway_standoff",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "shake"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab the fire extinguisher from its wall mount. It's heavy, solid—a real weapon. You swing it once, testing its weight. Alex watches you with wide eyes.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "You can't be serious. There's too many of them!",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The stairwell door gives way with a deafening CRACK. Wood splinters fly through the air. The first infected stumbles through—a man in a blood-soaked janitor's uniform, his jaw unhinged at an unnatural angle, white eyes fixed on you.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "Behind him, more pour through the gap. They crawl over each other, a writhing mass of pale limbs and clicking throats. The hallway fills with their noise—wet, hungry, relentless.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "Player",
+                "content": "Too late to run now. Fight or die.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You swing the fire extinguisher with all your strength. The first infected goes down with a crack of bone. But the second one grabs your arm, and the third tackles you from the side. You go down in a tangle of limbs, fighting, biting, clawing for your life.",
+                "label": "Fight with the fire extinguisher",
+                "targetScene": "hallway_fight",
+                "targetSceneDescription": "A desperate melee in the hallway. You're outnumbered. The infected keep coming. Every second is a fight for survival.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "There's no winning this fight. You turn and sprint for the apartment at the far end of the hall—the door to 3D, Mrs. Vasquez's unit. It's slightly ajar. Maybe you can barricade yourself in there and find another way out.",
+                "label": "Run for Mrs. Vasquez's open apartment door",
+                "targetScene": "vasquez_apartment",
+                "targetSceneDescription": "Diving into Mrs. Vasquez's apartment. The place has been ransacked. The open window offers a possible escape route, but you're not alone in here.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "basement_passage": {
+          "type": "impl",
+          "scene": {
+            "id": "basement_passage",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You freeze. A woman steps out of the shadows—Maya, as she'll later introduce herself. She moves with the practiced silence of a predator, crowbar in hand.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "Good, you listen. There's a pack of them in the dumpster—feeding. We go quiet through the basement, we might make it to the old maintenance tunnels. They connect to half the buildings on this block.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She gestures to the shattered basement window. The opening is dark, narrow, and smells of damp earth and copper. A low growl emanates from the overturned dumpster behind you—the thing inside is stirring.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "Name's Maya. Was a paramedic before this. I've been through three blocks of this hell tonight. The tunnels are our best shot. But we go now, or we don't go at all.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You follow Maya through the shattered window into the dark basement. The smell hits you first—mold, rust, and something metallic. Maya turns on a small flashlight, revealing a labyrinth of support pillars, old furniture, and a door at the far end marked 'MAINTENANCE.' She moves quickly, confidently. You trust her—for now.",
+                "label": "Follow Maya into the maintenance tunnels",
+                "targetScene": "maintenance_tunnels",
+                "targetSceneDescription": "Dark, narrow tunnels beneath the city. Maya leads the way. The infected are close behind. The tunnels could lead to safety—or to a dead end.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You hesitate. Maya seems capable, but you don't know her. The growling from the dumpster is getting louder. You spot a drainage grate in the alley floor—big enough to squeeze through. It leads to the sewers, but that might be better than following a stranger into a dark basement.",
+                "label": "Trust your gut and escape through the drainage grate instead",
+                "targetScene": "sewer_entry",
+                "targetSceneDescription": "Climbing down into the dark sewers beneath the city. The water is cold and foul. You hear echoes of movement in the darkness.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "street_run": {
+          "type": "impl",
+          "scene": {
+            "id": "street_run",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You shake your head at the stranger and break into a sprint toward the main street. Your footsteps echo loudly in the narrow alley. Behind you, the dumpster EXPLODES as the creature inside bursts out—a twisted, pale thing with too many joints that screeches and gives chase.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You burst onto the main street—and skid to a halt. The city has fallen. Cars are wrecked, overturned, some still burning. Streetlights flicker, casting strobing light over a landscape of devastation. Dark shapes shuffle between the vehicles. A few turn toward you.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The main road stretches before you, littered with debris. You see a convenience store with its glass front shattered—maybe supplies inside. A police cruiser sits abandoned, lights still spinning silently. And at the intersection, a group of survivors are fighting—three of them, back to back, holding off a cluster of infected.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The convenience store could have food, water, medicine—things you desperately need. You dart across the street, ducking between wrecked cars, and slip through the broken glass of the storefront. Inside is dark, ransacked, but there might be something left in the back.",
+                "label": "Raid the convenience store for supplies",
+                "targetScene": "convenience_store",
+                "targetSceneDescription": "A ransacked convenience store. Shelves are overturned, but the back room might hold emergency supplies. You're not alone in here.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Those survivors need help. You sprint toward them, grabbing a broken piece of car antenna as a weapon. As you get closer, you see one of them go down—a woman in scrubs. The other two are retreating toward an alley. You might make a difference.",
+                "label": "Join the survivors fighting at the intersection",
+                "targetScene": "intersection_battle",
+                "targetSceneDescription": "A desperate fight in the middle of a ruined intersection. Survivors versus infected. Your arrival could turn the tide.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The police cruiser. Lights still on, doors open. If there's a working radio—or weapons—you need to get to it. You weave through the chaos, dodging infected, heading for the car.",
+                "label": "Run for the abandoned police cruiser",
+                "targetScene": "police_cruiser",
+                "targetSceneDescription": "An abandoned patrol car in the middle of the street. Maybe it has a working radio, weapons, or at least a safe place to catch your breath.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "basement_alone": {
+          "type": "impl",
+          "scene": {
+            "id": "basement_alone",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You ignore the stranger and crouch by the shattered basement window. The opening is just big enough. You lower yourself through, your feet finding concrete floor a few feet below. The basement is pitch black, smelling of mildew, old concrete, and something else—something sweet and rotting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You pull out your phone, turning on the flashlight. The beam cuts through the darkness, revealing a vast, cluttered basement. Old furniture is draped in white sheets, making them look like ghosts. Support pillars cast long shadows. Pipes run along the ceiling, dripping condensation.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You spot three exits: a stairwell leading up (probably to the building lobby), a heavy metal door marked 'BOILER ROOM', and a smaller crawlspace access near the floor. The crawlspace might connect to other buildings—or to the maintenance tunnels Maya mentioned.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The stairwell is the most obvious way out. It probably leads to the lobby or first floor. But obvious paths are dangerous now—the infected took the stairs before. Still, it might be the fastest way to street level.",
+                "label": "Take the stairwell up to the lobby",
+                "targetScene": "lobby_entry",
+                "targetSceneDescription": "The building lobby, visible through the frosted glass of the stairwell door. Shapes move in the dark beyond. The front doors are open to the street.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The boiler room door is heavy and metal. If you can get inside and lock it, it might be a safe place to regroup. Boiler rooms have tools—potential weapons—and maybe a way to the maintenance tunnels.",
+                "label": "Investigate the boiler room",
+                "targetScene": "boiler_room",
+                "targetSceneDescription": "A dark, industrial boiler room. Pipes and machinery everywhere. The heat is oppressive, and shadows dance in the dim emergency light.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The crawlspace is small, dark, and uninviting—but that's exactly why the infected might not fit through it. If it connects to other buildings, it could be your ticket out of this one without ever going outside.",
+                "label": "Crawl through the narrow access tunnel",
+                "targetScene": "crawlspace_tunnel",
+                "targetSceneDescription": "A tight, dark crawlspace beneath the building. Dust and cobwebs. It could lead to safety—or to a dead end with no way back.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "survived_the_closet": {
+          "type": "impl",
+          "scene": {
+            "id": "survived_the_closet",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You count to a thousand in your head before you move. The apartment is silent now—deathly still. You push the closet door open and emerge into the ransacked living room. Drawers are pulled out, cushions slashed, your few possessions scattered across the floor.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The front door hangs open. A dark smear leads from the doorway down the hall—where Alex was. You swallow the bile rising in your throat. There's no time to grieve.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You grab your backpack and start stuffing essentials: a half-full water bottle, some granola bars, a Swiss Army knife, a lighter. Your phone battery is at 34%. Through the open door, you hear movement in the hallway—scuffling, clicking. They're still here.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "Player",
+                "content": "I can't stay here. I need to move. But where? Down the hall? Through the window? What's left?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The hallway is dangerous, but the rooftop might be safe. You remember the ladder at the end of the hall. Higher ground. Better vantage point. You steel yourself and step out into the hallway, moving quietly toward the rooftop access.",
+                "label": "Head for the rooftop for a better view",
+                "targetScene": "survivor_rooftop_climb",
+                "targetSceneDescription": "Creeping through the dark hallway toward the rooftop ladder. The infected are nearby. Every sound echoes like a gunshot.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The fire escape is right there. You go to the bedroom window, still open. The cold air rushes in. Below, the alley is dark and quiet. Maybe you can find a car, or another building to hide in. Anything is better than staying here.",
+                "label": "Take the fire escape down to the alley",
+                "targetScene": "survivor_alley",
+                "targetSceneDescription": "Descending the fire escape into the dark alley. The city is a war zone. Every shadow could hide a threat.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Mrs. Vasquez next door—her apartment might have supplies. She was always prepared, always had canned goods. The wall between your units is thin. You grab a hammer and start breaking through the drywall. A desperate plan, but a plan nonetheless.",
+                "label": "Break through the wall to Mrs. Vasquez's apartment",
+                "targetScene": "through_the_wall",
+                "targetSceneDescription": "Breaking through the wall into the neighbor's apartment. Desperate times call for desperate measures. What you find on the other side changes everything.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "closet_attack": {
+          "type": "impl",
+          "scene": {
+            "id": "closet_attack",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "Your fingers close around the cold metal of the Maglite. It's heavy—four D-cell batteries worth of weight. The creature has its back to you, sniffing at your kitchen counter. This is your moment.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You burst from the closet, a scream tearing from your throat. The Maglite comes down in a savage arc, connecting with the back of the creature's skull with a sickening CRACK. It crumples, twitching, but doesn't go down. It starts to rise, turning toward you with those dead white eyes.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You hit it again. And again. On the fourth blow, it stops moving. You stand over it, breathing hard, the Maglite slick in your grip. The apartment is silent except for your ragged breaths and the distant sounds of the city's death throes.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You've survived. But the noise will draw more of them. You have minutes, maybe seconds, to decide your next move.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The body is at your feet. More will come. You grab your keys, a bag, whatever you can carry, and you run for the front door. The hallway is chaos, but the street might offer more options than this death trap of an apartment.",
+                "label": "Grab your things and flee into the hallway",
+                "targetScene": "flee_into_hallway",
+                "targetSceneDescription": "Rushing out into the dark hallway. The building is crawling with infected. You need to find a way out—fast.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You search the creature's body. It was wearing clothes—a torn hospital gown with a nametag: 'M. KOWALSKI, St. Mary's.' A key card is clipped to the gown. St. Mary's Hospital is three blocks away. If there are answers about what caused this, they'd be there.",
+                "label": "Search the creature and take the hospital key card",
+                "targetScene": "hospital_keycard",
+                "targetSceneDescription": "Standing over the fallen creature with a hospital key card in hand. St. Mary's Hospital might have answers—or more infected.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "dash_to_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "dash_to_fire_escape",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The creature moves toward the kitchen, its back to the bedroom door. This is your chance. You explode out of the closet, feet pounding on the floorboards, diving for the open bedroom window.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Behind you, a shriek—inhuman, piercing. The creature has heard you. It's fast—terrifyingly fast. You hear its claws scraping the floor as it gives chase.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You hit the window frame and launch yourself through, landing hard on the metal grate of the fire escape. The impact knocks the wind out of you. You scramble to your feet just as the creature crashes through the window behind you, glass exploding outward.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "fall" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "The fire escape groans under the weight of both of you. You're on a narrow metal platform three stories up. The creature is climbing through the broken window, hissing, reaching for you. Below, the alley waits—a long, long drop.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab the ladder release and PULL. The lower section of the fire escape crashes down with a deafening CLANG, creating an angled slide to the ground. You don't think—you throw yourself onto it, sliding down headfirst, the wind roaring in your ears. You hit the alley floor hard, roll, and come up running.",
+                "label": "Slide down the fire escape ladder to the alley",
+                "targetScene": "alley_landing",
+                "targetSceneDescription": "Crashing into the alley below. The creature is still on the fire escape above. You're bruised, bleeding, but alive—for now.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You can't go down—too exposed. You climb UP instead, hauling yourself onto the roof of the fire escape cage, then grabbing the edge of the rooftop. If you can pull yourself up, you can lose the creature on the roof. It's a gamble, but it's the only way that doesn't end with you cornered in the alley.",
+                "label": "Climb UP to the rooftop instead",
+                "targetScene": "desperate_rooftop_climb",
+                "targetSceneDescription": "Climbing the side of the building to reach the rooftop. The creature is right behind you. One slip and you fall three stories.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "apartment_supplies": {
+          "type": "impl",
+          "scene": {
+            "id": "apartment_supplies",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You start grabbing anything useful. Canned goods from the kitchen, a first-aid kit from under the sink, duct tape, rope, the kitchen knife. Alex finds your emergency backpack and starts filling it with bottles of water.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The front door groans under the assault. The deadbolts are holding, but the wood is starting to splinter. You have maybe two minutes.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "I found your old camping gear in the closet—there's a hatchet! And... oh god, my arm. Look at my arm.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You look at Alex's wound. The scratch is angry and red, dark veins spiderwebbing out from it. Alex's skin feels hot to the touch. Whatever this infection is, it's spreading fast.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab the hatchet, shove the supplies into the backpack, and make for the bathroom window. The infected are seconds from breaking through. You help Alex through the narrow window first, then pass the bag, then squeeze through yourself. You land on the first-floor extension roof, the cold night air washing over you.",
+                "label": "Escape through the bathroom window with supplies",
+                "targetScene": "extension_roof",
+                "targetSceneDescription": "Standing on the first-floor extension roof with Alex and your supplies. Below is the alley. Above is the fire escape. The city stretches out before you.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You need to treat Alex's wound. You grab the first-aid kit and start cleaning the scratch with alcohol. Alex hisses in pain. You bandage it tightly, but the dark veins are already spreading. You need real medicine—antibiotics—or answers. Maybe the hospital has both.",
+                "label": "Treat Alex's wound and plan to find a hospital",
+                "targetScene": "wound_treatment",
+                "targetSceneDescription": "Working on Alex's wound in the besieged apartment. The infection is spreading. You need to get to a hospital—fast.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "bathroom_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "bathroom_escape",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You shove Alex toward the bathroom. The bathroom window is small, but you've seen the roof below—a flat extension above the first-floor units. You kick the window open, cold air rushing in.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "I can't—I won't fit—",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You help Alex through—they barely squeeze past the frame. You hear fabric tear, but they're through, landing on the roof with a grunt. You follow, the window scraping your back. You land on the tar-paper surface, the drop only six feet. Behind you, the apartment door finally gives way with a splintering crash, and you hear them pour inside.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You're on a narrow roof, maybe fifteen feet wide, extending to the edge of the building. Below is the alley. Above, the fire escape ladder dangles just out of reach.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You jump and grab the bottom rung of the fire escape ladder. It swings down with a metallic screech, and you climb. Alex follows. From this height, you can see into the second-floor windows—and movement inside one of them. Someone is signaling with a flashlight. Survivors.",
+                "label": "Climb the fire escape and signal back to the survivors",
+                "targetScene": "fire_escape_signal",
+                "targetSceneDescription": "On the fire escape, seeing a flashlight signal from a second-floor window. Other survivors are in the building. Do you go to them?",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The alley below is dark but quiet. You help Alex down from the roof edge—a careful drop to the garbage bags below. From the alley, you can move between buildings, stay in the shadows, and avoid the main streets.",
+                "label": "Drop down into the alley and move through the shadows",
+                "targetScene": "alley_route",
+                "targetSceneDescription": "In the dark alley, navigating through the debris. Staying off the main streets is your best chance. The infected are everywhere.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "rooftop_sanctuary": {
+          "type": "impl",
+          "scene": {
+            "id": "rooftop_sanctuary",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You drag an old wooden pallet and some discarded furniture over the rooftop hatch. It's not much, but it'll slow them down. Alex slumps against the HVAC unit, breathing shallowly, clutching their arm.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You examine Alex's wound in the dim light. The scratch is bad—infected, swollen, with dark tendrils creeping toward their shoulder. Alex's eyes are glassy.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "I don't feel so good. I'm cold. Why am I so cold?",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The hatch shudders as something slams against it from below. The barricade holds, but not forever. You look around the rooftop—the water tower, the maintenance shed, the edge of the building, and the distant glow of fires across the city.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You search the maintenance shed and find supplies: an old first-aid kit, a crowbar, some rope, and a half-empty bottle of whiskey. You use what you can to clean Alex's wound and give them something for the pain. But Alex is getting worse. You need real help.",
+                "label": "Treat Alex with makeshift supplies and radio for help",
+                "targetScene": "rooftop_medical",
+                "targetSceneDescription": "Using found supplies to treat Alex on the rooftop. You find an old ham radio in the shed. Maybe someone is listening.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "From the roof, you can see the neighboring building—a pharmacy. The roof is only six feet away. If you jump it, you can get down into the pharmacy through its roof access. They'll have real medicine there. You tell Alex to wait, that you'll be back.",
+                "label": "Jump to the neighboring building's pharmacy roof",
+                "targetScene": "pharmacy_roof_jump",
+                "targetSceneDescription": "Leaping across the gap to the neighboring building. A pharmacy roof access awaits. Medicine, supplies—and unknown dangers—lie inside.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "city_overlook": {
+          "type": "impl",
+          "scene": {
+            "id": "city_overlook",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You stand at the edge of the rooftop, the wind whipping around you. The city spreads out below like a map of hell. Fires burn in a dozen places, painting the smoke-choked sky in shades of orange and crimson. Sirens wail in the distance, growing fainter by the hour.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The bridge is visible to the north—a massive suspension structure, its lights mostly dark. Cars are abandoned on its approach, some crashed, some burning. But you can see dark shapes moving across it—survivors? Infected? Both, probably.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "We'll never make it that far on foot. We need a car. Or... I don't know... a miracle.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You scan the streets below. There's a parking garage two blocks east—maybe vehicles still inside. A fire station three blocks west—possible weapons and an emergency vehicle. And directly below, a hardware store with its front door smashed in.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The parking garage is the best bet for a working vehicle. You and Alex descend from the rooftop, navigating through the building's interior to reach the ground floor. From there, it's a dash through the streets to the garage entrance.",
+                "label": "Make for the parking garage to find a vehicle",
+                "targetScene": "parking_garage",
+                "targetSceneDescription": "A multi-level parking garage, dark and full of shadows. Cars sit abandoned, some with keys still in the ignition. But you're not the only things in here.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The fire station could have more than just vehicles—fire axes, turnout gear, maybe a working radio. It's a gamble, but the payoff could be huge. You point west and start planning your route.",
+                "label": "Head for the fire station for weapons and gear",
+                "targetScene": "fire_station",
+                "targetSceneDescription": "A fire station three blocks away. The bay doors are open, revealing a fire truck inside. But something has made this station its nest.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "hallway_fight": {
+          "type": "impl",
+          "scene": {
+            "id": "hallway_fight",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "shake"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You swing the fire extinguisher in a wide arc. It connects with the first infected's skull—a wet, hollow crack. The creature crumples, but two more scramble over its body, hissing and snapping.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You're overwhelmed in seconds. A hand closes around your ankle. Teeth sink into your calf. You scream and swing again, feeling the extinguisher connect with something soft. You break free and stumble backward, bleeding.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The hallway is a writhing mass of pale bodies. You're losing ground. Your leg burns where you were bitten. The taste of copper fills your mouth. You need to get out—NOW.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You're bitten, bleeding, and outnumbered. There's only one chance—you shove through the infected, using the fire extinguisher as a battering ram, and throw yourself down the stairwell. You tumble down the concrete steps, landing hard on the second-floor landing. Your leg screams in protest, but you force yourself up and keep moving.",
+                "label": "Fight your way to the stairwell and escape downward",
+                "targetScene": "stairwell_descent",
+                "targetSceneDescription": "Tumbling down the stairwell, bitten and bleeding. The infected are right behind you. You need to find shelter before the infection takes hold.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "There's an apartment door right next to you—3C. You've never met the tenant, but the door is solid wood with a heavy deadbolt. You slam the door shut behind you, throwing the lock, and press your back against it as bodies crash into the other side. You're trapped, but alive.",
+                "label": "Dive into apartment 3C and barricade yourself in",
+                "targetScene": "apartment_3c",
+                "targetSceneDescription": "Inside a stranger's dark apartment. The door is under siege. You're injured. The apartment might have supplies—or other dangers.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "vasquez_apartment": {
+          "type": "impl",
+          "scene": {
+            "id": "vasquez_apartment",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You dive through the half-open door of 3D and slam it shut behind you. The apartment is dark, ransacked—drawers pulled out, cushions slashed, a chair overturned. Mrs. Vasquez's collection of ceramic angels lies shattered on the floor.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The infected slam into the door behind you. It holds, but not for long. You scan the room. The window is open, curtains billowing in the night breeze. Below, the fire escape platform. But there's something else—a faint light coming from the bedroom. A flashlight. Someone's here.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You move toward the light, stepping carefully over the debris. The bedroom door is slightly ajar. The light flickers. You hear a soft whimper.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You push the bedroom door open. Huddled in the corner is a young girl—maybe eight years old—holding a flashlight. She looks up at you with tear-streaked eyes. She's holding a photo of Mrs. Vasquez. 'They took my grandma,' she whispers. 'She turned into one of them.'",
+                "label": "Comfort the child and find a way out together",
+                "targetScene": "child_survivor",
+                "targetSceneDescription": "A young girl hiding in the bedroom. Her grandmother was Mrs. Vasquez. She's alone, scared, and needs protection. The infected are at the door.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Your heart breaks, but you can't take a child with you. You turn away from the bedroom, cross to the open window, and slip out onto the fire escape. You tell yourself it's for the best as you descend into the darkness below.",
+                "label": "Leave the child and escape via the fire escape alone",
+                "targetScene": "guilty_escape",
+                "targetSceneDescription": "Descending the fire escape alone, leaving the child behind. The guilt is heavy, but survival is paramount. The alley below offers uncertain freedom.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "maintenance_tunnels": {
+          "type": "impl",
+          "scene": {
+            "id": "maintenance_tunnels",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You follow Maya through the shattered window into the basement. She moves with practiced ease, her small flashlight cutting through the oppressive darkness. The basement is a maze of support pillars, old furniture, and forgotten belongings.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "The tunnels run under this whole block. I've been using them to move between buildings. The infected don't seem to go down here—too dark, too many turns. But there are other things. Rats. And places where the ceiling's collapsed.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She leads you to a heavy metal door. Beyond it, the maintenance tunnels stretch into darkness—narrow corridors lined with pipes and cables, the air thick with dust and the distant sound of dripping water. The city's heartbeat, underground.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Maya seems to know what she's doing. You follow her through the winding tunnels, trusting her instincts. She navigates by memory, taking lefts and rights with confidence. After ten minutes, you emerge through a grate into the parking garage of a neighboring building.",
+                "label": "Follow Maya through the tunnels to safety",
+                "targetScene": "tunnel_exit_garage",
+                "targetSceneDescription": "Emerging from the maintenance tunnels into a dark parking garage. Maya knows the city's underground like the back of her hand. She might be your best chance at survival.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You thank Maya but decide to go your own way. The tunnels branch off in multiple directions. You take a left where she takes a right, choosing a path that slopes downward. The air grows colder, damper. You hear the trickle of water ahead—maybe a sewer line, maybe a way out.",
+                "label": "Split from Maya and explore the lower tunnels alone",
+                "targetScene": "lower_tunnels",
+                "targetSceneDescription": "Exploring deeper tunnels alone. The air is damp and cold. Strange echoes bounce off the concrete walls. You're not sure if you're heading toward escape or deeper into the earth.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "sewer_entry": {
+          "type": "impl",
+          "scene": {
+            "id": "sewer_entry",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You pry the drainage grate open—it's heavy, rusted, but it moves. Below, a ladder descends into darkness. The smell hits you first: sewage, rot, and something chemical. You climb down, your feet splashing into cold, ankle-deep water.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The sewer tunnel stretches in both directions, a curved concrete pipe lit only by your phone's dying flashlight. Water trickles along the bottom. The walls are covered in graffiti and dark stains. Echoes carry strangely—you hear sounds from blocks away, distorted and ghostly.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You hear something ahead. A splashing sound. Rhythmic. Growing louder. Something is moving through the sewers—and it's heading your way.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Whatever is making that sound is coming from ahead. You turn and splash back the way you came, looking for an exit. There's a maintenance ladder about twenty feet back that leads up to another grate. You climb, pushing against the grate with all your strength.",
+                "label": "Turn back and escape through another grate",
+                "targetScene": "street_emergence",
+                "targetSceneDescription": "Climbing out of the sewer into a residential street. The neighborhood is quiet—too quiet. But you've escaped the tunnels.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You press yourself against the curved wall of the sewer pipe, kill your light, and stand perfectly still. The splashing grows louder. A shape passes by in the darkness—large, quadrupedal, sniffing at the water. It pauses right where you're standing, snuffling at the air. Then it moves on.",
+                "label": "Hide and let the creature pass",
+                "targetScene": "sewer_hide",
+                "targetSceneDescription": "Hiding in the dark sewer as something large passes by. The creature is gone, but you're lost in the tunnels. Which way is out?",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "convenience_store": {
+          "type": "impl",
+          "scene": {
+            "id": "convenience_store",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You duck through the shattered glass of the convenience store. The smell hits you—spilled soda, rotting food, and copper. Shelves are overturned, their contents strewn across the linoleum floor. A fluorescent light buzzes weakly overhead.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You grab what you can—bottled water, energy bars, a first-aid kit from behind the counter. You find a sturdy crowbar tucked under the register. Jackpot.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A noise from the back. The storage room door is ajar. Something shuffles inside. You freeze, crowbar raised. The door creaks open wider.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You creep toward the storage room, crowbar ready. Through the gap, you see a figure hunched over—an infected, feasting on something you'd rather not identify. It hasn't seen you yet. You can slip out the front, or you can take it out and secure the store.",
+                "label": "Sneak past and escape out the front",
+                "targetScene": "store_escape",
+                "targetSceneDescription": "Slipping out of the convenience store with your supplies. The street is dangerous, but you're better equipped now.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You need this place as a safe spot. You raise the crowbar and push the door open wider. The infected turns, hissing, mouth dripping. You swing before it can scream.",
+                "label": "Attack the infected in the storage room",
+                "targetScene": "store_fight",
+                "targetSceneDescription": "Fighting for control of the convenience store. If you can clear it out, this place could be a temporary sanctuary with supplies.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "intersection_battle": {
+          "type": "impl",
+          "scene": {
+            "id": "intersection_battle",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You sprint toward the survivors, grabbing a broken pole from a smashed traffic light as you run. Three survivors—two women and a man—are fighting back-to-back against a cluster of infected. One of the women goes down, a nurse in blood-soaked scrubs, as you arrive.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You swing the metal pole into the nearest infected's skull. It drops. The survivors turn, surprised, but they don't hesitate. The man—a burly guy in a leather vest—nods at you.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "Wait—you? You're the one from the alley! Good timing. We were about to get overwhelmed.",
+                "instantCharacterEffects": [
+                  { "character": "Maya Ortiz", "effect": "happy" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The group fights off the remaining infected. The nurse on the ground isn't moving. The other survivor—a young man with a bat—helps you create a perimeter. For a moment, there's silence.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Maya and the other survivors are forming a group. They've been moving together, surviving together. The burly guy, Marcus, says they're heading for the bridge—there are reports of a safe zone on the other side. You can join them and increase your chances.",
+                "label": "Join the survivor group heading for the bridge",
+                "targetScene": "survivor_group",
+                "targetSceneDescription": "Joining Maya, Marcus, and the others. A group of survivors moving through the ruined city toward a rumored safe zone beyond the bridge.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Groups attract attention. More infected will come. You thank them for the assist but decide to go solo. You grab what supplies you can from the fallen nurse's bag and slip away down a side street.",
+                "label": "Go solo and slip away while the group regroups",
+                "targetScene": "solo_side_street",
+                "targetSceneDescription": "Alone again on a dark side street. The sounds of the city surround you. You have some supplies and your wits. It'll have to be enough.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "police_cruiser": {
+          "type": "impl",
+          "scene": {
+            "id": "police_cruiser",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You sprint for the police cruiser, weaving between abandoned cars. The lights are still circling—blue and red, casting surreal shadows across the street. The driver's door is open. The officer who was inside is... gone.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You slide into the driver's seat. The keys are in the ignition. A shotgun is mounted in the front seat. The radio crackles with static.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You key the radio. Through bursts of static, you hear fragments: '...containment zone... St. Mary's Hospital... survivors gathering...' The signal cuts in and out, but you've got a direction. A destination.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The cruiser has a full tank. You crank the engine, throw it into drive, and floor it. The car roars to life, plowing through debris and infected alike. You follow the radio's directions toward St. Mary's Hospital, where survivors are reportedly gathering.",
+                "label": "Drive the cruiser toward St. Mary's Hospital",
+                "targetScene": "hospital_drive",
+                "targetSceneDescription": "Racing through the ruined streets in a police cruiser toward St. Mary's Hospital. The radio said survivors are there. But radio signals can lie.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The shotgun is what you need. You grab it, check it's loaded, and grab the extra shells from the glove compartment. But a car is too loud, too visible. You'll go on foot, using the cruiser as a temporary shelter while you plan your next move.",
+                "label": "Take the shotgun and supplies but go on foot",
+                "targetScene": "armed_foot",
+                "targetSceneDescription": "Armed with a police shotgun and heading into the city on foot. You're better equipped now, but the noise of the shotgun will draw every infected for blocks.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "lobby_entry": {
+          "type": "impl",
+          "scene": {
+            "id": "lobby_entry",
+            "isCheckpoint": false,
+            "location": "The Stairwell",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb the stairs from the basement, emerging into the building's ground-floor lobby. The space is cavernous and cold, with a cracked marble floor and a massive chandelier hanging askew. The front doors are open, swinging in the wind.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The lobby is a war zone. Overturned couches, shattered glass, dark splatters across the walls. A body lies near the reception desk—the night guard, his radio still crackling with static.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You creep toward the body. The guard's belt has a set of keys and a nightstick. The radio murmurs: '...repeat, all units... St. Mary's has fallen... survivors moving to...'—static—'...the docks. Repeat, the docks.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab the keys, the nightstick, and the radio. The docks are several miles away, but you could make it if you find a vehicle. You step through the broken front doors onto the street, the cold night air hitting you.",
+                "label": "Head out toward the docks based on the radio message",
+                "targetScene": "road_to_docks",
+                "targetSceneDescription": "Making your way through the devastated streets toward the city docks. A rumored evacuation point. But the path is long and dangerous.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The lobby has a maintenance closet. You check it and find a janitor's uniform, some cleaning supplies, and—more importantly—a master key ring for the entire building. You could go back up, check other apartments for supplies or survivors.",
+                "label": "Take the master keys and search other apartments",
+                "targetScene": "master_keys",
+                "targetSceneDescription": "Armed with a master key ring. You can access any apartment in the building. Each door is a mystery—supplies, survivors, or infected waiting inside.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "boiler_room": {
+          "type": "impl",
+          "scene": {
+            "id": "boiler_room",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You push open the heavy metal door marked 'BOILER ROOM.' A wave of heat hits you, along with the smell of oil and rust. The room is a tangle of pipes, valves, and industrial machinery. A single bare bulb casts weak yellow light.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The boiler is still running, its flame casting dancing shadows across the walls. You spot tools hanging on a pegboard—wrenches, a hacksaw, a hammer. A workbench holds more supplies. And in the corner... a hatch in the floor.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You lift the hatch. Stone steps descend into darkness. The maintenance tunnels. This is what Maya was talking about. From here, you could go anywhere.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The boiler room is defensible, has tools, and is warm. You could barricade the door and hole up here for a while. Maybe wait for daylight. Rest. Plan. The supplies on the workbench could sustain you for a day or two.",
+                "label": "Barricade the boiler room and rest until dawn",
+                "targetScene": "boiler_room_shelter",
+                "targetSceneDescription": "Taking shelter in the warm boiler room. You barricade the door and try to rest. The sounds of the city filter through the walls. Morning will bring new choices.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The maintenance tunnels are your way out. You grab a wrench as a weapon, a flashlight from the workbench, and descend the stone steps into the darkness below. The tunnels could take you anywhere in the block.",
+                "label": "Descend into the maintenance tunnels",
+                "targetScene": "boiler_tunnels",
+                "targetSceneDescription": "Descending into the maintenance tunnels beneath the building. Dark, narrow, and silent. The tunnels connect to multiple buildings. Freedom is somewhere ahead.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "crawlspace_tunnel": {
+          "type": "impl",
+          "scene": {
+            "id": "crawlspace_tunnel",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You get on your hands and knees and crawl into the narrow passage. The space is tight—your shoulders scrape the walls. Dust fills your lungs. Cobwebs brush against your face. You crawl forward, one hand over the other, into absolute darkness.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The tunnel forks. Left leads upward at a slope—you can feel fresh air coming from that direction. Right continues level, and you hear a distant dripping sound. Both paths are black as pitch.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Fresh air means an exit. You crawl up the sloping tunnel, emerging through a broken vent cover into a dark alley on the other side of the block. You've escaped the building. A new part of the city awaits.",
+                "label": "Follow the fresh air to the surface",
+                "targetScene": "new_alley",
+                "targetSceneDescription": "Emerging from a vent into an unfamiliar alley. You've crossed to a new block. The city is even worse here—more fires, more chaos.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The dripping sound could mean water—a valuable resource. You crawl down the level tunnel, emerging into a small underground chamber. A pipe has burst, creating a pool of cold, clean water. And stacked in the corner are boxes of emergency supplies—someone's hidden cache.",
+                "label": "Explore the sound of dripping water",
+                "targetScene": "hidden_cache",
+                "targetSceneDescription": "Discovering a hidden emergency cache in an underground chamber. Food, water, medical supplies—someone prepared for this. You've struck gold.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "survivor_rooftop_climb": {
+          "type": "impl",
+          "scene": {
+            "id": "survivor_rooftop_climb",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You step out of your ransacked apartment into the dark hallway. The fluorescent light is dead now, leaving only the glow of your phone. The hallway is empty—for now. You creep toward the rooftop ladder at the far end.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The ladder groans as you climb, each footstep agonizingly loud. You push open the rooftop hatch and emerge into the cold night air. The city sprawls below you, a patchwork of fire and shadow.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You're not alone on the rooftop. A figure stands near the edge, silhouetted against the burning skyline. They turn at the sound of the hatch opening—a woman, mid-thirties, holding a baseball bat. She looks as surprised to see you as you are to see her.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The woman introduces herself as Jenna, a school teacher who lived two buildings over. She climbed across the rooftops to escape the infected. She's been watching the city, trying to spot safe routes. She knows a path across the rooftops that leads to a fire station with working vehicles.",
+                "label": "Team up with Jenna and follow her rooftop route",
+                "targetScene": "rooftop_highway",
+                "targetSceneDescription": "Following Jenna across the rooftops of the city. A dangerous sky-high journey, but the infected can't climb. The fire station awaits.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You can't trust anyone. You thank Jenna but keep your distance. You settle into a corner of the rooftop, sheltered by the HVAC unit, and try to rest. Dawn will bring clarity. For now, you survive.",
+                "label": "Keep to yourself and rest on the rooftop until dawn",
+                "targetScene": "rooftop_vigil",
+                "targetSceneDescription": "A cold, lonely vigil on the rooftop. The city burns below. You try to rest, but every sound makes you jump. Dawn is hours away.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "survivor_alley": {
+          "type": "impl",
+          "scene": {
+            "id": "survivor_alley",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb down the fire escape, your footsteps echoing in the narrow alley. The ground is slick with rain and something darker. Trash bags are torn open, their contents scattered like the remains of ordinary life.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A cat darts out from behind a dumpster, making you jump. It stares at you with wide eyes before disappearing into the shadows. The alley leads to the main street, where the scale of the nightmare becomes clear: buildings burn, cars are wrecked, and shapes shuffle through the smoke.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You see the entrance to a subway station at the end of the street. The trains aren't running, but the tunnels below could be a safe passage—dark, uncharted, but away from the chaos on the surface.",
+                "label": "Head for the subway station entrance",
+                "targetScene": "subway_entry",
+                "targetSceneDescription": "Descending into the dark subway station. The turnstiles are broken. Tunnels stretch into darkness. The subway could be a path through the city—or a tomb.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "On the main street, you spot a group of infected gathered around a crashed delivery truck. Beyond them, an all-night pharmacy. The pharmacy would have medicine, supplies. If you can distract the infected, you can slip inside.",
+                "label": "Sneak around the infected toward the pharmacy",
+                "targetScene": "pharmacy_sneak",
+                "targetSceneDescription": "Sneaking through the shadows toward an all-night pharmacy. Infected roam the street. One wrong move and they'll be on you.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "through_the_wall": {
+          "type": "impl",
+          "scene": {
+            "id": "through_the_wall",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab a hammer and start swinging at the drywall. The first swing punches through. The second tears a hole big enough to see through. Mrs. Vasquez's apartment is dark and still.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You widen the hole and climb through into her living room. The place is tidy—eerily so. A half-finished cup of tea sits on the coffee table. A photo album lies open, showing pictures of a young girl—Mrs. Vasquez's granddaughter.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The apartment has canned goods in the pantry, a fully stocked medicine cabinet, and a landline phone—dead, like all the lines. But on the kitchen counter, you find a note in shaky handwriting: 'They took Lily. I went after her. If you're reading this, please find my granddaughter. - Elena Vasquez'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You stuff your backpack with the canned goods and medicine. The note about Lily weighs on you, but you have to prioritize your own survival. You leave through Mrs. Vasquez's front door into the hallway—it's quieter on this side of the building.",
+                "label": "Take the supplies and leave via the hallway",
+                "targetScene": "vasquez_hallway",
+                "targetSceneDescription": "Stepping into the hallway from Mrs. Vasquez's apartment. The far end of the hall is dark. You hear movement from the stairwell.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You can't ignore the plea. You find a photo of Lily—a smiling girl with pigtails—and pocket it. If you're going to survive this, you need a purpose. Finding Lily gives you one. You gather supplies and head out, determined to find her.",
+                "label": "Search for Lily, Mrs. Vasquez's granddaughter",
+                "targetScene": "search_for_lily",
+                "targetSceneDescription": "Searching for a lost child in a fallen city. The note said 'they took her.' The infected took her. Or something worse. Either way, you have a mission now.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "flee_into_hallway": {
+          "type": "impl",
+          "scene": {
+            "id": "flee_into_hallway",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You burst out of your apartment, bag in hand, and sprint down the hallway. The lights are dead. Your phone's flashlight cuts a narrow path through the darkness.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The stairwell door is at the end of the hall. You can hear them below—the wet clicking sound of infected. They're climbing the stairs. Coming up.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You have two choices: go through the stairwell and fight your way down, or try the fire escape at the other end of the hall. Either way, you're running out of time.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You push through the stairwell door and start descending. The infected are below you—you can hear them, see their pale shapes moving in the dim light. You climb over the railing and jump down a full flight, landing hard, rolling, and keep running.",
+                "label": "Descend the stairwell, jumping past the infected",
+                "targetScene": "stairwell_jump",
+                "targetSceneDescription": "Leaping down the stairwell, bypassing the infected. You land hard but keep moving. The ground floor lobby is just ahead.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You turn and run back the other way, toward the fire escape window. You can hear the infected pouring into the hallway behind you. You slide the window open, climb out onto the metal platform, and start descending.",
+                "label": "Double back and escape via the fire escape",
+                "targetScene": "flee_fire_escape",
+                "targetSceneDescription": "Climbing down the fire escape as infected pour into the hallway behind you. The metal groans. Below, the alley waits in darkness.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "hospital_keycard": {
+          "type": "impl",
+          "scene": {
+            "id": "hospital_keycard",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You kneel beside the fallen creature. The hospital gown is stained, torn, but the nametag is clear: 'KOWALSKI, M.—St. Mary's Hospital—Staff.' A key card on a lanyard is clipped to the collar. You take it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "St. Mary's Hospital. Three blocks away. If this infection started there, the answers might be there too. Patient zero. Origin. Treatment. Cure. Or maybe just more infected, more death.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You stand, key card clutched in your hand. The apartment is a wreck, but you have a destination now. A purpose. The hospital calls.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab your things and head out immediately, following the streets toward St. Mary's Hospital. The key card opens doors—literally. You move through the chaos, determined to find answers.",
+                "label": "Head directly to St. Mary's Hospital now",
+                "targetScene": "direct_hospital",
+                "targetSceneDescription": "Making your way through the devastated streets toward St. Mary's Hospital. The key card in your pocket might be the key to answers. Or to a tomb.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You're not ready for the hospital yet. You need more supplies, more information. You check your apartment for anything useful before you go—maps, a better weapon, food. Preparation could mean the difference between answers and becoming one of them.",
+                "label": "Prepare more before heading to the hospital",
+                "targetScene": "prepare_for_hospital",
+                "targetSceneDescription": "Scavenging your apartment for supplies before the hospital run. Maps, weapons, food. Every item could save your life.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "alley_landing": {
+          "type": "impl",
+          "scene": {
+            "id": "alley_landing",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You hit the ground hard, the impact jarring through your legs. You roll, the gravel scraping your palms. Above, the creature is scrambling down the fire escape after you, moving with terrifying speed.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "fall" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You scramble to your feet and run. The alley stretches ahead, leading to the main street. You can see lights—flickering headlights, maybe a car. You run toward them, lungs burning.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You burst out of the alley onto the main street. A van is idling at the curb, its back doors open. A figure waves at you frantically.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The figure is a中年 man, panicked, waving you into the van. 'Get in! Get in!' he shouts. Behind you, the creature emerges from the alley. You don't hesitate—you dive into the van, and the man floors it, tires screeching.",
+                "label": "Jump into the stranger's van and escape",
+                "targetScene": "van_escape",
+                "targetSceneDescription": "Racing away from the alley in a stranger's van. The man says his name is Gary, and he's gathering survivors. He knows of a safe house.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You don't trust the stranger. You veer away from the van, ducking between two parked cars. The creature is right behind you, but you weave through the obstacle course of wrecked vehicles, using them as cover.",
+                "label": "Dodge between cars and lose both the creature and the van",
+                "targetScene": "car_dodge",
+                "targetSceneDescription": "Weaving through a maze of wrecked cars. The creature is persistent. You need to find cover and lose it.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "desperate_rooftop_climb": {
+          "type": "impl",
+          "scene": {
+            "id": "desperate_rooftop_climb",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab the edge of the fire escape cage and haul yourself up, muscles screaming. The creature is right behind you, its claws scraping metal. You climb onto the narrow roof ledge, fingers finding purchase on the brickwork.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You pull yourself onto the rooftop just as the creature lunges. It catches your ankle, but you kick free, scrambling across the gravel. The rooftop stretches before you—open, exposed, and vast.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "The creature hauls itself onto the roof behind you, hissing. You're trapped on a rooftop with a monster. There's no obvious exit. But you see a maintenance shed, the edge of the building, and a gap between your building and the next.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The gap between buildings is about eight feet. A running jump could clear it. You sprint across the rooftop and leap, arms windmilling, your feet hitting the edge of the neighboring building. You stumble, catch yourself, and turn. The creature hesitates at the edge—it can't make the jump. You're safe. For now.",
+                "label": "Make a running jump to the next building",
+                "targetScene": "building_jump",
+                "targetSceneDescription": "Landing on the neighboring rooftop after a desperate leap. The creature is stranded. But you're in unknown territory now.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You don't run—you fight. You grab a loose piece of gravel and hurl it at the creature's face, then charge, tackling it. You grapple at the edge of the roof, struggling desperately, trying to throw it off the side.",
+                "label": "Stand your ground and try to throw the creature off the roof",
+                "targetScene": "rooftop_struggle",
+                "targetSceneDescription": "A life-or-death struggle at the edge of the roof. You and the creature wrestle for control, the four-story drop waiting below.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "extension_roof": {
+          "type": "impl",
+          "scene": {
+            "id": "extension_roof",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You land on the first-floor extension roof, the tar paper crunching under your feet. Alex lands beside you, clutching the backpack of supplies. The roof is narrow, maybe eight feet wide, stretching from the building to the edge of the property.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Above you, the fire escape platform hangs within reach. Below, the alley is dark and quiet. Across the street, you see movement in a second-floor window—a flashlight blinking. Someone is signaling. A pattern: three short flashes, three long, three short. SOS.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab the fire escape ladder and pull it down. It clatters as it descends. You and Alex climb up to the second-floor platform. The window is open. Inside, a family of three huddles in the dark—a mother, father, and teenage son. They've been watching the street, too scared to move.",
+                "label": "Climb up and respond to the SOS signal",
+                "targetScene": "sos_family",
+                "targetSceneDescription": "Meeting a family of survivors in a second-floor apartment. They've been hiding since the outbreak began. They have supplies and information.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The alley is your path. You help Alex down from the roof edge, dropping into the darkness below. You move through the shadows, sticking to the walls, avoiding the open street. The city is a maze of dangers, but the dark is your ally.",
+                "label": "Drop into the alley and move through the shadows",
+                "targetScene": "alley_shadows",
+                "targetSceneDescription": "Moving through the dark alley system. Staying in the shadows, avoiding open streets. The infected hunt by sound and movement.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "wound_treatment": {
+          "type": "impl",
+          "scene": {
+            "id": "wound_treatment",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You clean Alex's wound with alcohol, the sharp smell filling the small bathroom. Alex hisses through clenched teeth, tears streaming down their face. The dark veins are spreading, creeping up toward their shoulder.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "I can feel it. Moving. Like something's crawling under my skin.",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You bandage the wound tightly. It's all you can do. The door is still holding, but the infected are relentless. You need to get Alex to a hospital—real medicine, real help.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You check your phone. No signal. But you remember the map you saw in the stairwell. St. Mary's Hospital is three blocks east. It's not far, but getting there through the chaos will be a nightmare.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Alex needs a hospital. You grab the map, the supplies, and your weapon. You and Alex will have to fight your way through the building to the ground floor, then make a run for St. Mary's. It's three blocks of pure hell, but it's the only option.",
+                "label": "Fight through the building toward St. Mary's Hospital",
+                "targetScene": "hospital_run",
+                "targetSceneDescription": "Fighting through the infected building toward the street. St. Mary's Hospital is three blocks away. Alex is weakening. Every minute counts.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The hospital is too far. Alex is too weak. You look around the apartment and spot a first-aid manual on your shelf. You flip through it, looking for anything about infected wounds. There's a section on rabies—similar symptoms. Maybe... maybe if you clean it deep enough, cauterize it...",
+                "label": "Try a desperate home treatment to slow the infection",
+                "targetScene": "desperate_treatment",
+                "targetSceneDescription": "A desperate attempt to treat Alex's wound at home. Cauterization, deep cleaning—it's risky, but the alternative is watching Alex turn.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "fire_escape_signal": {
+          "type": "impl",
+          "scene": {
+            "id": "fire_escape_signal",
+            "isCheckpoint": false,
+            "location": "The Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb the fire escape, the cold metal rungs biting into your hands. At the second-floor window, you see a face peering out—a young woman with a flashlight. She waves you over.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The window slides open. The woman helps you and Alex inside. The apartment is dark, but you can see it's been fortified—furniture pushed against the doors, supplies stacked in corners. A man and an elderly woman sit on the floor, looking terrified.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "I'm Maya. This is Marcus and Mrs. Chen. We've been holding out here since it started. We saw you on the fire escape. Glad you made it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Maya's group has been surviving. They have supplies, weapons, and a plan. Marcus says they've been monitoring a police scanner—there's a evacuation point being set up at the docks. A boat is supposed to come at dawn. You can join them.",
+                "label": "Join the survivor group and plan for the docks",
+                "targetScene": "dock_evacuation_plan",
+                "targetSceneDescription": "Planning with Maya's group. The docks are the last hope. A boat at dawn. But getting there means crossing the most dangerous part of the city.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The group seems nice, but you've seen how groups attract attention. You thank them for the shelter but insist on leaving. You take some supplies they offer and slip back out the window, continuing down the fire escape to the ground.",
+                "label": "Take supplies and continue alone",
+                "targetScene": "alone_again",
+                "targetSceneDescription": "Leaving the safety of the group behind. You continue down the fire escape, alone again. The city is a graveyard, and you're the only mourner.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "alley_route": {
+          "type": "impl",
+          "scene": {
+            "id": "alley_route",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You drop down into the alley, the impact softened by a pile of trash bags. You help Alex down, and together you press yourselves against the wall, listening. The night is full of sounds—distant screams, breaking glass, the ever-present scuffling.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The alley connects to a network of back passages behind the buildings. You move single file, staying in the shadows. Alex is breathing heavily, the wound obviously paining them.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You come to a junction. One path leads toward the main street, where you can see the glow of fires. The other leads deeper into the alley system, toward the industrial part of the neighborhood. A third path is a narrow gap between two buildings, barely wide enough to walk through.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The main street is dangerous, but it's also the fastest route to the hospital Alex needs. You take a deep breath and lead Alex toward the street, ready to face whatever comes.",
+                "label": "Head toward the main street",
+                "targetScene": "alley_to_street",
+                "targetSceneDescription": "Emerging from the alley onto the main street. The chaos is in full swing. But the hospital is visible in the distance.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The industrial area might have vehicles, tools, and fewer infected. You lead Alex deeper into the alley network, toward the old factory district. It's a longer route, but potentially safer.",
+                "label": "Head deeper into the industrial alley network",
+                "targetScene": "industrial_alley",
+                "targetSceneDescription": "Moving through the industrial back alleys. Abandoned factories and warehouses loom overhead. The silence here is heavier than the chaos of the main streets.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The narrow gap between buildings could be a shortcut. You squeeze through, Alex following. The walls press in on both sides, and you emerge in a small courtyard behind a row of shops. A delivery truck is parked here, its keys in the ignition.",
+                "label": "Take the narrow passage to the courtyard",
+                "targetScene": "courtyard_truck",
+                "targetSceneDescription": "Emerging into a hidden courtyard. A delivery truck sits with keys inside. This could be your ticket out of the city.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "rooftop_medical": {
+          "type": "impl",
+          "scene": {
+            "id": "rooftop_medical",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [
+              { "character": "Alex Chen", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You search the maintenance shed. Behind coils of old rope and dusty boxes, you find a rusted first-aid kit, a crowbar, and—most importantly—a ham radio. You set the radio on the roof and crank it to life.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You clean Alex's wound as best you can with the limited supplies, then pour a little whiskey on it. Alex hisses but nods—it helps. The dark veins haven't spread further, but they haven't receded either.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The radio crackles. You adjust the frequency, filtering through static. Then a voice cuts through: '...this is Sergeant Torres, National Guard... evacuation point established at...'—static—'...docks. Repeat, the docks. Survivors are being transported to a quarantine zone outside the city. If you can hear this, make your way to Pier 7. We leave at dawn.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The docks. That's your ticket out. You help Alex to their feet and head for the edge of the rooftop. The fire escape at the side of the building will take you down. From there, it's a straight shot to Pier 7—if you can make it through the streets.",
+                "label": "Make for the docks evacuation point",
+                "targetScene": "evacuation_run",
+                "targetSceneDescription": "Descending from the rooftop, heading for the docks. The National Guard is evacuating survivors. Dawn is still hours away. The streets are a war zone.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The radio is a lifeline. You hunker down on the rooftop, using the radio to gather more information. You learn that the infection is spreading, that safe zones are falling, and that the military is losing control. But you also learn about a research facility that was working on a cure before communications went dark.",
+                "label": "Stay and gather more intel from the radio",
+                "targetScene": "radio_intel",
+                "targetSceneDescription": "Gathering intelligence from the ham radio. You learn about a research facility, a possible cure, and the true scale of the outbreak.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "pharmacy_roof_jump": {
+          "type": "impl",
+          "scene": {
+            "id": "pharmacy_roof_jump",
+            "isCheckpoint": false,
+            "location": "The Rooftop",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You back up, take a running start, and leap across the gap. You hit the neighboring roof hard, rolling to absorb the impact. You made it.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "jump" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You look back. Alex is still on the other roof, looking pale and scared. The gap is too wide for them in their condition.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Alex Chen",
+                "content": "I can't... I can't make that jump...",
+                "instantCharacterEffects": [
+                  { "character": "Alex Chen", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You're separated. Alex is on one roof, you're on another. Behind Alex, the hatch shudders—the infected are breaking through. You see a fire escape ladder on the side of your building, leading down. And on Alex's side, a window into the building that might offer another route.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You can't abandon Alex. You look around and find an old wooden plank in a pile of debris on the roof. You wedge it across the gap, creating a makeshift bridge. 'Come on, Alex! You can do this!' Alex takes a breath, steps onto the plank, and crosses, shaking but alive.",
+                "label": "Build a bridge across the gap for Alex",
+                "targetScene": "plank_bridge",
+                "targetSceneDescription": "Using a plank to bridge the gap. Alex crosses safely. Together, you descend into the pharmacy building through its roof access.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You shout instructions to Alex: go back through the building, find another way down, meet you at the pharmacy. Then you turn and descend the fire escape alone. It's a risk, but splitting up might be the only way to save you both.",
+                "label": "Split up and meet at the pharmacy",
+                "targetScene": "split_pharmacy",
+                "targetSceneDescription": "Splitting up from Alex to cover more ground. You'll meet at the pharmacy below. Trusting Alex to survive alone weighs heavily on you.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "parking_garage": {
+          "type": "impl",
+          "scene": {
+            "id": "parking_garage",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You approach the parking garage cautiously. The entrance is a dark maw, the gate arm broken and hanging crooked. Inside, rows of cars sit in shadow, their windshields glinting dimly.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You move through the rows, checking vehicles. Most are locked. One has a shattered window. You find a sedan with the keys still in the ignition—a miracle. The engine turns over with a low rumble. You have a vehicle.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "But as the engine roars to life, you hear something respond. From the upper levels of the garage, a crash. Then another. Something is up there—and it's coming down.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "choices": [
+              {
+                "description": "You throw the car into reverse, spin around, and gun it toward the exit. Something crashes onto the hood of the car—an infected, its white eyes staring through the windshield. You swerve, throwing it off, and burst out into the street. You're mobile. You're free.",
+                "label": "Floor it and escape the garage immediately",
+                "targetScene": "car_escape",
+                "targetSceneDescription": "Racing out of the parking garage in a stolen sedan. You have wheels now. The city is your obstacle course.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You kill the engine and slip out of the car. The noise will draw them, but a car is useless if the streets are blocked. You need to scout ahead first, see if there's a clear route. You creep toward the upper levels to see what's coming.",
+                "label": "Scout the upper levels for the threat",
+                "targetScene": "garage_scout",
+                "targetSceneDescription": "Creeping up the ramps of the parking garage. Something large is moving on the upper levels. You need to know what you're dealing with.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "fire_station": {
+          "type": "impl",
+          "scene": {
+            "id": "fire_station",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You approach the fire station. The bay doors are open, revealing a red fire engine inside, its lights still glowing faintly. The station looks empty—too empty. No sign of the firefighters.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You step inside. The station is a mess—overturned desks, a shattered coffee mug, a radio still playing static. Fire axes hang on the wall. Lockers stand open, their contents strewn across the floor.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Then you hear it. From the bunk room in the back: a wet, rhythmic sound. Chewing. Something is back there, feeding.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab a fire axe from the wall. The weight is reassuring. You creep toward the bunk room, ready to face whatever is in there. If you can clear the station, you'll have a fortress with a working vehicle.",
+                "label": "Clear the station with the fire axe",
+                "targetScene": "station_clearing",
+                "targetSceneDescription": "Advancing on the bunk room, axe in hand. The infected inside is feeding. You have the element of surprise.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The fire engine is what you need. You don't need to clear the whole station. You grab a spare set of turnout gear, an axe, and climb into the engine. The keys are in the ignition. You start it up, the diesel engine roaring, and back out of the bay.",
+                "label": "Grab gear and take the fire engine",
+                "targetScene": "fire_engine_escape",
+                "targetSceneDescription": "Driving a fire engine through the ruined streets. The truck is big, tough, and can push through barricades. But it's also loud and slow.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "stairwell_descent": {
+          "type": "stub",
+          "scene": {
+            "id": "stairwell_descent",
+            "description": "You're bitten, bleeding, and outnumbered. There's only one chance—you shove through the infected, using the fire extinguisher as a battering ram, and throw yourself down the stairwell. You tumble down the concrete steps, landing hard on the second-floor landing. Your leg screams in protest, but you force yourself up and keep moving."
+          }
+        },
+        "apartment_3c": {
+          "type": "stub",
+          "scene": {
+            "id": "apartment_3c",
+            "description": "There's an apartment door right next to you—3C. You've never met the tenant, but the door is solid wood with a heavy deadbolt. You slam the door shut behind you, throwing the lock, and press your back against it as bodies crash into the other side. You're trapped, but alive."
+          }
+        },
+        "child_survivor": {
+          "type": "impl",
+          "scene": {
+            "id": "child_survivor",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You kneel down to the girl's level. She's trembling, clutching a photo of her grandmother—Mrs. Vasquez.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Player",
+                "content": "It's okay. I'm not going to hurt you. What's your name?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Lily",
+                "content": "L-Lily. They took grandma. She... she changed. She tried to... I ran and hid.",
+                "instantCharacterEffects": [
+                  { "character": "Lily", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Lily. The same girl from the note in Mrs. Vasquez's apartment. She's about eight, with pigtails and wide, terrified eyes. She's holding a small backpack with a teddy bear poking out. The infected are at the apartment door, pounding.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You take Lily's hand. 'We're getting out of here together.' The window is your only exit. You carry her to the fire escape, helping her climb down as the infected break through the door behind you. Together, you descend into the dark alley.",
+                "label": "Take Lily with you through the fire escape",
+                "targetScene": "lily_escape",
+                "targetSceneDescription": "Escaping with Lily through the fire escape. You're responsible for a child now. Every decision carries extra weight. But you're not alone anymore.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You can't take a child into that nightmare. You find a hiding spot—a crawlspace under the bed—and stash Lily there with supplies. 'Stay quiet. I'll come back for you.' You seal her in, hoping against hope you can keep that promise.",
+                "label": "Hide Lily and leave to find help alone",
+                "targetScene": "hide_lily",
+                "targetSceneDescription": "Hiding Lily in a crawlspace and leaving to find help alone. The promise weighs on you. You have to make it back.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "guilty_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "guilty_escape",
+            "isCheckpoint": false,
+            "location": "The Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You turn away from the bedroom door and climb out onto the fire escape. The cold metal bites into your hands as you descend, each step taking you further from the crying child. The guilt is a physical weight in your chest.",
+                "instantCharacterEffects": [
+                  { "character": "Player", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You reach the ground and disappear into the shadows of the alley. Above, you hear the infected break into the apartment. You force yourself to keep moving, telling yourself it was the only way.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The alley leads to a side street. The city stretches before you, full of horrors and possibilities. But the face of that little girl stays with you, a ghost you can't shake.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You can't live with yourself. You turn around and go back. You climb the fire escape, re-enter the apartment, and find Lily still hiding, still alive. This time, you take her hand and don't let go.",
+                "label": "Go back for Lily",
+                "targetScene": "return_for_lily",
+                "targetSceneDescription": "Going back for Lily. Second chances are rare in the apocalypse. You won't waste this one.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You harden your heart and walk away. The guilt will fade. It has to. You move through the side streets, looking for a way out of this nightmare alone.",
+                "label": "Walk away and focus on survival",
+                "targetScene": "survivors_guilt",
+                "targetSceneDescription": "Walking away from Lily, carrying the weight of guilt. The streets are dark and full of danger. You're alone with your choices.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "tunnel_exit_garage": {
+          "type": "impl",
+          "scene": {
+            "id": "tunnel_exit_garage",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You emerge from a grate into a parking garage. Maya leads you to a corner where she's stashed supplies. She hands you a bottle of water.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Maya Ortiz",
+                "content": "Welcome to my forward operating base. It's not much, but it's safe. I've been using this garage as a waypoint. There's a car on level 3 that still runs.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Maya shows you the garage. It's a multi-level structure, dark and echoing. Several cars are parked, but most are damaged. On level 3, a sturdy SUV sits waiting, its keys in the cupholder. Fuel is low, but it could get you out of the city.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You and Maya take the SUV. She knows the side streets, the ways around the blockages. Together, you navigate through the ruined city, heading for the bridge and the rumored safe zone beyond.",
+                "label": "Take the SUV with Maya and escape the city",
+                "targetScene": "suv_escape",
+                "targetSceneDescription": "Racing through the city in an SUV with Maya. The bridge is your goal. Safety is on the other side—if the reports are true.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "You thank Maya but decide to stay in the city. There's the hospital to investigate, the key card in your pocket, and the mystery of the infection to solve. Maya thinks you're crazy, but she gives you her radio frequency. 'If you change your mind,' she says.",
+                "label": "Stay in the city to investigate the outbreak",
+                "targetScene": "stay_and_investigate",
+                "targetSceneDescription": "Staying in the fallen city to find answers. The key card, the hospital, the origin of the infection. Maya heads for the bridge without you.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "lower_tunnels": {
+          "type": "stub",
+          "scene": {
+            "id": "lower_tunnels",
+            "description": "You thank Maya but decide to go your own way. The tunnels branch off in multiple directions. You take a left where she takes a right, choosing a path that slopes downward. The air grows colder, damper. You hear the trickle of water ahead—maybe a sewer line, maybe a way out."
+          }
+        },
+        "street_emergence": {
+          "type": "stub",
+          "scene": {
+            "id": "street_emergence",
+            "description": "Whatever is making that sound is coming from ahead. You turn and splash back the way you came, looking for an exit. There's a maintenance ladder about twenty feet back that leads up to another grate. You climb, pushing against the grate with all your strength."
+          }
+        },
+        "sewer_hide": {
+          "type": "stub",
+          "scene": {
+            "id": "sewer_hide",
+            "description": "You press yourself against the curved wall of the sewer pipe, kill your light, and stand perfectly still. The splashing grows louder. A shape passes by in the darkness—large, quadrupedal, sniffing at the water. It pauses right where you're standing, snuffling at the air. Then it moves on."
+          }
+        },
+        "store_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "store_escape",
+            "description": "You creep toward the storage room, crowbar ready. Through the gap, you see a figure hunched over—an infected, feasting on something you'd rather not identify. It hasn't seen you yet. You can slip out the front, or you can take it out and secure the store."
+          }
+        },
+        "store_fight": {
+          "type": "stub",
+          "scene": {
+            "id": "store_fight",
+            "description": "You need this place as a safe spot. You raise the crowbar and push the door open wider. The infected turns, hissing, mouth dripping. You swing before it can scream."
+          }
+        },
+        "survivor_group": {
+          "type": "stub",
+          "scene": {
+            "id": "survivor_group",
+            "description": "Maya and the other survivors are forming a group. They've been moving together, surviving together. The burly guy, Marcus, says they're heading for the bridge—there are reports of a safe zone on the other side. You can join them and increase your chances."
+          }
+        },
+        "solo_side_street": {
+          "type": "stub",
+          "scene": {
+            "id": "solo_side_street",
+            "description": "Groups attract attention. More infected will come. You thank them for the assist but decide to go solo. You grab what supplies you can from the fallen nurse's bag and slip away down a side street."
+          }
+        },
+        "hospital_drive": {
+          "type": "impl",
+          "scene": {
+            "id": "hospital_drive",
+            "isCheckpoint": false,
+            "location": "The Alleyway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You floor the gas pedal, the police cruiser roaring through the streets. You swerve around abandoned cars, run over debris, and plow through a cluster of infected that scatter too slowly.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The hospital appears ahead—a massive concrete structure, its windows dark except for a few flickering emergency lights. The parking lot is a graveyard of abandoned vehicles. Ambulances sit with their doors open.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You skid to a halt at the emergency entrance. The doors are smashed open. Inside, darkness and silence. But the radio mentioned survivors gathering here. Are they still inside?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab the shotgun, take a deep breath, and enter the hospital. The emergency room is a triage nightmare—overturned gurneys, spilled supplies, dark stains. You hear movement deeper in. Someone—or something—is still here.",
+                "label": "Enter the hospital and search for survivors",
+                "targetScene": "hospital_search",
+                "targetSceneDescription": "Searching the dark corridors of St. Mary's Hospital. The emergency room is a graveyard. But there are signs of life deeper in.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "The hospital is too dangerous. You've got a working car and a shotgun. You turn the cruiser around and head for the docks instead—the radio said evacuation, and that's your best bet.",
+                "label": "Abandon the hospital and head for the docks",
+                "targetScene": "cruiser_to_docks",
+                "targetSceneDescription": "Racing away from the hospital toward the docks. The evacuation is your priority. The hospital can wait—if it's still standing.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "armed_foot": {
+          "type": "stub",
+          "scene": {
+            "id": "armed_foot",
+            "description": "The shotgun is what you need. You grab it, check it's loaded, and grab the extra shells from the glove compartment. But a car is too loud, too visible. You'll go on foot, using the cruiser as a temporary shelter while you plan your next move."
+          }
+        },
+        "road_to_docks": {
+          "type": "stub",
+          "scene": {
+            "id": "road_to_docks",
+            "description": "You grab the keys, the nightstick, and the radio. The docks are several miles away, but you could make it if you find a vehicle. You step through the broken front doors onto the street, the cold night air hitting you."
+          }
+        },
+        "master_keys": {
+          "type": "stub",
+          "scene": {
+            "id": "master_keys",
+            "description": "The lobby has a maintenance closet. You check it and find a janitor's uniform, some cleaning supplies, and—more importantly—a master key ring for the entire building. You could go back up, check other apartments for supplies or survivors."
+          }
+        },
+        "boiler_room_shelter": {
+          "type": "stub",
+          "scene": {
+            "id": "boiler_room_shelter",
+            "description": "The boiler room is defensible, has tools, and is warm. You could barricade the door and hole up here for a while. Maybe wait for daylight. Rest. Plan. The supplies on the workbench could sustain you for a day or two."
+          }
+        },
+        "boiler_tunnels": {
+          "type": "stub",
+          "scene": {
+            "id": "boiler_tunnels",
+            "description": "The maintenance tunnels are your way out. You grab a wrench as a weapon, a flashlight from the workbench, and descend the stone steps into the darkness below. The tunnels could take you anywhere in the block."
+          }
+        },
+        "new_alley": {
+          "type": "stub",
+          "scene": {
+            "id": "new_alley",
+            "description": "Fresh air means an exit. You crawl up the sloping tunnel, emerging through a broken vent cover into a dark alley on the other side of the block. You've escaped the building. A new part of the city awaits."
+          }
+        },
+        "hidden_cache": {
+          "type": "stub",
+          "scene": {
+            "id": "hidden_cache",
+            "description": "The dripping sound could mean water—a valuable resource. You crawl down the level tunnel, emerging into a small underground chamber. A pipe has burst, creating a pool of cold, clean water. And stacked in the corner are boxes of emergency supplies—someone's hidden cache."
+          }
+        },
+        "rooftop_highway": {
+          "type": "stub",
+          "scene": {
+            "id": "rooftop_highway",
+            "description": "The woman introduces herself as Jenna, a school teacher who lived two buildings over. She climbed across the rooftops to escape the infected. She's been watching the city, trying to spot safe routes. She knows a path across the rooftops that leads to a fire station with working vehicles."
+          }
+        },
+        "rooftop_vigil": {
+          "type": "stub",
+          "scene": {
+            "id": "rooftop_vigil",
+            "description": "You can't trust anyone. You thank Jenna but keep your distance. You settle into a corner of the rooftop, sheltered by the HVAC unit, and try to rest. Dawn will bring clarity. For now, you survive."
+          }
+        },
+        "subway_entry": {
+          "type": "stub",
+          "scene": {
+            "id": "subway_entry",
+            "description": "You see the entrance to a subway station at the end of the street. The trains aren't running, but the tunnels below could be a safe passage—dark, uncharted, but away from the chaos on the surface."
+          }
+        },
+        "pharmacy_sneak": {
+          "type": "stub",
+          "scene": {
+            "id": "pharmacy_sneak",
+            "description": "On the main street, you spot a group of infected gathered around a crashed delivery truck. Beyond them, an all-night pharmacy. The pharmacy would have medicine, supplies. If you can distract the infected, you can slip inside."
+          }
+        },
+        "vasquez_hallway": {
+          "type": "stub",
+          "scene": {
+            "id": "vasquez_hallway",
+            "description": "You stuff your backpack with the canned goods and medicine. The note about Lily weighs on you, but you have to prioritize your own survival. You leave through Mrs. Vasquez's front door into the hallway—it's quieter on this side of the building."
+          }
+        },
+        "search_for_lily": {
+          "type": "stub",
+          "scene": {
+            "id": "search_for_lily",
+            "description": "You can't ignore the plea. You find a photo of Lily—a smiling girl with pigtails—and pocket it. If you're going to survive this, you need a purpose. Finding Lily gives you one. You gather supplies and head out, determined to find her."
+          }
+        },
+        "stairwell_jump": {
+          "type": "stub",
+          "scene": {
+            "id": "stairwell_jump",
+            "description": "You push through the stairwell door and start descending. The infected are below you—you can hear them, see their pale shapes moving in the dim light. You climb over the railing and jump down a full flight, landing hard, rolling, and keep running."
+          }
+        },
+        "flee_fire_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "flee_fire_escape",
+            "description": "You turn and run back the other way, toward the fire escape window. You can hear the infected pouring into the hallway behind you. You slide the window open, climb out onto the metal platform, and start descending."
+          }
+        },
+        "direct_hospital": {
+          "type": "stub",
+          "scene": {
+            "id": "direct_hospital",
+            "description": "You grab your things and head out immediately, following the streets toward St. Mary's Hospital. The key card opens doors—literally. You move through the chaos, determined to find answers."
+          }
+        },
+        "prepare_for_hospital": {
+          "type": "stub",
+          "scene": {
+            "id": "prepare_for_hospital",
+            "description": "You're not ready for the hospital yet. You need more supplies, more information. You check your apartment for anything useful before you go—maps, a better weapon, food. Preparation could mean the difference between answers and becoming one of them."
+          }
+        },
+        "van_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "van_escape",
+            "description": "The figure is a中年 man, panicked, waving you into the van. 'Get in! Get in!' he shouts. Behind you, the creature emerges from the alley. You don't hesitate—you dive into the van, and the man floors it, tires screeching."
+          }
+        },
+        "car_dodge": {
+          "type": "stub",
+          "scene": {
+            "id": "car_dodge",
+            "description": "You don't trust the stranger. You veer away from the van, ducking between two parked cars. The creature is right behind you, but you weave through the obstacle course of wrecked vehicles, using them as cover."
+          }
+        },
+        "building_jump": {
+          "type": "stub",
+          "scene": {
+            "id": "building_jump",
+            "description": "The gap between buildings is about eight feet. A running jump could clear it. You sprint across the rooftop and leap, arms windmilling, your feet hitting the edge of the neighboring building. You stumble, catch yourself, and turn. The creature hesitates at the edge—it can't make the jump. You're safe. For now."
+          }
+        },
+        "rooftop_struggle": {
+          "type": "stub",
+          "scene": {
+            "id": "rooftop_struggle",
+            "description": "You don't run—you fight. You grab a loose piece of gravel and hurl it at the creature's face, then charge, tackling it. You grapple at the edge of the roof, struggling desperately, trying to throw it off the side."
+          }
+        },
+        "sos_family": {
+          "type": "stub",
+          "scene": {
+            "id": "sos_family",
+            "description": "You grab the fire escape ladder and pull it down. It clatters as it descends. You and Alex climb up to the second-floor platform. The window is open. Inside, a family of three huddles in the dark—a mother, father, and teenage son. They've been watching the street, too scared to move."
+          }
+        },
+        "alley_shadows": {
+          "type": "stub",
+          "scene": {
+            "id": "alley_shadows",
+            "description": "The alley is your path. You help Alex down from the roof edge, dropping into the darkness below. You move through the shadows, sticking to the walls, avoiding the open street. The city is a maze of dangers, but the dark is your ally."
+          }
+        },
+        "hospital_run": {
+          "type": "stub",
+          "scene": {
+            "id": "hospital_run",
+            "description": "Alex needs a hospital. You grab the map, the supplies, and your weapon. You and Alex will have to fight your way through the building to the ground floor, then make a run for St. Mary's. It's three blocks of pure hell, but it's the only option."
+          }
+        },
+        "desperate_treatment": {
+          "type": "stub",
+          "scene": {
+            "id": "desperate_treatment",
+            "description": "The hospital is too far. Alex is too weak. You look around the apartment and spot a first-aid manual on your shelf. You flip through it, looking for anything about infected wounds. There's a section on rabies—similar symptoms. Maybe... maybe if you clean it deep enough, cauterize it..."
+          }
+        },
+        "dock_evacuation_plan": {
+          "type": "stub",
+          "scene": {
+            "id": "dock_evacuation_plan",
+            "description": "Maya's group has been surviving. They have supplies, weapons, and a plan. Marcus says they've been monitoring a police scanner—there's a evacuation point being set up at the docks. A boat is supposed to come at dawn. You can join them."
+          }
+        },
+        "alone_again": {
+          "type": "stub",
+          "scene": {
+            "id": "alone_again",
+            "description": "The group seems nice, but you've seen how groups attract attention. You thank them for the shelter but insist on leaving. You take some supplies they offer and slip back out the window, continuing down the fire escape to the ground."
+          }
+        },
+        "alley_to_street": {
+          "type": "stub",
+          "scene": {
+            "id": "alley_to_street",
+            "description": "The main street is dangerous, but it's also the fastest route to the hospital Alex needs. You take a deep breath and lead Alex toward the street, ready to face whatever comes."
+          }
+        },
+        "industrial_alley": {
+          "type": "stub",
+          "scene": {
+            "id": "industrial_alley",
+            "description": "The industrial area might have vehicles, tools, and fewer infected. You lead Alex deeper into the alley network, toward the old factory district. It's a longer route, but potentially safer."
+          }
+        },
+        "courtyard_truck": {
+          "type": "stub",
+          "scene": {
+            "id": "courtyard_truck",
+            "description": "The narrow gap between buildings could be a shortcut. You squeeze through, Alex following. The walls press in on both sides, and you emerge in a small courtyard behind a row of shops. A delivery truck is parked here, its keys in the ignition."
+          }
+        },
+        "evacuation_run": {
+          "type": "stub",
+          "scene": {
+            "id": "evacuation_run",
+            "description": "The docks. That's your ticket out. You help Alex to their feet and head for the edge of the rooftop. The fire escape at the side of the building will take you down. From there, it's a straight shot to Pier 7—if you can make it through the streets."
+          }
+        },
+        "radio_intel": {
+          "type": "stub",
+          "scene": {
+            "id": "radio_intel",
+            "description": "The radio is a lifeline. You hunker down on the rooftop, using the radio to gather more information. You learn that the infection is spreading, that safe zones are falling, and that the military is losing control. But you also learn about a research facility that was working on a cure before communications went dark."
+          }
+        },
+        "plank_bridge": {
+          "type": "stub",
+          "scene": {
+            "id": "plank_bridge",
+            "description": "You can't abandon Alex. You look around and find an old wooden plank in a pile of debris on the roof. You wedge it across the gap, creating a makeshift bridge. 'Come on, Alex! You can do this!' Alex takes a breath, steps onto the plank, and crosses, shaking but alive."
+          }
+        },
+        "split_pharmacy": {
+          "type": "stub",
+          "scene": {
+            "id": "split_pharmacy",
+            "description": "You shout instructions to Alex: go back through the building, find another way down, meet you at the pharmacy. Then you turn and descend the fire escape alone. It's a risk, but splitting up might be the only way to save you both."
+          }
+        },
+        "car_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "car_escape",
+            "description": "You throw the car into reverse, spin around, and gun it toward the exit. Something crashes onto the hood of the car—an infected, its white eyes staring through the windshield. You swerve, throwing it off, and burst out into the street. You're mobile. You're free."
+          }
+        },
+        "garage_scout": {
+          "type": "stub",
+          "scene": {
+            "id": "garage_scout",
+            "description": "You kill the engine and slip out of the car. The noise will draw them, but a car is useless if the streets are blocked. You need to scout ahead first, see if there's a clear route. You creep toward the upper levels to see what's coming."
+          }
+        },
+        "station_clearing": {
+          "type": "stub",
+          "scene": {
+            "id": "station_clearing",
+            "description": "You grab a fire axe from the wall. The weight is reassuring. You creep toward the bunk room, ready to face whatever is in there. If you can clear the station, you'll have a fortress with a working vehicle."
+          }
+        },
+        "fire_engine_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "fire_engine_escape",
+            "description": "The fire engine is what you need. You don't need to clear the whole station. You grab a spare set of turnout gear, an axe, and climb into the engine. The keys are in the ignition. You start it up, the diesel engine roaring, and back out of the bay."
+          }
+        },
+        "lily_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "lily_escape",
+            "description": "You take Lily's hand. 'We're getting out of here together.' The window is your only exit. You carry her to the fire escape, helping her climb down as the infected break through the door behind you. Together, you descend into the dark alley."
+          }
+        },
+        "hide_lily": {
+          "type": "stub",
+          "scene": {
+            "id": "hide_lily",
+            "description": "You can't take a child into that nightmare. You find a hiding spot—a crawlspace under the bed—and stash Lily there with supplies. 'Stay quiet. I'll come back for you.' You seal her in, hoping against hope you can keep that promise."
+          }
+        },
+        "return_for_lily": {
+          "type": "stub",
+          "scene": {
+            "id": "return_for_lily",
+            "description": "You can't live with yourself. You turn around and go back. You climb the fire escape, re-enter the apartment, and find Lily still hiding, still alive. This time, you take her hand and don't let go."
+          }
+        },
+        "survivors_guilt": {
+          "type": "stub",
+          "scene": {
+            "id": "survivors_guilt",
+            "description": "You harden your heart and walk away. The guilt will fade. It has to. You move through the side streets, looking for a way out of this nightmare alone."
+          }
+        },
+        "suv_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "suv_escape",
+            "description": "You and Maya take the SUV. She knows the side streets, the ways around the blockages. Together, you navigate through the ruined city, heading for the bridge and the rumored safe zone beyond."
+          }
+        },
+        "stay_and_investigate": {
+          "type": "stub",
+          "scene": {
+            "id": "stay_and_investigate",
+            "description": "You thank Maya but decide to stay in the city. There's the hospital to investigate, the key card in your pocket, and the mystery of the infection to solve. Maya thinks you're crazy, but she gives you her radio frequency. 'If you change your mind,' she says."
+          }
+        },
+        "hospital_search": {
+          "type": "stub",
+          "scene": {
+            "id": "hospital_search",
+            "description": "You grab the shotgun, take a deep breath, and enter the hospital. The emergency room is a triage nightmare—overturned gurneys, spilled supplies, dark stains. You hear movement deeper in. Someone—or something—is still here."
+          }
+        },
+        "cruiser_to_docks": {
+          "type": "stub",
+          "scene": {
+            "id": "cruiser_to_docks",
+            "description": "The hospital is too dangerous. You've got a working car and a shotgun. You turn the cruiser around and head for the docks instead—the radio said evacuation, and that's your best bet."
+          }
+        }
+      },
+      "locations": {
+        "The Apartment": {
+          "name": "The Apartment",
+          "vignette": "A small, third-floor unit in a crumbling urban complex. The emergency power flickers weakly, casting long, dancing shadows across walls covered with peeling wallpaper and a single framed photo of a sunnier time.",
+          "appearanceDescription": "A cramped studio apartment with a single window overlooking the street, a fire escape bolted to the side, and a heavy front door with three deadbolts. The kitchenette is to the left, cluttered with half-packed emergency supplies. The air smells of dust, stale coffee, and cold fear.",
+          "backstoryDescription": "This apartment has been your sanctuary for three years. You know every creak in the floorboards, every draft from the poorly sealed window. Tonight, its walls feel paper-thin against the chaos outside."
+        },
+        "The Alleyway": {
+          "name": "The Alleyway",
+          "vignette": "A narrow, garbage-choked corridor between two brick buildings. The streetlight above flickers and sparks, illuminating piles of trash bags and a single, overturned dumpster that leaks something dark and viscous.",
+          "appearanceDescription": "The walls are tagged with faded graffiti, and the pavement is slick with rain and something else you'd rather not identify. A fire escape ladder hangs down from above, swaying gently. Broken glass crunches underfoot near a shattered basement window that gapes like a dark mouth.",
+          "backstoryDescription": "A shortcut you've taken during the day, now a gauntlet of shadows and noises. Local legend said a homeless man disappeared here last winter. No one investigated."
+        },
+        "The Hallway": {
+          "name": "The Hallway",
+          "vignette": "The narrow corridor of your apartment building's third floor, lined with faded floral wallpaper and a single buzzing fluorescent light that throws sickly green light across the scene.",
+          "appearanceDescription": "A claustrophobic hall with four apartment doors—yours, your neighbor's, and two others that have been ominously silent all night. The air is heavy with the smell of smoke and copper. The floor is strewn with a torn welcome mat and what looks like a child's shoe.",
+          "backstoryDescription": "You've exchanged pleasantries with your neighbors here for years. Mr. Chen in 3B always watered your plants when you were away. Mrs. Vasquez in 3D would bake cookies for the holidays. Now their doors are shut and silent."
+        },
+        "The Stairwell": {
+          "name": "The Stairwell",
+          "vignette": "A concrete shaft of echoing darkness, reeking of sweat, copper, and something else—something sweet and wrong. Each landing holds a door to a different floor, and each door has its own story of what waits beyond.",
+          "appearanceDescription": "Graffitied concrete walls, flickering emergency lights casting strobing shadows. The stairs are littered with debris—a shattered phone, a single sneaker, dark splatters that could be paint or could be something else. The air is cold and still, except for the occasional distant groan echoing up from below.",
+          "backstoryDescription": "The backbone of the apartment building, usually taken for granted. Now it's a vertical labyrinth where sound travels strangely and shadows move independently of their owners. Floor by floor, the infection climbed. Floor by floor, people fell."
+        },
+        "The Rooftop": {
+          "name": "The Rooftop",
+          "vignette": "A tar-paper expanse under a starless sky. The city sprawls out below in a patchwork of darkness punctuated by scattered fires. The wind here is sharp and cold, carrying smoke, sirens, and distant screams.",
+          "appearanceDescription": "Flat roof covered in gravel and patches of tar. An HVAC unit hums quietly in one corner. A clothesline still holds a few forgotten shirts, dancing in the wind. The edge is a low wall—beyond it, a four-story drop to the street, where shapes shuffle in the dark.",
+          "backstoryDescription": "The highest accessible point of the building. From here, you can see the whole neighborhood burning. The rooftop door is heavy and metal, and if you could barricade it... maybe this could be a sanctuary. For now, it's just a place to catch your breath and witness the scale of the nightmare."
+        }
+      },
+      "characters": {
+        "Alex Chen": {
+          "name": "Alex Chen",
+          "vignette": "Your neighbor from apartment 3B, a friendly graphic designer in their late twenties who always had a kind word and a pot of coffee ready. You've never seen the terror in their eyes that you hear in their voice tonight.",
+          "appearanceDescription": "Mid-twenties, average height, with messy dark hair and glasses. They're dressed in rumpled pajamas and a bathrobe, clutching a phone with a cracked screen. A deep scratch runs down their left forearm, still oozing blood.",
+          "backstoryDescription": "Alex moved in two years ago and quickly became the friendly face of the building. They work from home as a freelance designer and often keep odd hours—which is why they were awake when everything went wrong. They have a cat named Pixel who is currently missing."
+        },
+        "Player": {
+          "name": "Player",
+          "vignette": "You. The one staring into the dark, heart hammering against your ribs, trying to remember if you locked the window.",
+          "appearanceDescription": "You—in your rumpled clothes, clutching your phone like a lifeline, shadows clinging to your face. You look exactly as you did ten minutes ago, except the world has ended.",
+          "backstoryDescription": "Your story is unwritten. You're an ordinary person in extraordinary circumstances, and every decision from this moment forward will carve the path of your survival—or your demise."
+        },
+        "The Infected": {
+          "name": "The Infected",
+          "vignette": "They were people once. Now they move with a jerky, unnatural grace, their limbs bending at wrong angles, their eyes glazed over with a milky film. They don't speak—they only make sounds: wet clicks, guttural growls, and the occasional shriek that sounds almost human.",
+          "appearanceDescription": "Humanoid figures with pale, clammy skin marred by dark veins. Their eyes are white and pupil-less. They wear tattered clothes—pajamas, work uniforms, a bathrobe—remnants of their former lives. Their mouths hang open, drooling a viscous fluid, and their fingers end in blackened nails like claws.",
+          "backstoryDescription": "No one knows where they came from. The emergency broadcast mentioned a \"contamination event\" before cutting out. They seem to be drawn to sound and movement, and their bite carries something that turns you in hours—or minutes. They don't tire, they don't feel pain, and they *hunt*."
+        },
+        "Maya Ortiz": {
+          "name": "Maya Ortiz",
+          "vignette": "A sharp-eyed woman in her early thirties, dressed in a leather jacket and carrying a crowbar. She moves with the practiced silence of someone who has already survived the worst of whatever this is. There's a hard-won knowledge in her eyes, and a deep, bone-tired weariness.",
+          "appearanceDescription": "Hispanic woman, athletic build, with dark hair pulled back in a tight ponytail. She wears a scuffed leather jacket over a hoodie, jeans, and combat boots. A crowbar hangs from her belt, and she carries a small backpack. A fresh bandage wraps around her left hand.",
+          "backstoryDescription": "Maya was a paramedic before the world ended. She was on shift when the first cases came in—people biting and tearing at each other in the ER waiting room. She barely made it out. She's been moving through the city ever since, looking for other survivors and trying to understand what's happening."
+        },
+        "Lily": {
+          "name": "Lily",
+          "vignette": "A small girl of about eight years old, clutching a worn teddy bear and a photograph of her grandmother. Her eyes are red from crying, but there's a spark of resilience in them that reminds you that children are stronger than we give them credit for.",
+          "appearanceDescription": "A young girl with dark hair in two messy pigtails. She wears pajamas with cartoon cats on them, and a small pink backpack. Her face is smudged with dirt and tears. She's small, fragile, and gripping a teddy bear like it's the only thing keeping her tethered to reality.",
+          "backstoryDescription": "Lily Vasquez was visiting her grandmother for the weekend when the outbreak began. She saw her grandmother change into one of the infected and barely escaped. She's been hiding in the apartment ever since, too scared to move, waiting for someone to find her."
+        }
+      }
+    },
+    "minimumCheckpointsSpacing": 4,
+    "thresholdFrontierCheckpointsCount": 4,
+    "maximumDistanceFromCheckpoint": 6,
+    "minimumDistanceToFinalEnding": 2
+  }
+}

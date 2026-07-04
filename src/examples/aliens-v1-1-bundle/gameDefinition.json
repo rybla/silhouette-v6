@@ -1,0 +1,1921 @@
+{
+  "story": {
+    "start": "start",
+    "scenes": {
+      "start": {
+        "type": "impl",
+        "scene": {
+          "id": "start",
+          "location": "Suburban Backyard",
+          "passiveLocationEffects": ["dark"],
+          "passiveCharacterEffects": [],
+          "script": [
+            {
+              "type": "narration",
+              "content": "It is 9:47 PM on a cool autumn evening in the quiet town of Meadow Creek. The stars are out, the crickets are chirping, and Dr. Elena Vasquez is pouring herself a cup of coffee when the entire house trembles. Dishes rattle in the cupboards. The refrigerator hums and stutters. Through the kitchen window, a blinding blue-white light floods the backyard, casting long, impossible shadows across the walls.",
+              "instantCharacterEffects": [],
+              "instantLocationEffects": ["shake"]
+            },
+            {
+              "type": "narration",
+              "content": "By the time Elena and her son Leo reach the back door, the light has dimmed to a pulsing glow. In the center of the lawn — where Leo's swing set stands beneath the old oak tree — rests something that shouldn't exist. A teardrop-shaped craft, roughly the size of a small car, sits in a smoldering circle of scorched grass. Its surface is crystalline, translucent, alive with shifting colors that dance beneath its skin. The air around it shimmers with heat, and a low, resonant hum fills the night — a note so deep it feels more felt than heard.",
+              "instantCharacterEffects": [],
+              "instantLocationEffects": []
+            },
+            {
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom... is that... is it really one? Like from your research?",
+              "instantCharacterEffects": [
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": []
+            },
+            {
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I don't know, sweetheart. But we're going to be very, very careful.",
+              "instantCharacterEffects": [],
+              "instantLocationEffects": []
+            },
+            {
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Everything I've studied, everything I've ever believed... it's right there. But Leo is here. I need to protect him. I need to think clearly. First contact isn't a textbook anymore.",
+              "instantCharacterEffects": [],
+              "instantLocationEffects": []
+            }
+          ],
+          "choices": [
+            {
+              "description": "Your scientist instincts take over. You grab a flashlight and a pair of gardening gloves, telling Leo to stay by the back door. You step out onto the lawn, each footstep crunching on the frost-kissed grass as you approach the crystalline craft. The humming grows louder, seeming to vibrate in your very bones.",
+              "label": "Approach the alien craft to investigate",
+              "targetScene": "approach_craft",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena approaches the alien craft closely, examining its crystalline surface and trying to make contact. She discovers it responds to her presence."
+            },
+            {
+              "description": "You pull Leo back from the door and close the curtains. This is too dangerous, too unknown. You need to observe from a safe distance, gather information before acting. The kitchen window offers a clear view of the craft, and you watch as patterns of light begin to move across its surface.",
+              "label": "Stay inside and observe from the kitchen window",
+              "targetScene": "observe_from_kitchen",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Leo stay inside, watching the craft from the kitchen window. They witness strange movements and signals coming from the alien ship."
+            },
+            {
+              "description": "Your hand trembles as you reach for your phone. Protocol. Authorities. This is beyond what one person should handle. You dial the non-emergency number, but before anyone answers, a second tremor shakes the house — and your phone screen goes dark. The craft is somehow interfering with electronics.",
+              "label": "Call the authorities for help",
+              "targetScene": "call_authorities",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena attempts to call for help, but the alien craft disrupts communications. However, the call was enough to alert a secret government organization that was tracking the craft's descent."
+            }
+          ],
+          "isCheckpoint": true,
+          "checkpoint": "interior"
+        }
+      },
+      "approach_craft": {
+        "type": "impl",
+        "scene": {
+          "id": "approach_craft",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "choices": [
+            {
+              "description": "Your scientific training kicks in. This is the moment every astrobiologist dreams of. You introduce yourself, ask questions about Zylar's biology, their civilization, their technology. You want to learn everything. Leo creeps closer, utterly fascinated.",
+              "label": "Engage scientifically — ask questions and learn about Zylar",
+              "targetScene": "scientific_exchange",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena engages Zylar in a scientific dialogue, learning about crystalline life forms, their dying star, and their desperate mission. Leo joins them, forming a bond with the alien."
+            },
+            {
+              "description": "Your motherly instincts override everything. You step between Zylar and Leo, demanding to know if they're dangerous. You need guarantees of safety before any communication continues. The air crackles with tension.",
+              "label": "Demand safety guarantees — protect Leo first",
+              "targetScene": "protective_demand",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena takes a defensive posture, demanding to know if Zylar poses any threat. Zylar demonstrates its peaceful intentions by sharing a vision of its dying homeworld, appealing for help."
+            },
+            {
+              "description": "You take a leap of faith. Zylar came here for help, and something in its light feels true. You extend your hand toward the being of light, offering trust without conditions. The gesture hangs in the air, waiting for a response.",
+              "label": "Extend your hand in trust and friendship",
+              "targetScene": "gesture_of_trust",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena extends her hand in a gesture of trust. Zylar responds by sharing a fragment of its consciousness with her, creating a profound empathic connection that lets Elena feel what Zylar feels."
+            }
+          ],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The grass crunches under your feet, frosted with the first chill of autumn. Each step brings you closer to the impossible — a vessel from beyond the stars, resting in your own backyard like a fallen star. The humming intensifies, resonating deep within your chest, and the crystalline surface of the craft ripples with light as if aware of your approach."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You stop about ten feet away. The craft's surface is smooth like polished glass, yet somehow organic — veins of light pulse beneath its skin in a rhythm almost like a heartbeat. As you watch, a section of the hull begins to shift, the crystals parting like a blooming flower, revealing a warm golden glow from within."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Oh my god... it's opening."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "jump"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "A figure emerges. It's roughly humanoid but made of flowing light — a column of liquid starlight that shifts and shimmers. Two points of golden light focus on you like eyes. It makes no sound, yet a voice resonates directly in your mind — warm, curious, and slightly desperate."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "You... perceive me. You are the first on this world who can. Please. I have crossed the great dark to find aid. My people are dying."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The words aren't spoken — they appear as pure meaning in your consciousness, bypassing language entirely. You understand Zylar perfectly. Behind you, Leo gasps from the back door."
+            }
+          ]
+        }
+      },
+      "observe_from_kitchen": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "You pull Leo close and watch as the craft's surface begins to shimmer. Patterns of light dance across the crystalline hull — constellations, star maps, and something that looks like a plea written in geometry. It's trying to communicate with you, even from a distance.",
+              "label": "Try to decipher the light patterns from the window",
+              "targetScene": "decipher_patterns",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Leo watch from the window, trying to understand the light patterns. They realize the alien is projecting star maps and a distress signal. Before they can act, a black SUV pulls up outside."
+            },
+            {
+              "description": "This is too much, too fast. You grab Leo, your emergency bag, and head for the front door. You need to get away from the house, to think clearly somewhere safe. But as you reach for the front door handle, flashing lights appear through the curtains.",
+              "label": "Grab Leo and flee the house",
+              "targetScene": "flee_the_house",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Leo try to escape, but they run into Agent Cole and his team, who have already surrounded the house. The Veil has arrived."
+            },
+            {
+              "description": "You decide to document everything. You grab your phone camera and start recording the craft through the window. The footage could be invaluable. As you film, the craft's light pulses in a rhythm that seems almost... responsive to your presence.",
+              "label": "Document the event — record everything on your phone",
+              "targetScene": "document_event",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena records the craft, but the footage shows strange anomalies. The craft seems to notice her watching and responds with a pattern that forms a clear message."
+            }
+          ],
+          "id": "observe_from_kitchen",
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You pull Leo away from the back door and click the lock into place. The curtains sway as you close them, but you leave a gap — just enough to see. Your heart pounds against your ribs as you press Leo behind you, your body a shield between him and the unknown."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom, I want to see! Is it doing something?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Stay back, Leo. Let me watch first."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Through the gap in the curtains, you watch the crystalline craft. Its surface shimmers and shifts, colors cascading across its form like oil on water. The humming from outside seems to be changing — from a single deep note into a complex sequence of tones, almost like a language."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "It's trying to communicate. Those patterns... they're not random. They're structured. I've seen similar patterns in my research on pulsar signals. This is intentional. This is a message."
+            }
+          ]
+        }
+      },
+      "call_authorities": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "You take a deep breath and step outside to meet the agents. If they're here to handle this, maybe they're the experts. You can work with them — share your scientific knowledge, help them understand what they're dealing with. Leo clutches your hand as you approach the dark-suited figures.",
+              "label": "Cooperate with the government agents",
+              "targetScene": "cooperate_with_veil",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena offers her expertise to Agent Cole and his team. Cole is skeptical but recognizes her value. He allows her to assist while maintaining tight control over the situation."
+            },
+            {
+              "description": "No. You've studied the history of first contact scenarios. Government intervention always ends badly — for the aliens, for the witnesses, for everyone. You grab Leo and rush to the backyard, determined to reach the alien first and warn it about the approaching authorities.",
+              "label": "Defy them — warn the alien first",
+              "targetScene": "defy_authorities",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena rushes to warn Zylar about the approaching government agents. She must decide whether to help Zylar escape or try to broker peace between the alien and The Veil."
+            }
+          ],
+          "id": "call_authorities",
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Your fingers tremble as you dial 9-1-1. But before you can press send, a deafening crack of static erupts from the speaker, and your phone dies in your hand. The screen flickers and goes dark. The craft's electromagnetic field has fried every electronic in the house."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Then you hear it — tires on gravel. Through the front window, headlights sweep across the living room. A black SUV with no markings pulls up to the curb. Three figures in dark suits step out, moving with practiced efficiency. One of them looks directly at your window, as if they knew exactly where you'd be standing."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Agent Marcus Cole",
+              "content": "Dr. Vasquez. My name is Agent Cole. We need to discuss what's in your backyard. Please open the door."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "His voice is calm, authoritative, and leaves no room for argument. He knows your name. He knows exactly what's happening. And from the look in his cold gray eyes, this isn't his first encounter with the impossible."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "They were tracking it. They've been watching. How long has the government known about extraterrestrial life? And what do they plan to do with that poor creature in my backyard?"
+            }
+          ]
+        }
+      },
+      "scientific_exchange": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Zylar's crystalline ship is a marvel of bio-engineering. You ask about its propulsion, its FTL mechanics, how it survived interstellar travel. Zylar eagerly explains — and what it reveals could revolutionize human science forever.",
+              "label": "Ask about the ship's technology and interstellar travel",
+              "targetScene": "alien_technology",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Zylar explains the principles behind its crystalline ship — living technology grown, not built. Elena learns about gravity-wave surfing and the nature of Zylar's people."
+            },
+            {
+              "description": "Zylar mentioned its people are dying. You ask about their homeworld, their civilization, the crisis they face. Zylar shares a vision of a beautiful crystalline world orbiting a dying star — and the desperate race against time to save it.",
+              "label": "Ask about Zylar's dying civilization and homeworld",
+              "targetScene": "dying_homeworld",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Zylar shares a poignant vision of its crystalline homeworld facing extinction. Elena learns that Zylar's people need a specific energy source to survive — one that Earth might be able to provide."
+            },
+            {
+              "description": "You ask the most important question of all: why Earth? Why this backyard? Zylar's answer is surprising — it didn't choose Earth. It was drawn here by a signal. A signal that's been broadcasting from this very house for years.",
+              "label": "Ask why Zylar came to Earth — and to this house",
+              "targetScene": "the_signal",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Zylar reveals it was drawn by a signal coming from Earth — specifically from the Vasquez home. The source is something Elena has unknowingly had all along."
+            }
+          ],
+          "id": "scientific_exchange",
+          "isCheckpoint": true,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You step closer, your scientist's mind racing with a thousand questions. Zylar's form shifts, colors flowing like aurora borealis condensed into humanoid shape. Leo has crept out onto the back porch, eyes wide, clutching his stuffed bear Cosmo."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "You said your people are dying. Tell me everything. What are you? Where are you from? How did you get here?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's light pulses brighter, and you feel a warmth spread through your mind — not words, but direct understanding. Images, concepts, emotions flow into you like a river of knowledge. You see crystalline cities floating in amber skies. You feel the cold of deep space and the warmth of a billion stars. And beneath it all, a deep, aching sorrow — the grief of a species facing its end."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "We are the Keth. We have existed since before your world formed its first ocean. Our bodies are crystallized consciousness, our ships are extensions of our will. We have searched the galaxy for allies... and found only silence. Until tonight."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom... it's sad. I can feel it. It's like when I miss Dad, but bigger. Space-bigger."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Leo's simple words cut through the complexity. He's right. This isn't just a scientific discovery — it's a plea for help from across the cosmos."
+            }
+          ],
+          "checkpoint": "interior"
+        }
+      },
+      "protective_demand": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "The vision is heartbreaking — a crystalline civilization on the brink of extinction. Your scientific mind sees the opportunity to study an alien species, but your heart aches for Zylar's people. You agree to help, but on your terms. You'll need Zylar's cooperation and full disclosure.",
+              "label": "Agree to help Zylar — but set conditions",
+              "targetScene": "conditional_help",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena agrees to help Zylar but sets conditions for safety and open communication. Together they begin planning how to save the Keth without endangering Earth."
+            },
+            {
+              "description": "This is too much. You're a single mother, not a diplomat for the galaxy. Your priority is Leo. You step back, telling Zylar that you can't help, that it should leave before things get complicated. The look in Zylar's light is one of profound disappointment.",
+              "label": "Refuse involvement — tell Zylar to leave",
+              "targetScene": "refuse_help",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena refuses to help, prioritizing her son's safety. Zylar, hurt but understanding, begins to retreat into its ship — but before it can leave, Agent Cole's men arrive and surround the backyard."
+            }
+          ],
+          "id": "protective_demand",
+          "isCheckpoint": true,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You step forward, placing yourself firmly between the light-being and your son. Your heart hammers against your ribs, but your voice is steady."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I need to know — are you dangerous? Can you hurt us? I have a son. I need guarantees before anything else."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's light dims slightly, and the being seems to bow its head. A wave of emotion washes over you — not words, but pure feeling. Remorse. Understanding. And a gentle, almost tender reassurance."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "I would cause no harm. I am a scientist, like you. An explorer. My people's nature is creation, not destruction. I came seeking help, not conquest. Let me show you."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar extends a shimmering arm, and a vision blooms in the air before you — a crystalline world of impossible beauty, orbiting a swollen red sun. You see cities of glass and light, beings of color and song... and then you see the cracks forming, the light fading, the cold creeping in. A species dying as its star dies."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "It's not a weapon. It's a refugee. A scientist, like me, who watched their world die. And it came all this way... to us."
+            }
+          ],
+          "checkpoint": "interior"
+        }
+      },
+      "gesture_of_trust": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "You reach out and gently touch Zylar's luminous form. The connection is overwhelming — you feel Zylar's memories, emotions, and the desperate hope of an entire species. It's beautiful and terrifying. Zylar shows you what it needs to save its people.",
+              "label": "Accept the empathic connection fully",
+              "targetScene": "deep_connection",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena fully embraces the empathic connection with Zylar, experiencing its memories deeply. She learns about the Keth's need for a specific energy source and makes a powerful bond with the alien."
+            },
+            {
+              "description": "The connection is too intimate, too vulnerable. You pull your hand back, grateful for the trust but needing boundaries. Zylar understands, but the moment of profound connection is lost — though respect remains between you.",
+              "label": "Pull back — maintain boundaries",
+              "targetScene": "maintain_boundaries",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena maintains her boundaries but offers friendship and help within limits. Zylar respects her choice, and they begin a more cautious alliance."
+            }
+          ],
+          "id": "gesture_of_trust",
+          "isCheckpoint": true,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You take a deep breath. Every instinct as a scientist tells you to be cautious, to observe, to analyze. But something deeper — something human — tells you that this being across from you is not a threat. It's a plea."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You extend your hand, palm open, fingers uncurled. The universal gesture of peace. Leo watches from the porch, holding his breath. The night air is still, the humming of the craft the only sound."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's form ripples, and it slowly reaches out with its own appendage — a tendril of shimmering light that coalesces into something hand-like. The moment your skin touches the light, a jolt runs through you — not electric, but spiritual. You feel Zylar's essence. It feels wonder, hope, and a gratitude so profound it brings tears to your eyes."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                },
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "You are... extraordinary. Your species has such capacity for trust. Among my people, this bond is sacred. I will not forget this gift, Elena Vasquez."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "It knows my name. It knows me. And somehow, across the vast distance between our species, we've found a moment of true understanding. This changes everything."
+            }
+          ],
+          "checkpoint": "interior"
+        }
+      },
+      "decipher_patterns": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "The star maps show a location — the alien's homeworld. And the pattern... the pattern is a mathematical proof. Zylar is trying to communicate a scientific concept. But you realize you can't decode it from here. You need to get closer. You take a deep breath and step outside to meet the being face to face.",
+              "label": "Step outside to meet the alien directly",
+              "targetScene": "approach_craft",
+              "targetSceneMode": "reference-existing-scene"
+            },
+            {
+              "description": "The patterns speak of a dying people, a desperate journey. But you can't help from here. You need information, and you know just where to look. You decide to document everything and wait for morning — but as you turn from the window, headlights sweep across the front of the house. Someone is coming.",
+              "label": "Document what you've seen and wait — but someone's coming",
+              "targetScene": "document_event",
+              "targetSceneMode": "reference-existing-scene"
+            }
+          ],
+          "id": "decipher_patterns",
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You press your face to the cool glass of the kitchen window, squinting at the patterns dancing across the alien craft's hull. They're not random — they're geometric, precise, repeating. Constellations shift and align. You recognize Orion, the Big Dipper, and... a star map centered on a system you don't recognize."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The patterns cycle through a sequence: a star, a planet, a crystal, a wave of light flowing outward — then the same sequence, but the star is dimmer, the planet cracks, the crystal shatters. It's a story. A before-and-after. A warning and a plea."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "My god. It's not attacking. It's asking for help. Its home... its home is dying."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom, look — the pattern changed. It's... it's showing our house! How does it know our house?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "He's right. Amidst the swirling constellations, a new image forms: a simple house with a tree, a swing set, and two stick figures — one tall, one small. The alien knows exactly who lives here."
+            }
+          ]
+        }
+      },
+      "flee_the_house": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Agent Cole is terrifying, but his expression shifts when he sees Leo. Maybe you can negotiate. You offer cooperation — you'll help them understand the alien if they ensure your safety and the safety of the being in your backyard. It's a gamble, but it's the only card you have left.",
+              "label": "Negotiate with Agent Cole for cooperation",
+              "targetScene": "cooperate_with_veil",
+              "targetSceneMode": "reference-existing-scene"
+            },
+            {
+              "description": "You see the armed agents and your blood runs cold. You drop the keys, raise your hands. But you won't abandon the alien. You tell Cole that if he wants access to the craft, he goes through you. Your defiance might be your only leverage.",
+              "label": "Stand your ground — protect the alien",
+              "targetScene": "defy_authorities",
+              "targetSceneMode": "reference-existing-scene"
+            }
+          ],
+          "id": "flee_the_house",
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You grab Leo's hand and your emergency bag — always kept packed since the wildfires two years ago. Keys, wallet, phone (dead), a change of clothes. You head for the front door, heart pounding."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom, where are we going? What about the spaceship?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "We're getting somewhere safe first. Then we'll figure out what to do."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You throw open the front door — and freeze. Three black SUVs are parked at the curb, their headlights blinding. A wall of dark-suited agents stands between you and freedom. The man in front — tall, cold-eyed, military bearing — gives you a thin smile that doesn't reach his eyes."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Agent Marcus Cole",
+              "content": "Going somewhere, Dr. Vasquez? I'm afraid we need to talk. All of us."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "His gaze flicks past you, toward the backyard. He knows. He's been watching this whole time."
+            }
+          ]
+        }
+      },
+      "document_event": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "The recording is incredible — but it also shows that the craft is pulsing in response to your presence. It knows you're watching. You decide you can't just film from a distance. You need to interact directly. You pocket your phone and head outside.",
+              "label": "Stop filming and go outside to meet the alien",
+              "targetScene": "approach_craft",
+              "targetSceneMode": "reference-existing-scene"
+            },
+            {
+              "description": "The footage is too important to risk losing. You upload it to a secure cloud server and email copies to trusted colleagues. As you hit send, the front doorbell rings. Through the peephole, you see a man in a dark suit. Agent Cole and The Veil have arrived. Your evidence might be the only record of the truth.",
+              "label": "Secure the evidence and face the authorities",
+              "targetScene": "call_authorities",
+              "targetSceneMode": "reference-existing-scene"
+            }
+          ],
+          "id": "document_event",
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Your phone may be dead from the electromagnetic pulse, but the old digital camera in the junk drawer still works. You grab it, hands shaking, and start recording through the kitchen window."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The footage is extraordinary. The craft's crystalline surface reflects the moonlight and its own internal glow. But something strange happens on the playback — every time you point the camera at the craft, the patterns on its surface shift, aligning themselves with the lens. It's performing for the camera. Showing off. Communicating."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Then the pattern changes. A sequence of geometric shapes resolves into something unmistakable: a human hand, reaching out. And beneath it, the same shape in light — tendrils extending toward the hand. An invitation."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom, it wants to shake hands! The alien wants to be friends!"
+            }
+          ]
+        }
+      },
+      "cooperate_with_veil": {
+        "type": "impl",
+        "scene": {
+          "choices": [],
+          "id": "cooperate_with_veil",
+          "isCheckpoint": false,
+          "location": "The Veil's Mobile Command Unit",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You step outside, Leo's hand in yours, and face Agent Cole. The night air is cold, but his demeanor is colder. Yet when you start speaking — about extremophiles, about crystalline life forms, about the patterns you've already observed — something shifts in his expression. He's listening."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Agent Marcus Cole",
+              "content": "You're the astrobiologist. We know about your research. Frankly, Dr. Vasquez, we could use someone who understands what we're dealing with."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Hours pass. You become the bridge between worlds. You translate Zylar's crystalline concepts into language Cole's team can understand. You explain that the Keth are not conquerors — they are refugees, scientists, artists. Their civilization is ancient and wise, and they offer knowledge in exchange for sanctuary."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "By dawn, a tentative agreement is reached. Zylar's craft will be relocated to a secure research facility — but one staffed with scientists, not soldiers. You will lead the research team. Leo will have the best education money can buy. And the Keth will have a new home."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                },
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "As the sun rises over Meadow Creek, painting the sky in shades of pink and gold, Zylar emerges from its craft one last time. Its light shines softly, gratefully, and you feel a single word resonate in your mind: *Thank you.* The first interstellar alliance has begun — not with a war, but with a handshake."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — A New Beginning**"
+            }
+          ]
+        }
+      },
+      "defy_authorities": {
+        "type": "impl",
+        "scene": {
+          "choices": [],
+          "id": "defy_authorities",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You make a split-second decision. You grab Leo and bolt through the kitchen, throwing open the back door. The alien craft pulses brighter as you approach, as if Zylar can sense your desperation."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Zylar! There are people coming — they'll try to contain you, study you. You need to go, now!"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "I cannot leave without what I came for. The signal... it leads here. To you, Elena Vasquez."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Before you can ask what it means, the backyard floods with light. Agent Cole's team surrounds the fence, weapons trained on Zylar. But something unexpected happens: Leo steps forward, holding up his stuffed bear Cosmo — and Zylar's light reaches out, touching the toy. A spark passes between them, and suddenly you understand."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "jump"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The signal wasn't from your house. It was from Leo's drawings, his dreams, his wish upon a star every night for his father to come home. Zylar's people are drawn to concentrated hope — the most powerful energy in the universe. And Leo, with his unwavering belief in friendly aliens, broadcast a beacon of pure hope that crossed the galaxy."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "With a surge of light, Zylar's craft powers up. The agents open fire, but the weapons fire passes through Zylar like light through glass. The being of light touches Leo's forehead gently, and you hear a final whisper in your mind: *Hope is never wasted. Thank you for teaching me that.*"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The craft rises silently, then shoots upward like a shooting star in reverse. In moments, it's gone. The agents stand in stunned silence. And Leo looks up at the departing light with a smile."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "He said he'll come back. When his people are safe. He said hope travels faster than light."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                },
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Hope That Travels**"
+            }
+          ]
+        }
+      },
+      "alien_technology": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "The crystalline ship is not a machine — it's alive. A bio-engineered organism grown from seeds. Zylar explains that its people grow their technology from crystalline spores. The implications for human science are staggering. As Zylar explains the principles of gravity-wave surfing, you're filled with wonder.",
+              "label": "Study Zylar's living ship technology",
+              "targetScene": "living_tech_study",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena studies Zylar's living ship, learning about bio-crystalline technology. Zylar offers to share a crystalline seed as a gift — a seed that could revolutionize Earth's energy."
+            },
+            {
+              "description": "The creature before you is made of crystallized consciousness — a being of pure thought given physical form. You ask about Keth biology, evolution, how a species transitions from matter to light. Zylar's answer is both beautiful and humbling: all sufficiently advanced life eventually transcends its physical origins.",
+              "label": "Ask about Zylar's biology and evolution",
+              "targetScene": "keth_biology",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena learns about the Keth's evolutionary journey from physical beings to beings of crystallized light. This gives her a profound perspective on consciousness and life itself."
+            }
+          ],
+          "id": "alien_technology",
+          "isCheckpoint": false,
+          "location": "Inside the Alien Craft",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar invites you inside its ship. As you cross the threshold, the world changes. The interior is vast — impossibly larger within than the craft appears from outside. Walls of faceted crystal pulse with a soft, living light. The floor reflects the starry sky above, though you're still indoors."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You feel the ship around you like a living presence — not mechanical, but organic. Zylar's voice resonates in your mind as it guides you through the chamber."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "This vessel is a child of my world. We do not build — we grow. The crystalline seed is planted in the void between stars, and it feeds on radiation and gravity until it matures into a ship. Each vessel is unique, a living being that chooses its pilot."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You reach out and touch the crystalline wall. A warmth spreads through your fingers, and you feel... gratitude. The ship is glad to have you inside."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "This changes everything. If we can learn to grow technology instead of building it... the implications for energy, for manufacturing, for our relationship with the planet... This is bigger than any scientific discovery in human history."
+            }
+          ]
+        }
+      },
+      "dying_homeworld": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Zylar's people need a specific form of energy — pure stellar radiation filtered through crystalline resonance. Earth's sun could provide it, but building the relay would take time and resources. You begin sketching plans on a napkin, your astrobiology training finding unexpected applications.",
+              "label": "Plan a way to help — the solar relay project",
+              "targetScene": "solar_relay",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Zylar begin planning a solar relay that could channel energy from Earth's sun to the Keth's dying star. It's an ambitious interstellar engineering project."
+            },
+            {
+              "description": "The vision of a dying world is too much to bear. You can't save an entire civilization. But you can offer Zylar one thing: Earth could become a sanctuary. A new homeworld for the Keth. It would change everything, but perhaps that's what humanity needs — a purpose beyond itself.",
+              "label": "Offer Earth as a sanctuary for the Keth",
+              "targetScene": "sanctuary_earth",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena offers Earth as a sanctuary for the Keth. Zylar is overwhelmed by the offer, but warns that the Keth's arrival would transform human society forever."
+            }
+          ],
+          "id": "dying_homeworld",
+          "isCheckpoint": false,
+          "location": "Inside the Alien Craft",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's form shifts, and the air before you shimmers. A vision blooms — you see a world of impossible beauty. Spires of crystal rise from oceans of liquid light. Beings of color and song glide through amber skies. It's paradise."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Then the vision changes. Cracks spider across the crystal spires. The amber sky darkens to red. The sun at the horizon swells — dying, expanding. The songs become screams, then silence. One by one, the lights of the Keth go out."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "My star dies. In your years — perhaps fifty — it will go supernova. Everything I knew, everyone I loved, will be ash and memory. I am the last explorer. I came here because... because you have hope. Your species has barely reached its own moon, yet you dream of the stars. I felt those dreams. They called to me across the void."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "Mom... we have to help. It's like when our fish was sick. You said everyone deserves a chance."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "A whole civilization. An entire species. And they reached out to us — the dreamers, the hopers, the ones who still look up at the stars and wonder. How can I say no?"
+            }
+          ]
+        }
+      },
+      "the_signal": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "The signal was hope — pure, concentrated, aimed at the stars. Leo's drawings weren't just childish fantasies; they were prayers, and the universe answered. You realize the power of human hope is real and measurable. This knowledge could change everything.",
+              "label": "Explore the science of hope as energy",
+              "targetScene": "hope_energy",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena explores the scientific implications of hope as a form of energy. This leads to a new understanding of consciousness and its role in the universe."
+            },
+            {
+              "description": "The signal came from Leo's drawings, his wishes. But now the entire world will learn about this. You need to protect Leo, to give him a normal childhood even if he's just changed the course of human history. Zylar agrees — some knowledge is too precious to be weaponized.",
+              "label": "Protect Leo — keep the secret between you",
+              "targetScene": "protect_the_secret",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena decides to protect Leo's role in the first contact, keeping the secret of hope-energy hidden from those who would exploit it. A quiet, protective ending."
+            }
+          ],
+          "id": "the_signal",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You ask the question that's been burning in your mind: why here? Why this house, this backyard, this particular night?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "For a hundred of your years, I have searched. I followed whispers of hope across the galaxy — faint signals of a species that believed, truly believed, that they were not alone. But one signal burned brighter than all others. It came from here."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's light extends toward the house — toward the kitchen window, where Leo's drawings are taped to the refrigerator. A drawing of a child holding hands with a starry being. A drawing with the words 'I wish you were real' written in crayon underneath."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Leo Vasquez",
+              "content": "That's my drawing! I made that last year. I... I wished on a star every night that aliens were real and that they'd be my friend."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Your eyes fill with tears. The signal wasn't a radio wave or a mathematical proof. It was a little boy's hope, so powerful and pure that it crossed the galaxy and brought an alien civilization to your doorstep."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "All my years of research, my degrees, my papers — none of it matters compared to what my son did with nothing but crayons and a wish. Hope. Pure, simple, powerful hope. That's what brought an alien here."
+            }
+          ]
+        }
+      },
+      "conditional_help": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Zylar agrees to your conditions: full disclosure, no contact with Leo without your presence, and a gradual, controlled exchange of knowledge. Together, you draft the first treaty between humanity and an extraterrestrial species — right there on the back porch, using a spiral notebook and a pen.",
+              "label": "Draft a treaty of cooperation",
+              "targetScene": "first_treaty",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Zylar draft a historic treaty governing first contact. Leo draws pictures to commemorate the moment. It's a peaceful, hopeful resolution."
+            },
+            {
+              "description": "Zylar accepts your conditions, but before you can begin formal negotiations, headlights sweep across the yard. Agent Cole and The Veil have arrived. Your quiet negotiation becomes a three-way standoff between science, government, and an alien civilization.",
+              "label": "Negotiations interrupted by The Veil's arrival",
+              "targetScene": "interrupted_negotiations",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Agent Cole's team arrives during the negotiations. Elena must navigate between Zylar and The Veil, trying to prevent a catastrophe."
+            }
+          ],
+          "id": "conditional_help",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You take a shaky breath and square your shoulders. Zylar waits, its light pulsing patiently."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Okay. I'll help you. But I have conditions. First: my son is never put in danger. Second: you tell me everything — no secrets, no hidden agendas. Third: this has to be done carefully. Humanity isn't ready for the full truth all at once."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's light pulses warmly. A feeling of agreement flows through the connection — gratitude mixed with respect."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Your conditions are wise. The Keth have a saying: 'Trust is built in the light of shared truth.' I accept."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "For a moment, it's just you, your son, and a being of light in a quiet suburban backyard. The stars wheel overhead, indifferent to the historic moment unfolding beneath them. Leo sits on the grass, showing Cosmo the bear to Zylar, who examines the stuffed toy with gentle curiosity."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "This is really happening. I just negotiated with an alien. And I think... I think we might actually pull this off."
+            }
+          ]
+        }
+      },
+      "refuse_help": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Zylar retreats toward its ship, and you feel a pang of regret. But as the craft's engines begin to hum, the backyard floods with light — Agent Cole's men storm the fence. Zylar pauses, looking to you. In this moment, you realize you can still choose: protect the alien, or let it go. You step between the agents and the ship.",
+              "label": "Step in and protect Zylar after all",
+              "targetScene": "defy_authorities",
+              "targetSceneMode": "reference-existing-scene"
+            },
+            {
+              "description": "You made your choice. You hold Leo close and watch as the craft powers up. Cole's agents arrive too late — Zylar's ship rises silently and shoots into the night sky, a streak of light fading among the stars. You don't know if you did the right thing. But Leo is safe, and that's what matters. As you watch the light disappear, you whisper: 'Good luck, Zylar.'",
+              "label": "Let Zylar go — protect your family (Ending)",
+              "targetScene": "let_zylar_go_ending",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "An ending: Elena lets Zylar leave Earth. The alien escapes into space, and the Vasquez family is left with the memory of an impossible night. But Leo keeps drawing stars."
+            }
+          ],
+          "id": "refuse_help",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The words catch in your throat, but you force them out."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I'm sorry. I can't help you. I have a son. I have to keep him safe. Please... you should leave before things get complicated."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar's light dims. The golden points that serve as its eyes flicker, and a wave of emotion washes through the connection — not anger, but profound disappointment. A sadness so deep it feels like a physical weight."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "I understand. Your kind is young. Fear is natural. I... I will remember you, Elena Vasquez. And your hope-bright son. Perhaps another world will hear my plea."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar turns back toward its craft, its light fading to a dull gray. The crystalline hull opens to receive it. You watch, your heart breaking, as the being of light steps back into its vessel."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I just turned away an entire civilization. I chose fear over hope. Is this what humanity is? Is this what I am?"
+            }
+          ]
+        }
+      },
+      "deep_connection": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "Through the connection, you see the Keth homeworld in its dying days. But more than that, you feel Zylar's hope — a tiny, stubborn flame that crossed the galaxy. You make a solemn promise to help, whatever it takes. The bond between you crystallizes into something unbreakable.",
+              "label": "Make a solemn promise to help Zylar",
+              "targetScene": "promise_to_help",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena makes a deep, empathic promise to help Zylar save its people. The connection changes her, giving her insight into the Keth's crystalline consciousness."
+            },
+            {
+              "description": "The connection is too intense. You gently withdraw, but you're forever changed — you now carry a fragment of Zylar's consciousness within you. It's a gift and a responsibility. You'll help, but you need to stay grounded in your own humanity.",
+              "label": "Withdraw gently but retain the bond",
+              "targetScene": "grounded_bond",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena maintains a partial bond with Zylar while staying grounded in her human perspective. They work together as partners, each bringing their strengths."
+            }
+          ],
+          "id": "deep_connection",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Your hand remains extended, touching Zylar's light. The connection deepens — you're no longer just Elena Vasquez, astrobiologist. You're part of something vast. You feel the cold of deep space, the warmth of distant suns, the loneliness of a billion years of searching."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Memories flow through you. You see Zylar as a young Keth, newly formed from the crystal nurseries, learning to shape light. You see the first cracks in the homeworld's sun. The desperate council meetings. The decision to send the explorers out into the dark, knowing most would never return."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Tears stream down your face, but you don't pull away. You feel Zylar's wonder at Earth — the blue skies, the green grass, the warmth of a yellow sun. To a being of light, these are miracles."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "You are the first being from another world I have truly touched. This bond... it is sacred among my people. I give you a fragment of my light. Carry it always. You are Keth-kin now, Elena Vasquez."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "A warmth spreads through your chest — a tiny star, pulsing gently. Zylar has given you a part of itself. You're connected now, across any distance."
+            }
+          ]
+        }
+      },
+      "maintain_boundaries": {
+        "type": "impl",
+        "scene": {
+          "choices": [
+            {
+              "description": "You offer Zylar friendship and cooperation within clear boundaries. No mind-bonds, no empathic connections — just two scientists from different worlds working together. Zylar respects your boundaries, and a professional partnership forms. It may lack the poetry of deep connection, but it's solid and real.",
+              "label": "Build a professional scientific partnership",
+              "targetScene": "scientific_partnership",
+              "targetSceneMode": "create-new-scene-stub",
+              "targetSceneDescription": "Elena and Zylar form a professional scientific partnership. They work together to save the Keth while respecting each other's boundaries."
+            }
+          ],
+          "id": "maintain_boundaries",
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You pull your hand back gently. The warmth of the connection fades, but the memory of it remains — a door opened, then gently closed."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I'm sorry. I can't — not yet. That was... overwhelming. But I do want to help. I'm a scientist. Let me help you as a scientist. I need to keep my feet on the ground."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "I understand. Your species draws lines between self and other. Among my people, that boundary is... more fluid. But I respect your need. Science can be our bridge."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "A sense of relief washes over you. Zylar's light shifts to a calm blue — contentment, you realize. The being settles onto the grass beside you, its form molding into a shape like a seated person. For a long moment, you simply sit together, two beings from different stars, watching the same night sky."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "This is enough. I don't need to merge with an alien consciousness to be a good person. I just need to be willing to help. And I am."
+            }
+          ]
+        }
+      },
+      "living_tech_study": {
+        "type": "impl",
+        "scene": {
+          "id": "living_tech_study",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Inside the Alien Craft",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You spend hours studying the crystalline technology. Zylar patiently explains how each component grows, how the ship repairs itself, how it converts starlight into propulsion through crystalline resonance."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Before you leave, Zylar extends a hand — and in its palm, a tiny crystal seed materializes, glowing with soft inner light."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Take this. Plant it in your Earth soil. With sunlight and care, it will grow into a small energy nexus — enough to power your home for a thousand years. A gift from the Keth to humanity. Grow it wisely."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You accept the seed, feeling its warmth. It's not just a gift of technology — it's a seed of trust, planted between worlds. The dawn breaks, and you walk back into your house, a crystalline seed in one hand and your son's hand in the other. Humanity's future has just begun."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Seed of Tomorrow**"
+            }
+          ]
+        }
+      },
+      "keth_biology": {
+        "type": "impl",
+        "scene": {
+          "id": "keth_biology",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Inside the Alien Craft",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar explains the Keth's evolutionary journey. A billion years ago, they were carbon-based life forms much like you — but as their civilization advanced, they learned to transcend physical limitations. First, they digitized consciousness. Then, they crystallized it into light."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "All intelligent life eventually faces the same choice: remain bound to fragile biology, or transcend into something more. We chose to become light. But we lost something in the process — the simple warmth of touch, the taste of rain, the smell of a flower. Your world has so many beautiful sensations."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You realize something profound: the Keth, for all their advancement, envy humanity's physical experience of the universe. They've become gods of light, but they miss being alive."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Every species that reaches the stars pays a price. The Keth paid theirs. But maybe... maybe there's a middle path. Technology that enhances life, not replaces it."
+            }
+          ]
+        }
+      },
+      "solar_relay": {
+        "type": "impl",
+        "scene": {
+          "id": "solar_relay",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Inside the Alien Craft",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Together, you and Zylar sketch out a plan for a solar relay — a crystalline satellite that would harvest energy from Sol and beam it across space to the Keth's dying star. The science is sound in principle, but the engineering is beyond anything humanity has attempted."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "The relay would need to be built in your orbit. It would take ten of your years to complete. But it would work. My people would have the energy they need to stabilize their star."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You look at the drawings — a beautiful crystalline structure orbiting Earth, catching sunlight and sending it across the galaxy. It's the most ambitious engineering project in history. And it's possible."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "Let's do it. Let's build a bridge between stars."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Bridge Between Stars**"
+            }
+          ]
+        }
+      },
+      "sanctuary_earth": {
+        "type": "impl",
+        "scene": {
+          "id": "sanctuary_earth",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You make the offer before you can second-guess yourself: Earth could be a sanctuary for the Keth. There's room here. Your sun is stable. Your world is rich with life."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "You would share your world with us? Your species... you fight over borders, over resources. Could you truly welcome strangers from the stars?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The question hangs in the air. You think of all humanity's flaws — the wars, the greed, the fear of the other. But you also think of the kindness of strangers, the open hands after disasters, the way people pull together when it matters."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "We're not perfect. But we're trying. And maybe — just maybe — having friends from the stars will help us become who we're meant to be."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Zylar",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "In response, Zylar's light blossoms into an explosion of colors — a celestial dance of joy and gratitude. A new chapter in Earth's history has begun. The Sanctuary Age."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Sanctuary Age**"
+            }
+          ]
+        }
+      },
+      "hope_energy": {
+        "type": "impl",
+        "scene": {
+          "id": "hope_energy",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The revelation changes your understanding of physics. Hope isn't an abstraction — it's a form of energy, as real as light or heat. The concentrated belief of a conscious being projects a measurable field into the universe."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Your species calls it 'hope.' The Keth call it 'will-light.' It is the energy of conscious intention. It is why we seek out young species — your hope burns brighter than any star. It is the most powerful force in the universe."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You look at Leo, who's now drawing on the driveway with chalk — a picture of himself holding hands with a starry being. His hope brought an alien here. What else could human hope accomplish?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "internal_dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "I've spent my whole life studying the physical universe. But the most important force in existence is something I can't measure with any instrument. Hope. Belief. Love. Maybe that's what we should have been studying all along."
+            }
+          ]
+        }
+      },
+      "protect_the_secret": {
+        "type": "impl",
+        "scene": {
+          "id": "protect_the_secret",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Vasquez Family Kitchen",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": [],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You make a decision. The world isn't ready for the truth about hope-energy. Governments would weaponize it. Corporations would exploit it. You and Zylar agree: the secret of the signal stays between you."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Some truths are too powerful to be spoken. They must be lived. Your son's hope will remain our secret — a light that only we know the source of."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar departs before dawn, promising to return when the time is right. You watch the craft vanish into the fading night sky, holding Leo close. The world will never know that a little boy's wish changed the course of history. And that's exactly how it should be."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Secret Light**"
+            }
+          ]
+        }
+      },
+      "first_treaty": {
+        "type": "impl",
+        "scene": {
+          "id": "first_treaty",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "With a spiral notebook and a pen from the kitchen drawer, you write the first treaty between Earth and an alien civilization. It covers: non-interference, mutual respect, controlled knowledge exchange, and the establishment of a joint scientific council."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Your people value written agreements. Among the Keth, a promise is etched into light — but I understand. This paper will serve as our bond."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar touches the paper, and the words shimmer, turning silver. A crystalline seal forms at the bottom — the mark of the Keth. You add your signature. Leo draws a smiley face next to it."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Leo Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The treaty is signed. The first humanity-Keth accord. It will change everything — but for now, it's just three beings on a back porch, sharing a moment of peace under the stars."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The First Treaty**"
+            }
+          ]
+        }
+      },
+      "interrupted_negotiations": {
+        "type": "impl",
+        "scene": {
+          "id": "interrupted_negotiations",
+          "choices": [
+            {
+              "description": "You step up as a mediator, explaining to Cole that Zylar is a diplomat, not a threat. You show him the beginnings of your treaty. Cole is skeptical, but your scientific credentials and the fact that Zylar hasn't harmed anyone give you leverage.",
+              "label": "Negotiate with Cole on Zylar's behalf",
+              "targetScene": "cooperate_with_veil",
+              "targetSceneMode": "reference-existing-scene"
+            },
+            {
+              "description": "Cole's men are surrounding the yard. You have seconds. You whisper to Zylar to go — to escape while you delay the agents. It might end your chance at cooperation, but it might save Zylar's life.",
+              "label": "Help Zylar escape while you stall the agents",
+              "targetScene": "defy_authorities",
+              "targetSceneMode": "reference-existing-scene"
+            }
+          ],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You're mid-sentence when the headlights hit you. Three black SUVs screech to a halt around the house. Men in dark suits pour out, weapons raised. Agent Cole strides to the front of the formation, his cold gaze taking in the scene — the alien, the notebook, the treaty."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Agent Marcus Cole",
+              "content": "Dr. Vasquez. Step away from the extraterrestrial. This situation is now under government jurisdiction."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Your heart pounds. The treaty is in your hands. Zylar's light pulses nervously beside you. Leo clutches your leg. The moment balances on a knife's edge."
+            }
+          ]
+        }
+      },
+      "let_zylar_go_ending": {
+        "type": "impl",
+        "scene": {
+          "id": "let_zylar_go_ending",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You hold Leo close and watch as Zylar's craft powers up. The crystalline hull glows brighter and brighter until it's blinding. Agent Cole's men arrive, shouting orders — but it's too late."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The craft rises silently, a teardrop of light ascending into the night sky. For a moment, it hangs among the stars, indistinguishable from them. Then it's gone — a streak of light fading into the cosmic dark."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "sad"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "Zylar is gone. The Keth will find another way, or they won't. You'll never know. But Leo is safe. That's what matters."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "In the weeks that follow, you return to teaching. But something has changed. At night, you sit on the back porch and look up at the stars. And Leo... Leo keeps drawing. Pictures of a shining being, waving goodbye. Underneath, in careful letters: 'See you soon.'"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The One That Got Away**"
+            }
+          ]
+        }
+      },
+      "promise_to_help": {
+        "type": "impl",
+        "scene": {
+          "id": "promise_to_help",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You make a solemn vow, feeling the weight of it settle into your bones. You will help Zylar save its people. Whatever it takes, for however long it takes."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Your promise is etched in my light now, Elena Vasquez. The Keth will sing of this night for eons — the night a human chose hope over fear."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "The bond between you glows warm in your chest. You are different now. You carry a fragment of an alien civilization within you, and you will carry it until the Keth are saved. It's a burden. It's a gift. It's the most meaningful thing you've ever done."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Promise**"
+            }
+          ]
+        }
+      },
+      "grounded_bond": {
+        "type": "impl",
+        "scene": {
+          "id": "grounded_bond",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You withdraw from the deep connection, but a thin thread of light remains — a gentle bond that keeps you linked to Zylar without overwhelming you. You can feel its emotions at the edge of your awareness, like a distant melody."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "You are wise to keep your feet on your world, Elena. A bond should never consume. This thread between us — it is enough. It is friendship."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "And so begins a partnership unlike any other. You help Zylar with its mission while maintaining your life, your work, your humanity. The thread between you grows stronger with trust, not with fusion. You are allies. You are friends. You are two beings from different worlds, walking side by side."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — The Thread Between Worlds**"
+            }
+          ]
+        }
+      },
+      "scientific_partnership": {
+        "type": "impl",
+        "scene": {
+          "id": "scientific_partnership",
+          "choices": [],
+          "isCheckpoint": false,
+          "location": "Suburban Backyard",
+          "passiveCharacterEffects": [],
+          "passiveLocationEffects": ["dark"],
+          "script": [
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You and Zylar settle into a professional rhythm. You ask questions, take notes, hypothesize. Zylar explains Keth physics with patience and clarity. It's like working with the most brilliant colleague you've ever had — one who happens to be made of light."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Dr. Elena Vasquez",
+              "content": "So if we use a phased crystalline array to focus solar energy, we could theoretically create a stable bridge across spacetime?"
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "dialogue",
+              "character": "Zylar",
+              "content": "Your grasp of the principles is remarkable. Yes. The math is sound. We could begin construction within your lunar cycle."
+            },
+            {
+              "instantCharacterEffects": [],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "You work through the night, filling page after page with equations and diagrams. By dawn, you have the framework for a plan to save the Keth. It's not emotional. It's not mystical. It's science. And it's beautiful."
+            },
+            {
+              "instantCharacterEffects": [
+                {
+                  "character": "Dr. Elena Vasquez",
+                  "effect": "happy"
+                }
+              ],
+              "instantLocationEffects": [],
+              "type": "narration",
+              "content": "**THE END — Partners in Science**"
+            }
+          ]
+        }
+      }
+    },
+    "locations": {
+      "Suburban Backyard": {
+        "name": "Suburban Backyard",
+        "vignette": "A modest fenced backyard where the extraordinary has become ordinary. A crystalline alien craft the size of a small car rests in a smoldering circle of grass, its surface humming with otherworldly energy. Flowerbeds and a child's swing set frame this impossible visitor.",
+        "appearanceDescription": "A well-kept suburban lawn bordered by a white picket fence and overgrown rose bushes. A child's wooden swing set stands to one side, next to a vegetable garden. In the center, the grass is blackened and scorched in a perfect circle, where a teardrop-shaped crystalline craft sits, pulsing with soft internal light.",
+        "backstoryDescription": "This backyard has been in Elena's family for three generations — a place of birthday parties, summer barbecues, and quiet evenings watching stars. Tonight, it becomes the site of first contact, forever changing its peaceful history."
+      },
+      "Vasquez Family Kitchen": {
+        "name": "Vasquez Family Kitchen",
+        "vignette": "The warm heart of the home, this cozy kitchen smells of coffee and cinnamon. Yellow curtains frame the window overlooking the backyard, offering a view of the impossible craft resting on the lawn. A half-eaten dinner sits forgotten on the table.",
+        "appearanceDescription": "A warm, lived-in kitchen with worn wooden cabinets, a farmhouse sink, and a large oak table covered with a checkered cloth. Dishes are drying by the sink, and a child's drawings — of rockets and aliens — are taped to the refrigerator. The back door's glass pane looks out onto the glowing craft in the yard.",
+        "backstoryDescription": "This kitchen has hosted countless family dinners, late-night homework sessions, and heart-to-heart conversations. The window has always been Elena's favorite spot for stargazing, but tonight it frames a sight she could never have imagined."
+      },
+      "Inside the Alien Craft": {
+        "name": "Inside the Alien Craft",
+        "vignette": "The interior defies physics — larger within than without, a cathedral of crystalline geometry. Walls of faceted crystal pulse with living light, and the air hums with a frequency that resonates in the bones. Strange symbols dance across every surface, telling stories in light.",
+        "appearanceDescription": "A spherical chamber with walls of translucent crystal that shift between deep blue and silver. The floor seems to be made of polished obsidian, reflecting the pulsing lights above. Floating platforms and crystal formations serve as unknown furniture. The air itself glitters with suspended particles of light, and a gentle warmth emanates from every surface.",
+        "backstoryDescription": "This craft is a biological extension of its pilot, grown from crystalline seeds rather than built. It has crossed interstellar voids, ridden gravity waves, and now rests in a suburban backyard — the first of its kind to touch Earth's soil."
+      },
+      "The Veil's Mobile Command Unit": {
+        "name": "The Veil's Mobile Command Unit",
+        "vignette": "A command vehicle disguised as a delivery truck, stuffed with surveillance equipment, communication arrays, and weapons designed for the extraordinary. It's the nerve center of a covert operation that has happened many times before — though never quite like this.",
+        "appearanceDescription": "The interior of a repurposed delivery truck, lined with monitors showing satellite imagery, heat signatures, and encrypted data streams. A small tactical table occupies the center, with a holographic projector mapping the surrounding neighborhood. Weapon cases are secured to the walls alongside hazmat suits and unknown containment devices.",
+        "backstoryDescription": "Mobile Command Units like this one have been deployed across the globe for decades, quietly containing evidence of the unexplained. This unit was scrambled from a nearby black site within minutes of the craft's atmospheric entry."
+      }
+    },
+    "characters": {
+      "Dr. Elena Vasquez": {
+        "name": "Dr. Elena Vasquez",
+        "vignette": "A brilliant but weary astrobiologist in her late 30s, Dr. Vasquez has spent her career searching for signs of extraterrestrial life. Now that it's landed in her own backyard, she's caught between scientific wonder and a mother's fierce protectiveness.",
+        "appearanceDescription": "Elena has sharp, intelligent brown eyes framed by wire-rimmed glasses. Her dark hair is pulled into a messy bun, with strands escaping after a long day. She wears a rumpled cardigan over a NASA t-shirt, with reading glasses perched on her head.",
+        "backstoryDescription": "A former NASA researcher who left the agency after budget cuts, Elena now teaches at a local university. She's a single mother raising her 10-year-old son, Leo, in the suburban home she grew up in. Her research on extremophiles gave her unique insights into how alien life might adapt to Earth's conditions."
+      },
+      "Leo Vasquez": {
+        "name": "Leo Vasquez",
+        "vignette": "A curious and imaginative 10-year-old boy who sees the world as an endless adventure. Leo has been fascinated by space since his mother first showed him the constellations, and he's not afraid of what he doesn't understand — he's thrilled by it.",
+        "appearanceDescription": "A small boy with a mess of dark curls, bright hazel eyes, and a smattering of freckles across his nose. He wears pajamas with rocket ships printed on them and clutches a worn stuffed bear named \"Cosmo.\"",
+        "backstoryDescription": "Leo lost his father young, but his mother's stories about the stars filled that void with wonder. He's obsessed with space exploration, building model rockets, and watching sci-fi movies — though he secretly believes aliens would be friendly, not frightening."
+      },
+      "Agent Marcus Cole": {
+        "name": "Agent Marcus Cole",
+        "vignette": "A stern-faced government agent in a dark suit, Cole represents a shadowy organization tasked with containing extraterrestrial encounters. He's efficient, pragmatic, and views the unknown as a threat to be neutralized rather than a mystery to be explored.",
+        "appearanceDescription": "Tall and broad-shouldered, with a military bearing and a dark suit that seems too formal for the suburbs. His face is impassive, with cold gray eyes and a close-cropped haircut. He wears a discreet earpiece and a sidearm concealed beneath his jacket.",
+        "backstoryDescription": "A former special forces operative recruited into a classified government division known only as \"The Veil.\" His job is to ensure that evidence of extraterrestrial life never reaches the public. He follows orders without question, believing the greater good requires hard choices."
+      },
+      "Zylar": {
+        "name": "Zylar",
+        "vignette": "A being of liquid light and crystalline thought, Zylar is the vanguard of a dying civilization. It communicates through shimmering patterns and resonant hums, desperate to find help before its species fades into cosmic memory.",
+        "appearanceDescription": "Zylar's form shifts like a column of molten starlight, roughly humanoid but constantly in flux. Colors ripple across its surface — deep blues, silvery whites, and occasional bursts of violet. Its \"face\" is a smooth oval where two points of golden light pulse like eyes. When it moves, it leaves faint trails of sparkling particles.",
+        "backstoryDescription": "Zylar is the last of its kind's exploration caste, sent across the galaxy in search of allies. Its homeworld, a crystalline sphere orbiting a dying star, faces extinction as its sun collapses. Zylar's people are beings of pure energy and consciousness, but they cannot survive the coming supernova without help."
+      }
+    }
+  },
+  "minimumCheckpointsSpacing": 2,
+  "thresholdFrontierCheckpointsCount": 3,
+  "maximumDistanceFromCheckpoint": 2,
+  "minimumDistanceToFinalEnding": 2
+}

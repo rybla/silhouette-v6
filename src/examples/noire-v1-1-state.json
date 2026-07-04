@@ -1,0 +1,2308 @@
+{
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "impl",
+          "scene": {
+            "id": "start",
+            "location": "Vance's Office",
+            "passiveLocationEffects": [],
+            "passiveCharacterEffects": [],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The afternoon sun slants through the dusty blinds of Vance's office, cutting stripes of light across the cluttered desk. The ceiling fan ticks rhythmically as a woman in a navy blue dress sits across from him, her gloved hands folded neatly in her lap.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "Mr. Vance, I need your help. My father has disappeared. The police think he's simply gone on a business trip, but I know something terrible has happened to him.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She speaks with practiced composure, but her knuckles are white where she grips her handbag. Vance leans back in his creaking chair, studying her carefully.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Mrs. Blackwood, the police usually handle missing persons cases pretty well. What makes you think this is different?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "Because I found this in his study. A note, written in his hand. It says: *'If anything happens to me, don't trust the police. Find Marlowe Vance.'*",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She places a crumpled piece of paper on the desk. Vance picks it up, recognizing the expensive stationery and the shaky handwriting. His eyes narrow as he reads it twice.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Examine the note closely for clues",
+                "description": "Vance studies the note, looking for hidden meanings, watermarks, or any forensic evidence that might reveal more about Blackwood's state of mind.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "examine_note",
+                "targetSceneDescription": "Vance carefully examines the note under a magnifying glass, discovering subtle details like a faint address written in invisible ink or a watermark that suggests the paper came from a specific location."
+              },
+              {
+                "label": "Question Eleanor about her family's affairs",
+                "description": "Vance probes Eleanor for more information about the Blackwood family business, recent events, and anyone who might have wanted her father gone.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "question_eleanor",
+                "targetSceneDescription": "Eleanor reveals the Blackwood Shipping Corporation has been under financial strain, and her father had been receiving threatening letters from a rival company."
+              },
+              {
+                "label": "Visit the Blackwood mansion to investigate",
+                "description": "Vance decides to start at the scene of the disappearance, asking Eleanor to take him to the Blackwood mansion to examine her father's study.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "blackwood_mansion",
+                "targetSceneDescription": "At the grand Blackwood mansion, Vance searches the study and discovers a hidden safe behind a portrait, along with signs of a struggle that were cleaned up."
+              }
+            ],
+            "isCheckpoint": true,
+            "checkpoint": "interior"
+          }
+        },
+        "examine_note": {
+          "type": "impl",
+          "scene": {
+            "id": "examine_note",
+            "location": "Vance's Office",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "Vance holds the note up to the light, turning it over in his fingers. The paper is heavy, expensive—the kind sold at Harrington's Stationery on Fifth. But it's what he doesn't see that interests him.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "Marlowe Vance",
+                "content": "There's something odd about this paper. It's thicker than it should be, like there's another layer...",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "He reaches into his desk drawer and pulls out a small bottle of iodine and a cotton swab. A trick he learned from an old forgery expert. He dabs the corner of the paper gently and watches as faint letters begin to emerge, invisible to the naked eye before.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Eleanor, your father was clever. He wrote this note with invisible ink underneath. There's an address here. 'The Lantern Club, ask for the Proprietor.'",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "The Lantern Club? I've heard whispers about that place, but I've never been. Father never spoke of it.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "shy" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "That's because people who talk about the Lantern Club don't tend to stay healthy. But if your father wanted me to go there, that's where I'm headed.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Head to The Lantern Club immediately",
+                "description": "Vance leaves Eleanor at the office and makes his way through the rainy streets to the hidden speakeasy to meet the mysterious Proprietor.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "lantern_club_meeting",
+                "targetSceneDescription": "Vance navigates the hidden entrance of The Lantern Club and meets the Proprietor, who offers cryptic information about Victor Blackwood's last known movements."
+              },
+              {
+                "label": "Take Eleanor with you to The Lantern Club",
+                "description": "Vance decides it's safer to keep Eleanor close, but bringing a socialite to a shadowy speakeasy could attract unwanted attention.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "lantern_club_with_eleanor",
+                "targetSceneDescription": "Vance and Eleanor enter The Lantern Club together. The Proprietor is surprised to see her and reveals that Victor had been planning something big before he vanished."
+              }
+            ]
+          }
+        },
+        "question_eleanor": {
+          "type": "impl",
+          "scene": {
+            "id": "question_eleanor",
+            "location": "Vance's Office",
+            "passiveLocationEffects": [],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "Vance leans forward, fixing Eleanor with a steady gaze. He's learned over the years that people always hold something back on their first visit. The trick is knowing which questions to ask.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Tell me about your father's business. Has anything changed recently? Any new competitors? Financial trouble?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Eleanor hesitates, her carefully composed mask cracking for just a moment. She reaches into her handbag and pulls out a sheaf of letters bound with a ribbon.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "These arrived over the past two months. My father tried to hide them from me, but I found them in his study.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Vance takes the letters. They're typed, no signature, but the message is clear: sell Blackwood Shipping to Moretti Line or face the consequences. The last letter is dated three days before Victor's disappearance.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Frank Moretti. He's been trying to buy your father out for years. These threats are escalating.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "Father would never sell. The company is his legacy. But... he was scared, Mr. Vance. I saw it in his eyes. He started carrying a revolver and sleeping in his study.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Confront Frank Moretti directly",
+                "description": "Vance decides to go straight to the source and pay a visit to Frank Moretti at his office on the waterfront.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "confront_moretti",
+                "targetSceneDescription": "Vance storms into Moretti's office at the shipping yards. Moretti plays innocent but lets slip that Victor had a secret that would destroy the Blackwood family if it came to light."
+              },
+              {
+                "label": "Investigate the Blackwood Shipping Corporation",
+                "description": "Vance decides to look into the company's financial records and operations to find evidence of what drove Victor to disappear.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "shipping_investigation",
+                "targetSceneDescription": "At the Blackwood Shipping headquarters, Vance uncovers irregularities in the books and learns that Victor had been secretly meeting with a federal investigator about smuggling operations on the docks."
+              }
+            ]
+          }
+        },
+        "blackwood_mansion": {
+          "type": "impl",
+          "scene": {
+            "id": "blackwood_mansion",
+            "location": "Blackwood Mansion",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The Blackwood mansion looms against the gray afternoon sky as Eleanor unlocks the iron gates. The gardens are overgrown, the fountain dry. The house has an air of abandonment, even though the family still technically resides here.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Inside, the grandeur of old money is suffocating. Crystal chandeliers, oil paintings of stern-faced ancestors, mahogany everywhere. Eleanor leads Vance to her father's study on the second floor.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "This is where he spent most of his time. The police already searched it, but they said they found nothing unusual.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Vance moves through the room with practiced efficiency. His eyes scan the bookshelves, the desk, the fireplace. And then he notices something—a portrait of Silas Blackwood that hangs slightly askew, as if someone recently moved it.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "He walks over and pushes the painting aside. Behind it is a small wall safe, its door cracked open. Inside is empty except for a single photograph—a much younger Victor Blackwood standing with a man who has been crudely cut out of the picture, leaving only Victor and a woman who is not Eleanor's mother.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Someone beat us to the safe. And they left this photo behind. Either they didn't think it was important, or they wanted us to find it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Search the rest of the mansion for clues",
+                "description": "Vance decides to thoroughly search the mansion, looking for hidden rooms, secret passages, or anything else the police might have missed.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "mansion_search",
+                "targetSceneDescription": "Vance searches the mansion thoroughly and discovers a hidden room in the attic containing surveillance equipment, photographs, and evidence that Victor had been investigating someone close to him."
+              },
+              {
+                "label": "Investigate the woman in the photograph",
+                "description": "Vance pockets the photo and sets out to identify the mysterious woman, hoping she holds the key to Victor's disappearance.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "photo_investigation",
+                "targetSceneDescription": "Vance tracks down the woman in the photograph—a former Blackwood family maid named Margaret. She reveals a decades-old secret about Victor that could ruin the family."
+              }
+            ]
+          }
+        },
+        "lantern_club_meeting": {
+          "type": "impl",
+          "scene": {
+            "id": "lantern_club_meeting",
+            "location": "The Lantern Club",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The Gilded Page bookstore smells of old paper and dust. Vance finds the hidden door behind the poetry section—a loose shelf that swings inward when pressed. The stairs descend into a warm, smoky glow.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The Lantern Club is everything he expected and less. Velvet booths, a jazz trio playing a mournful tune, the clink of glasses in shadowy corners. He approaches the bar where a man with silver hair and a porcelain mask polishes a glass.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "I'm looking for the Proprietor. Victor Blackwood sent me.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The masked man sets down the glass and studies Vance with eyes that seem to see through him. He gestures to a private booth in the back.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "The Proprietor doesn't show his face. But he knows why you're here. Victor came to see him three days before he vanished. He was afraid—not for his life, but for his legacy.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The masked man leans in close. His voice drops to a whisper.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Victor discovered that his company was being used for smuggling. Not by him—by someone in his inner circle. He was going to expose them. The Proprietor advised him to go into hiding until he had enough proof.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The man slides a folded piece of paper across the table. It's a dock schedule for the night Victor disappeared.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "He was supposed to meet someone at Pier 17 that night. He never showed.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Investigate Pier 17",
+                "description": "Vance takes the dock schedule and heads to the waterfront to investigate what happened the night Victor disappeared.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "pier_17",
+                "targetSceneDescription": "At Pier 17, Vance finds evidence of a struggle and a dockworker who remembers seeing Victor arguing with a man before a boat arrived in the night."
+              },
+              {
+                "label": "Ask about the inner circle",
+                "description": "Vance presses for more information about who in Victor's inner circle might be involved in the smuggling operation.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "inner_circle",
+                "targetSceneDescription": "The barkeep reveals that Victor's trusted business partner, Arthur Crane, has been acting suspiciously and meeting with Frank Moretti in secret."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "lantern_club_with_eleanor": {
+          "type": "impl",
+          "scene": {
+            "id": "lantern_club_with_eleanor",
+            "location": "The Lantern Club",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The Lantern Club is a different place when you walk in with Eleanor Blackwood. The jazz stops. Eyes turn. The masked Proprietor himself emerges from the back room, which Vance is told has never happened before.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Miss Blackwood. I wasn't expecting you. Your father... he spoke of you often. He wanted to protect you from all of this.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Eleanor Blackwood",
+                "content": "Protect me from what? What was my father involved in?",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "angry" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The Proprietor leads them to a private room where the walls are lined with filing cabinets. He retrieves a folder and places it on the table.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Your father was planning something, Miss Blackwood. A complete restructuring of the company that would have cut out several key players. He left this with me for safekeeping—a contingency plan, in case something happened to him.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Eleanor opens the folder. Inside are legal documents transferring ownership of Blackwood Shipping to a trust in her name, along with a sealed envelope marked 'To be opened only if I don't return.'",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Open the sealed envelope",
+                "description": "Vance and Eleanor open Victor's letter, which reveals his suspicions about who was betraying him.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "open_envelope",
+                "targetSceneDescription": "The letter names Arthur Crane, Victor's longtime business partner, as the man behind the smuggling operation, and instructs Eleanor to go to the police—but only Detective Clara Ruiz."
+              },
+              {
+                "label": "Secure the documents and lay low",
+                "description": "Vance advises Eleanor to secure the documents and wait while he investigates further, but Eleanor insists on taking action immediately.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "secure_documents",
+                "targetSceneDescription": "Eleanor refuses to wait and storms off to confront Arthur Crane herself, forcing Vance to follow and intervene."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "confront_moretti": {
+          "type": "impl",
+          "scene": {
+            "id": "confront_moretti",
+            "location": "Blackwood Shipping Corporation",
+            "passiveLocationEffects": ["rain"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "Moretti Shipping's office is above a warehouse, accessible by a rickety exterior staircase. Rain patters against the windows as Vance pushes open the door without knocking.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "content": "Frank Moretti sits behind a massive oak desk, a cigar clamped between his teeth. He looks up with amusement as Vance enters.",
+                "instantCharacterEffects": [
+                  { "character": "Frank Moretti", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Frank Moretti",
+                "content": "Well, well. Marlowe Vance. The cop who thought he was too good for the force. What brings you to my humble office?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "You've been sending threatening letters to Victor Blackwood. Now he's missing. Let's skip the song and dance, Frank. Where is he?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Moretti's smile doesn't waver, but his eyes harden. He leans forward, stubbing out his cigar.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Frank Moretti",
+                "content": "I wanted to buy his company, sure. But I don't need to kidnap a man to get what I want. Victor was hiding something, detective. Something that would have destroyed his precious family name. And he knew I knew it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "What did he know?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Frank Moretti",
+                "content": "Let's just say the Blackwood fortune wasn't built on shipping alone. Victor's father, Silas, had... arrangements. And Victor was about to expose the whole dirty business. I didn't take him. But I know who did. His precious partner, Arthur Crane.",
+                "instantCharacterEffects": [
+                  { "character": "Frank Moretti", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance leaves Moretti's office and heads to the Lantern Club, where the Proprietor might have more information about Crane's involvement.",
+                "label": "Share this information at The Lantern Club",
+                "targetScene": "lantern_club_meeting",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "shipping_investigation": {
+          "type": "impl",
+          "scene": {
+            "id": "shipping_investigation",
+            "location": "Blackwood Shipping Corporation",
+            "passiveLocationEffects": ["rain", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The administrative building of Blackwood Shipping is nearly empty at this hour. The night shift runs the docks, but the offices are dark and quiet. Vance uses the key Eleanor provided to let himself in.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Victor's office is on the top floor, a corner room with views of the harbor. Vance sifts through the desk, the filing cabinets, the ledgers. At first, everything seems legitimate. Then he notices the discrepancies—entries that don't match the shipping manifests, payments to companies that don't exist.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "He's been at it for an hour when he hears footsteps in the hallway. He ducks behind a filing cabinet as the door swings open. A woman enters—Detective Clara Ruiz.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Detective Clara Ruiz",
+                "content": "I thought I might find you here, Vance. You always did have a knack for showing up where you don't belong.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marlowe Vance",
+                "content": "Clara. Still working late? Or did someone tip you off?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Detective Clara Ruiz",
+                "content": "I've been investigating Blackwood Shipping for weeks. There's a smuggling operation running through these docks, and Victor Blackwood was about to blow the whistle. But he disappeared before he could give me the evidence he promised.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Clara pulls out a notepad with a list of names. Arthur Crane, Frank Moretti, and surprisingly—Eleanor Blackwood's name is at the bottom, with a question mark.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Partner with Clara Ruiz",
+                "description": "Vance agrees to share information with Clara, combining their resources to solve the case together.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "partner_ruiz",
+                "targetSceneDescription": "Vance and Clara work together, discovering that the smuggling ring involves high-ranking officials and that Victor may have been taken to a secure location outside the city."
+              },
+              {
+                "label": "Keep your distance from the police",
+                "description": "Vance distrusts the police after his past experiences and decides to work alone, taking the evidence he's found so far.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "alone_investigation",
+                "targetSceneDescription": "Vance slips away from Clara and follows a lead to a warehouse on the docks, where he finds evidence that Victor was taken by force."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "mansion_search": {
+          "type": "impl",
+          "scene": {
+            "id": "mansion_search",
+            "location": "Blackwood Mansion",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "While Eleanor waits in the study, Vance takes a flashlight and begins a systematic search of the mansion. Room by room, floor by floor, he looks for anything the police might have missed.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "In the attic, beneath a pile of old trunks and moth-eaten curtains, he finds a trapdoor. It's been recently disturbed—the dust is displaced. He pulls it open and finds a narrow staircase leading to a hidden room.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The room is a surveillance post. Cameras, listening devices, photographs, and files spread across a table. Someone has been watching the mansion. And someone has been watching Victor.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Vance sifts through the photographs. There are pictures of Victor meeting with various people—Frank Moretti, Arthur Crane, and a woman he doesn't recognize. But one photo stops him cold: Victor, handcuffed, being led onto a boat at night.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "This isn't just surveillance. This is evidence of a kidnapping. Whoever set this up wanted to document everything. Vance pockets the photo and heads to the harbor, determined to find where that boat was headed.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "internal_dialogue",
+                "character": "Marlowe Vance"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance takes the evidence he found and goes to The Lantern Club to see if the Proprietor knows about the boat in the photograph.",
+                "label": "Consult the Proprietor about the boat",
+                "targetScene": "lantern_club_meeting",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "photo_investigation": {
+          "type": "impl",
+          "scene": {
+            "id": "photo_investigation",
+            "location": "Blackwood Mansion",
+            "passiveLocationEffects": ["sunny"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "Vance shows the photograph to Eleanor. She stares at it for a long moment, her face pale.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "That's Margaret. She was our maid when I was a child. She left suddenly when I was twelve, and I never knew why.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Do you know where I can find her?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "She lives in the old neighborhood, on Harbor Street. I went to see her once, years ago, but she wouldn't open the door.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance drives to Harbor Street, a row of modest houses near the waterfront. Margaret's house has peeling paint and a gate that creaks. An elderly woman answers the door, her eyes widening when she sees the photograph.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Margaret? My name is Marlowe Vance. I'm looking into Victor Blackwood's disappearance.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "She lets him in reluctantly. Inside, the house is filled with old photographs and newspaper clippings. She pours tea with trembling hands.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Victor Blackwood was my employer for thirty years. He was a good man, but his family... his family has secrets. The woman in that photograph with him? That's his sister, Amelia. She died in an asylum twenty-five years ago. The family covered it up, said she died abroad. But Victor never forgave himself for what happened to her.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "And the man who was cut out of the photo?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "That was Arthur Crane. He was Amelia's lover. He's been working for the family ever since, biding his time, waiting for revenge. If you want to find Victor, you need to find Arthur Crane first.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Armed with Margaret's story, Vance heads to The Lantern Club to share this information and see if the Proprietor knows where Arthur Crane might be found.",
+                "label": "Bring this information to The Lantern Club",
+                "targetScene": "lantern_club_meeting",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "pier_17": {
+          "type": "impl",
+          "scene": {
+            "id": "pier_17",
+            "location": "Pier 17",
+            "passiveLocationEffects": ["dark", "rain", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "The rain falls in sheets as Vance makes his way to Pier 17. The dock schedule from the Proprietor is clutched in his hand, the ink already smearing. Fog rolls in from the harbor, swallowing the dim lights of the city behind him.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The pier is dark, the old wooden planks slick with rain. At the far end, a single lantern glows outside a warehouse. Vance approaches carefully, his footsteps echoing in the empty night.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "He finds evidence of a struggle—scorch marks on the wood, a broken crate, and a man's shoe lodged between the planks. Expensive leather, handmade. Victor's size.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "A figure emerges from the shadows—an old dockworker in a slicker, smoking a cigarette.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "You the watchman? I'm looking for information about a man who was taken from here three weeks ago.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "The old man takes a long drag of his cigarette, studying Vance with rheumy eyes.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "I saw it. Man in a suit, arguing with another man. Then a boat came, and the suit went quiet. They took him out to sea. The boat... it had a name on the stern. 'Amelia's Revenge.'",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance realizes the boat's name is a clue pointing directly to Arthur Crane and his vendetta for Amelia. He decides to confront Crane at his estate.",
+                "label": "Confront Arthur Crane at his estate",
+                "targetScene": "confront_crane",
+                "targetSceneDescription": "Vance drives to Arthur Crane's isolated house and finds him preparing to flee. A tense confrontation reveals that Victor is being held on an island, and Crane holds the key to his location.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Vance decides to investigate the island where Victor might be held, gathering resources for a rescue mission.",
+                "label": "Investigate the island location",
+                "targetScene": "island_rescue",
+                "targetSceneDescription": "Vance returns to The Lantern Club to get more information about the island. The Proprietor reveals it's a private island owned by a shell company linked to Crane, and provides a boat.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "inner_circle": {
+          "type": "impl",
+          "scene": {
+            "id": "inner_circle",
+            "location": "The Lantern Club",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "Vance doesn't leave the booth. He leans in, fixing the masked barkeep with a hard stare.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "You said someone in Victor's inner circle is behind the smuggling. Who?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "The Proprietor's masked face is unreadable, but his hands still. He pours himself a drink before answering.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Arthur Crane. He's been Victor's right hand for thirty years. Quiet, loyal, efficient. But he's been meeting with Frank Moretti in secret for months. And I've heard whispers that Crane has been making payments to a private security firm.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Where can I find Crane at this hour?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "He has a house on the edge of town. But if you want proof of his betrayal, check the shipping logs at the Blackwood office. Look for discrepancies in the accounts—Crane has been skimming money for years, setting up a nest egg for his escape.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance goes to the Blackwood Shipping office to find the financial evidence against Crane.",
+                "label": "Check the shipping logs for proof",
+                "targetScene": "shipping_investigation",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Vance decides to confront Crane directly at his home before he can flee.",
+                "label": "Confront Crane directly",
+                "targetScene": "pier_17",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "open_envelope": {
+          "type": "impl",
+          "scene": {
+            "id": "open_envelope",
+            "location": "The Lantern Club",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "Eleanor's hands tremble as she breaks the wax seal on the envelope. Vance watches her read, her eyes moving across the page. Tears well up, but she doesn't let them fall.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "He knew. He knew someone was betraying him. He writes that Arthur Crane—his partner of thirty years—has been embezzling from the company and working with Frank Moretti.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "What else does it say?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "He says that if anything happens to him, I should go to Detective Clara Ruiz. She's the only one in the police department he trusts. And he says... he says he's sorry. For everything. For the secrets our family has kept.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Clara Ruiz. I know her. She was my partner. She's good. If Victor trusted her, I trust her too.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance and Eleanor go to the police to meet with Detective Ruiz, bringing Victor's letter as evidence.",
+                "label": "Go to Detective Ruiz together",
+                "targetScene": "partner_ruiz",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Vance decides to confront Arthur Crane immediately with the evidence before he can destroy more documents.",
+                "label": "Confront Crane with the evidence",
+                "targetScene": "pier_17",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "secure_documents": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance stalls Crane while secretly signaling for backup. Detective Ruiz arrives with a squad, and Crane is arrested.",
+                "label": "Try to negotiate with Crane",
+                "targetScene": "crane_standoff",
+                "targetSceneDescription": "Vance negotiates with Crane while Eleanor slips away to call Detective Ruiz. Ruiz arrives with a squad, and Crane is arrested, revealing Victor's location in exchange for a deal.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Vance charges Crane, hoping to overpower him before he can destroy the remaining evidence.",
+                "label": "Subdue Crane by force",
+                "targetScene": "crane_showdown",
+                "targetSceneDescription": "Vance tackles Crane, but a struggle ensues. Crane reveals Victor is alive but in danger, and only he knows where.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "secure_documents",
+            "isCheckpoint": false,
+            "location": "The Lantern Club",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "Eleanor slams the folder shut, her eyes blazing with determination.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "I'm not going to sit here and wait while that man destroys everything my father built. I'm going to confront Arthur Crane right now.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "That's a bad idea. If Crane is involved in kidnapping and smuggling, he's dangerous. Let me handle this.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "But Eleanor is already on her feet, clutching the folder to her chest. Vance sighs and follows her out into the night.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "run" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "They arrive at Crane's estate to find the front door ajar. Inside, papers are scattered everywhere, and a fire burns in the study fireplace. Arthur Crane stands before it, feeding documents into the flames.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "Miss Blackwood. I was wondering when you'd come. And you've brought the detective. How convenient.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ]
+          }
+        },
+        "partner_ruiz": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance meets Clara at Crane's estate for the arrest, leading to a confrontation that reveals Victor's location.",
+                "label": "Meet Clara for the arrest",
+                "targetScene": "crane_standoff",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Vance decides to go to Pier 17 to gather more evidence before the arrest.",
+                "label": "Gather more evidence first",
+                "targetScene": "pier_17",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "partner_ruiz",
+            "isCheckpoint": false,
+            "location": "Blackwood Shipping Corporation",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["rain"],
+            "script": [
+              {
+                "content": "Clara Ruiz leads Vance to a quiet corner of the shipping office, away from the prying ears of the night staff. She closes the door and turns to face him, arms crossed.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Alright, Vance. We're off the record. Tell me what you know, and I'll tell you what I know.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance lays out the case: the note, the Lantern Club, the threatening letters from Moretti, the surveillance in the mansion, Arthur Crane's betrayal. Clara listens without interrupting, her face unreadable.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "I've had my eye on Blackwood Shipping for months. The smuggling ring, the missing cargo, the payments to shell companies. But I didn't have enough to make an arrest. Your witness from Pier 17 changes things.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "So we're partners again?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Don't push it. But I'll get a warrant for Crane's arrest. Meet me at his estate in two hours. We'll bring him in together.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ]
+          }
+        },
+        "alone_investigation": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance takes the map and heads to The Lantern Club to enlist the Proprietor's help in getting to the island.",
+                "label": "Get help from The Lantern Club",
+                "targetScene": "island_rescue",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Vance brings the evidence to Clara Ruiz despite his distrust, realizing he needs official backup for a rescue.",
+                "label": "Reluctantly partner with Ruiz",
+                "targetScene": "partner_ruiz",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "alone_investigation",
+            "isCheckpoint": false,
+            "location": "Harbor Warehouse District",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "Vance slips out of the shipping office before Clara can stop him. He doesn't trust the police, even her. Some habits die hard.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "run" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "He follows the trail of evidence to a warehouse in the Harbor District. The number matches one of the shell companies from Victor's ledgers. The corrugated iron door is padlocked, but a side door hangs open.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Inside, the warehouse is filled with crates. French wine, Italian silk, Cuban cigars—goods that should have passed through customs legally but were smuggled instead. And in the back, a makeshift office with a desk, a lamp, and a map on the wall.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The map has a small island circled in red ink, thirty miles off the coast. A note is pinned next to it: 'Subject secured. Awaiting further instructions.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "An island. Crane's been keeping Victor on an island. I need a boat and a crew if I'm going to get him out.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "internal_dialogue"
+              }
+            ]
+          }
+        },
+        "confront_crane": {
+          "type": "impl",
+          "scene": {
+            "id": "confront_crane",
+            "location": "Crane's Estate",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "content": "Vance arrives at Arthur Crane's estate to find the front door unlocked. Inside, a single lamp burns in the study. Arthur Crane sits in a leather armchair, a glass of whiskey in his hand, as if he's been waiting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "Detective Vance. I was wondering when you'd find your way here. You're more persistent than I gave you credit for.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Where is Victor Blackwood?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Crane takes a slow sip of his whiskey, his eyes never leaving Vance's.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "He's safe. On an island, away from the mess he was about to make. I've been waiting thirty years for this, you know. Thirty years, watching that family pretend to be honorable while they destroyed the people who got in their way.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "This is about Amelia.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "They took her from me. Locked her away in that asylum and threw away the key. And Victor... he let it happen. He was too weak to stand up to his father. So yes, this is about Amelia. And it's about justice.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance tries to reason with Crane, appealing to his humanity and offering a way out that doesn't end in tragedy.",
+                "label": "Reason with Crane",
+                "targetScene": "rescue_island",
+                "targetSceneDescription": "Crane finally relents and gives Vance the coordinates to the island. Vance and Ruiz mount a rescue mission, bringing Victor home safely and Crane to justice.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "description": "Vance refuses to negotiate with a kidnapper and moves to arrest Crane, forcing a violent confrontation.",
+                "label": "Arrest Crane by force",
+                "targetScene": "final_showdown",
+                "targetSceneDescription": "Crane pulls a revolver, and a struggle ensues. In the chaos, Crane reveals where Victor is before being subdued, but not without consequences.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "island_rescue": {
+          "type": "impl",
+          "scene": {
+            "id": "island_rescue",
+            "location": "The Lantern Club",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "content": "Back at The Lantern Club, the Proprietor listens to Vance's plan with growing interest. He traces a finger along the map of the island.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "I need a boat. Someone who knows these waters. And I need it tonight.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "The Proprietor laughs softly behind his mask.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "You're in luck, detective. I have a boat, and I have a man who knows those waters blindfolded. But this isn't a favor I do for free. When you bring Victor Blackwood back, you owe me a debt.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "What kind of debt?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "The kind that gets repaid when I call. Don't worry—I won't ask you to do anything you wouldn't do for a friend. Good luck, detective. You'll need it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "An hour later, Vance is on a fishing boat cutting through the fog toward the island. The lighthouse looms ahead, dark and foreboding against the night sky.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance storms the island alone, sneaking past the guards to find Victor in the lighthouse.",
+                "label": "Storm the island alone",
+                "targetScene": "rescue_island",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Vance calls Clara Ruiz for backup, waiting for police reinforcements before assaulting the island.",
+                "label": "Wait for police backup",
+                "targetScene": "rescue_island",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "crane_standoff": {
+          "type": "impl",
+          "scene": {
+            "id": "crane_standoff",
+            "location": "Crane's Estate",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "content": "Vance and Clara Ruiz arrive at Crane's estate with a warrant. The house is dark, but a light flickers in the study window. Ruiz signals to the officers to surround the property as she and Vance approach the front door.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "walk" },
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "They enter to find Crane sitting calmly at his desk, a single document before him and a pen in his hand.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "Detective Ruiz. I was expecting you. And Vance—you've been a thorn in my side from the beginning.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Arthur Crane, you're under arrest for kidnapping, embezzlement, and conspiracy to commit smuggling. You have the right to remain silent...",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "Save your breath. I know my rights. But before you take me in, you should know this: Victor Blackwood is alive. And the only way you'll find him is if I tell you where he is.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Crane pushes the document across the desk. It's a confession—and a map to the island.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "I'm not the villain you think I am. I just wanted the truth to come out. Victor can tell you himself—if you get to him in time.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "Vance and Ruiz immediately head to the island to rescue Victor before Crane's men can harm him.",
+                "label": "Rush to rescue Victor",
+                "targetScene": "rescue_island",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "crane_showdown": {
+          "type": "impl",
+          "scene": {
+            "id": "crane_showdown",
+            "location": "Crane's Estate",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "content": "Vance tackles Crane before he can throw another document into the fire. They crash to the floor, the whiskey glass shattering. Crane is surprisingly strong, driving an elbow into Vance's ribs.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "fall" },
+                  { "character": "Arthur Crane", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "You don't understand! I didn't want to hurt him—I wanted him to suffer like I suffered!",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Where is he, Crane? Tell me, and maybe I can help you!",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Crane's resistance crumbles. He goes limp, defeated.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "The lighthouse island. Thirty miles east. He's in the lighthouse keeper's cottage. Please... just don't let him die before he knows the truth about his sister.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance hauls Crane to his feet and calls Clara Ruiz. Within the hour, Crane is in custody and a rescue mission is underway.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "choices": [
+              {
+                "description": "The rescue mission succeeds, and Victor Blackwood is brought home. The truth about Amelia comes to light, and the Blackwood family faces its past.",
+                "label": "See the rescue through",
+                "targetScene": "rescue_island",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "rescue_island": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Victor is rescued and returned to the city. The family is reunited, but there are still loose ends to tie up with the authorities.",
+                "label": "Return to the city with Victor",
+                "targetScene": "case_closed_happy",
+                "targetSceneDescription": "Back in the city, Victor is reunited with Eleanor. The case is wrapped up with Clara Ruiz, and Vance reflects on justice served.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "rescue_island",
+            "isCheckpoint": false,
+            "location": "Remote Island Hideout",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["wind", "rain"],
+            "script": [
+              {
+                "content": "The boat cuts through the fog as the lighthouse island looms ahead. Vance's knuckles are white on the railing as they approach the rickety dock.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The lighthouse keeper's cottage is dark and silent. Vance kicks open the door to find Victor Blackwood sitting on a cot, thin and pale but alive. His eyes widen when he sees Vance.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Victor Blackwood? Your daughter sent me.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Victor's face crumples with relief. He's been held here for three weeks, fed bread and water, guarded by men who never spoke to him.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Eleanor. Is she safe?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "She's safe. And she's brave. She never gave up on you.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ]
+          }
+        },
+        "final_showdown": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Though Victor is lost, Vance ensures justice is served and Eleanor finds closure.",
+                "label": "Help Eleanor find closure",
+                "targetScene": "case_closed_bittersweet",
+                "targetSceneDescription": "Vance helps Eleanor through the aftermath, and together they expose the truth about the Blackwood family's past, finally laying Amelia's ghost to rest.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "final_showdown",
+            "isCheckpoint": false,
+            "location": "Crane's Estate",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "content": "Crane's hand darts to his desk drawer. Vance lunges, but he's too late—Crane pulls out a revolver and fires. The shot goes wide, shattering a window, but the noise brings a response.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "fall" },
+                  { "character": "Arthur Crane", "effect": "angry" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "content": "Vance tackles Crane again, and the gun skitters across the floor. They struggle, furniture crashing around them. Crane is desperate, manic, speaking in fragments about Amelia, about justice, about thirty years of waiting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Finally, Vance pins him, handcuffs clicking around Crane's wrists. The man goes still, defeated, tears streaming down his face.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Arthur Crane",
+                "content": "The island. The lighthouse. He's there. Please... don't let him die.",
+                "instantCharacterEffects": [
+                  { "character": "Arthur Crane", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "But by the time Vance reaches the island, the storm has hit. The coast guard finds Victor Blackwood's body washed up on the shore the next morning. He'd tried to escape in the chaos and drowned in the freezing water.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The case makes headlines. Arthur Crane is convicted of kidnapping and manslaughter. Frank Moretti is implicated in the smuggling ring and loses his shipping license. Eleanor Blackwood inherits the company—and the burden of her family's secrets.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "case_closed_happy": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance accepts Clara's offer of a drink, celebrating the successful resolution of the case.",
+                "label": "Accept the drink and celebrate",
+                "targetScene": "final_toast",
+                "targetSceneDescription": "Vance and Clara share a drink, reminiscing about old times and discussing future cases. The Blackwood case is closed, and a new chapter begins.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "case_closed_happy",
+            "isCheckpoint": true,
+            "location": "Blackwood Mansion",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "The Blackwood mansion is bathed in golden morning light as Vance escorts Victor through the front door. Eleanor rushes down the grand staircase, tears streaming down her face.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "run" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Father and daughter embrace, the weight of weeks of fear and uncertainty finally lifting. Victor holds her tight, whispering apologies and promises.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "happy" },
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "I told you I'd find him, Mrs. Blackwood.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "Thank you, Mr. Vance. How can we ever repay you?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "The truth was payment enough. And my usual fee, of course.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Later, in his office, Vance sits with his feet on the desk, a cigarette burning in the ashtray. The case is closed. The Blackwood family is whole again, and Arthur Crane is in custody, finally facing justice for his decades-long vendetta.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "A knock at the door. Clara Ruiz steps in, holding a bottle of whiskey.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Well, partner. Looks like you haven't lost your touch.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Partners again?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Don't push it. But I brought this for a reason. To the Blackwood case. And to old friends.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "The two detectives clink glasses in the dim afternoon light. Outside, the city hums with its endless stories. But for now, one story has found its happy ending.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "case_closed_bittersweet": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance decides to help Eleanor publish Amelia's story, ensuring the truth comes out.",
+                "label": "Help Eleanor publish the truth",
+                "targetScene": "final_truth",
+                "targetSceneDescription": "Vance and Eleanor work together to publish Amelia's story, finally bringing justice to the wronged woman and closure to the Blackwood family's dark past.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "case_closed_bittersweet",
+            "isCheckpoint": true,
+            "location": "Blackwood Mansion",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["rain"],
+            "script": [
+              {
+                "content": "The rain falls steadily on the Blackwood mansion as Vance stands in the doorway, hat in hand. Eleanor sits in the study, surrounded by papers and photographs, her face a mask of quiet grief.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "I'm sorry I couldn't save him, Eleanor.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "You brought us the truth. That's more than he ever had while he was running from it.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "She hands him a folder. Inside are documents about Amelia Blackwood—her medical records, her death certificate, and a letter she wrote from the asylum that was never sent.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "I'm going to publish Amelia's story. The truth about our family. About what my grandfather did to her, and what my father carried his whole life. It's time the Blackwood name was known for what it really is.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "That takes courage.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "Courage is all I have left.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance walks out into the rain, the folder tucked under his arm. Justice has been served, but at a cost. The Blackwood dynasty will never be the same—and perhaps that's for the best. Some truths are painful, but they set us free.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "final_toast": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance accepts the drink and toasts to old friends and new beginnings.",
+                "label": "Raise a glass",
+                "targetScene": "vance_final",
+                "targetSceneDescription": "Vance and Clara share stories as the night goes on. The Blackwood case becomes a memory, and Vance looks forward to whatever mystery comes next.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "final_toast",
+            "isCheckpoint": false,
+            "location": "Vance's Office",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "Vance takes the glass Clara offers him, the whiskey warming his hands. She settles into the client chair, kicking off her shoes with a sigh.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "You know, when I took this case, I thought it would be another dead end. Victor Blackwood, missing. His daughter, hysterical. Crane, playing the loyal partner.",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "But you kept digging.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Someone had to. The department wanted to sweep it under the rug. Too many powerful names involved.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "They clink glasses. Outside, the city hums with life. The case is closed, but the city never runs out of mysteries.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Detective Clara Ruiz",
+                "content": "Same time next year, Vance?",
+                "instantCharacterEffects": [
+                  { "character": "Detective Clara Ruiz", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "I'll be here. Someone's got to keep this city honest.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ]
+          }
+        },
+        "final_truth": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Eleanor releases Amelia's story to the press, changing the Blackwood legacy forever.",
+                "label": "Publish Amelia's story",
+                "targetScene": "truth_published",
+                "targetSceneDescription": "The story runs in every newspaper in the city. The Blackwood name is cleared of its secrets, and Amelia's memory is finally honored. Vance watches from a distance as Eleanor finds her purpose.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "final_truth",
+            "isCheckpoint": false,
+            "location": "Blackwood Mansion",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "Vance sits with Eleanor at her father's desk, the morning light streaming through the tall windows. She spreads Amelia's documents across the polished mahogany.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "I've decided to give an interview to the Herald. A full account of what happened to Amelia. What my family did.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Once you do that, there's no going back. The Blackwood name will never be the same.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "I know. But it's time the world knew the truth. My father carried this guilt his whole life. I won't carry it into the next generation.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Then I'll be here to make sure you're safe while you do it.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Eleanor smiles—the first genuine smile Vance has seen from her. She reaches across the desk and takes his hand.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "Thank you, Mr. Vance. For everything.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              }
+            ]
+          }
+        },
+        "vance_final": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance decides to take a vacation, leaving the city behind for a while.",
+                "label": "Take a well-deserved break",
+                "targetScene": "vance_ending",
+                "targetSceneDescription": "Vance packs a bag and heads to the coast for some much-needed rest. The case is closed, and for the first time in years, he allows himself to relax.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "vance_final",
+            "isCheckpoint": true,
+            "location": "Vance's Office",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "The morning sun streams through the dusty blinds of Vance's office, cutting bright stripes across the desk where an envelope sits—his payment from the Blackwood estate, more than he's made in the past year.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "He leans back in his chair, feet on the desk, a cigarette unlit between his fingers. The city hums below, and for once, the world feels quiet.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Victor Blackwood is home. Crane is in prison. Eleanor is running the company. And me? I'm still here, in this dusty office, waiting for the next person to walk through that door with a story to tell.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "internal_dialogue"
+              },
+              {
+                "content": "His phone rings. He lets it ring twice before picking up.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Vance Investigations. How can I help you?",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Some cases end with a bang. Others with a whiskey toast. But the city never runs out of mysteries, and Marlowe Vance never runs out of reasons to keep searching for the truth.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "truth_published": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Eleanor's story hits the front page, and Vance watches as the Blackwood legacy transforms.",
+                "label": "Watch the story break",
+                "targetScene": "eleanor_ending",
+                "targetSceneDescription": "The newspaper prints Amelia's full story. Eleanor becomes a crusader for mental health reform. The Blackwood name, once a symbol of power, becomes a symbol of redemption.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "truth_published",
+            "isCheckpoint": true,
+            "location": "Blackwood Mansion",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "The morning edition of the Herald hits the streets with a headline that shocks the city: 'BLACKWOOD FAMILY SECRET EXPOSED: The Tragic Story of Amelia Blackwood.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Vance reads the article over coffee at a diner downtown. The story is thorough, compassionate, and damning—the old Blackwood patriarch's role in committing his own daughter to an asylum, the cover-up, the decades of silence.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Across town, Eleanor Blackwood stands on the steps of City Hall, speaking to a crowd of reporters. She's not hiding anymore. She's fighting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "My family's past is written in secrets and shame. But the future... the future is written in truth. I will donate my entire inheritance to mental health reform. Amelia's name will not be forgotten.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance folds his newspaper, leaves a tip on the counter, and steps out into the morning light. The city feels different today—like something has shifted. Sometimes, the truth is enough.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "eleanor_ending": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Eleanor's crusade begins. She becomes a new kind of Blackwood - one defined by honesty and compassion.",
+                "label": "Witness Eleanor's new beginning",
+                "targetScene": "epilogue_eleanor",
+                "targetSceneDescription": "Eleanor throws herself into activism, reforming the family name. Vance watches from the sidelines, proud of the woman she's become.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "eleanor_ending",
+            "isCheckpoint": false,
+            "location": "Blackwood Mansion",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "Weeks later, the Blackwood mansion has been transformed. The heavy drapes are open, letting in the light. Eleanor has converted her father's study into a community center, her desk covered not in ledgers but in plans for a mental health foundation.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Vance visits one afternoon, finding her in the garden, planting roses where the fountain once stood dry.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Never took you for a gardener.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "character": "Eleanor Blackwood",
+                "content": "There's a lot you don't know about me, Mr. Vance. But I'd like you to find out. If you're ever not too busy saving the city.",
+                "instantCharacterEffects": [
+                  { "character": "Eleanor Blackwood", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "Vance tips his hat, a rare smile crossing his weathered face. Maybe some cases don't end with a closed file, but with an open door.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "vance_ending": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Vance rests, knowing he's made a difference in this city. The end of one case is just the beginning of the next.",
+                "label": "Rest and reflect",
+                "targetScene": "epilogue_vance",
+                "targetSceneDescription": "Vance takes a long walk along the waterfront, reflecting on the case and his place in the world.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "vance_ending",
+            "isCheckpoint": false,
+            "location": "Vance's Office",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["sunny"],
+            "script": [
+              {
+                "content": "Vance tucks the payment envelope into his coat pocket and looks around his office one last time. The dust motes dance in the morning light. The ceiling fan ticks. The city waits outside his window.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Marlowe Vance",
+                "content": "Well, Blackwood. You were one hell of a case. But this detective's got a date with a beach and a bottle of bourbon.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue"
+              },
+              {
+                "content": "He grabs his coat and heads for the door, pausing at the threshold to take one last look. Then he steps out into the hall, locking the door behind him.",
+                "instantCharacterEffects": [
+                  { "character": "Marlowe Vance", "effect": "walk" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The city stretches before him, full of shadows and secrets, mysteries waiting to be solved. But for now, the sun is shining, and Marlowe Vance is taking a day off.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "epilogue_vance": {
+          "type": "stub",
+          "scene": {
+            "id": "epilogue_vance",
+            "description": "Vance rests, knowing he's made a difference in this city. The end of one case is just the beginning of the next."
+          }
+        },
+        "epilogue_eleanor": {
+          "type": "stub",
+          "scene": {
+            "id": "epilogue_eleanor",
+            "description": "Eleanor's crusade begins. She becomes a new kind of Blackwood - one defined by honesty and compassion."
+          }
+        }
+      },
+      "locations": {
+        "Vance's Office": {
+          "name": "Vance's Office",
+          "vignette": "A cramped, dusty office on the third floor of a dilapidated building downtown. The window overlooks a neon sign that flickers all night, casting intermittent red and blue shadows across the cluttered desk.",
+          "appearanceDescription": "A small room with peeling wallpaper, a battered wooden desk covered in case files and coffee rings, a worn leather chair behind it, and two uncomfortable chairs for clients. A filing cabinet sits in the corner, overflowing with papers. A ceiling fan spins lazily, stirring the haze of cigarette smoke.",
+          "backstoryDescription": "Vance has rented this office since leaving the police force. The landlord, a sympathetic old man named Mr. Henderson, lets him defer rent when cases are slow. The building also houses a pawn shop on the ground floor and a dance hall in the basement."
+        },
+        "Blackwood Mansion": {
+          "name": "Blackwood Mansion",
+          "vignette": "An imposing Gothic revival mansion perched on the hill overlooking the city, the Blackwood estate has been in the family for four generations. Its ivy-covered stone walls and wrought-iron gates speak of old money and older secrets.",
+          "appearanceDescription": "A three-story stone mansion with tall arched windows, a grand oak door, and a turret on the eastern wing. The grounds are meticulously maintained, with rose gardens and a marble fountain. Inside, dark wood paneling, chandeliers, and oil paintings of ancestors line the walls.",
+          "backstoryDescription": "Built in 1889 by Silas Blackwood, the founder of Blackwood Shipping, the mansion has been the family seat ever since. Rumors persist of hidden rooms and secret passages, though the family has always denied them."
+        },
+        "The Lantern Club": {
+          "name": "The Lantern Club",
+          "vignette": "A dim, exclusive speakeasy hidden beneath an old bookstore, the Lantern Club is where the city's elite go to conduct business that cannot be discussed in polite company. The password changes weekly.",
+          "appearanceDescription": "Accessed through a hidden door behind a bookshelf in The Gilded Page bookstore, the club is a sprawling underground space with red velvet booths, a mahogany bar, and a low stage where a jazz trio plays nightly. The air is thick with cigar smoke and the clink of glasses.",
+          "backstoryDescription": "The Lantern Club has operated for decades, surviving the Prohibition era and every mayor since. Its owner, a shadowy figure known only as 'The Proprietor,' knows every secret in the city and trades in information as much as liquor."
+        },
+        "Blackwood Shipping Corporation": {
+          "name": "Blackwood Shipping Corporation",
+          "vignette": "A massive industrial waterfront complex of warehouses, docks, and administrative offices. Blackwood Shipping has been the backbone of the city's maritime trade for over a century.",
+          "appearanceDescription": "A sprawling complex of brick warehouses with rusted corrugated roofs, towering cranes, and a three-story administrative building with a clock tower. The salt air mixes with the smell of diesel and cargo. Dockworkers move crates along the piers while ships blow their horns in the harbor.",
+          "backstoryDescription": "Founded in 1875 by Silas Blackwood, the shipping company grew from a single schooner to a fleet of cargo vessels. In recent years, the company has faced increasing competition from the Moretti Shipping Line, and rumors of financial trouble have circulated."
+        },
+        "Pier 17": {
+          "name": "Pier 17",
+          "vignette": "An abandoned pier at the far end of the harbor, Pier 17 was once a bustling cargo dock but has fallen into disrepair. It's now used primarily for illicit activities under the cover of darkness.",
+          "appearanceDescription": "A long wooden pier stretching into the foggy harbor, with broken lamps, rotting planks, and a single rusted warehouse at the end. The sound of lapping water mingles with distant foghorns. Crates and debris are scattered about.",
+          "backstoryDescription": "Pier 17 was closed to commercial traffic five years ago after a fatal accident. The city never funded repairs, and it became a no-man's land where smugglers and criminals operate freely. The police rarely patrol here."
+        },
+        "Crane's Estate": {
+          "name": "Crane's Estate",
+          "vignette": "A modest but well-kept house on the outskirts of the city, Arthur Crane's home is unassuming on the outside but filled with secrets within. The garden is overgrown, and the windows are always shuttered.",
+          "appearanceDescription": "A two-story Victorian house with peeling white paint, a wraparound porch, and a weathered brass door knocker. Inside, the rooms are cluttered with books, old photographs, and filing cabinets. A heavy safe sits in the corner of the study.",
+          "backstoryDescription": "Arthur Crane bought this house twenty-five years ago, shortly after Amelia Blackwood's death. He lives alone with his cats and his memories, working as Blackwood Shipping's financial controller while nursing a decades-old grudge."
+        },
+        "Harbor Warehouse District": {
+          "name": "Harbor Warehouse District",
+          "vignette": "A maze of aging warehouses along the waterfront, this district is a labyrinth of corrugated iron, shadowy alleys, and the constant smell of salt and diesel. By night, it belongs to those who don't want to be found.",
+          "appearanceDescription": "Row after row of identical warehouses with faded numbers painted above their doors. Broken streetlights cast pools of darkness. The occasional flicker of a cigarette or the glow of a lantern reveals the presence of watchmen and vagrants.",
+          "backstoryDescription": "The Harbor Warehouse District was the heart of the city's shipping industry in its heyday. Now many of the warehouses stand empty, leased by shell companies and used for purposes that don't bear close inspection."
+        },
+        "City Archives": {
+          "name": "City Archives",
+          "vignette": "A cavernous, dust-filled building in the municipal center, the City Archives house decades of records, deeds, and forgotten documents in its labyrinthine stacks.",
+          "appearanceDescription": "A towering marble building with columns and a grand staircase. Inside, row after row of metal shelving stretches into the dim recesses, lit by flickering fluorescent lights. The air smells of old paper, mold, and floor wax.",
+          "backstoryDescription": "The City Archives were established in 1850 and have accumulated records ever since. The archivist, an elderly man named Mr. Pennington, has worked there for forty years and knows where every skeleton is buried—literally and figuratively."
+        },
+        "Remote Island Hideout": {
+          "name": "Remote Island Hideout",
+          "vignette": "A small, rocky island thirty miles off the coast, accessible only by boat. An old lighthouse and a few outbuildings serve as a secluded prison for those who know too much.",
+          "appearanceDescription": "A barren island dominated by a crumbling stone lighthouse. Salt-sprayed rocks surround a small dock. The wind howls constantly, and the only shelter is the lighthouse keeper's cottage, now converted into a makeshift cell.",
+          "backstoryDescription": "The island lighthouse was decommissioned decades ago and purchased by a shell company. It's been used as a discreet location for meetings and, more recently, as a place to keep Victor Blackwood hidden from the world."
+        },
+        "Police Headquarters": {
+          "name": "Police Headquarters",
+          "vignette": "The bustling heart of the city's law enforcement, Police Headquarters is a fortress of justice where cases are solved and secrets are kept in equal measure.",
+          "appearanceDescription": "A gray stone building with tall columns, brass fixtures, and a large lobby with a polished floor. Inside are endless corridors of desks, interrogation rooms, and the offices of detectives. The air smells of coffee, paper, and stale cigarette smoke.",
+          "backstoryDescription": "Built in 1920, Police Headquarters has been the scene of countless investigations. Detective Clara Ruiz works in the homicide division on the third floor, where she keeps a file on the Blackwood case in her locked desk drawer."
+        }
+      },
+      "characters": {
+        "Marlowe Vance": {
+          "name": "Marlowe Vance",
+          "vignette": "A weary private detective in his late forties, Marlowe Vance has seen the underbelly of the city through years of missing persons cases, infidelity investigations, and the occasional murder. He operates by a personal code of justice that often puts him at odds with the police.",
+          "appearanceDescription": "A tall, lean man with graying temples, tired blue eyes, and a trench coat that has seen better days. He always has a cigarette tucked behind his ear and a five o'clock shadow that never quite becomes a beard.",
+          "backstoryDescription": "A former police detective who left the force after a corruption scandal shook the department. He started his own private investigation agency and has been working out of a cramped office downtown for the past twelve years. His reputation is one of stubborn persistence."
+        },
+        "Eleanor Blackwood": {
+          "name": "Eleanor Blackwood",
+          "vignette": "A poised and elegant woman in her early thirties, Eleanor carries herself with the confidence of old money. Behind her composed exterior, there is a deep well of anxiety about her family's dark secrets.",
+          "appearanceDescription": "Striking with raven-black hair pulled back in a sophisticated chignon, piercing green eyes, and a string of pearls that likely cost more than Vance's monthly rent. She wears a tailored navy blue dress and gloves, even in the warm weather.",
+          "backstoryDescription": "The only daughter of the wealthy Blackwood family, owners of Blackwood Shipping Corporation. She grew up in a mansion on the hill, educated in Switzerland, and recently returned to the city after her father's mysterious disappearance three weeks ago."
+        },
+        "Victor Blackwood": {
+          "name": "Victor Blackwood",
+          "vignette": "The patriarch of the Blackwood family, Victor is a stern and calculating businessman in his late sixties. He built the shipping corporation into a regional powerhouse through ruthless deals and strategic alliances. Now he is mysteriously missing.",
+          "appearanceDescription": "A tall, broad-shouldered man with silver-gray hair, a well-groomed mustache, and piercing eyes that match his daughter's. He favors expensive three-piece suits and always carries a silver-topped cane, though he doesn't need it to walk.",
+          "backstoryDescription": "Victor took over Blackwood Shipping at age thirty after his father's sudden death. He expanded the company aggressively, making powerful friends—and dangerous enemies. His disappearance three weeks ago left the company in chaos and his daughter terrified."
+        },
+        "Frank Moretti": {
+          "name": "Frank Moretti",
+          "vignette": "The slick, ambitious owner of Moretti Shipping Line, Frank is a self-made man who clawed his way up from the docks. He has been aggressively trying to buy out Blackwood Shipping for months, and his methods are not always legitimate.",
+          "appearanceDescription": "A stocky man in his fifties with a slicked-back mane of black hair, a gold chain visible at his collar, and a perpetual smirk. He wears expensive but slightly loud suits, favoring pinstripes and flashy tie pins.",
+          "backstoryDescription": "Born in the tenements near the waterfront, Frank Moretti started as a dockworker, then a foreman, then owner of a single barge. Through questionable dealings and strategic partnerships with organized crime, he built Moretti Shipping into Blackwood's primary competitor."
+        },
+        "Detective Clara Ruiz": {
+          "name": "Detective Clara Ruiz",
+          "vignette": "A sharp, no-nonsense detective with the city police department, Clara has a reputation for solving cases that others give up on. She and Vance have a complicated history—they used to be partners before he left the force.",
+          "appearanceDescription": "A woman in her late thirties with short, practical black hair streaked with gray, warm brown skin, and intelligent dark eyes. She wears a rumpled blazer over a shoulder holster, sensible shoes, and carries a worn leather notebook.",
+          "backstoryDescription": "Clara was Vance's partner for three years in the homicide division. When Vance left the force after uncovering corruption, she stayed and worked her way up. She has never forgotten the case that broke them apart, and her feelings about Vance remain complicated—respect mixed with resentment."
+        },
+        "Arthur Crane": {
+          "name": "Arthur Crane",
+          "vignette": "A quiet, meticulous man in his late fifties, Arthur Crane has worked as the Blackwood family's financial controller for thirty years. Beneath his mild manner lurks a deep well of bitterness and a methodical plan for revenge.",
+          "appearanceDescription": "A slender, balding man with wire-rimmed spectacles, pale skin, and thin lips that rarely smile. He dresses in conservative suits that are always slightly outdated. His hands are ink-stained, and his eyes are sharp and watchful behind his glasses.",
+          "backstoryDescription": "Arthur Crane was once in love with Amelia Blackwood, Victor's sister. When the family had Amelia committed to an asylum and she died there, Crane swore revenge. He insinuated himself into the family business, waiting decades for the perfect moment to destroy the Blackwood legacy."
+        }
+      }
+    },
+    "minimumCheckpointsSpacing": 2,
+    "thresholdFrontierCheckpointsCount": 3,
+    "maximumDistanceFromCheckpoint": 2,
+    "minimumDistanceToFinalEnding": 2
+  }
+}

@@ -1,0 +1,2671 @@
+{
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "The emergency broadcast on your phone didn't end with instructions; it ended with a wet, choking scream that cut to static just as the power grid blew, plunging your apartment into an oppressive, heavy darkness.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "Outside your third-story window, the familiar hum of the city has mutated into a chaotic symphony of screeching tires, distant explosions, and an underlying, rhythmic scuffling sound that makes the hairs on your arms stand up."
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "content": "A frantic, heavy pounding suddenly rattles your front door, accompanied by the panicked voice of your neighbor begging to be let in."
+              },
+              {
+                "type": "dialogue",
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "Sarah" }
+                ],
+                "content": "Please! Oh god, please open the door! There's something in the stairwell! It's coming!",
+                "instantLocationEffects": [],
+                "character": "Sarah"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "But from the alleyway directly below your fire escape, you hear the unmistakable sound of breaking glass and a guttural, distinctly non-human howl. You are trapped between two mounting threats. Every second you hesitate is a second closer to death.",
+                "instantLocationEffects": []
+              }
+            ],
+            "location": "Apartment 3B",
+            "choices": [
+              {
+                "targetSceneDescription": "You open the door to let Sarah in. She is terrified and tells you about the horrific creatures she saw in the hallway. However, your movement and the noise of the heavy locks might have drawn unwanted attention.",
+                "description": "Unbolt the heavy locks and pull the front door open to let Sarah inside, despite the danger of attracting whatever is prowling the hallway.",
+                "targetScene": "open_door_for_sarah",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Open the door to let Sarah in."
+              },
+              {
+                "targetSceneDescription": "You move cautiously toward the window and peer outside into the dark alley. The fire escape is cold and metal, and something is scaling it from below.",
+                "description": "Ignore the pounding at the front door and head straight for the window to investigate the fire escape, where the shattering glass and guttural howl originated.",
+                "targetScene": "check_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Investigate the fire escape."
+              },
+              {
+                "targetSceneDescription": "You hide in the darkness of your apartment, holding your breath. Sarah's screams suddenly cut short, and the heavy thudding of something large entering your home begins.",
+                "label": "Hide in the apartment and stay silent.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "hide_in_apartment",
+                "description": "Keep quiet, retreat to the bedroom closet or under the bed, and wait in total darkness, hoping both Sarah's pleas and the creature outside will go away."
+              }
+            ],
+            "id": "start"
+          }
+        },
+        "open_door_for_sarah": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Help Sarah slam the heavy oak door shut, twist the deadbolt, and drag your heavy wooden bookshelf in front of it to keep whatever is in the hallway out.",
+                "label": "Barricade the front door.",
+                "targetScene": "barricade_door",
+                "targetSceneDescription": "You and Sarah successfully barricade the front door with a heavy bookshelf. However, the noise attracts the attention of the creature in the hallway, and it begins violently throwing itself against the door. At the same time, the creature on the fire escape is getting closer.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You drag Sarah toward the window and climb onto the metal fire escape, only to find the Stalker climbing up right below you. You must make a split-second decision to fight or climb up to the roof.",
+                "description": "Grab Sarah's hand, bypass the front door, and scramble out the open window onto the iron fire escape, hoping to escape into the dark streets.",
+                "targetScene": "flee_with_sarah_to_fire_escape",
+                "label": "Flee with Sarah to the fire escape."
+              },
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You step out into the flickering hallway. The door to Sarah's apartment is wide open and blood-smeared. Suddenly, a low growl vibrates through the ceiling above you.",
+                "label": "Slip out into the hallway to investigate.",
+                "targetScene": "slip_into_hallway",
+                "description": "Slipping past the door into the dimly lit building hallway, you try to see if the coast is clear or find something to defend yourselves."
+              }
+            ],
+            "script": [
+              {
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "jump" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration",
+                "content": "You hurriedly unlock the door and swing it open. Sarah practically falls into the room, her clothes torn and her face pale with sheer terror. You quickly shut the door behind her, locking the deadbolt with a metallic click that sounds deafeningly loud in the silent apartment."
+              },
+              {
+                "content": "Thank God... thank God you opened it! There’s something... some kind of monster down the hall! It... it was eating Mr. Henderson! It tore him apart like he was paper!",
+                "type": "dialogue",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "character": "Sarah"
+              },
+              {
+                "content": "Before you can fully process her words, a heavy, wet thud echoes against your apartment door from the outside, followed by a wet, clicking sound. Something is sniffing at the gap under the door frame. Sarah gasps and covers her mouth with trembling hands.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "location": "Apartment 3B",
+            "passiveLocationEffects": ["dark"],
+            "id": "open_door_for_sarah"
+          }
+        },
+        "check_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "check_fire_escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "location": "The Fire Escape",
+            "choices": [
+              {
+                "targetSceneDescription": "You stand in your dark kitchen, clutching your improvised weapons, waiting for the creature to break through the glass. The air is tense as the Stalker's pale face appears at the windowpane.",
+                "description": "Grab a heavy cast-iron skillet and a chef's knife from your kitchen counter, brace yourself, and prepare to strike the creature as soon as it breaches your window.",
+                "label": "Prepare to fight the Stalker in your apartment.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "fight_stalker_apartment"
+              },
+              {
+                "targetSceneDescription": "You climb the cold metal steps of the fire escape, looking up at the dark sky. The wind is biting. Below you, the Stalker climbs with terrifying agility. You must reach the roof before it catches you.",
+                "label": "Climb up the fire escape to the rooftop.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Clamber out of the window and immediately start climbing the iron rungs of the ladder upwards, aiming for the relative safety and open space of the building's rooftop.",
+                "targetScene": "climb_to_roof"
+              },
+              {
+                "targetSceneDescription": "You quietly unlock your front door and step into the silent, blood-splattered hallway. Sarah is nowhere to be seen, only a pool of blood. You must find your way to the stairs.",
+                "description": "Slip quietly through the front door into the dim building hallway, hoping the horror that attacked Sarah has moved on, leaving an escape route down the main stairwell.",
+                "label": "Slip out into the hallway quietly.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "slip_out_hallway_quietly"
+              }
+            ],
+            "script": [
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You ignore the frantic pounding and pleading at your front door, turning your back on Sarah. Your survival instincts scream at you to find another way. You rush to the bedroom window, sliding it open, and peer out onto the rusty iron landing of the fire escape."
+              },
+              {
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "Below, in the pitch-black alleyway, glass shards littering the concrete glitter under the starlight. Emerging from the shattered windows of the basement is a twisted, pale silhouette—The Stalker. It moves on all fours, its long, spider-like limbs scaling the brick wall with unnatural, silent speed. It is already on the second-floor landing, climbing directly toward your window!"
+              },
+              {
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "Suddenly, from the hallway behind you, Sarah's desperate pounding on your door stops. There is a brief, blood-curdling shriek of pain and terror, followed by a sickening, wet crunch, then a heavy silence. Whatever was in the hallway has found her. And now, the Stalker is mere feet away from your window, its pale nostrils twitching as it catches your scent."
+              }
+            ]
+          }
+        },
+        "hide_in_apartment": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "targetScene": "distract_and_run",
+                "description": "Grab a heavy glass mug from your bedside table and fling it hard across the room into the living area, hoping the shattering sound will draw the creature away so you can dash for the front door.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The glass shatters in the living room, and the Stalker immediately lunges toward the noise. You sprint for the front door, but find it locked or blocked. You must make a fast move.",
+                "label": "Throw an object to distract the Stalker and run."
+              },
+              {
+                "description": "Stay absolutely motionless inside the dark closet, burying your face in your clothes to muffle your breathing, praying the Stalker's acute hearing won't detect your rapid heartbeat.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "stay_still_closet",
+                "label": "Stay still and silent in the closet.",
+                "targetSceneDescription": "You hide in the closet, holding your breath. The Stalker enters the bedroom, sniffing the air, scratching at the furniture. Its pale face presses right against the closet slats."
+              },
+              {
+                "targetScene": "ambush_creature",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Wait until the creature wanders close to your hiding spot with its back turned, then burst out and strike it in the skull with a heavy metal flashlight.",
+                "targetSceneDescription": "You leap out of the closet and smash the heavy flashlight onto the creature's head. It shrieks in pain, but the blow doesn't kill it. A desperate, close-quarters struggle begins.",
+                "label": "Ambush the creature."
+              }
+            ],
+            "location": "Apartment 3B",
+            "id": "hide_in_apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "script": [
+              {
+                "content": "Fear paralyzes you. Deciding that opening the door or going to the window is suicide, you retreat into your bedroom. You slip into the small bedroom closet, pulling the slatted wooden doors shut behind you. You sit in the pitch darkness, surrounded by hanging shirts, hugging your knees.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "Through the thin walls, you hear Sarah's frantic pounding on your door grow faster and more desperate, her voice breaking. Then, there is a wet, tearing sound, a choking gasp, and the heavy thump of something being dragged down the hallway. After that, absolute silence descends.",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "content": "But the silence doesn't last. A sharp, loud crash of shattering glass erupts from your living room. The Stalker has broken through your window. You hear its heavy, rhythmic scuffling on your wooden floor. It lets out a soft, clicking sound, clicking its jaw as it slowly walks around your apartment, hunting. It is entering the bedroom now, its heavy breathing audible right outside your closet door.",
+                "instantCharacterEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "barricade_door": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "label": "Climb out the window and face the Stalker.",
+                "targetSceneDescription": "You and Sarah scramble out the window. The Stalker is climbing up and is almost on your landing. With Sarah's help, you must push a heavy AC unit down onto the creature to knock it off the wall.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "escape_window_face_stalker",
+                "description": "The front door won't hold forever. Run to the window and climb onto the fire escape, ready to confront the Stalker before it can block your escape route entirely."
+              },
+              {
+                "description": "Arm yourselves with kitchen knives and heavy tools, standing side-by-side with Sarah, ready to make a desperate stand against whichever monstrosity breaks through first.",
+                "targetScene": "fight_with_sarah",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The bookshelf splintering signals the door is failing. A mutated creature bursts through, but with Sarah's distraction and your weapon, you have a chance to kill it.",
+                "label": "Make a stand and fight."
+              },
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You hide in the tight, dusty crawlspace of the ceiling. Below you, the two creatures crash into your room and fight each other over your scent. You must crawl to safety through the vents.",
+                "label": "Climb into the ceiling maintenance hatch.",
+                "description": "Spot the small maintenance hatch in your ceiling and hoist Sarah up, then climb in yourself, pulling the hatch shut just as the door and window give way.",
+                "targetScene": "climb_attic_hatch"
+              }
+            ],
+            "location": "Apartment 3B",
+            "id": "barricade_door",
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You and Sarah push with all your might, sliding the heavy oak bookshelf across the hardwood floor. It slams into place with a loud scrape, jamming tight against the front door just as something heavy throws itself against the exterior.",
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "dialogue",
+                "content": "It's not going to hold! I can hear it scraping... oh god, it's scratching through the wood!",
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "Sarah" }
+                ],
+                "character": "Sarah"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "A terrifying screech echoes from the apartment's back window. You look back and see the pale, elongated fingers of the Stalker tapping against the bedroom window glass, leaving bloody smudges. The glass is starting to crack. You are trapped in the middle, and the barricade is already splintering under the heavy blows from the hallway.",
+                "instantLocationEffects": ["shake"]
+              }
+            ]
+          }
+        },
+        "flee_with_sarah_to_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark", "wind"],
+            "choices": [
+              {
+                "description": "With the Stalker just a few feet below your landing, put your shoulders against the bulky window air-conditioning unit and shove it out of the frame, aiming directly at the creature's head.",
+                "label": "Push the heavy AC unit down onto the Stalker.",
+                "targetSceneDescription": "The heavy AC unit crashes down, striking the Stalker square in the chest. It shrieks and falls down three stories into the alleyway. The path down is clear, but the noise will attract more.",
+                "targetScene": "push_ac_unit",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "label": "Climb up to the rooftop with Sarah.",
+                "targetScene": "climb_up_to_roof_with_sarah",
+                "targetSceneDescription": "You scramble up to the gravel roof of the apartment building. The cold wind howls. The Stalker is right behind you, and there is no way down from the roof. You must find a way to trap or kill it.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Clamber up the rusty metal ladder with Sarah, heading straight toward the rooftop, trying to outrun the swift, agile predator."
+              },
+              {
+                "description": "Panicking at the sight of the creature below, pull Sarah back into the apartment and try to bolt out into the building hallway before the creature there notices.",
+                "label": "Turn back and try the building hallway.",
+                "targetSceneDescription": "You drag Sarah back inside, but the creature from the hallway has already smashed the door open. You are cornered in your own living room.",
+                "targetScene": "turn_back_to_hallway",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "location": "The Fire Escape",
+            "id": "flee_with_sarah_to_fire_escape",
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You grab Sarah by the hand and pull her toward the window. Cold air hits your face as you climb out onto the rusty iron landing of the fire escape. The metal groans under your weight, echoing loudly in the narrow alley below.",
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "content": "Below you, the Stalker freezes. Its milky-white eyes stare blindly up at you, its jaw opening in a grotesque, needle-toothed hiss. It leaps onto the ladder and begins climbing toward you with terrifying speed, its limbs moving like a spider's.",
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "The Stalker" }
+                ]
+              },
+              {
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "character": "Sarah",
+                "type": "dialogue",
+                "content": "It's too fast! It's going to catch us before we can reach the street! Do something!",
+                "instantLocationEffects": []
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "effect": "shake", "character": "Sarah" }
+            ]
+          }
+        },
+        "slip_into_hallway": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "content": "You decide that staying in the apartment is a trap. You peek out into the narrow, chilly hallway. The emergency lights flicker, casting long, eerie shadows across the peeling wallpaper. Down the hall, Sarah's door stands wide open, a thick smear of dark blood painted across the white door frame."
+              },
+              {
+                "instantLocationEffects": [],
+                "character": "Sarah",
+                "type": "dialogue",
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "content": "My... my keys are in my apartment. On the kitchen counter. If we get to the garage, we can use my car..."
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "A low, bubbling growl echoes from the ceiling vents above. The creature in the hallway is close, hunting, but the shadows are deep enough that you might be able to slip past if you are careful.",
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "location": "The Building Hallway",
+            "id": "slip_into_hallway",
+            "choices": [
+              {
+                "targetSceneDescription": "You slip into Sarah's apartment, which is silent but messy. You find her car keys on the counter, but a low growl from her bedroom indicates she didn't live alone, or the beast followed her.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Slip into Sarah's open, dark apartment to search for her car keys or her baseball bat, hoping to find a means of defense or escape.",
+                "label": "Search Sarah's apartment.",
+                "targetScene": "search_sarah_apartment"
+              },
+              {
+                "label": "Sneak toward the main stairwell.",
+                "description": "Creep slowly and quietly down the long hallway toward the main fire stairwell, keeping close to the walls and avoiding the flickering emergency lights.",
+                "targetScene": "sneak_to_stairs",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You sneak toward the stairs, but you see a large, skinless creature eating something in the middle of the corridor. You must find a way to distract it or slip past."
+              },
+              {
+                "label": "Retreat back inside your apartment.",
+                "description": "Hearing a sudden, loud splash of fluid and a heavy step down the hall, panic takes over. Pull Sarah back into your apartment and slam the door shut.",
+                "targetScene": "retreat_to_apartment_locked",
+                "targetSceneDescription": "You retreat and lock the door again, but the creature heard you. It charges the door, and now you have no choice but to face the fire escape or make a desperate stand.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ]
+          }
+        },
+        "fight_stalker_apartment": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You stand in your pitch-black kitchen, the cold metal handle of the cast-iron skillet in your left hand and a 10-inch chef's knife in your right. Your heart hammers against your ribs like a trapped bird.",
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "Through the glass, the Stalker's face is a horror show of pale skin, black veins, and milky, sightless eyes. It sniffs the air, its nostrils flaring. It raises its long, clawed hand and presses it against the glass. ",
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "content": "With a violent, explosive crash, the window shatters. Shards of glass rain onto the kitchen linoleum. The Stalker thrusts its head and shoulders through the opening, snapping its needle-toothed jaws in your direction. It knows you are here.",
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "location": "Apartment 3B",
+            "id": "fight_stalker_apartment",
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "targetScene": "strike_stalker_neck",
+                "targetSceneDescription": "You strike its neck with a sickening crunch. The Stalker falls backward off the sill, plunging down to the alley. But the sound of shattering glass has drawn the beast from the hallway into your room.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "The moment the glass shatters and the creature's pale head thrusts into the kitchen, swing your cast-iron skillet with all your strength at its throat.",
+                "label": "Strike its throat with the cast-iron skillet."
+              },
+              {
+                "label": "Crush the creature with the refrigerator.",
+                "description": "Wait until the creature is halfway through the window frame, then wedge your shoulder against the heavy, old refrigerator and push it over to pin it against the sill.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The heavy fridge crashes down, pinning the screeching Stalker between the heavy appliance and the window sill. It is trapped! You can now escape into the hallway.",
+                "targetScene": "crush_stalker_fridge"
+              },
+              {
+                "description": "Throw the heavy chef's knife directly at its pale, twitching face and immediately sprint for the front door, leaving the kitchen behind.",
+                "label": "Throw the knife and run.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The knife grazes its cheek, causing it to shriek. You run to the front door, but as you open it, you come face-to-face with the other creature carrying Sarah's body.",
+                "targetScene": "throw_knife_and_run"
+              }
+            ]
+          }
+        },
+        "climb_to_roof": {
+          "type": "impl",
+          "scene": {
+            "id": "climb_to_roof",
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "content": "You climb the cold, vibrating metal steps of the fire escape, your boots clanging against the iron rungs. Behind you, the rhythmic, metallic scratching of the Stalker's claws gets louder and faster. It is scaling the metal structure like an oversized insect.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You scramble over the top railing and tumble onto the flat, gravel-strewn roof of your apartment building. The cold night wind howls in your ears, carrying the smell of smoke from fires burning across the city skyline. "
+              },
+              {
+                "content": "Just twenty feet away is the brick penthouse housing the metal access door back into the building's central stairwell. Behind you, the pale, bald head of the Stalker emerges over the lip of the roof, its milky eyes scanning the darkness, its twitching nostrils locking onto your position.",
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "lock_roof_door_victory",
+                "label": "Escape into the building stairwell and lock the roof door.",
+                "description": "Sprint to the heavy metal roof access door, yank it open, dive into the stairwell, and slam it shut, throwing the heavy slide latch just as the Stalker reaches the roof.",
+                "targetSceneDescription": "You slam and latch the heavy metal door. The Stalker scratches frantically at the outside, but cannot break through. You can now descend the stairs to the lobby and escape."
+              },
+              {
+                "targetScene": "jump_neighboring_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Jump to the neighboring roof.",
+                "description": "Gauge the six-foot gap between your building's roof and the adjacent warehouse roof, take a running start, and leap into the dark void.",
+                "targetSceneDescription": "You leap across the gap, landing hard on the gravel of the adjacent warehouse. The Stalker pauses at the edge, unable or unwilling to follow. You find a fire escape on this side leading to safety."
+              },
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "strike_fingers_roof",
+                "label": "Bash its hands at the roof edge.",
+                "description": "Grab a rusty iron pipe from an old ventilation unit and stand at the edge of the roof, ready to bash the Stalker's fingers as soon as it tries to climb over the parapet.",
+                "targetSceneDescription": "You stand at the edge, pipe raised. As the Stalker's pale hands grasp the brick edge, you swing. You smash its fingers, sending it falling into the dark alley, but the shock of the impact throws you off balance."
+              }
+            ],
+            "passiveCharacterEffects": [],
+            "location": "The Fire Escape"
+          }
+        },
+        "slip_out_hallway_quietly": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [],
+            "location": "The Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "You slip out of your apartment, closing the door quietly behind you. The air in the hallway is thick and copper-sweet with the unmistakable smell of fresh blood. "
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "A few yards down the corridor, a massive pool of dark blood stains the carpet. Sarah is gone, but a trail of blood leads into her open apartment. The hallway is empty, but you can hear a wet, rhythmic tearing sound coming from inside her flat. Whatever took her is busy feeding.",
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "To your left is the fire door leading to the building's central stairwell. To your right are the elevators, their doors closed and dark due to the power outage. You must act silently and quickly before the creature in Sarah's apartment finishes its meal.",
+                "instantCharacterEffects": [],
+                "type": "narration"
+              }
+            ],
+            "choices": [
+              {
+                "label": "Descend the stairs toward the lobby.",
+                "description": "Creep down the concrete steps of the main stairwell, keeping your back to the wall and listening for any movement below.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You descend the stairs quietly. As you reach the lobby, you see the glass front doors are shattered and a pack of smaller creatures is roaming the street outside. You must find another way out.",
+                "targetScene": "creep_down_stairs_lobby"
+              },
+              {
+                "targetSceneDescription": "Inside Sarah's apartment, you find her dead cat on the floor, and a large shadow blocks the exit. The creature that killed Sarah is still here, and it has detected you.",
+                "targetScene": "hide_sarah_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Hide in Sarah's apartment.",
+                "description": "Slip inside Sarah's dark, open apartment, closing the door softly behind you, hoping to find a place to hide until morning."
+              },
+              {
+                "targetScene": "elevator_shaft_escape",
+                "targetSceneDescription": "You pry open the doors and grab the greasy steel cable. It's incredibly slippery, and as you slide, you hear a screech from the bottom of the shaft. You must hold on or drop.",
+                "description": "Use a metal crowbar from the hallway fire locker to pry open the closed elevator doors, intending to slide down the steel cables to the basement.",
+                "label": "Pry open the elevator doors and slide down.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "id": "slip_out_hallway_quietly"
+          }
+        },
+        "distract_and_run": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "type": "narration",
+                "content": "With trembling hands, you grab a heavy glass mug from your bedside table. You slide the closet door open just an inch, aim toward the living room, and hurl it with all your strength. "
+              },
+              {
+                "type": "narration",
+                "content": "The mug crashes against the far wall of the living room, shattering with a sharp, echoing ring. Instantly, the Stalker lets out a piercing, bird-like shriek and lunges out of the bedroom, its claws clicking furiously across the hardwood floors toward the sound.",
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "jump" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You burst out of the closet and sprint in the opposite direction, rushing toward the front door. Your lungs burn and adrenaline spikes as you reach the entrance. You grab the deadbolt, twisting it frantically. But your hands are slick with sweat, and the lock is stiff. You hear the Stalker realize it's been tricked—its heavy scuttling is turning back toward the bedroom!",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "id": "distract_and_run",
+            "location": "Apartment 3B",
+            "choices": [
+              {
+                "targetSceneDescription": "You sprint into the dark hallway. You trip over Sarah's lifeless body, falling hard. Behind you, the Stalker bursts out of your apartment, and down the hall, another creature turns to look at you.",
+                "description": "Fling the front door open and sprint blindly into the dark hallway, ignoring the danger of whatever might be waiting out there.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "run_into_hallway_blindly",
+                "label": "Sprint blindly into the hallway."
+              },
+              {
+                "description": "Snatch your car keys from the hook next to the front door, slip into the hallway, and make a run for the building's underground parking garage.",
+                "targetSceneDescription": "You grab your keys and sprint down the back stairs toward the underground garage. You find your car, but the garage is pitch-black and you hear scraping sounds of monsters on top of the vehicles.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "grab_keys_and_run",
+                "label": "Grab your keys and head for the parking garage."
+              },
+              {
+                "label": "Dive out onto the fire escape.",
+                "targetScene": "dive_to_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You slip out the window onto the fire escape. The alley below is dark and quiet, but as you reach the ground, a pack of mutated hounds blocks your path. You must fight or find a way around.",
+                "description": "Realizing the Stalker's back is turned, dive out the broken bedroom window onto the fire escape and climb down to the alley."
+              }
+            ],
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "stay_still_closet": {
+          "type": "impl",
+          "scene": {
+            "id": "stay_still_closet",
+            "location": "Apartment 3B",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "hold_breath_to_limit",
+                "targetSceneDescription": "You hold your breath until you almost faint. The Stalker sniffs the door slats for what feels like an eternity, then finally turns away toward a noise outside. You survive, but you are still trapped in the closet.",
+                "label": "Hold your breath and wait.",
+                "description": "Do not move a muscle. Close your eyes, pinch your nose, and hold your breath to the absolute limit of your endurance, hoping it loses the scent."
+              },
+              {
+                "targetSceneDescription": "You stab the knife through the slats, burying it in the Stalker's milky eye. It screeches in agony, tearing the closet doors off their hinges in its thrashing. You are thrown onto the floor.",
+                "targetScene": "stab_through_slats",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Carefully pull out your tactical folding knife, open it silently, and prepare to plunge the blade through the wooden slats directly into the creature's twitching nostril or eye.",
+                "label": "Stab the creature through the closet slats."
+              },
+              {
+                "description": "Brace your back against the closet wall and kick both wooden doors outward with all your force, slamming them hard into the creature's face.",
+                "label": "Kick the doors open into its face.",
+                "targetScene": "kick_door_open",
+                "targetSceneDescription": "The doors slam into the Stalker's face, fracturing its nose and knocking it backward. You scramble over its thrashing body, heading for the exit.",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "You squeeze your eyes shut in the pitch blackness of the closet. The wooden slats in the door let in tiny, horizontal slivers of dim gray light from the bedroom. Through those slats, you see a pale, muscular chest covered in twitching veins. The Stalker is standing directly outside."
+              },
+              {
+                "content": "Its long, elongated face presses closer. You can hear its wet, ragged breathing. A drop of thick, warm saliva drips through the slats, landing on your boot with a soft tap. It is sniffing the wood, its nostrils twitching violently. It is mere inches from your face, separated only by thin pine slats. Your lungs scream for air.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "ambush_creature": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "Adrenaline floods your system, replacing fear with cold, survival-driven rage. You grip the heavy steel Maglite flashlight, burst out of the closet, and swing it with all your might. ",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "effect": "jump", "character": "The Stalker" }
+                ]
+              },
+              {
+                "content": "CRACK! The solid aluminum head of the flashlight strikes the side of the Stalker's skull. A sickening crunch echoes in the bedroom as the beast's head whips to the side. It emits a high-pitched, metallic shriek of pain and stumbles backward, black blood spurting from its ear.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "The Stalker" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "But it doesn't fall. The creature whips its head back around, its sightless, milky eyes wide with fury. It lunges at you, wrapping its long, clawed limbs around your waist and slamming you hard against the wall. The flashlight slips from your grip and rolls under the bed, leaving you in near-total darkness, grappling for your life with a mutated predator.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ],
+            "id": "ambush_creature",
+            "passiveCharacterEffects": [
+              { "character": "The Stalker", "effect": "shake" }
+            ],
+            "choices": [
+              {
+                "targetSceneDescription": "You and the Stalker crash through the window frame onto the metal landing. The impact knocks the breath out of you, but the Stalker is dazed. You must decide whether to throw it over the railing or climb up.",
+                "label": "Tackle the creature out the window.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Lunge forward, wrapping your arms around its wet, wiry torso and using your momentum to drive both of you through the broken bedroom window onto the fire escape landing.",
+                "targetScene": "tackle_out_window"
+              },
+              {
+                "description": "Do not let up. Pin its shoulders with your knees and rain relentless, heavy blows down on its skull with the solid metal flashlight.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "pounding_with_flashlight",
+                "label": "Keep striking its head with the flashlight.",
+                "targetSceneDescription": "You pound its skull until it stops moving. You are covered in its black, foul-smelling blood. The Stalker is dead, but the noise of the struggle has echoed throughout the building. You must leave immediately."
+              },
+              {
+                "targetSceneDescription": "You run to the kitchen, but the Stalker recovery is too fast. It pounces on your back, knocking you to the floor. You reach desperately for the knife on the counter.",
+                "label": "Scramble to the kitchen for a knife.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Push the creature off you and scramble back, sprinting into the kitchen to grab the long carving knife from the counter.",
+                "targetScene": "run_for_kitchen_knife"
+              }
+            ]
+          }
+        },
+        "escape_window_face_stalker": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "id": "escape_window_face_stalker",
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "push_ac_unit",
+                "label": "Push the AC unit down onto the Stalker.",
+                "description": "Put your shoulder against the bulky AC unit in the window frame and shove it down onto the climbing beast."
+              },
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Try to squeeze past the Stalker.",
+                "targetSceneDescription": "You try to climb past the creature, but its long limbs wrap around your ankles and drag you down into the dark alley.",
+                "description": "Try to squeeze past the Stalker on the narrow ladder to reach the ground.",
+                "targetScene": "ending_death_beast"
+              }
+            ],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "You scramble out of the bedroom window onto the cold metal platform, with Sarah right behind you. The Stalker is scaling the ladder with terrifying agility, its pale face just a few rungs below. "
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "The heavy window-mounted air conditioning unit is wedged loose in the bedroom frame. If you can push it, it might knock the creature off the building. But you have to time it perfectly."
+              }
+            ],
+            "location": "The Fire Escape"
+          }
+        },
+        "fight_with_sarah": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Lunge together at the beast, driving your chef's knife into its neck while Sarah distracts it with a heavy frying pan.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "ending_fight_victory",
+                "label": "Attack the creature together with Sarah.",
+                "targetSceneDescription": "You and Sarah manage to slay the beast in a frantic, terrifying struggle. You barricade the door again, surviving the night together."
+              },
+              {
+                "targetSceneDescription": "You escape out the window, leaving Sarah to her fate. You survive, but the memory of her screams haunts you forever.",
+                "description": "When the beast lunges at Sarah, panicking, turn and flee out the broken bedroom window, leaving her behind.",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Flee and leave Sarah behind.",
+                "targetScene": "ending_coward_escape"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "location": "Apartment 3B",
+            "script": [
+              {
+                "instantLocationEffects": ["shake"],
+                "content": "The bookshelf splinters with a deafening crack. A large, skinless, mutated beast from the hallway forces its head and shoulders through the shattered door frame, snapping its jaws wildly.",
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "content": "For Henderson! Die, you bastard!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "type": "dialogue",
+                "character": "Sarah"
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "Sarah screams, raising a heavy cast-iron skillet, ready to strike. You grip your chef's knife, your hands slick with sweat. This is it—live or die together.",
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "id": "fight_with_sarah"
+          }
+        },
+        "climb_attic_hatch": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "script": [
+              {
+                "content": "You reach up and pop open the dusty wood panels of the ceiling maintenance hatch. You hoist Sarah up first, her arms straining as she climbs into the dark, insulated crawlspace. You grab the edge and swing yourself up, pulling the wooden hatch back into place just as the front door collapses with a horrific crash below you.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "content": "Through the cracks in the hatch, you watch in terrified silence. The beast from the hallway and the Stalker from the window breach the bedroom at the exact same moment. Finding no humans, they mistake each other for rivals. A brutal, snarling clash erupts directly beneath you, shaking the ceiling joists.",
+                "instantLocationEffects": ["shake"],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "dialogue",
+                "character": "Sarah",
+                "instantCharacterEffects": [],
+                "content": "We need to move... the dust is making me want to sneeze... and the vents lead to other parts of the building."
+              }
+            ],
+            "id": "climb_attic_hatch",
+            "choices": [
+              {
+                "targetScene": "crawl_lobby_vents",
+                "label": "Crawl toward the lobby vents.",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Follow the wider ductwork down and toward the front lobby, hoping to find an exit to the street.",
+                "targetSceneDescription": "You crawl through the narrow ducts toward the lobby, but the vents are blocked by smoke from a fire below. You must turn back or push through the smoke."
+              },
+              {
+                "targetSceneDescription": "You crawl upward and emerge from a ventilation grate onto the rooftop. The air is cold and clear. But the roof access door is locked. You must find another way down.",
+                "description": "Follow the vertical vents upwards, towards the fresh air of the rooftop.",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Crawl toward the roof vents.",
+                "targetScene": "crawl_roof_vents"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ]
+          }
+        },
+        "push_ac_unit": {
+          "type": "impl",
+          "scene": {
+            "id": "push_ac_unit",
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "location": "The Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration",
+                "content": "You line up your shoulders with the bulky metal air conditioning unit in the bedroom window frame. Sarah joins you, placing her hands next to yours. On the count of three, you both shove with all your strength."
+              },
+              {
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "fall" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration",
+                "content": "The heavy unit breaks free, sliding out of the frame and plunging down the exterior wall. It strikes the climbing Stalker square in its pale chest with a horrific metallic clang. The creature screeches as it is ripped off the brickwork, falling three stories into the trash bins below."
+              },
+              {
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "character": "Sarah",
+                "instantLocationEffects": [],
+                "content": "It worked! It's down! But look... other things are moving in the alley now. We have to move, fast!",
+                "type": "dialogue"
+              }
+            ],
+            "choices": [
+              {
+                "description": "With the Stalker knocked down, hurry down the iron stairs of the fire escape into the dark alley and run for the street.",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Descend to the alley and head for the street.",
+                "targetScene": "descend_to_alley_street",
+                "targetSceneDescription": "You and Sarah reach the ground. The alley is dark and filled with trash. You see Sarah's car parked nearby. This is your chance."
+              },
+              {
+                "description": "Fearing the noise will bring more monsters to the alley, turn and climb up to the rooftop instead.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "climb_up_to_roof_with_sarah",
+                "label": "Climb up to the roof with Sarah."
+              }
+            ]
+          }
+        },
+        "climb_up_to_roof_with_sarah": {
+          "type": "impl",
+          "scene": {
+            "id": "climb_up_to_roof_with_sarah",
+            "location": "The Fire Escape",
+            "choices": [
+              {
+                "label": "Enter the penthouse and lock the roof door.",
+                "description": "Pull Sarah inside the brick roof access penthouse, slam the heavy metal door, and slide the lock into place.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "lock_roof_door_victory"
+              },
+              {
+                "description": "Gauge the gap to the adjacent building's rooftop and jump together, holding hands to ensure you both make it.",
+                "targetSceneDescription": "You both jump across the gap. You land hard, but Sarah slips on the gravel and hangs off the edge. You must pull her up before she loses her grip.",
+                "label": "Jump to the neighboring roof with Sarah.",
+                "targetScene": "jump_neighboring_roof_with_sarah",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "targetScene": "strike_fingers_roof_with_sarah",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Grab a metal pipe from the roof vents and stand together to defend the roof edge.",
+                "targetSceneDescription": "With Sarah's help, you strike the creature's claws as it climbs over the roof parapet, sending it falling to its doom.",
+                "label": "Stand and fight at the roof edge."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and Sarah scramble over the roof's parapet, collapsing onto the rough gravel. The wind howls violently up here, carrying the distant wails of car alarms and sirens from the city streets. ",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You look back. Whether the Stalker survived the fall or a new predator has taken its place, a dark, spindly shape is rapidly scaling the fire escape ladder, its claws scraping against the iron. There is no way down from the edges of this roof—you are cornered.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "character": "Sarah",
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "Sarah" }
+                ],
+                "instantLocationEffects": [],
+                "type": "dialogue",
+                "content": "There's a door over there! The maintenance stairs! Or... or we can jump to the next building! It's close!"
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "effect": "shake", "character": "Sarah" }
+            ],
+            "passiveLocationEffects": ["dark", "wind"]
+          }
+        },
+        "turn_back_to_hallway": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Brace yourselves and prepare to fight the creature that has breached your apartment.",
+                "label": "Face the creature in the living room.",
+                "targetScene": "fight_with_sarah"
+              },
+              {
+                "description": "Try to dodge past its lunging claws and sprint into the hallway.",
+                "label": "Sprint past it into the hallway.",
+                "targetScene": "ending_death_beast",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "Panicked by the sight of the Stalker climbing up the ladder, you pull Sarah back inside through the window, slamming it shut. ",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "But as you turn around, you realize you've run from one mouth straight into another. The front door of your apartment has been completely demolished, splintered into kindling. Standing in your dark living room is the other creature—a skinless, muscular brute, its maw dripping with fresh blood. It turns its sightless head toward you and roars.",
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ],
+            "id": "turn_back_to_hallway"
+          }
+        },
+        "search_sarah_apartment": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "location": "The Building Hallway",
+            "id": "search_sarah_apartment",
+            "choices": [
+              {
+                "description": "Snatch the heavy metal keyring from the kitchen counter and whisper to Sarah that it's time to go to the stairs.",
+                "label": "Grab the keys and head for the stairs.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "sneak_to_stairs"
+              },
+              {
+                "description": "Cautiously peer into the dark bedroom to identify the source of the low growl before making a move.",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Investigate the growl in the bedroom.",
+                "targetScene": "investigate_sarah_bedroom",
+                "targetSceneDescription": "You peek into the bedroom and see Sarah's giant, mutated Rottweiler. It has been infected and lunges at you. You must defend yourself."
+              },
+              {
+                "description": "Fearing the growl is a predator, abandon the search and slip back into the hallway.",
+                "label": "Retreat back to the hallway.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "slip_into_hallway"
+              }
+            ],
+            "script": [
+              {
+                "content": "You and Sarah slip into her apartment. It is the mirror image of yours, but decorated with colorful rugs and school supplies. Everything is in disarray—drawers pulled open, a floor lamp knocked down and shattered. ",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration",
+                "content": "On the kitchen counter, illuminated by a sliver of moonlight, lies a set of keys with a colorful keychain. But as you reach for them, a low, wet growl vibrates through the darkness from the bedroom down her short hallway."
+              },
+              {
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "Sarah" }
+                ],
+                "type": "dialogue",
+                "character": "Sarah",
+                "content": "Oh no... Buster... is that Buster? Or is it... something else?"
+              }
+            ],
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "sneak_to_stairs": {
+          "type": "impl",
+          "scene": {
+            "location": "The Building Hallway",
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You and Sarah creep down the narrow hallway, stepping carefully to avoid the flickering pools of emergency light. As you approach the heavy fire door of the stairwell, you freeze.",
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "content": "Crouched in the center of the corridor is a massive, skinless creature. It is hunched over a body, its jaw dripping with dark fluids as it feeds. The tearing of flesh and the crunching of bone are sickeningly loud. It has no eyes, but its massive ears twitch at every sound. The stairwell door is just ten feet past the beast. There is no other way down.",
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "targetScene": "distract_corridor_beast",
+                "description": "Throw a small, heavy object (like a brass paperweight from Sarah's apartment) down the opposite stairwell to draw the creature away.",
+                "targetSceneDescription": "The object clangs down the far hallway. The skinless brute lifts its head and bounds toward the sound, clearing the path to the stairwell. You and Sarah slip inside.",
+                "label": "Distract the creature with a thrown object.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "label": "Try to sneak past it in the shadows.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "sneak_past_corridor_beast",
+                "targetSceneDescription": "You sneak past the beast, but Sarah steps on a creaky floorboard. The creature whips its head around and lunges. You must run down the stairs immediately.",
+                "description": "Move as slowly and silently as possible through the deep shadows along the wall, hoping its lack of eyes means it won't see you."
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Charge and attack the creature.",
+                "description": "Charge the eating creature and strike it with your weapon while its attention is focused on its meal.",
+                "targetScene": "ending_death_beast"
+              }
+            ],
+            "id": "sneak_to_stairs"
+          }
+        },
+        "retreat_to_apartment_locked": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "id": "retreat_to_apartment_locked",
+            "script": [
+              {
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "Panic overcomes you. You grab Sarah's arm and pull her back into your apartment, slamming the door shut and locking the deadbolt. "
+              },
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "content": "But the click of the lock is immediately answered by a heavy, thunderous roar from the hallway. Heavy footsteps sprint down the corridor, and a massive body slams into the door. The wood groans and cracks. The door will not hold for more than a few seconds.",
+                "type": "narration"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "description": "Unlock the window and climb out onto the iron fire escape immediately.",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Escape to the fire escape.",
+                "targetScene": "flee_with_sarah_to_fire_escape"
+              },
+              {
+                "label": "Stand and fight the intruder.",
+                "targetScene": "fight_with_sarah",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Grab what weapons you can find and stand ready with Sarah to fight when the door gives way."
+              },
+              {
+                "label": "Hide under the bed.",
+                "targetScene": "ending_death_beast",
+                "description": "Try to pull Sarah under the bed in the bedroom, hoping the beast won't look there.",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "effect": "shake", "character": "Sarah" }
+            ]
+          }
+        },
+        "strike_stalker_neck": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "label": "Descend the fire escape alone.",
+                "targetSceneDescription": "You climb down to the alleyway alone. It is quiet, but you need to find a vehicle or a safe way out of the city.",
+                "description": "Climb out of the broken window onto the fire escape and climb down into the dark alley to escape.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "descend_to_alley_alone"
+              },
+              {
+                "description": "Slip out the front door into the building hallway before the creature entering your apartment spots you.",
+                "label": "Slip out into the hallway.",
+                "targetScene": "slip_out_hallway_quietly",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "location": "Apartment 3B",
+            "passiveLocationEffects": ["dark"],
+            "id": "strike_stalker_neck",
+            "passiveCharacterEffects": [],
+            "script": [
+              {
+                "content": "Your swing is true. The heavy cast-iron skillet connects with the side of the Stalker's neck with a sickening, wet crunch. Its head whips to the side, and its grip on the window frame slips. It shrieks as it plunges backward into the darkness of the alley below, landing with a heavy thud.",
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "But there is no time to celebrate. The explosive crash of glass and the creature's shriek have alerted the other monster down the hallway. You hear a furious roar and the sounds of your apartment's front door being ripped off its hinges. The hallway brute is inside your living room, and it is heading for the kitchen!"
+              }
+            ]
+          }
+        },
+        "crush_stalker_fridge": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "passiveCharacterEffects": [
+              { "character": "The Stalker", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "targetScene": "ending_death_beast",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Step over the creature onto the fire escape.",
+                "description": "Step over the thrashing, pinned creature to reach the fire escape ladder."
+              },
+              {
+                "description": "Turn your back on the trapped monster and run out the front door into the building hallway.",
+                "label": "Escape into the building hallway.",
+                "targetScene": "slip_out_hallway_quietly",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "crush_stalker_fridge",
+            "script": [
+              {
+                "content": "You wedge your shoulder against the heavy, old-fashioned refrigerator and push with all your strength. The appliance tips, then crashes down onto the window sill with a deafening metallic boom.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "shake" }
+                ],
+                "content": "The Stalker shrieks in agony as it is pinned flat between the heavy refrigerator and the window frame. Its limbs flail wildly, and its needle-toothed jaws snap just inches from your floor, but it cannot free itself. It is trapped.",
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "The loud crash has surely alerted any other monsters nearby. You must move immediately."
+              }
+            ]
+          }
+        },
+        "throw_knife_and_run": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "description": "Desperate, wrench open the metal door of the hallway garbage chute next to your door and slide feet-first into the dark tube.",
+                "label": "Dive into the hallway garbage chute.",
+                "targetSceneDescription": "You slide down the metal chute and land on a soft, smelly pile of trash bags in the dumpster. You are bruised and dirty, but alive. You must escape the basement.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "dive_garbage_chute"
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Force your way past the brute.",
+                "targetScene": "ending_death_beast",
+                "description": "Try to ram your shoulder into the brute's chest and force your way past it."
+              }
+            ],
+            "script": [
+              {
+                "content": "You throw the heavy chef's knife. It spins through the air and slices across the Stalker's pale cheek. The creature shrieks in pain, clutching its face, which buys you just enough time to spin on your heel and sprint out of the kitchen.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "You reach the front door, rip it open, and take a step out—only to freeze in terror. Standing right in front of you in the dim hallway is the massive, skinless brute from the hallway, carrying the lifeless body of Sarah. It drops her body, its wet, toothy jaw opening in a silent, horrific snarl. You are trapped between the two beasts."
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "id": "throw_knife_and_run"
+          }
+        },
+        "lock_roof_door_victory": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "instantLocationEffects": ["shake"],
+                "content": "You slam the heavy metal fire door of the roof penthouse shut. You grab the thick iron slide bolt and slam it home. A split second later, a heavy THUD rattles the door, followed by the furious scratching of claws on the steel exterior. ",
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "content": "The Stalker is trapped outside on the roof. It lets out a muffled, frustrated shriek, but the heavy metal door holds firm. You are safe in the concrete stairwell—for now. The stairs lead all the way down to the ground floor lobby and the underground parking.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "location": "The Building Hallway",
+            "id": "lock_roof_door_victory",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Descend the concrete steps of the stairwell toward the lobby, hoping the street is clear.",
+                "label": "Descend the stairs toward the lobby.",
+                "targetScene": "creep_down_stairs_lobby"
+              },
+              {
+                "description": "Search the building's utility closet in the stairwell for anything useful.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You find a heavy metal crowbar and a working flashlight in the utility closet. You are now better prepared.",
+                "targetScene": "search_utility_closet",
+                "label": "Search the utility closet."
+              }
+            ]
+          }
+        },
+        "jump_neighboring_roof": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "targetScene": "ending_escape_alone",
+                "targetSceneDescription": "You climb down the fire escape and escape into the dark streets. You are alone, but you survived the night.",
+                "description": "Descend the warehouse's exterior ladder to the street level and run into the night, looking for safety.",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Descend to the street and flee."
+              },
+              {
+                "label": "Enter the warehouse.",
+                "targetScene": "enter_warehouse",
+                "targetSceneMode": "create-new-scene-stub",
+                "description": "Slip through an open skylight into the dark warehouse below to hide and wait out the outbreak.",
+                "targetSceneDescription": "You climb inside the dark warehouse, only to find that it is being used as a nesting ground for dozens of the skinless creatures. You are cornered."
+              }
+            ],
+            "script": [
+              {
+                "content": "You back up to the far edge of the roof, take a deep breath, and sprint toward the edge. You leap into the cold night air, soaring across the six-foot gap between the buildings.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You land hard on the gravel-covered roof of the adjacent warehouse, rolling to absorb the impact. Scrapes sting your knees and hands, but you are alive. ",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Behind you, the Stalker stands on the edge of your apartment building's roof. It clicks its jaws and snarls, but it refuses to make the jump, pacing back and forth in frustration. On this warehouse roof, a sturdy iron fire escape ladder leads down to a quiet side street.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "location": "The Fire Escape",
+            "id": "jump_neighboring_roof"
+          }
+        },
+        "strike_fingers_roof": {
+          "type": "impl",
+          "scene": {
+            "id": "strike_fingers_roof",
+            "location": "The Fire Escape",
+            "choices": [
+              {
+                "label": "Try to catch yourself on the parapet.",
+                "targetScene": "catch_self_on_parapet",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You manage to grab the edge, but your fingers slip on the cold brick. You fall into the dark alley, meeting the same fate as the creature.",
+                "description": "Lunging forward, try to grab the rough brick edge of the roof parapet before you tilt over the edge."
+              },
+              {
+                "description": "Throw your body weight backward, tumbling onto the hard gravel of the roof to avoid falling over.",
+                "targetSceneDescription": "You fall backward onto the gravel, knocking the wind out of you. You are bruised but safe on the roof. The Stalker is gone. You can now use the roof access door to escape.",
+                "targetScene": "fall_back_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Throw your weight backward."
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "script": [
+              {
+                "content": "You stand at the very edge of the roof, clutching a heavy, rusted iron pipe you found near a vent. Below you, the Stalker's pale, spindly fingers reach over the brick parapet, grasping for a handhold.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "content": "With a desperate roar, you swing the pipe down with all your strength. CRACK! The solid iron slams into the creature's fingers. Its bones shatter, and it lets out a piercing shriek of agony. Its grip fails, and it plunges backward into the pitch-black alley below.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "But the force of your swing, combined with the slippery gravel under your boots, throws you dangerously off balance. You tilt precariously over the three-story drop."
+              }
+            ]
+          }
+        },
+        "creep_down_stairs_lobby": {
+          "type": "impl",
+          "scene": {
+            "location": "The Building Hallway",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "id": "creep_down_stairs_lobby",
+            "choices": [
+              {
+                "label": "Escape through the basement.",
+                "targetSceneDescription": "You enter the dark, damp basement. You see a light at the end of a corridor—the building supervisor's office, which has a door leading directly to the alleyway. But there is a sound of scratching nearby.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "basement_escape",
+                "description": "Quietly slip through the basement door near the lobby, heading toward the building's laundry and boiler rooms."
+              },
+              {
+                "description": "Try to creep out of the shattered lobby doors, using the abandoned cars on the street as cover to reach the parking garage.",
+                "label": "Sneak onto the street.",
+                "targetSceneDescription": "You try to sneak onto the street, but a pack of mutated hounds detects your scent. You must run for the nearest parked car and lock yourself in.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "sneak_to_car"
+              }
+            ],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "You move down the cold, concrete stairwell, your hand sliding along the dusty metal railing. Your steps are a whisper. Each flight of stairs feels longer than the last, the darkness growing more oppressive as you leave the roof behind."
+              },
+              {
+                "content": "You finally reach the ground floor. Peeking through the wire-mesh window of the stairwell's fire door, you look out into the building's lobby. The heavy glass double doors leading to the street have been completely shattered. ",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "content": "Outside, on the cracked asphalt under the dim starlight, a pack of smaller, quadrapedal creatures with pale, hairless skin is pacing back and forth. They are sniffing the air, growling softly. The main street is completely blocked. You cannot go out the front.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ]
+          }
+        },
+        "hide_sarah_apartment": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Sprint to Sarah's bedroom window, fling it open, and dive onto her fire escape landing before the creature can grab you.",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Flee through Sarah's bedroom window.",
+                "targetScene": "descend_to_alley_alone"
+              },
+              {
+                "label": "Hide under the kitchen table.",
+                "targetScene": "ending_death_beast",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Desperately try to slide under her kitchen table, hiding behind the hanging tablecloth."
+              }
+            ],
+            "script": [
+              {
+                "content": "You slip into Sarah's apartment, closing the door softly until it clicks. The interior is dead silent, save for the hum of a battery-powered clock. The smell of copper is overwhelming. On the kitchen tile, you step on something soft—the lifeless body of her cat.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Suddenly, a massive, dark silhouette rises from behind the kitchen island. It is the skinless brute. Its hands are covered in dark blood, and its jaw is wide open, exposing rows of yellow teeth. It turns its sightless face directly toward you, letting out a low, vibrating growl. It knows you are here.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              }
+            ],
+            "location": "The Building Hallway",
+            "passiveCharacterEffects": [],
+            "id": "hide_sarah_apartment",
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "elevator_shaft_escape": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "location": "The Building Hallway",
+            "choices": [
+              {
+                "description": "Let go of the cable and drop down, hoping the elevator car is close below.",
+                "targetScene": "drop_shaft_darkness",
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Drop down into the dark shaft.",
+                "targetSceneDescription": "You drop ten feet, landing hard on top of the elevator car. The impact rattles your teeth, but you are alive. There is an escape hatch on the roof of the car."
+              },
+              {
+                "description": "Use all your strength to climb up the greasy cable toward the mechanical room on the roof.",
+                "targetScene": "climb_cable_up",
+                "label": "Climb up the cable.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb up, but your hands are too slick with grease. You lose your grip and slide down, tearing your palms, before falling to your doom."
+              },
+              {
+                "targetScene": "ending_death_beast",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Pry open the doors of a lower floor.",
+                "description": "Reach out and grab the frame of the middle-floor elevator door, trying to pry it open and pull yourself out."
+              }
+            ],
+            "id": "elevator_shaft_escape",
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You use the metal pry bar from the hallway fire locker to wedge open the heavy sliding elevator doors. They slide back with a screech, revealing a pitch-black vertical abyss. A cold, drafty wind blows up from the shaft, smelling of oil and dust.",
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "You grab the greasy steel suspension cable, wrapping your legs around it, and swing into the shaft. The cable vibrates violently under your weight. As you slide down slowly, your palms burning, a terrifying screech echoes from the very bottom of the shaft—and you hear something heavy beginning to climb up the cable from below!",
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "passiveCharacterEffects": []
+          }
+        },
+        "run_into_hallway_blindly": {
+          "type": "impl",
+          "scene": {
+            "location": "The Building Hallway",
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "content": "You bolt out of your apartment door, your heart hammering in your chest. In the pitch blackness of the hallway, your foot catches on a soft obstacle, and you plunge forward, crashing hard onto the carpet. ",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "You look back. Your hands are wet with blood—you have tripped over Sarah's lifeless body. Behind you, the Stalker bursts out of your apartment, snarling. Down the hall, the skinless brute turns to look in your direction, its massive jaw clicking. You are caught on the floor between them.",
+                "type": "narration"
+              }
+            ],
+            "id": "run_into_hallway_blindly",
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Dive into the garbage chute.",
+                "description": "Scramble across the floor and dive into the metal garbage chute nearby.",
+                "targetScene": "dive_garbage_chute"
+              },
+              {
+                "label": "Crawl into Sarah's apartment.",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Drag yourself on all fours into Sarah's open apartment door to hide.",
+                "targetScene": "hide_sarah_apartment"
+              },
+              {
+                "label": "Play dead.",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Stay absolutely still, closing your eyes and praying they ignore you.",
+                "targetScene": "ending_death_beast"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": []
+          }
+        },
+        "grab_keys_and_run": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "label": "Get in your car and drive out.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You burst through the garage security gate in your car, headlights illuminating the ruined streets. You drive out of the city, escaping the nightmare.",
+                "targetScene": "ending_car_escape_victory",
+                "description": "Press the key fob to unlock your sedan, jump inside, lock the doors, crank the ignition, and slam the pedal to the metal toward the exit gate."
+              },
+              {
+                "label": "Creep back to the stairwell.",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Fearing the noise of the engine will draw them, try to creep to the garage stairwell to find another way.",
+                "targetScene": "creep_down_stairs_lobby"
+              }
+            ],
+            "id": "grab_keys_and_run",
+            "location": "The Building Hallway",
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "You snatch your car keys from the hook and barrel down the narrow concrete steps of the back stairwell, bypassing the main floors. You emerge into the vast, freezing concrete cavern of the underground parking garage. ",
+                "instantLocationEffects": []
+              },
+              {
+                "content": "The garage is in near-total darkness, illuminated only by the faint green glow of emergency exit signs. Your sedan is parked just fifty feet away. But as you step onto the concrete floor, a metallic scratching sound echoes from above. You look up and see pale, spider-like shapes crawling across the concrete ceiling beams, right above the parked cars. They are sniffing the air, searching for you.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "dive_to_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "content": "While the Stalker is distracted by the shattered glass in the living room, you slide open your bedroom window and dive out onto the cold metal platform of the fire escape. ",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You look down into the deep, shadows of the alley. It is cold and quiet below, save for the hum of distant fires. The ladder down is clear, but you also have the ladder leading up to the roof. You must make your choice quickly before the Stalker realizes you've slipped away.",
+                "instantLocationEffects": []
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "id": "dive_to_fire_escape",
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "label": "Descend to the alleyway alone.",
+                "description": "Hustle down the metal stairs of the fire escape into the dark alley to try and escape on foot.",
+                "targetScene": "descend_to_alley_alone",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "climb_to_roof",
+                "label": "Climb up to the roof.",
+                "description": "Fearing the alley is too dangerous, climb up to the rooftop instead."
+              }
+            ],
+            "location": "The Fire Escape"
+          }
+        },
+        "hold_breath_to_limit": {
+          "type": "impl",
+          "scene": {
+            "id": "hold_breath_to_limit",
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "content": "Your lungs burn like dry paper, and black spots dance across your vision. Just as you are about to gasp for air and reveal yourself, a loud, thunderous explosion from a block away shakes the entire building, shattering a nearby window.",
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "The Stalker lets out a startled, clicked chirp and immediately pivots, sprinting out of the bedroom towards the source of the noise. You finally release your breath, gasping quietly in the dark. It is quiet now, but the creature is still in the apartment. You must act.",
+                "instantCharacterEffects": []
+              }
+            ],
+            "location": "Apartment 3B",
+            "choices": [
+              {
+                "label": "Slip out onto the fire escape.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "dive_to_fire_escape",
+                "description": "Once you are sure the creature is out of the bedroom, open the closet, slip through the open window, and climb onto the fire escape."
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Escape into the building hallway.",
+                "targetScene": "slip_out_hallway_quietly",
+                "description": "Slip out the bedroom door and run out the front door into the building hallway."
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": []
+          }
+        },
+        "stab_through_slats": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "run_for_kitchen_knife",
+                "label": "Scramble to the kitchen.",
+                "description": "Push past the thrashing, blinded beast and run into the kitchen to find a larger weapon."
+              },
+              {
+                "description": "Try to grab its throat and wrestle it to the ground.",
+                "label": "Wrestle the beast.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "ending_death_beast"
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "content": "You slide the thin blade of your pocket knife through a gap in the slats, lining it up with the creature's twitching nostril. With a desperate yell, you plunge the blade forward. "
+              },
+              {
+                "content": "It buries deep into the Stalker's face. The creature lets out an ear-splitting, metallic shriek of absolute agony. It thrashes violently, its heavy, muscular limbs smashing through the closet doors, shattering the pine wood into splinters. You are thrown onto the bedroom floor, covered in splinters, as the blinded beast flails around the room in a bloody frenzy.",
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ],
+            "location": "Apartment 3B",
+            "id": "stab_through_slats",
+            "passiveCharacterEffects": []
+          }
+        },
+        "kick_door_open": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "label": "Escape to the fire escape.",
+                "targetScene": "dive_to_fire_escape",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Slam your bedroom window open and vault onto the fire escape."
+              },
+              {
+                "description": "Run out of the bedroom and sprint out the front door of your apartment.",
+                "label": "Escape into the building hallway.",
+                "targetScene": "slip_out_hallway_quietly",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You brace your back against the rear wall of the closet and bring both feet up, kicking the slatted wooden doors outward with all the force you can muster. ",
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "effect": "fall", "character": "The Stalker" }
+                ],
+                "content": "The heavy wooden doors fly outward, slamming directly into the Stalker's face. The impact splits its snout and knocks the lanky predator flat onto its back on the bedroom floor. It lets out a startled, wet groan. You scramble over its thrashing limbs, sprinting out of the room before it can recover its senses.",
+                "type": "narration"
+              }
+            ],
+            "location": "Apartment 3B",
+            "id": "kick_door_open",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "tackle_out_window": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "label": "Shove the Stalker off the fire escape.",
+                "description": "Grab its legs and hoist the dazed beast over the narrow iron safety railing into the alley below.",
+                "targetSceneDescription": "You heave the Stalker over the railing. It plunges three stories down, landing with a wet crunch. You are left alone on the fire escape, with the path down clear.",
+                "targetScene": "shove_stalker_off_railing"
+              },
+              {
+                "targetScene": "climb_to_roof",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Climb up to the roof.",
+                "description": "Ignore the beast, scramble up the iron ladder, and climb toward the roof."
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "id": "tackle_out_window",
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "You grab the wiry, cold torso of the Stalker, lock your arms around it, and drive forward with all your weight. Together, you crash through the bedroom window pane, shattering the glass and tumbling out onto the cold, metal fire escape landing.",
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "You hit the metal grating hard, knocking the wind out of your lungs. The Stalker lands on its back, dazed and disoriented by the fall, its long limbs twitching as it tries to regain its footing on the narrow platform. This is your chance.",
+                "instantLocationEffects": []
+              }
+            ],
+            "location": "The Fire Escape",
+            "passiveCharacterEffects": []
+          }
+        },
+        "pounding_with_flashlight": {
+          "type": "impl",
+          "scene": {
+            "location": "Apartment 3B",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "label": "Escape to the fire escape.",
+                "description": "Climb out the broken bedroom window onto the metal fire escape.",
+                "targetScene": "dive_to_fire_escape",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Slink out of your bedroom and head out the front door into the building hallway.",
+                "targetScene": "slip_out_hallway_quietly",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Escape into the building hallway."
+              }
+            ],
+            "script": [
+              {
+                "content": "Rage takes over. You crawl on top of the thrashing beast, pin its chest down with your knees, and raise the heavy metal flashlight. You rain blow after blow down on its skull. ",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "CRACK! CRACK! CRACK! The solid metal flashlight strikes again and again. The creature's shrieks subside into wet gurgles, and then, finally, its body goes limp. Its thick, black, foul-smelling blood splatters across your face and shirt. You are gasping, your hands trembling, standing over the dead predator. The noise was loud—you have to get out of here.",
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ],
+            "id": "pounding_with_flashlight"
+          }
+        },
+        "run_for_kitchen_knife": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "Grasp the handle of the carving knife and swing it blindly backward over your shoulder into the creature's chest.",
+                "label": "Stab backward with the knife.",
+                "targetSceneDescription": "The blade sinks deep into its flesh. The creature screams and falls off you, writhing. You run out of the kitchen into the hallway.",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "stab_backward_knife"
+              },
+              {
+                "targetScene": "ending_death_beast",
+                "description": "Try to use your legs to kick the heavy monster off your back.",
+                "label": "Kick the monster off you.",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "script": [
+              {
+                "content": "You break away from the struggle in the bedroom, sprinting into the pitch-black kitchen. Your hand sweeps across the kitchen counter, searching for the heavy chef's knife. ",
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "content": "But before your fingers can find the handle, the Stalker recovers. With an agile, terrifying leap, it pounces onto your back. The weight of the beast slams you face-first onto the linoleum floor. Its hot, metallic breath hits the back of your neck, and its claws dig deep into your shoulders. You reach out frantically, your fingers brushing the cold steel of the knife blade..."
+              }
+            ],
+            "passiveCharacterEffects": [],
+            "id": "run_for_kitchen_knife",
+            "passiveLocationEffects": ["dark"],
+            "location": "Apartment 3B"
+          }
+        },
+        "ending_death_beast": {
+          "type": "impl",
+          "scene": {
+            "id": "ending_death_beast",
+            "location": "Apartment 3B",
+            "passiveCharacterEffects": [],
+            "choices": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You try to fight or flee, but the speed and power of the mutated predator are overwhelming. A cold, heavy claw pins you to the ground, and before you can even scream, a row of needle-sharp teeth closes around your neck. ",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "As the darkness of death fades in, the sounds of the ruined city outside grow quiet. You have become just another statistic in the sudden, silent end of the world."
+              },
+              {
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "### GAME OVER - You did not survive.",
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "ending_fight_victory": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "instantCharacterEffects": [],
+                "content": "With a final, desperate cry, you drive the carving knife deep into the creature's neck. It lets out a wet, bubbling shriek and collapses onto your apartment floor, its limbs twitching before going completely still.",
+                "type": "narration",
+                "instantLocationEffects": []
+              },
+              {
+                "content": "We... we did it. Oh god, we actually killed it...",
+                "instantCharacterEffects": [],
+                "type": "dialogue",
+                "character": "Sarah",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You and Sarah slide the heavy bookshelf back into place, reinforce the locks, and sit in the dark, clutching your weapons. The rest of the night is a blur of distant gunshots and sirens, but no other creature breaches your home. When the first rays of dawn filter through the broken window, you hear the hum of military humvees entering the street below. You survived the night."
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "### VICTORY - You and Sarah survived the night together!",
+                "type": "narration",
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "float" }
+            ],
+            "location": "Apartment 3B",
+            "id": "ending_fight_victory",
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "ending_coward_escape": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [],
+            "choices": [],
+            "id": "ending_coward_escape",
+            "script": [
+              {
+                "content": "You scramble out of the broken bedroom window onto the fire escape, leaving Sarah behind. Through the glass, you hear her desperate, terrified screams cut short as the skinless brute tears into the room. ",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You climb down the rusty metal stairs as fast as you can. Reaching the ground, you run blindly into the dark streets, hiding in the shadows. You survived the night, but the memory of Sarah's screams and your own cowardice will haunt your nightmares for the rest of your days.",
+                "instantLocationEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "type": "narration",
+                "content": "### SURVIVAL (COWARDICE ENDING) - You survived, but at a terrible moral cost.",
+                "instantLocationEffects": []
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "location": "The Fire Escape"
+          }
+        },
+        "crawl_lobby_vents": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "label": "Turn back and head for the roof.",
+                "targetScene": "crawl_roof_vents",
+                "description": "Crawl backward through the dusty vents and head toward the vertical roof shafts.",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Hold your breath, squint your eyes, and try to crawl through the thick black smoke.",
+                "targetScene": "ending_death_beast",
+                "label": "Push through the smoke."
+              }
+            ],
+            "passiveCharacterEffects": [
+              { "effect": "shake", "character": "Sarah" }
+            ],
+            "id": "crawl_lobby_vents",
+            "script": [
+              {
+                "content": "You and Sarah crawl on your bellies through the dusty metal ventilation shafts, the cold sheet metal vibrating with the distant screams and explosions from the city outside. ",
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you crawl deeper, the air becomes warm, and a bitter, stinging smell of burning plastic fills the ductwork. Soon, thick, gray-black smoke begins billowing up from a lower floor grate. Coughing, you look ahead—the duct leading to the lobby is completely choked with smoke. You cannot breathe.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "character": "Sarah",
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "type": "dialogue",
+                "content": "*Cough*... We can't go... this way... we'll suffocate! Let's go back toward the roof vertical shafts!",
+                "instantLocationEffects": []
+              }
+            ],
+            "location": "Apartment 3B"
+          }
+        },
+        "crawl_roof_vents": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [
+              { "effect": "shake", "character": "Sarah" }
+            ],
+            "location": "The Fire Escape",
+            "id": "crawl_roof_vents",
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Prepare to jump to the neighboring building.",
+                "targetScene": "jump_neighboring_roof_with_sarah",
+                "description": "Crawl over the gravel with Sarah and check the distance to the neighboring roof."
+              },
+              {
+                "targetScene": "strike_fingers_roof_with_sarah",
+                "label": "Stand and defend the roof.",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Grab some heavy iron pipes lying near the roof vents and stand ready to defend the rooftop."
+              }
+            ],
+            "script": [
+              {
+                "content": "You and Sarah turn back, coughing and gasping for air, and scramble up the steep vertical shafts of the building's central ductwork. ",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "You reach a large metal ventilation cap on the building's flat, gravel-strewn roof. Pushing the heavy louvers open, you and Sarah pull yourselves out into the cold, clean night wind. The sky is filled with a pale haze of smoke, and sirens echo from every direction. "
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "But your relief is short-lived. A sudden, loud scraping sound echoes from the fire escape landing—and you see the pale, bald head of a Stalker emerging over the edge of the parapet. It has tracked your scent up the exterior wall! The heavy roof access door is padlocked from the inside. There is no easy way down."
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"]
+          }
+        },
+        "descend_to_alley_street": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "choices": [
+              {
+                "label": "Get in Sarah's car and drive.",
+                "targetScene": "ending_car_escape_victory",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Use Sarah's keys to unlock her sedan, get inside, and drive out of the city."
+              },
+              {
+                "label": "Flee on foot together.",
+                "targetSceneDescription": "You and Sarah run through the back streets, slipping past patrols of both soldiers and creatures, escaping the city to safety.",
+                "description": "Run out of the alley on foot, sticking to the dark side streets to avoid attention.",
+                "targetScene": "ending_escape_together_on_foot",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "location": "The Fire Escape",
+            "id": "descend_to_alley_street",
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "content": "You and Sarah climb down the metal rungs of the fire escape, your boots clanking softly. You reach the ground, landing in a damp, narrow alleyway strewn with overflowing trash bins and broken glass. ",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "Just twenty feet away, parked under a broken streetlamp, is Sarah's compact silver sedan. It looks undamaged. The keys are in your pocket, and the alley seems quiet, though a low, rhythmic scuffling sound echoes from the main street.",
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "character": "Sarah",
+                "content": "The keys... we have them! Let's get in and get out of here before those things on the street see us!",
+                "type": "dialogue",
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              }
+            ]
+          }
+        },
+        "jump_neighboring_roof_with_sarah": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "content": "You back up to the far edge of the roof, hold Sarah's hand tight, and take a running start. Together, you leap across the six-foot gap between the building roofs. ",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You land hard on the warehouse roof, rolling across the rough gravel. But Sarah's foot slips on the loose stones at the edge. With a terrified gasp, she slides over the lip, her fingers barely catching the brick parapet. She is hanging over the three-story drop, her boots dangling in the dark air.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "effect": "fall", "character": "Sarah" }
+                ],
+                "type": "narration"
+              },
+              {
+                "instantCharacterEffects": [
+                  { "effect": "shake", "character": "Sarah" }
+                ],
+                "type": "dialogue",
+                "instantLocationEffects": [],
+                "content": "Please! My hands are slipping! Don't let me fall!",
+                "character": "Sarah"
+              }
+            ],
+            "location": "The Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "id": "jump_neighboring_roof_with_sarah",
+            "choices": [
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetScene": "pull_sarah_up_success",
+                "description": "Grab Sarah's hands, dig your boots into the gravel, and haul her up with all your strength.",
+                "targetSceneDescription": "You pull Sarah up onto the roof. She hugs you, crying in relief. You both find a fire escape on this building leading down to safety.",
+                "label": "Pull Sarah up."
+              },
+              {
+                "label": "Leave her and run.",
+                "targetScene": "ending_coward_escape",
+                "description": "Fearing the creature will catch you if you stay, let go of her hands and run.",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "strike_fingers_roof_with_sarah": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "choices": [
+              {
+                "targetScene": "enter_stairwell_with_sarah",
+                "label": "Enter the stairwell with Sarah.",
+                "description": "Enter the roof penthouse door with Sarah, heading down the concrete stairwell toward the street.",
+                "targetSceneDescription": "You and Sarah enter the stairwell. The path down to the lobby is quiet. You find a security locker with survival gear.",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Jump to the neighboring warehouse building roof to be absolutely sure you aren't cornered.",
+                "targetScene": "jump_neighboring_roof_with_sarah",
+                "label": "Jump to the neighboring roof."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You stand at the edge of the roof, clutching a heavy iron pipe, while Sarah stands beside you holding a concrete block. The Stalker's pale, spider-like fingers grasp the brick edge of the parapet as it tries to hoist itself onto the roof.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "content": "With a coordinated cry, you smash the iron pipe onto its left hand while Sarah drops the heavy concrete block directly onto its head. ",
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "fall" }
+                ]
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "The double blow is devastating. The Stalker lets out a high-pitched, metallic shriek and falls backward off the building, plunging into the dark alley below with a heavy crash. The roof is silent once more, save for the howling wind.",
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "id": "strike_fingers_roof_with_sarah",
+            "location": "The Fire Escape"
+          }
+        },
+        "investigate_sarah_bedroom": {
+          "type": "impl",
+          "scene": {
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "id": "investigate_sarah_bedroom",
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "content": "You slowly push the bedroom door open, the hinges letting out a quiet squeak. The room is in pitch darkness, but the smell of ozone and wet fur is heavy. "
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [],
+                "content": "Suddenly, a pair of glowing red eyes ignites in the darkness. A massive, mutated Rottweiler—its jaw split down the middle into four writhing mandibles—rises from the bed, letting out a low, terrifying growl. It lunges directly at you!",
+                "type": "narration"
+              }
+            ],
+            "choices": [
+              {
+                "targetSceneDescription": "You slam and latch the door, trapping the mutated dog inside. It thuds heavily against the wood. You grab the car keys from the kitchen and run to the stairs.",
+                "description": "Quickly slam the heavy wooden bedroom door shut and hold your shoulder against it to latch it.",
+                "label": "Slam the bedroom door shut.",
+                "targetScene": "trap_mutated_dog",
+                "targetSceneMode": "create-new-scene-stub"
+              },
+              {
+                "targetScene": "ending_death_beast",
+                "description": "Try to swing a heavy object to fight off the lunging beast.",
+                "label": "Fight the beast.",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "location": "The Building Hallway"
+          }
+        },
+        "distract_corridor_beast": {
+          "type": "impl",
+          "scene": {
+            "location": "The Building Hallway",
+            "script": [
+              {
+                "instantLocationEffects": [],
+                "type": "narration",
+                "content": "You throw a heavy brass paperweight down the opposite end of the corridor. It hits the concrete floor with a loud CLANG, rolling and bouncing. ",
+                "instantCharacterEffects": []
+              },
+              {
+                "content": "The skinless brute instantly whips its head around, lets out a shrill shriek, and charges toward the noise, its clawed feet tearing up the carpet. The path to the stairwell fire door is wide open! You grab Sarah's hand and slip through the heavy door, shutting it quietly behind you.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Head down the concrete stairs toward the lobby.",
+                "targetScene": "creep_down_stairs_lobby",
+                "targetSceneMode": "reference-existing-scene",
+                "label": "Descend to the lobby."
+              },
+              {
+                "targetScene": "climb_up_to_roof_with_sarah",
+                "targetSceneMode": "reference-existing-scene",
+                "description": "Climb up the stairs to escape onto the roof.",
+                "label": "Ascend to the roof."
+              }
+            ],
+            "id": "distract_corridor_beast",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ]
+          }
+        },
+        "sneak_past_corridor_beast": {
+          "type": "impl",
+          "scene": {
+            "id": "sneak_past_corridor_beast",
+            "passiveCharacterEffects": [
+              { "character": "Sarah", "effect": "shake" }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You creep along the dark wall, your backs pressed against the peeling wallpaper, trying to slide past the feeding monster. You are just three feet away, close enough to smell its rancid breath. ",
+                "instantLocationEffects": []
+              },
+              {
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "Sarah", "effect": "jump" }
+                ],
+                "content": "Suddenly, Sarah's foot catches a loose edge of the carpet, and a wooden floorboard creaks loudly. The skinless brute freezes. Its massive, ear-like structures twitch. It whips its toothy face directly toward you, letting out an ear-splitting shriek. It lunges!",
+                "type": "narration"
+              }
+            ],
+            "location": "The Building Hallway",
+            "choices": [
+              {
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You slam the heavy fire door. The brute slams into the other side, but the fire door is built of solid steel and holds. You are safe in the stairwell.",
+                "targetScene": "stairwell_slam_door",
+                "label": "Dive through the door and slam it.",
+                "description": "Lunge forward, grab Sarah, dive through the fire door, and slam it shut behind you."
+              },
+              {
+                "description": "Sprint through the door alone, leaving Sarah to face the lunging beast.",
+                "label": "Sprint through alone.",
+                "targetScene": "ending_coward_escape",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "passiveLocationEffects": ["dark"]
+          }
+        },
+        "descend_to_alley_alone": {
+          "type": "impl",
+          "scene": {
+            "id": "descend_to_alley_alone",
+            "script": [
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "You descend the iron ladders of the fire escape alone, your steps light and silent. You reach the damp asphalt of the narrow alleyway below. "
+              },
+              {
+                "instantLocationEffects": [],
+                "content": "The alley is empty, save for rows of trash bins and a rusted delivery van parked near the street. Far away, the city sky is painted with a red glow of fires, and sirens wail in a chaotic chorus. You are free of the apartment building, but the danger is still everywhere.",
+                "instantCharacterEffects": [],
+                "type": "narration"
+              }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "location": "The Fire Escape",
+            "passiveCharacterEffects": [],
+            "choices": [
+              {
+                "targetScene": "ending_escape_alone",
+                "label": "Escape on foot alone.",
+                "description": "Walk quietly out of the alley into the dark side streets on foot, staying in the shadows.",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Smash the driver-side window of the old delivery van parked in the alley and try to hotwire the engine.",
+                "label": "Try to hotwire the delivery van.",
+                "targetSceneDescription": "You smash the window, scramble inside, and spark the wires. The engine roars to life just as a pack of mutated hounds floods the alley. You smash through them and escape the city.",
+                "targetScene": "hotwire_van",
+                "targetSceneMode": "create-new-scene-stub"
+              }
+            ]
+          }
+        },
+        "dive_garbage_chute": {
+          "type": "stub",
+          "scene": {
+            "id": "dive_garbage_chute",
+            "description": "Desperate, wrench open the metal door of the hallway garbage chute next to your door and slide feet-first into the dark tube."
+          }
+        },
+        "search_utility_closet": {
+          "type": "stub",
+          "scene": {
+            "id": "search_utility_closet",
+            "description": "Search the building's utility closet in the stairwell for anything useful."
+          }
+        },
+        "ending_escape_alone": {
+          "type": "impl",
+          "scene": {
+            "script": [
+              {
+                "content": "You climb down the side of the warehouse, your boots hitting the damp concrete of a quiet alley. Ahead of you, the dark streets of the city are quiet, save for the flickering of broken streetlights and distant smoke rising into the starry sky.",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              },
+              {
+                "instantCharacterEffects": [],
+                "content": "You pull your jacket tight against the cold wind and start walking away from the apartment building. You are alone, bruised, and exhausted, but you have made it out of the immediate danger zone. You survived.",
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "### VICTORY - You escaped the apartment building alone and survived!",
+                "instantLocationEffects": [],
+                "type": "narration",
+                "instantCharacterEffects": []
+              }
+            ],
+            "id": "ending_escape_alone",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "location": "The Fire Escape",
+            "choices": []
+          }
+        },
+        "enter_warehouse": {
+          "type": "stub",
+          "scene": {
+            "id": "enter_warehouse",
+            "description": "Slip through an open skylight into the dark warehouse below to hide and wait out the outbreak."
+          }
+        },
+        "catch_self_on_parapet": {
+          "type": "stub",
+          "scene": {
+            "id": "catch_self_on_parapet",
+            "description": "Lunging forward, try to grab the rough brick edge of the roof parapet before you tilt over the edge."
+          }
+        },
+        "fall_back_roof": {
+          "type": "stub",
+          "scene": {
+            "id": "fall_back_roof",
+            "description": "Throw your body weight backward, tumbling onto the hard gravel of the roof to avoid falling over."
+          }
+        },
+        "basement_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "basement_escape",
+            "description": "Quietly slip through the basement door near the lobby, heading toward the building's laundry and boiler rooms."
+          }
+        },
+        "sneak_to_car": {
+          "type": "stub",
+          "scene": {
+            "id": "sneak_to_car",
+            "description": "Try to creep out of the shattered lobby doors, using the abandoned cars on the street as cover to reach the parking garage."
+          }
+        },
+        "drop_shaft_darkness": {
+          "type": "stub",
+          "scene": {
+            "id": "drop_shaft_darkness",
+            "description": "Let go of the cable and drop down, hoping the elevator car is close below."
+          }
+        },
+        "climb_cable_up": {
+          "type": "stub",
+          "scene": {
+            "id": "climb_cable_up",
+            "description": "Use all your strength to climb up the greasy cable toward the mechanical room on the roof."
+          }
+        },
+        "ending_car_escape_victory": {
+          "type": "impl",
+          "scene": {
+            "passiveLocationEffects": ["dark"],
+            "id": "ending_car_escape_victory",
+            "passiveCharacterEffects": [],
+            "location": "The Building Hallway",
+            "script": [
+              {
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [],
+                "content": "You slam the sedan into reverse, tires screeching as you back out of the parking spot, knocking over a recycling bin. You throw the gear into drive, smash the accelerator, and speed toward the heavy security gate."
+              },
+              {
+                "type": "narration",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [],
+                "content": "CRASH! The front bumper of your car smashes through the thin aluminum barrier gate. You roar out of the dark underground garage and into the open streets. Behind you, several pale, spider-like shapes leap onto the asphalt, but they cannot keep up with your accelerating vehicle."
+              },
+              {
+                "content": "You turn on your headlights, navigating past abandoned cars and burning debris, and speed out of the city toward the mountains. You have escaped the quarantine zone. You are safe.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "type": "narration",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [],
+                "content": "### VICTORY - You escaped the city in your car!"
+              }
+            ],
+            "choices": []
+          }
+        },
+        "shove_stalker_off_railing": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "label": "Descend the fire escape.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "descend_to_alley_alone",
+                "description": "Hurry down the fire escape steps to escape through the alley."
+              },
+              {
+                "description": "Climb up the iron ladder to find safety on the roof.",
+                "targetScene": "climb_to_roof",
+                "label": "Climb up to the roof.",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "location": "The Fire Escape",
+            "id": "shove_stalker_off_railing",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "content": "With a surge of adrenaline, you grab the Stalker's flailing legs. Using the iron railing as leverage, you heave the heavy, muscular beast over the edge of the fire escape landing.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "content": "The Stalker lets out a sharp, clicking screech as it falls through the air, plunging three stories down. It lands on top of a stack of wooden pallets in the alley with a sickening crunch. It thrashes for a moment, then lies still. You are left alone, panting, on the fire escape landing.",
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ]
+          }
+        },
+        "stab_backward_knife": {
+          "type": "impl",
+          "scene": {
+            "id": "stab_backward_knife",
+            "script": [
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "content": "Your fingers grip the cold metal handle of the 10-inch carving knife. With a desperate, backward thrust, you plunge the blade over your shoulder. "
+              },
+              {
+                "content": "Squish! The heavy knife sinks deep into the creature's chest. The Stalker lets out a piercing, bird-like shriek of pain and falls off your back, writhing on the linoleum floor, trying to claw the knife out of its chest. ",
+                "instantLocationEffects": ["shake"],
+                "type": "narration",
+                "instantCharacterEffects": [
+                  { "character": "The Stalker", "effect": "fall" }
+                ]
+              },
+              {
+                "type": "narration",
+                "instantCharacterEffects": [],
+                "content": "You scramble to your feet, coughing and bleeding from your shoulder scrapes. The path to your front door is clear, but the Stalker won't be dazed for long.",
+                "instantLocationEffects": []
+              }
+            ],
+            "location": "Apartment 3B",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "choices": [
+              {
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "slip_out_hallway_quietly",
+                "label": "Escape into the building hallway.",
+                "description": "Run out the front door into the building hallway to escape."
+              },
+              {
+                "label": "Hide in the bedroom closet.",
+                "description": "Run back into the bedroom and try to hide in the closet again.",
+                "targetSceneMode": "reference-existing-scene",
+                "targetScene": "stay_still_closet"
+              }
+            ]
+          }
+        },
+        "ending_escape_together_on_foot": {
+          "type": "stub",
+          "scene": {
+            "id": "ending_escape_together_on_foot",
+            "description": "Run out of the alley on foot, sticking to the dark side streets to avoid attention."
+          }
+        },
+        "pull_sarah_up_success": {
+          "type": "stub",
+          "scene": {
+            "id": "pull_sarah_up_success",
+            "description": "Grab Sarah's hands, dig your boots into the gravel, and haul her up with all your strength."
+          }
+        },
+        "enter_stairwell_with_sarah": {
+          "type": "stub",
+          "scene": {
+            "id": "enter_stairwell_with_sarah",
+            "description": "Enter the roof penthouse door with Sarah, heading down the concrete stairwell toward the street."
+          }
+        },
+        "trap_mutated_dog": {
+          "type": "stub",
+          "scene": {
+            "id": "trap_mutated_dog",
+            "description": "Quickly slam the heavy wooden bedroom door shut and hold your shoulder against it to latch it."
+          }
+        },
+        "stairwell_slam_door": {
+          "type": "stub",
+          "scene": {
+            "id": "stairwell_slam_door",
+            "description": "Lunge forward, grab Sarah, dive through the fire door, and slam it shut behind you."
+          }
+        },
+        "hotwire_van": {
+          "type": "stub",
+          "scene": {
+            "id": "hotwire_van",
+            "description": "Smash the driver-side window of the old delivery van parked in the alley and try to hotwire the engine."
+          }
+        }
+      },
+      "locations": {
+        "Apartment 3B": {
+          "vignette": "Your dark, third-story apartment, suddenly turned from a sanctuary into a trap.",
+          "name": "Apartment 3B",
+          "backstoryDescription": "Your sanctuary for the past three years. It felt safe until tonight. Now, its thin walls and single locked door feel like a fragile paper cage.",
+          "appearanceDescription": "A cozy, third-story apartment now plunged into pitch blackness. Shelves are lined with books, a small kitchen counter is cluttered with unwashed dishes, and a large window leads to a rusty metal fire escape. The air is thick and smells of ozone and distant smoke."
+        },
+        "The Building Hallway": {
+          "appearanceDescription": "A narrow, dimly lit hallway with peeling wallpaper and flickering emergency lights that cast long, dancing shadows. Sarah's door lies open down the hall, and doors to other units remain tightly shut.",
+          "vignette": "The claustrophobic hallway outside your apartment door.",
+          "backstoryDescription": "The shared corridor of your apartment building. Usually quiet, save for the occasional smell of cooking or the sound of televisions, it is now a tense claustrophobic gauntlet.",
+          "name": "The Building Hallway"
+        },
+        "The Fire Escape": {
+          "vignette": "A rusty iron structure clinging to the side of the building, offering a shaky way down.",
+          "backstoryDescription": "A secondary exit meant for emergencies, now a precarious path between the safety of the heights and the dangers lurking in the dark below.",
+          "name": "The Fire Escape",
+          "appearanceDescription": "A metal structure bolted to the brick exterior of the building. It overlooks a narrow, trash-strewn alleyway. The air here is cold, filled with the smell of burning rubber and the sound of distant sirens."
+        }
+      },
+      "characters": {
+        "Sarah": {
+          "name": "Sarah",
+          "backstoryDescription": "Sarah is your next-door neighbor, an elementary school teacher who usually keeps to herself but is always polite. She lives alone with her cat, which seems to have been lost in the initial panic. She has no survival training but is driven by pure adrenaline and fear.",
+          "vignette": "A terrified neighbor caught in the sudden outbreak, desperate for safety.",
+          "appearanceDescription": "Sarah is a woman in her late twenties, wearing disheveled pajamas and a torn jacket. Her face is pale with terror, her eyes wide and bloodshot, and she has a superficial scrape on her left cheek that is slowly bleeding."
+        },
+        "The Stalker": {
+          "name": "The Stalker",
+          "backstoryDescription": "Once human, this creature has been twisted by a sudden, violent bio-organic catastrophe. It hunts by sound, moving with alarming speed on all fours, scaling walls and shattering glass with ease.",
+          "vignette": "A horrific mutated beast hunting in the shadows of the ruined city.",
+          "appearanceDescription": "A hulking, mutated creature with elongated limbs, pale, greyish skin covered in black veins, and jaws that open too wide, lined with needle-like teeth. Its eyes are milky-white and blind, but its hearing and sense of smell are extremely acute."
+        }
+      }
+    },
+    "minimumCheckpointsSpacing": 4,
+    "thresholdFrontierCheckpointsCount": 4,
+    "maximumDistanceFromCheckpoint": 6,
+    "minimumDistanceToFinalEnding": 2
+  }
+}

@@ -1,0 +1,3140 @@
+{
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "impl",
+          "scene": {
+            "id": "start",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The emergency broadcast on your phone didn't end with instructions; it ended with a wet, choking scream that cut to static just as the power grid blew, plunging your apartment into an oppressive, heavy darkness.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Outside your third-story window, the familiar hum of the city has mutated into a chaotic symphony of screeching tires, distant explosions, and an underlying, rhythmic *scuffling* sound that makes the hairs on your arms stand up.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A frantic, heavy pounding suddenly rattles your front door, accompanied by the panicked voice of your neighbor **Marcus** begging to be let in. From the alleyway directly below your fire escape, you hear the unmistakable sound of breaking glass and a guttural, distinctly non-human howl.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "Everything has gone to hell in the span of minutes. You need to move. Now. Every second you hesitate is a second closer to whatever is *out there* finding you.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Marcus's terrified voice cuts through the chaos, begging for help. You've known him for two years—he loaned you sugar, you fed his cat once. You can't just leave him out there. You stride to the door, hand reaching for the deadbolt.",
+                "label": "Open the door for Marcus",
+                "targetScene": "open_for_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You unlock the deadbolt and pull open the door, revealing Marcus in the dim hallway light, his face pale and streaked with sweat. Behind him, the stairwell door creaks ominously."
+              },
+              {
+                "description": "You need information before you act. Silently, you creep to the window, pressing yourself against the wall as you peer through the curtain at the nightmare unfolding in the streets below. The city is burning, and something is moving through the flames.",
+                "label": "Look out the window to assess the situation",
+                "targetScene": "window_lookout",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You edge to the window and peek through the blinds. The city below is a war zone—cars overturned, fires spreading, and strange, loping figures darting between the wreckage. You need a plan."
+              },
+              {
+                "description": "Your hands are shaking as you grab the emergency duffel bag you've kept packed since the last storm season. Flashlight, water, first aid kit, multi-tool. The fire escape is right there, and the back alley might be safer than the front of the building.",
+                "label": "Grab your emergency bag and head for the fire escape",
+                "targetScene": "fire_escape_choice",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You snatch your bag and move to the kitchen window, sliding it open. The rusted fire escape groans as you step onto it, the cold night air hitting your face. Below, the alley is dark, but you can hear scuttling sounds."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "open_for_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "open_for_marcus",
+            "location": "Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You throw the deadbolt and yank the door open. **Marcus** practically falls through the doorway, his eyes wide with terror behind his smudged glasses. He's gasping for breath, clutching a small fire extinguisher like a weapon.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "run" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Oh god, oh god—thank you! Did you see them? Did you *hear* them? They came through the stairwell—Mrs. Patterson from 2A, she... she didn't make it. Something *took* her. I saw it drag her into the dark!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "He's hyperventilating. Behind him, the hallway stretches into darkness, the emergency light flickering weakly. From somewhere below, you hear a wet, crunching sound, followed by an eerie, chittering noise that doesn't sound like anything human.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "Marcus is in shock. You need to decide—fast. Whatever is down there is coming up.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You slam the door shut and slide the deadbolt home, then start dragging furniture—the bookcase, the coffee table—to barricade the door. Marcus snaps out of his panic and helps, his hands shaking as he piles chairs against the wood.",
+                "label": "Barricade the door and fortify the apartment with Marcus",
+                "targetScene": "barricade_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Together, you and Marcus pile furniture against the door, building a makeshift barrier. The apartment feels like a cage, but at least it's a fortified one. You need to figure out your next move."
+              },
+              {
+                "description": "You grab Marcus by the arm. 'We can't stay here—they're coming up. The fire escape!' You drag him toward the kitchen window, where the rusted ladder waits in the darkness.",
+                "label": "Pull Marcus toward the fire escape",
+                "targetScene": "marcus_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus scramble to the kitchen window and onto the fire escape. The metal groans under both your weights. Below, the alley is dark, but above, the roof might offer a way out."
+              },
+              {
+                "description": "You need to know what you're dealing with. 'Marcus, what did you see? Exactly. What did those *things* look like?' You grip his shoulders, forcing him to focus.",
+                "label": "Question Marcus about what he saw",
+                "targetScene": "question_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You press Marcus for details. His eyes dart around as he describes lanky, pale creatures with too many joints, moving like insects but with human faces frozen in silent screams."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "window_lookout": {
+          "type": "impl",
+          "scene": {
+            "id": "window_lookout",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press yourself flat against the wall beside the window, using two fingers to gently part the blinds. The sight that greets you steals the breath from your lungs.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The street below is a tableau of apocalypse. Cars lie overturned, their headlights still cutting beams through rising smoke. A bus has crashed into a storefront, its interior dark. Fires gutter in trash cans and broken windows. But it's the *movement* that catches your eye—figures, dozens of them, loping through the chaos on limbs that bend at wrong angles, stopping occasionally to sniff the air or drag something into the shadows.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "One of them pauses directly below your window. It tilts its head upward, and in the flickering firelight, you see its face—or what remains of it. A human face, stretched and distorted, eyes wide and unblinking, mouth agape in a silent, eternal scream. It sniffs the air.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "It knows something is here. Stay quiet. Stay still. Your heart is pounding so loudly you're sure it can hear it.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You step back from the window, your mind racing. The apartment can be fortified—you have canned food, water, tools. If you seal the doors and windows, you might be able to wait this out until help arrives. Or until whatever is happening passes.",
+                "label": "Fortify the apartment and wait it out",
+                "targetScene": "fortify_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You decide to hunker down. You start moving furniture, boarding up windows, and preparing for a siege. But as you work, the sounds from outside grow closer..."
+              },
+              {
+                "description": "The fire escape is your best bet. It leads down to the back alley, away from the main street. If you're quiet, you might be able to slip away through the shadows while the creatures are focused on the front of the building.",
+                "label": "Take the fire escape down to the alley",
+                "targetScene": "solo_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You slip out onto the fire escape, moving as silently as possible. The cold metal bites through your shoes. Below, the alley is a canyon of darkness, and somewhere in that darkness, something scrapes against the brickwork."
+              },
+              {
+                "description": "Your phone buzzes—a text from an unknown number: 'ROOF. HELIPAD. NOW.' You have no idea who sent it, but it's the only sign of organized humanity you've seen. The roof access is through the hallway.",
+                "label": "Head for the roof to find the helipad",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Your phone screen glows with a cryptic message. The roof might be a rescue point. You grab your bag and head for the door, hoping whatever sent that text is friendly."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "fire_escape_choice": {
+          "type": "impl",
+          "scene": {
+            "id": "fire_escape_choice",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "Your hands close around the familiar weight of your emergency duffel. You sling it over your shoulder and slide the kitchen window open, the cool night air rushing in to meet you. The fire escape groans in protest as you step onto it, the rusted grating cold beneath your feet.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "From this vantage point, the full scale of the nightmare becomes clear. The city skyline is dotted with fires, and the distant pop of gunfire echoes between buildings. The howl you heard earlier has faded, replaced by an almost musical chittering sound, like insects clicking together in the dark.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You have two directions: **up** to the roof, where you might find a vantage point or an escape route, or **down** to the alley, where the shadows may hide you—or consume you.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "The metal is cold. The air smells of smoke and something coppery. Choose quickly—you're exposed out here.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You climb upward, the old metal ladder creaking as you ascend. The roof offers a clear view of the surrounding blocks, and if that text about a helipad was real, you might see something from up there.",
+                "label": "Climb up to the roof",
+                "targetScene": "climb_to_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb the rusty ladder to the rooftop. The roof is flat and gravel-covered, with a view of the burning city. In the distance, you see lights moving on another rooftop—maybe other survivors."
+              },
+              {
+                "description": "You descend carefully, each step a prayer that the metal won't give you away. The alley below is dark, but you spot a dumpster you can hide behind, and a chain-link fence at the far end that might lead to the next street over.",
+                "label": "Climb down to the alley below",
+                "targetScene": "alley_descent",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You lower yourself down the ladder into the dark alley. The smell is overwhelming—garbage, smoke, and something organic and wrong. You duck behind a dumpster as a shadow passes overhead."
+              },
+              {
+                "description": "Something about this feels wrong. The open air, the exposure. You climb back inside, sliding the window shut. Maybe fortifying in place is the smarter play after all.",
+                "label": "Go back inside and barricade the apartment",
+                "targetScene": "back_inside_barricade",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb back through the window, your heart racing. The apartment feels different now—smaller, more dangerous. But at least you have four walls. Time to make them count."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "barricade_apartment": {
+          "type": "impl",
+          "scene": {
+            "id": "barricade_apartment",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** work in frantic silence, dragging the heavy bookcase in front of the door. He holds it steady while you stack chairs and the coffee table behind it. The barricade won't hold forever, but it'll buy you time.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Okay... okay, that's good. That's... that's something. What now? We can't stay here forever.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "sad" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "He looks at you, waiting for direction. The apartment is quiet except for the distant chaos outside. You have a few options.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You creep to the window, Marcus following close behind. Peeking through the blinds, you scan for a safe exit route. The creatures seem to be moving toward the sound of gunfire in the distance.",
+                "label": "Scout a route from the window with Marcus",
+                "targetScene": "scout_window_with_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus peer out the window, mapping the chaos below. A path through the back alley might be clear, but you'll need to get past whatever is in the hallway first."
+              },
+              {
+                "description": "You grab a kitchen knife and hand Marcus a heavy frying pan. 'If they get through, we fight.' The weight of the weapon in your hand is reassuring, even if your palms are sweating.",
+                "label": "Arm yourselves and prepare to fight",
+                "targetScene": "arm_up_with_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus arm yourselves with makeshift weapons. The kitchen knife feels flimsy, but it's better than nothing. A plan forms—ambush whatever comes through that door."
+              },
+              {
+                "description": "'There are other people in this building. We can't just leave them.' You press your ear to the wall, listening for signs of life from the neighboring apartments.",
+                "label": "Try to contact other neighbors through the walls",
+                "targetScene": "contact_neighbors",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You tap on the walls in a pattern, listening for a response. From 3A, you hear a faint tapping back. Someone else is alive in there."
+              }
+            ]
+          }
+        },
+        "marcus_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "marcus_fire_escape",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You drag **Marcus** through the kitchen and shove the window open. The cold air hits you both as you tumble onto the fire escape, the metal platform groaning under your combined weight.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "run" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Oh god, oh god—where are we going?! There's no way down, the alley—I heard them down there!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "He's right. The chittering sound rises from the alley below, bouncing off the brick walls. Above you, the roof line is silhouetted against the orange glow of the burning city.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "'Up! We go up!' You start climbing the ladder to the roof, hoping to find a way across the building tops. Marcus follows, his breath coming in panicked gasps.",
+                "label": "Climb to the roof with Marcus",
+                "targetScene": "roof_with_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb to the roof, Marcus close behind. The rooftop stretches before you, covered in gravel and dotted with vent pipes. Across the way, you see movement on another roof."
+              },
+              {
+                "description": "'We have to go down. There's a fence at the end of the alley—we can make it.' You start descending, motioning for Marcus to follow. Every step on the metal ladder feels like a death knell.",
+                "label": "Descend to the alley with Marcus",
+                "targetScene": "alley_with_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You descend into the dark alley, Marcus's footsteps echoing yours on the metal rungs. The smell of garbage and smoke intensifies as you near the ground. Something scrapes against a wall nearby."
+              }
+            ]
+          }
+        },
+        "question_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "question_marcus",
+            "location": "Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grip **Marcus** by the shoulders, forcing him to meet your eyes. 'Focus. Tell me exactly what you saw.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "He swallows hard, his adam's apple bobbing. His eyes dart to the dark hallway behind him before he speaks.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "They're... they're like people, but *wrong*. Tall and thin, with joints that bend backward. They move fast—really fast—on all fours like spiders. And their faces... god, their faces are *human*, but stretched out, like they're wearing someone's skin. I saw one look at Mrs. Patterson and it *smiled* before it... it took her.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "sad" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "There's dozens of them. They came from the subway tunnels—I heard the grates blowing off from my window. They're everywhere.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "Subway tunnels. They came from underground. That information might save your life. The question is: what do you do with it?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You know what you're dealing with now. Spiders that wear human faces. You grab a heavy lamp from a nearby table and hand Marcus a fire extinguisher. 'We make for the fire escape. Together.'",
+                "label": "Arm up and head for the fire escape with Marcus",
+                "targetScene": "armed_escape_with_marcus",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Armed with improvised weapons, you and Marcus head for the fire escape. Knowledge is power—and you know these things came from the subway. Staying above ground is the key."
+              },
+              {
+                "description": "'The subway tunnels? Then we need to find out how far this goes.' You pull out your phone, desperately searching for news, signals, any information about what's happening.",
+                "label": "Try to gather information from your phone",
+                "targetScene": "phone_info",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You scroll through your phone, finding fragments of social media posts and emergency alerts. The picture that emerges is terrifying—this is happening across the entire city."
+              },
+              {
+                "description": "'If they came from the subway, the subway is the last place we want to be. We need to get to higher ground.' You decide to find a way to the roof.",
+                "label": "Head for the roof to find higher ground",
+                "targetScene": "stairwell_to_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You head for the stairwell, aiming for the roof. Higher ground means safety—or at least a better view of the nightmare unfolding below."
+              }
+            ]
+          }
+        },
+        "fortify_apartment": {
+          "type": "impl",
+          "scene": {
+            "id": "fortify_apartment",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "Staying put. It's a gamble, but at least you know this space. Every corner, every hiding spot. You can make this work.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You move through the dark apartment with purpose. Nails and a hammer from the utility drawer. You start nailing the window shut, pausing every few strikes to listen. The sounds outside are getting closer—the chittering, the scraping, the occasional human scream cut short.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you work, something catches your eye. A flicker of light from across the street. You peer through a gap in the boards and see a figure on the roof of the building opposite, waving a flashlight in your direction. Once. Twice. Three times. A pattern.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "Someone's out there. Signaling. They're asking if you're alive.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You grab your own flashlight and signal back—three flashes. A connection. Maybe there's a group of survivors out there, organizing. You need to find a way to reach them.",
+                "label": "Signal back to the survivor across the street",
+                "targetScene": "signal_survivor",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You flash your light in response. The figure across the street stops, then signals again—a direction. They're pointing toward the hospital on Fifth Street. A rendezvous point."
+              },
+              {
+                "description": "The window is too exposed. You finish boarding it up, blocking out the signal and the danger alike. The only way out now is through the front door—or the fire escape.",
+                "label": "Finish boarding up and secure the apartment completely",
+                "targetScene": "sealed_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You seal yourself in completely. The apartment becomes a bunker. But as the hours pass, the sounds outside only grow louder, and you begin to wonder if you've trapped yourself."
+              },
+              {
+                "description": "A crash from the bedroom. Something came through the window. You grab the hammer and move toward the sound, heart pounding.",
+                "label": "Investigate the crash in the bedroom",
+                "targetScene": "bedroom_intrusion",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Hammer raised, you creep toward the bedroom. The curtains billow in the wind from a shattered window pane. Something is already inside."
+              }
+            ]
+          }
+        },
+        "solo_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "solo_fire_escape",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You slip out onto the fire escape alone, the metal cold and unforgiving beneath your feet. The wind carries the smell of smoke and something acrid—chemical, maybe. The city burns around you.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "From here, the world is a patchwork of light and shadow. Fires cast dancing orange light across the buildings, and the creatures—you can see them now, moving through the streets below—seem almost graceful in their horrifying, spider-like gait.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The ladder extends both up and down. The fire escape also passes by a window on the second floor—Apartment 2C, where old Mrs. Patterson lives. The window is dark, but the frame looks loose.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You climb down to the alley, moving as quietly as possible. The dumpster below offers cover, and the chain-link fence at the far end might lead to safety.",
+                "label": "Descend to the alley",
+                "targetScene": "alley_solo",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb down into the shadowy alley. The ground is slick with something you don't want to identify. The fence rattles as you approach it."
+              },
+              {
+                "description": "The roof offers a vantage point. You climb upward, gripping the cold metal rungs. From above, you might be able to see a pattern in the chaos—a safe route through the city.",
+                "label": "Climb up to the roof",
+                "targetScene": "roof_solo",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb to the roof, emerging into the smoke-filled air. The view is apocalyptic, but you spot something—a helicopter silhouetted against the flames, heading north."
+              },
+              {
+                "description": "Mrs. Patterson's window is just a few feet below. You lower yourself carefully, testing the window frame. It gives slightly. Maybe she left it unlocked. Maybe she's still in there.",
+                "label": "Try to enter Mrs. Patterson's apartment through the window",
+                "targetScene": "patterson_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You pry open Mrs. Patterson's window and slip inside. The apartment is dark and silent. Too silent. The smell hits you first—metallic and wrong."
+              }
+            ]
+          }
+        },
+        "roof_attempt": {
+          "type": "impl",
+          "scene": {
+            "id": "roof_attempt",
+            "location": "Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You stare at the cryptic message on your phone: *'ROOF. HELIPAD. NOW.'* You don't know who sent it, but it's the only sign of organized resistance you've seen. You grab your bag and ease open your apartment door.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The hallway is eerily quiet. The emergency light has died, leaving only the dim glow from a streetlamp outside filtering through the stairwell window. Shadows pool in every corner. Your footsteps on the worn carpet sound deafeningly loud.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You reach the stairwell door. It's ajar, a sliver of darkness beyond. From somewhere above, you hear a metallic clang and what sounds like a human voice—shouting, but muffled. From below, the chittering.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The voice is above. Someone is alive up there. You push through the stairwell door and start climbing, taking the steps two at a time.",
+                "label": "Race up the stairs toward the voice",
+                "targetScene": "stairs_up_to_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You sprint up the concrete stairs. The voice grows clearer—someone is calling for help. The roof access door is at the top, half open, revealing a sliver of smoke-filled sky."
+              },
+              {
+                "description": "The chittering below is getting louder. Whatever is down there is coming up. You need to create a diversion. You grab a fire extinguisher from the wall and yank the pin, spraying foam down the stairwell.",
+                "label": "Create a diversion with the fire extinguisher",
+                "targetScene": "fire_extinguisher_diversion",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You spray the fire extinguisher down the stairwell, filling it with white chemical foam. The chittering turns into angry hisses. It bought you seconds—maybe enough to get to the roof."
+              },
+              {
+                "description": "Going up feels like a trap. Whoever sent that message might not be friendly. You decide to go back to your apartment and find another way out.",
+                "label": "Head back to your apartment",
+                "targetScene": "back_to_apartment",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You retreat to your apartment, closing the door quietly behind you. The barricade is still in place. But now you've lost your chance at the rooftop extraction."
+              }
+            ],
+            "checkpoint": "frontier"
+          }
+        },
+        "climb_to_roof": {
+          "type": "impl",
+          "scene": {
+            "id": "climb_to_roof",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb the rusted ladder hand over hand, the metal groaning with each step. The wind picks up as you rise above the building's third floor, whipping your hair across your face. The roof access ladder folds down from above, and you pull it with a sharp *clang*.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You haul yourself onto the rooftop. The view is breathtaking and horrific. The city spreads out before you like a patchwork of fire and shadow. Buildings burn like candles. Sirens wail from every direction. And in the distance, you see them—lights moving on another rooftop, perhaps a quarter mile away. A flashlight, blinking in a pattern. Three short, three long, three short.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "SOS. Someone is signaling SOS from the hospital rooftop.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Someone needs help. And where there's one survivor, there might be more. The hospital is only a few blocks away—if you can make it through the streets, you might find refuge.",
+                "label": "Head toward the hospital rooftop signal",
+                "targetScene": "toward_hospital",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You set off across the rooftops, moving from building to building, hoping to reach the hospital. The journey will take you across fire escapes, ledges, and possibly through dangerous territory."
+              },
+              {
+                "description": "A helicopter! You spot a silhouette moving through the smoke. It's heading north, away from the city center. Maybe there's an evacuation point. You scan the horizon for a landing zone.",
+                "label": "Try to signal the helicopter",
+                "targetScene": "signal_helicopter",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You scramble for something reflective—a broken mirror from a rooftop vent—and angle it toward the helicopter. The flash catches its attention. It banks and starts circling back."
+              },
+              {
+                "description": "The roof access door—the one leading back into the building—is padlocked from the outside. But the lock is old and rusted. You might be able to break it and get back inside to search for supplies.",
+                "label": "Break the padlock and go back inside",
+                "targetScene": "break_padlock",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You smash the rusted padlock with a piece of metal pipe from the roof. The door swings open, revealing a dark stairwell. The sounds of the building echo from below."
+              }
+            ]
+          }
+        },
+        "alley_descent": {
+          "type": "impl",
+          "scene": {
+            "id": "alley_descent",
+            "location": "City Streets",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You step off the last rung onto the cracked asphalt of the alley. The ground is wet—water from a broken fire hydrant mixing with something darker, something that gleams in the faint light. The smell is overwhelming: garbage, smoke, and a coppery, organic odor that turns your stomach.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The alley stretches between two brick buildings. At one end, the main street—where you can see the overturned cars and flickering fires. At the other, a chain-link fence with a gap big enough to crawl through, leading to the next block. In between: dumpsters, shadows, and the constant sense that you're being watched.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A dumpster to your left shifts slightly. Something is behind it.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You sprint for the gap in the fence, your heart hammering. Whatever is behind that dumpster, you don't want to meet it. You drop to your knees and squeeze through the gap, ripping your jacket on the jagged metal.",
+                "label": "Run for the fence gap",
+                "targetScene": "through_the_fence",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You scramble through the gap in the fence, emerging onto the next street. It's quieter here—fewer fires, fewer sounds. But the silence might be worse than the chaos."
+              },
+              {
+                "description": "You grab a broken bottle from the ground and creep toward the dumpster, ready to face whatever is there. It could be a creature—or it could be another survivor in need of help.",
+                "label": "Investigate behind the dumpster cautiously",
+                "targetScene": "dumpster_investigation",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Bottle held like a knife, you peer around the dumpster. A figure crouches in the shadows—small, trembling. A child, no older than ten, with wide, terrified eyes."
+              },
+              {
+                "description": "There's a storm drain grate nearby, partially pried open. Marcus said the creatures came from the subway tunnels. If the tunnels are their home, maybe there's a way to navigate through them safely—or maybe you'd be walking into their nest.",
+                "label": "Climb down into the storm drain",
+                "targetScene": "storm_drain",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You lift the heavy grate and descend into the darkness below. The tunnel is narrow, damp, and utterly black. The sounds from above are muffled, replaced by the steady drip of water."
+              }
+            ]
+          }
+        },
+        "back_inside_barricade": {
+          "type": "impl",
+          "scene": {
+            "id": "back_inside_barricade",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb back through the window, sliding it shut with a soft click. Your hands are shaking as you press your back against the wall. The apartment feels different now—smaller, closer. The shadows seem to press in from all sides.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "You're back where you started. But the fire escape was a reminder—there's no safe way out. Not yet. You need a plan, a weapon, and a destination.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A faint sound comes from the wall—a tapping. Rhythmic. Deliberate. Someone in the neighboring apartment is signaling.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You tap back on the wall—three knocks. A pause. Then three knocks in return. Someone is alive next door. You press your ear to the wall, trying to make out words or sounds.",
+                "label": "Communicate with the neighbor through the wall",
+                "targetScene": "wall_communication",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Through coded knocks, you learn that your neighbor—a nurse named Diana from 3A—is alive and injured. She says the stairwell is clear, but something is scratching at her door."
+              },
+              {
+                "description": "You grab a kitchen knife and start boarding up the door and windows with anything you can find. Broken chair legs, a tabletop, nails from the junk drawer. You're making a stand.",
+                "label": "Board up and fortify every entrance",
+                "targetScene": "total_fortification",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You work methodically, sealing every possible entry point. The apartment becomes a fortress. But as you work, you realize you've sealed yourself in as much as you've sealed the danger out."
+              },
+              {
+                "description": "The utility closet. You remember seeing a heavy-duty toolbox in there, and maybe a crowbar. If you're going to survive, you need better weapons and tools.",
+                "label": "Search the utility closet for tools and weapons",
+                "targetScene": "utility_closet",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You open the utility closet and find more than you expected—a crowbar, a hammer, duct tape, and a heavy flashlight that doubles as a club. In the back, you notice a trapdoor in the floor you'd never seen before."
+              }
+            ]
+          }
+        },
+        "scout_window_with_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "scout_window_with_marcus",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** creep to the window. He presses close behind you, his breath warm on your neck as you both peer through the blinds.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The street below is a graveyard of cars. Movement catches your eye—a creature dragging something into the mouth of an alley. But the back alley behind your building looks clear. A path through the shadows, if you're brave enough.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "The back alley. If we go out the fire escape and drop down quietly, we might make it to the next block. My car is parked on Mulberry Street—if it's still there.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "'Let's go. Fire escape, then the alley. Stay close and stay quiet.' You grab your bag and head for the kitchen window.",
+                "label": "Take the fire escape to the back alley with Marcus",
+                "targetScene": "escape_route_alley",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus slip out onto the fire escape and descend into the alley. The shadows offer cover as you move toward the chain-link fence."
+              },
+              {
+                "description": "'Your car might have supplies. If we can reach it, we can drive out of the city.' You start planning a route to Mulberry Street.",
+                "label": "Plan to reach Marcus's car on Mulberry Street",
+                "targetScene": "mulberry_street_car",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You plan a route to Mulberry Street where Marcus's car is parked. It's two blocks away through dangerous territory, but a vehicle could mean escape."
+              }
+            ]
+          }
+        },
+        "arm_up_with_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "arm_up_with_marcus",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You open the kitchen drawer and pull out the largest knife you own—a serrated bread knife. Not ideal, but it'll cut. You toss **Marcus** a heavy cast-iron skillet.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "A frying pan? Really?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "happy" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "The Narrator",
+                "content": "It'll crack a skull. That's all we need.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Armed and tense, you position yourselves on either side of the barricaded door. The chittering in the hallway grows louder. Something is scratching at the wood.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The scratching stops. Then a thud shakes the door. They're trying to break through. You grip your knife tighter and get ready to fight.",
+                "label": "Stand your ground and fight when they break through",
+                "targetScene": "fight_the_breach",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The door splinters as the creatures force their way in. You and Marcus fight for your lives in the dark apartment."
+              },
+              {
+                "description": "'We can't fight them all. We need to escape while they're focused on the door.' You grab Marcus and head for the fire escape, weapons still in hand.",
+                "label": "Use the distraction to escape via fire escape",
+                "targetScene": "distraction_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "While the creatures pound on the front door, you and Marcus slip out the window onto the fire escape, armed but fleeing."
+              }
+            ]
+          }
+        },
+        "contact_neighbors": {
+          "type": "impl",
+          "scene": {
+            "id": "contact_neighbors",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press your ear to the wall and tap three times. The response comes almost immediately—three knocks back, weak but deliberate. Someone is alive in 3A.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "That's Diana's apartment. She's a nurse at St. Mary's. She might have medical supplies—or information.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You tap a question—*Are you okay?*—and wait. The response comes slower this time. Two knocks. A pause. One knock. Then silence.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Diana needs help. You know she's a nurse—she could be a valuable ally. You decide to try to reach her apartment through the hallway.",
+                "label": "Risk the hallway to reach Diana in 3A",
+                "targetScene": "rescue_diana",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You unbarricade the door and slip into the hallway with Marcus. Apartment 3A's door is ajar, and you can hear a faint moaning from inside."
+              },
+              {
+                "description": "Getting to her is too dangerous. Instead, you yell through the wall instructions for barricading her door and promise to come back with help.",
+                "label": "Shout instructions through the wall and promise to return",
+                "targetScene": "promise_to_return",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You shout instructions to Diana through the wall, telling her to barricade her door and stay quiet. Then you and Marcus make a plan to find help and come back."
+              }
+            ]
+          }
+        },
+        "roof_with_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "roof_with_marcus",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You climb to the roof, **Marcus** scrambling up behind you. The wind hits you both full force, carrying the acrid smell of smoke. The roof is a dark expanse of gravel and vent pipes, but you're not alone.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "run" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "Across the gap between buildings, on the adjacent rooftop, you see figures moving. Human shapes. One of them shines a flashlight in your direction—a friendly signal.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Look! Other survivors! We can make the jump—it's only about six feet.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "happy" }
+                ]
+              }
+            ],
+            "choices": [
+              {
+                "description": "You back up, take a running start, and leap across the gap to the next building. The landing is hard but you make it. Marcus follows, landing badly but catching himself.",
+                "label": "Jump to the adjacent rooftop with the survivors",
+                "targetScene": "rooftop_survivors",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You land on the adjacent rooftop where a small group of survivors has gathered. They have a radio and news of an evacuation center at the stadium."
+              },
+              {
+                "description": "The jump is too risky in the dark. You signal back to the survivors but decide to find a safer route down from your current building.",
+                "label": "Signal back and find a safer way down",
+                "targetScene": "find_safer_route",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You wave to the survivors and then search the roof for another way down—a service ladder or a roof access door."
+              }
+            ]
+          }
+        },
+        "alley_with_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "alley_with_marcus",
+            "location": "City Streets",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** descend into the alley, the metal ladder slick with moisture. Your feet hit wet concrete. The alley is a tunnel of darkness between two brick walls, the only light coming from the fires reflected off the low clouds above.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Okay... okay, we're down. Now what? Which way?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "The alley offers two exits: one leads back to the main street where the chaos is thickest, the other to a side street that looks quieter. A chain-link fence with a torn gap leads to an overgrown lot.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You lead Marcus toward the side street, moving from shadow to shadow. A car sits abandoned with its door open—maybe the keys are still inside.",
+                "label": "Sneak toward the side street and check the abandoned car",
+                "targetScene": "abandoned_car",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You approach the abandoned car carefully. The driver's door is open, and you can see keys dangling from the ignition. A potential escape vehicle."
+              },
+              {
+                "description": "The chain-link fence gap leads to an overgrown lot. Beyond it, you can see the back of a police station. Cops mean weapons and a radio.",
+                "label": "Crawl through the fence toward the police station",
+                "targetScene": "police_station",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus crawl through the fence and cross the overgrown lot. The police station looms ahead, its lights still on—but so are the creatures gathered at its front entrance."
+              }
+            ]
+          }
+        },
+        "armed_escape_with_marcus": {
+          "type": "impl",
+          "scene": {
+            "id": "armed_escape_with_marcus",
+            "location": "Fire Escape",
+            "passiveLocationEffects": ["dark", "wind"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "Armed with a lamp and a fire extinguisher, you and **Marcus** slip out onto the fire escape. The metal groans but holds. Below, the alley is dark and silent.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "They came from the subway, right? So we stay above ground. That's our strategy.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You have the high ground for now. The fire escape offers two paths—up or down.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "'Up. We can see more from above.' You climb toward the roof, weapon in hand. Knowledge is power, and from the roof you can chart a safe course.",
+                "label": "Climb to the roof for a better view",
+                "targetScene": "roof_view_armed",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You reach the roof and survey the city. The creatures seem drawn to sound and light. You spot a path through the darker, quieter streets."
+              },
+              {
+                "description": "'Down. We need to get out of this building.' You descend into the alley, ready to fight anything that comes near.",
+                "label": "Descend to the alley and fight if necessary",
+                "targetScene": "alley_fight",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You drop into the alley, weapons ready. A creature rounds the corner and you have seconds to react."
+              }
+            ]
+          }
+        },
+        "phone_info": {
+          "type": "impl",
+          "scene": {
+            "id": "phone_info",
+            "location": "Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You pull out your phone, the screen painfully bright in the darkness. Social media is a cascade of panic. Videos of the creatures—people calling them 'Skinners' for the way they wear human skin—spread across every platform.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "One post catches your eye: a live stream from a woman barricaded in a convenience store. She says the military is setting up checkpoints on the highway. Another post mentions the old subway tunnels as the origin point—something was released from a research facility beneath the city.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "A research facility? Under the city? This wasn't an accident. Someone *made* these things.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "sad" }
+                ]
+              }
+            ],
+            "choices": [
+              {
+                "description": "The highway. That's the way out. You show Marcus the post about military checkpoints and decide to head for the on-ramp.",
+                "label": "Head for the highway military checkpoint",
+                "targetScene": "highway_checkpoint",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You navigate through side streets toward the highway. In the distance, you can see searchlights and hear gunfire. The military is holding the line."
+              },
+              {
+                "description": "If the creatures came from a research facility, there might be answers there—and maybe a way to stop them. You decide to find the facility.",
+                "label": "Investigate the research facility origin",
+                "targetScene": "research_facility",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You find an old subway map on your phone and locate the research facility entrance. It's in the abandoned Central Station—three blocks away."
+              }
+            ]
+          }
+        },
+        "stairwell_to_roof": {
+          "type": "impl",
+          "scene": {
+            "id": "stairwell_to_roof",
+            "location": "Building Hallway",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You push open the stairwell door, Marcus close behind. The concrete stairs spiral upward into darkness. The air is cold and still. Your footsteps echo in the confined space.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you climb, you pass the fourth-floor landing. A sign reads 'ROOF ACCESS—AUTHORIZED PERSONNEL ONLY.' The door at the top is steel, heavy, and it's slightly ajar.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Wait. Do you hear that? Something's on the roof.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              }
+            ],
+            "choices": [
+              {
+                "description": "You creep up the last few steps and peer through the gap in the door. On the roof, you see a helicopter rotor spinning slowly and a figure in military gear waving a flashlight.",
+                "label": "Approach the roof door cautiously",
+                "targetScene": "military_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You push the door open and step onto the roof. A military helicopter is on the landing pad, and a soldier motions for you to hurry."
+              },
+              {
+                "description": "It could be a trap. You decide not to take the risk and instead head back down to find another escape route.",
+                "label": "Back away and find another exit",
+                "targetScene": "retreat_from_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You quietly descend back down the stairs, looking for another way out. The ground floor has a fire exit that leads to a side alley."
+              }
+            ]
+          }
+        },
+        "signal_survivor": {
+          "type": "impl",
+          "scene": {
+            "id": "signal_survivor",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab your flashlight and flick it on, pointing it toward the building across the street. You flash three times—the universal signal for 'I'm here.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The figure across the way stops moving. Then they flash back. Three times. Then they point—emphatically, repeatedly—toward the hospital on Fifth Street. You can see its silhouette against the burning sky, its rooftop lit by emergency lights.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The figure disappears from view, but the message is clear: the hospital is a rendezvous point. A safe zone.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The hospital is only a few blocks away. If there are survivors gathering there, that's your best chance. You grab your bag and head out.",
+                "label": "Head to the hospital rendezvous point",
+                "targetScene": "to_hospital",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You exit your apartment and make your way toward the hospital, navigating through the chaotic streets. The emergency lights guide you like a beacon."
+              },
+              {
+                "description": "The signal could be a trap. You decide to stay put and observe for a while longer before committing to a risky journey.",
+                "label": "Stay and observe before making a move",
+                "targetScene": "observe_and_wait",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You watch from your window for several minutes, tracking movement patterns. You notice the creatures avoid certain areas—places with bright lights or loud noises."
+              }
+            ]
+          }
+        },
+        "sealed_apartment": {
+          "type": "impl",
+          "scene": {
+            "id": "sealed_apartment",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You finish boarding up the last window. The apartment is dark, sealed tight, and utterly silent except for your own breathing. You've created a tomb.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Hours pass—or maybe minutes. Time loses meaning in the dark. The sounds outside fade and swell like a terrible tide. You huddle in the corner, your emergency bag clutched to your chest.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Then you hear it: footsteps in the hallway. Slow. Deliberate. They stop outside your door. A voice—human, strained—whispers through the wood: 'Please... let me in... they're coming...'",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "It sounds human. Terrified. You can't just leave them to die. You start moving the barricade.",
+                "label": "Open the door for the stranger",
+                "targetScene": "open_for_stranger",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You pull aside the barricade and open the door. A woman stumbles in, bleeding from a wound on her arm. She gasps out a warning before collapsing."
+              },
+              {
+                "description": "It could be one of *them*, mimicking a human voice. You've read about creatures that do that. You stay silent, pressing yourself against the wall, hoping they go away.",
+                "label": "Stay silent and don't open the door",
+                "targetScene": "silent_refusal",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You remain perfectly still, not making a sound. The pleading continues for a minute, then turns into a guttural hiss. Whatever it was, it moves on."
+              }
+            ]
+          }
+        },
+        "bedroom_intrusion": {
+          "type": "impl",
+          "scene": {
+            "id": "bedroom_intrusion",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The crash from the bedroom sends adrenaline surging through your veins. You grip the hammer tight and move toward the sound, your footsteps silent on the worn carpet.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The bedroom door is half open. Through the gap, you can see the curtains billowing in the night breeze from a shattered window. Glass crunches under your foot as you push the door open.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The room is empty. But on the floor, near the broken window, something glints in the faint light—a metal canister, about the size of a soda can, with a blinking red light on its side. It wasn't there before.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "You pick up the canister carefully. It's warm, and the blinking light suggests it's active. This might be important—maybe a signal device or something dropped by the creatures.",
+                "label": "Examine the mysterious canister",
+                "targetScene": "mysterious_canister",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You pick up the canister and examine it. It has a small display that reads 'SAMPLE 7—ACTIVE' and a symbol you don't recognize. This could be connected to the outbreak."
+              },
+              {
+                "description": "You don't know what that thing is, but the broken window means you're exposed. You grab your bag and climb out through the window onto the fire escape, leaving the canister behind.",
+                "label": "Flee through the broken window to the fire escape",
+                "targetScene": "flee_through_bedroom",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb out the broken bedroom window onto the fire escape, leaving the mysterious device behind. The alley below is dark, but you can see a path to safety."
+              }
+            ]
+          }
+        },
+        "stairs_up_to_roof": {
+          "type": "stub",
+          "scene": {
+            "id": "stairs_up_to_roof",
+            "description": "The voice is above. Someone is alive up there. You push through the stairwell door and start climbing, taking the steps two at a time."
+          }
+        },
+        "fire_extinguisher_diversion": {
+          "type": "stub",
+          "scene": {
+            "id": "fire_extinguisher_diversion",
+            "description": "The chittering below is getting louder. Whatever is down there is coming up. You need to create a diversion. You grab a fire extinguisher from the wall and yank the pin, spraying foam down the stairwell."
+          }
+        },
+        "back_to_apartment": {
+          "type": "stub",
+          "scene": {
+            "id": "back_to_apartment",
+            "description": "Going up feels like a trap. Whoever sent that message might not be friendly. You decide to go back to your apartment and find another way out."
+          }
+        },
+        "wall_communication": {
+          "type": "impl",
+          "scene": {
+            "id": "wall_communication",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You tap back on the wall. Three knocks. A pause. Then a response—three knocks, weaker but clear. Your neighbor is alive.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You develop a crude code: one knock for yes, two for no. You learn that your neighbor is Diana, a nurse from 3A. She's injured—a deep cut on her leg from broken glass. She's barricaded herself in her bathroom. The creatures haven't found her yet.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She knocks a message: 'Stairwell clear. Fire escape clear. Roof dangerous.' Important information.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "Diana is injured and needs help. You decide to go to her. You unbarricade your door and slip into the hallway, hoping the stairwell is truly clear.",
+                "label": "Go help Diana in apartment 3A",
+                "targetScene": "help_diana",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the hallway and find Diana's door unlocked. She's in the bathroom, pale from blood loss. You manage to stop the bleeding and help her to her feet."
+              },
+              {
+                "description": "Diana gave you valuable intel. You decide to use it and take the fire escape alone, heading down to find a way out of the city.",
+                "label": "Use the intel and take the fire escape down",
+                "targetScene": "use_intel_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Armed with Diana's information, you take the fire escape down to the alley. The path ahead is dangerous, but at least you know what to expect."
+              }
+            ]
+          }
+        },
+        "total_fortification": {
+          "type": "impl",
+          "scene": {
+            "id": "total_fortification",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You work with frantic precision. Nails hammered into window frames. Furniture stacked against the door. The apartment transforms into a bunker.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you work, you find a forgotten corner of your kitchen pantry—a stash of canned goods, a bottle of whiskey, and a battery-powered radio. You turn it on, static hissing before a weak signal comes through.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "'...repeat, this is an emergency broadcast. The outbreak is contained to the downtown area. Military checkpoints are established at all major highways. Citizens are advised to shelter in place or proceed to the nearest evacuation center. Do not—' The signal cuts to static.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "The broadcast said to shelter in place. You have supplies, a radio, and a fortified position. You settle in for a long wait.",
+                "label": "Shelter in place and wait for rescue",
+                "targetScene": "shelter_in_place",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You settle into your fortified apartment, rationing supplies and monitoring the radio. Days pass in darkness. Then you hear heavy boots in the hallway."
+              },
+              {
+                "description": "The broadcast mentioned evacuation centers. You can't just sit here—you need to reach one. You grab your supplies and prepare to make a run for it.",
+                "label": "Make a run for the nearest evacuation center",
+                "targetScene": "run_for_evacuation",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You gather your supplies and unbarricade the door. The hallway is clear. You make your way toward the evacuation center, following the distant sound of helicopter rotors."
+              }
+            ]
+          }
+        },
+        "utility_closet": {
+          "type": "impl",
+          "scene": {
+            "id": "utility_closet",
+            "location": "Apartment 3C",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You open the utility closet door. The smell of dust and old cardboard greets you. Shelves line the walls, cluttered with tools, old paint cans, and forgotten items.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You grab a crowbar—solid iron, perfect for both prying and swinging. A heavy-duty flashlight. Duct tape. A box of nails. Your arms fill with useful tools.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you reach for a hammer on the top shelf, your foot kicks something hollow on the floor. You clear away a dusty rug and find it: a square outline in the floorboards. A trapdoor. You never knew this was here.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "description": "A secret trapdoor in your apartment? This could be an escape route—or a way into the building's basement. You pry it open with the crowbar.",
+                "label": "Open the trapdoor and investigate",
+                "targetScene": "trapdoor_secret",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You wedge the crowbar into the seam and pry open the trapdoor. A ladder descends into darkness. The air that rises is cold and smells of earth and concrete."
+              },
+              {
+                "description": "You're not ready to crawl into an unknown hole. You gather your tools and prepare to head out the front door, better armed than before.",
+                "label": "Take the tools and head out the front door",
+                "targetScene": "armed_exit_front",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Crowbar in hand, flashlight in the other, you unbarricade the door and step into the hallway. You're ready for whatever comes."
+              }
+            ]
+          }
+        },
+        "alley_solo": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You creep through the dark alley. A rusted fire escape rattles above you. At the end, you see the main road—carnage, but also a military convoy rolling through.",
+                "label": "Sneak toward the military convoy",
+                "targetScene": "military_convoy",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You reach the main street and see a military convoy pushing through the chaos. Soldiers are engaging the creatures with rifle fire."
+              },
+              {
+                "description": "A side door marked 'BASEMENT ACCESS' catches your eye. It's slightly open. A potential hiding spot or a way into the building's underbelly.",
+                "label": "Enter the basement access door",
+                "targetScene": "basement_access",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You slip through the basement door into darkness. The stairwell descends into a damp, concrete cellar. The sounds of the street are muffled here."
+              }
+            ],
+            "id": "alley_solo",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You drop into the alley, landing silently on the wet ground. The shadows cling to you as you press yourself against the cold brick wall. The alley stretches before you like a dark corridor.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Somewhere nearby, glass shatters. A creature howls in the distance. You're alone, exposed, but alive.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "roof_solo": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The hospital roof is your destination. You navigate the rooftop maze, leaping gaps and climbing ventilation units, making your way toward the blinking lights.",
+                "label": "Navigate rooftops toward the hospital",
+                "targetScene": "rooftop_trek",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You leap from rooftop to rooftop, making your way toward the hospital. The journey is perilous, but each building brings you closer to safety."
+              },
+              {
+                "description": "Below, you spot a hardware store with a smashed window. A quick detour could yield more useful supplies.",
+                "label": "Descend to scavenge the hardware store",
+                "targetScene": "scavenge_hardware",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You climb down from the roof and enter the hardware store. Shelves have been ransacked, but you find rope, a hatchet, and a box of flares."
+              }
+            ],
+            "id": "roof_solo",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You emerge onto the roof, the wind whipping around you. The city sprawls in all directions, a patchwork of fire and shadow. In the distance, you spot the hospital's emergency lights—a beacon of hope.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The helicopter you saw earlier is gone, but the hospital roof still glows with activity.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "patterson_apartment": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The apartment is silent. Too silent. You creep through the living room, eyes adjusting to the dark. A shape in the corner—a body. Mrs. Patterson didn't make it.",
+                "label": "Search the apartment for supplies",
+                "targetScene": "patterson_supplies",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You find Mrs. Patterson's emergency stash—canned food, a first aid kit, and a shotgun in her bedroom closet. But you also find signs of a struggle."
+              },
+              {
+                "description": "You can't stay here. The open window behind you is an invitation for creatures to follow. You move toward the front door, hoping to reach the hallway.",
+                "label": "Leave through the front door into the hallway",
+                "targetScene": "patterson_hallway",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You exit Mrs. Patterson's apartment into the second-floor hallway. The emergency lights are dead here, and the air is thick with the smell of gas."
+              }
+            ],
+            "id": "patterson_apartment",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You pry open Mrs. Patterson's window and slip inside. The apartment is dark and cold. The smell hits you immediately—metallic, like old blood.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The living room is in disarray—furniture overturned, a table lamp shattered. Signs of a violent struggle. But there's no body. No blood. Just... emptiness.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "toward_hospital": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You navigate the alleyways and side streets, keeping to the shadows. The hospital grows closer, its emergency lights a beacon in the smoke-filled night.",
+                "label": "Keep moving toward the hospital",
+                "targetScene": "hospital_arrival",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You reach the hospital's side entrance. The doors are barricaded, but you can hear voices inside. You pound on the door and wait."
+              },
+              {
+                "description": "A group of creatures blocks the direct path. You need to circle around through an abandoned office building.",
+                "label": "Detour through the office building",
+                "targetScene": "office_detour",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the dark office building. Cubicles stretch into the darkness. Somewhere, a computer screen flickers, casting eerie shadows."
+              }
+            ],
+            "id": "toward_hospital",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You set out across the rooftops, the hospital your North Star. The gap between buildings is wide, but you find a path—a series of ledges, fire escapes, and antenna towers that form a treacherous bridge across the urban landscape.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Below, the creatures move like sharks through water, patrolling the streets. But up here, you're safe. For now.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "signal_helicopter": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The helicopter circles back. You wave frantically, using your phone's screen as a signal. The pilot spots you and begins to descend toward your rooftop.",
+                "label": "Wait for the helicopter to land",
+                "targetScene": "helicopter_rescue",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The helicopter descends onto the roof, rotor wash flattening the gravel. A soldier reaches out a hand to pull you aboard."
+              },
+              {
+                "description": "The helicopter is military. They might be evacuating civilians. But the roar might also attract the creatures. You hesitate, unsure if signaling is wise.",
+                "label": "Hesitate and hide instead",
+                "targetScene": "hide_from_chopper",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You duck behind a vent as the helicopter passes overhead. It doesn't see you. It continues north, disappearing into the smoke."
+              }
+            ],
+            "id": "signal_helicopter",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You find a piece of broken mirror on the rooftop and angle it toward the helicopter. The reflection catches the light—a brilliant flash that cuts through the smoke.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The helicopter banks. It's turning. It saw you.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "break_padlock": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You grip the pipe and swing at the lock. It shatters after the third hit. The door swings open, revealing a dark stairwell descending into the building.",
+                "label": "Enter the stairwell and descend",
+                "targetScene": "stairwell_descent",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the building through the roof access. The stairs lead down past multiple floors. You can hear sounds of movement below."
+              },
+              {
+                "description": "Halfway down the stairs, you hear voices. Other survivors are in the building. You call out to them.",
+                "label": "Call out to the voices you hear",
+                "targetScene": "voices_in_stairwell",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You call out and receive a response. A group of survivors is holed up on the second floor. They have food, water, and a plan to escape."
+              }
+            ],
+            "id": "break_padlock",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You pick up a length of metal pipe from the roof debris. The padlock is old, rusted—a few solid hits should break it.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You raise the pipe and bring it down on the lock. Metal clangs against metal. Once. Twice. On the third strike, the lock snaps open.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "through_the_fence": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You sprint through the gap and find yourself in a residential area. Houses sit dark and silent. One has a light on—candlelight, flickering in an upstairs window.",
+                "label": "Head toward the house with the candlelight",
+                "targetScene": "candlelight_house",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You approach the house cautiously. Someone is home. You knock on the door, hoping for sanctuary."
+              },
+              {
+                "description": "The next street over is clear. You follow it toward the sound of the highway, where military checkpoints might offer safety.",
+                "label": "Follow the street toward the highway",
+                "targetScene": "street_to_highway",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You walk quickly but quietly, staying in the shadows of parked cars and storefronts. The highway overpass looms ahead."
+              }
+            ],
+            "id": "through_the_fence",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You squeeze through the torn gap in the chain-link fence, the sharp metal edges tearing at your clothes. You emerge into an overgrown lot on the next block.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "This part of the city is quieter. Fewer fires. Fewer sounds. The silence is almost more unnerving than the chaos you left behind.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "dumpster_investigation": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The child is terrified but alive. You kneel down. 'It's okay. I'm not one of them. What's your name?' The child stares at you with wide eyes.",
+                "label": "Comfort and help the child",
+                "targetScene": "child_survivor",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The child's name is Lily. She got separated from her parents during the chaos. She's hiding behind the dumpster, clutching a stuffed rabbit."
+              },
+              {
+                "description": "A child is vulnerable and slow. As much as it hurts, you can't risk your own life for a stranger. You back away quietly, leaving the child behind.",
+                "label": "Leave the child and continue alone",
+                "targetScene": "leave_child",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You slip away into the shadows, leaving the child behind. The guilt weighs heavy on you, but survival comes first."
+              }
+            ],
+            "id": "dumpster_investigation",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grip the broken bottle and edge around the dumpster, your heart pounding in your ears. You peer into the shadows beyond.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A small figure crouches there—a child, no older than ten, with dirt-streaked cheeks and wide, terrified eyes. She presses a finger to her lips, begging for silence.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "storm_drain": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The tunnel stretches ahead into absolute darkness. You use your phone's light to navigate. The walls are damp and covered in old graffiti. You hear water running somewhere ahead.",
+                "label": "Follow the tunnel forward",
+                "targetScene": "tunnel_forward",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You walk through the dark tunnel, the beam of your phone illuminating strange markings on the walls. The tunnel forks ahead."
+              },
+              {
+                "description": "This was a mistake. The tunnels are where they came from. You turn back, climbing up the ladder as fast as you can.",
+                "label": "Climb back out immediately",
+                "targetScene": "climb_out_drain",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You scramble back up the ladder and emerge into the alley, gasping for fresh air. The alley is still clear, but you've wasted precious time."
+              }
+            ],
+            "id": "storm_drain",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You lift the heavy iron grate and peer into the darkness below. A ladder leads down into the storm drain. The air that rises is cold, damp, and smells of rust and decay.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You descend into the darkness, the grate clanging shut above you. The tunnel is narrow, just wide enough for one person. Water trickles somewhere in the depths.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "escape_route_alley": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You and Marcus slip through the shadows, moving from dumpster to doorway. The alley opens onto a quieter side street. You're making progress.",
+                "label": "Continue through the shadows",
+                "targetScene": "shadow_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You lead Marcus through a maze of back alleys and side streets. The sounds of pursuit fade behind you."
+              },
+              {
+                "description": "Up ahead, a convenience store with a smashed window. Maybe there's food, water, or a working phone inside.",
+                "label": "Scavenge the convenience store",
+                "targetScene": "convenience_scavenge",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the dark convenience store. Shelves are overturned, but you find bottled water, energy bars, and a first aid kit behind the counter."
+              }
+            ],
+            "id": "escape_route_alley",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** slip out onto the fire escape and descend into the dark alley. The rain has started to fall, cold and thin, masking your sounds.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "Okay... we made it. The fence is just ahead. Once we're through, we can circle around to Mulberry.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "mulberry_street_car": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You navigate the two blocks to Mulberry Street, keeping to shadows. Marcus's car—a beat-up sedan—is still there, miraculously untouched.",
+                "label": "Reach the car and try to drive out",
+                "targetScene": "escape_by_car",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You reach the car. The keys are in Marcus's pocket. You start the engine—it roars to life. But the sound attracts attention."
+              },
+              {
+                "description": "The car is a trap—too obvious. Instead, you and Marcus find a delivery van with keys under the visor. Quieter, less noticeable.",
+                "label": "Find an alternative vehicle",
+                "targetScene": "alternative_vehicle",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You find a delivery van parked behind a restaurant. The keys are in the ignition. It's not fast, but it's inconspicuous."
+              }
+            ],
+            "id": "mulberry_street_car",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You lead **Marcus** through the back streets, keeping low and quiet. Mulberry Street is two blocks east. The rain helps mask your footsteps.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you round the corner, you see it—Marcus's blue sedan, parked where he left it. The street is eerily empty.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "fight_the_breach": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The door explodes inward. You swing the knife, catching the first creature across the arm. It shrieks and recoils. Marcus brings the skillet down on another's head.",
+                "label": "Fight to the death",
+                "targetScene": "desperate_fight",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus fight desperately in the dark apartment. The creatures are fast, but your weapons find their marks. Blood—black and thick—spatters the walls."
+              },
+              {
+                "description": "You grab Marcus and dive through the bedroom window onto the fire escape just as the door gives way. The creatures crash into the apartment as you flee.",
+                "label": "Flee at the last second through the bedroom",
+                "targetScene": "last_second_flight",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus tumble out the bedroom window onto the fire escape as the creatures pour into the apartment behind you. You climb frantically."
+              }
+            ],
+            "id": "fight_the_breach",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The scratching stops. A heavy thud shakes the door. Then another. The wood splinters. They're coming through.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "They're breaking through! What do we do?!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "The barricade groans. You have seconds.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "distraction_escape": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "While the creatures pound on the front door, you and Marcus slip out the kitchen window onto the fire escape. The noise covers your escape.",
+                "label": "Escape to the fire escape",
+                "targetScene": "quiet_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus climb onto the fire escape as the creatures break into the apartment behind you. They haven't noticed your escape yet."
+              }
+            ],
+            "id": "distraction_escape",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab **Marcus** and pull him toward the kitchen. 'This way—while they're focused on the door!'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You slide the window open and climb onto the fire escape, Marcus right behind you. The pounding at the front door covers the sound of your escape.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "run" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "They're going to destroy my apartment...",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "sad" }
+                ]
+              }
+            ]
+          }
+        },
+        "rescue_diana": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You find Diana in the bathroom, bleeding from a gash on her leg. You tear strips from a bedsheet and fashion a tourniquet. She gasps in pain but nods gratefully.",
+                "label": "Bandage Diana and bring her with you",
+                "targetScene": "escape_with_diana",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "With Diana stabilized, you help her to her feet. The three of you—you, Marcus, and Diana—make your way toward the fire escape. Strength in numbers."
+              },
+              {
+                "description": "Diana is too injured to move quickly. You patch her up as best you can and hide her in a closet, promising to return with help.",
+                "label": "Hide Diana and go for help alone",
+                "targetScene": "hide_diana",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You hide Diana in a bedroom closet with water and a knife, then leave with Marcus to find help. The guilt gnaws at you."
+              }
+            ],
+            "id": "rescue_diana",
+            "isCheckpoint": false,
+            "location": "Building Hallway",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You unbarricade the door and slip into the hallway with **Marcus**. Apartment 3A's door is ajar. You push it open slowly.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The apartment is dark, but you hear a weak voice from the bathroom. 'In here... please...'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You find Diana, a woman in her thirties, sitting on the bathroom floor with a blood-soaked towel wrapped around her leg. Her face is pale, but her eyes are alert.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "promise_to_return": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You shout instructions to Diana through the wall—barricade the door, stay quiet, save your phone battery. She taps back: 'Understood.' You promise to return with help.",
+                "label": "Promise to find help and return",
+                "targetScene": "find_help",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Marcus leave the building, determined to find help and return for Diana. The streets are dangerous, but you have a mission."
+              }
+            ],
+            "id": "promise_to_return",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press your mouth close to the wall and speak loudly but clearly. 'Diana! Barricade your door! Stay quiet! We're going for help!'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Three weak knocks come back. She understood.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "We can't just leave her. But... we can't help her if we're dead. Let's find help and come back.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "sad" }
+                ]
+              }
+            ]
+          }
+        },
+        "abandoned_car": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You climb into the car. Marcus turns the key. The engine roars to life—and every creature within a block turns toward the sound.",
+                "label": "Floor it and escape",
+                "targetScene": "car_chase",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You peel out as creatures swarm toward the car. Marcus weaves through abandoned vehicles, heading for the highway."
+              },
+              {
+                "description": "The car is too risky. You decide to stay on foot—quieter, more maneuverable.",
+                "label": "Abandon the car and continue on foot",
+                "targetScene": "on_foot_again",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You leave the car behind and continue on foot, weaving through back alleys. It's slower, but safer."
+              }
+            ],
+            "id": "abandoned_car",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You approach the abandoned car carefully. It's a sedan, driver's door hanging open. The keys dangle from the ignition, swaying slightly.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Marcus",
+                "content": "A car! We can drive out of here!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "happy" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "But a car engine is loud. It will attract attention. Is the risk worth it?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "police_station": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You and Marcus approach the police station from the rear. A back door is unlocked. Inside, you find an armory—lockers full of rifles and shotguns.",
+                "label": "Enter the police station armory",
+                "targetScene": "police_armory",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You arm yourselves with proper weapons from the police station. The firepower gives you confidence. You can fight back now."
+              },
+              {
+                "description": "The front of the station is overrun. You can see officers trapped on the roof, firing down at the creatures swarming the entrance.",
+                "label": "Help the officers on the roof",
+                "targetScene": "officers_on_roof",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You find a way onto the police station roof and help the trapped officers fight off the creatures. Together, you hold the line."
+              }
+            ],
+            "id": "police_station",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** crawl through the fence and cross the overgrown lot. The police station looms ahead—a two-story brick building with bars on the windows.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The front entrance is crawling with creatures, their pale forms writhing in the light of a burning patrol car. But the back alley looks clear.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "rooftop_survivors": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You land on the rooftop and approach the survivors cautiously. There are four of them—a family with two kids. They have a radio and news of a safe zone.",
+                "label": "Join the survivor group",
+                "targetScene": "survivor_group",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You join the family of survivors. They've been in contact with the military. The evacuation point is the stadium, three miles north."
+              },
+              {
+                "description": "The group looks trustworthy, but you decide to keep your distance. You exchange information and then continue alone.",
+                "label": "Exchange information and go solo",
+                "targetScene": "solo_info_exchange",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You share information with the other survivors and then continue on your own path. They warn you about a nest of creatures in the subway station ahead."
+              }
+            ],
+            "id": "rooftop_survivors",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You take a running start and leap across the gap. Your feet hit the gravel of the adjacent rooftop and you roll, coming up in a crouch. **Marcus** follows, his landing less graceful but successful.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "run" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "The survivors turn toward you. A man steps forward, hands raised. 'You made it! Thank God—we thought we were the only ones left in this part of the city.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "find_safer_route": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You find a service ladder bolted to the side of the building. It descends to a delivery alley on the north side. A path opens up.",
+                "label": "Take the service ladder down",
+                "targetScene": "service_ladder",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You descend the service ladder into a quiet delivery alley. From here, you can see the highway in the distance."
+              },
+              {
+                "description": "The roof access door is unlocked. You find a set of stairs leading back down into the building's upper floor.",
+                "label": "Enter the roof access door",
+                "targetScene": "roof_door_entry",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the building through the roof access. You're on the top floor of what looks like an office building. Cubicles stretch into the darkness."
+              }
+            ],
+            "id": "find_safer_route",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You wave to the survivors across the gap, signaling that you'll find another way. They wave back and disappear from view.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You search the rooftop and find a service ladder bolted to the side of the building, leading down to an alley. There's also a roof access door that might lead inside.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "roof_view_armed": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "From the roof, you spot a clear path through the back streets. You and Marcus descend and move quickly, avoiding the main roads.",
+                "label": "Follow the clear path",
+                "targetScene": "clear_path",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You navigate the side streets, keeping to the shadows. The path leads to a residential area that seems untouched by the chaos."
+              },
+              {
+                "description": "A nearby fire station has its doors open. There might be emergency vehicles or communication equipment inside.",
+                "label": "Check the fire station for supplies",
+                "targetScene": "fire_station",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You enter the fire station. The engines are still here, but the crews are gone. You find axes, flashlights, and a working radio."
+              }
+            ],
+            "id": "roof_view_armed",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and **Marcus** climb to the roof, weapons in hand. The view is sobering—the city burns in patches, and the creatures move through the streets like a dark tide.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "But you notice patterns. The creatures avoid bright lights and loud noises. They cluster around the subway entrances. The residential streets to the north look clear.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "alley_fight": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The creature rounds the corner and sees you. It lets out a shriek and lunges. You swing the lamp like a club, connecting with its head. It crumples.",
+                "label": "Fight the creature",
+                "targetScene": "alley_combat",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You fight the creature in the alley, your improvised weapons finding their marks. More will come at the sound of combat. You need to move fast."
+              },
+              {
+                "description": "You fire the extinguisher, filling the alley with a cloud of white foam. The creature shrieks and recoils, giving you time to run.",
+                "label": "Use the fire extinguisher as a distraction and flee",
+                "targetScene": "foam_and_flee",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The foam cloud gives you cover. You and Marcus sprint down the alley as the creature thrashes blindly behind you."
+              }
+            ],
+            "id": "alley_fight",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You drop into the alley, weapons ready. The ground is slick with rain. A scraping sound comes from around the corner, growing louder.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A creature rounds the dumpster—tall, pale, limbs bending at impossible angles. Its human face stretches into a grotesque smile as it sees you.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "Marcus", "effect": "shake" }
+                ]
+              }
+            ]
+          }
+        },
+        "highway_checkpoint": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You approach the military checkpoint with your hands raised. Soldiers in full combat gear aim rifles at you before lowering them. 'You're safe now. Get in the truck.'",
+                "label": "Surrender to the military checkpoint",
+                "targetScene": "military_safe_zone",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You're taken to a refugee camp outside the city. You've survived the first night. But the nightmare is far from over."
+              },
+              {
+                "description": "The military is shooting everything that moves. You can't be sure they won't shoot you too. You bypass the checkpoint and continue north on foot.",
+                "label": "Bypass the checkpoint and go north",
+                "targetScene": "north_on_foot",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You skirt around the military checkpoint, heading north through residential areas. The creatures seem fewer here, but the silence is unsettling."
+              }
+            ],
+            "id": "highway_checkpoint",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You follow the sounds of gunfire and shouting toward the highway. The on-ramp is a bottleneck of abandoned cars and military vehicles. Soldiers in hazmat suits wave flashlights, scanning the crowd of civilians for signs of infection.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A sergeant spots you. 'You! Are you bitten? Have you been scratched by any of them?'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "research_facility": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You find the entrance to Central Station—an abandoned subway hub. The tunnels below are dark and cold. You descend, hoping to find answers.",
+                "label": "Descend into the research facility",
+                "targetScene": "central_station_lab",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You navigate the dark subway tunnels, following signs to the old research wing. The air grows colder. You find a locked door marked 'PROJECT HOLLOW EARTH.'"
+              },
+              {
+                "description": "The facility entrance is swarming with creatures. You can't get in. You retreat and look for another way to survive.",
+                "label": "Retreat and find another way",
+                "targetScene": "retreat_from_facility",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You back away from the subway entrance. The answers will have to wait. Survival comes first."
+              }
+            ],
+            "id": "research_facility",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You make your way toward Central Station, where the research facility entrance is supposedly located. The streets grow quieter as you approach—fewer creatures, fewer fires. It's as if even they avoid this place.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The station looms ahead, its grand facade cracked and darkened. A symbol on the door catches your eye—a biohazard warning, freshly painted.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "military_roof": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You step onto the roof, hands raised. The soldier lowers his weapon. 'Get in. We're the last evacuation flight.' You climb aboard the helicopter.",
+                "label": "Board the military helicopter",
+                "targetScene": "helicopter_evacuation",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The helicopter lifts off, carrying you away from the burning city. You've made it out. But looking down, you wonder how many didn't."
+              },
+              {
+                "description": "Something feels wrong. The soldier's eyes are too wide, too glassy. You notice a wound on his neck. You back away slowly.",
+                "label": "Refuse and retreat",
+                "targetScene": "suspicious_soldier",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You back away from the helicopter. The soldier's expression twists—and you see the truth. He's infected. You flee back into the building."
+              }
+            ],
+            "id": "military_roof",
+            "isCheckpoint": false,
+            "location": "Fire Escape",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "wind"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You push the roof door open and step out into the open air. A Black Hawk helicopter sits on the landing pad, its rotor spinning slowly. A soldier in full gear stands beside it, waving frantically.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Soldier",
+                "content": "Move! Move! This is the last evac! We're pulling out!",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "retreat_from_roof": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You descend the stairs, looking for another exit. The ground floor fire door leads to a side alley. You push through and emerge into the night.",
+                "label": "Exit through the ground floor fire door",
+                "targetScene": "fire_door_exit",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You emerge from the building into a quiet side street. The sounds of chaos echo from the main roads, but here, it's almost peaceful."
+              }
+            ],
+            "id": "retreat_from_roof",
+            "isCheckpoint": false,
+            "location": "Building Hallway",
+            "passiveCharacterEffects": [
+              { "character": "Marcus", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You decide the roof is too risky. You turn and descend the stairs, looking for another way out.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The stairwell spirals down past each floor. Through the door on the second floor, you hear movement—not creatures, but human footsteps.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "to_hospital": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You reach the hospital's emergency entrance. The doors are barricaded with gurneys, but a nurse spots you and opens a side door. 'Quick, inside!'",
+                "label": "Enter the hospital",
+                "targetScene": "hospital_safe_room",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You're ushered into the hospital. The lobby has been converted into a triage center. Doctors and nurses move between patients. You've found sanctuary."
+              },
+              {
+                "description": "The hospital is overflowing. You decide it's not safe—too many people, too many entrances for the creatures. You keep moving.",
+                "label": "Keep moving past the hospital",
+                "targetScene": "past_hospital",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You walk past the hospital, heading deeper into the residential districts. The further from downtown, the safer it seems."
+              }
+            ],
+            "id": "to_hospital",
+            "isCheckpoint": false,
+            "location": "City Streets",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You navigate the rain-slicked streets toward the hospital. The emergency lights on the rooftop guide you like a lighthouse. The hospital is a fortress of light in a sea of darkness.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you approach, you see that the hospital is still operational—armed guards at the entrances, ambulances coming and going. It's a beacon of civilization.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "observe_and_wait": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You watch from your window for an hour, tracking the creatures' movements. You notice a pattern—they move in packs of five to eight, patrolling in circuits. There's a ten-minute window between patrols on the east side.",
+                "label": "Plan your escape using the patrol patterns",
+                "targetScene": "escape_using_patterns",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You time the patrols and make your move during the gap. You slip out of the building and head east, staying ahead of the creature patrols."
+              },
+              {
+                "description": "The creatures seem to be drawn to sound. You test this by throwing a bottle down the alley. They converge on the noise instantly.",
+                "label": "Experiment with sound as a distraction",
+                "targetScene": "sound_distraction_plan",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You've learned that sound draws them. You can use this knowledge to create diversions. You start planning a route that uses noise to clear your path."
+              }
+            ],
+            "id": "observe_and_wait",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You stay at the window, watching. The city burns and the creatures hunt. But as you watch, patterns emerge in their seemingly random movement.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "They follow the lights. They avoid the dark alleys. They respond to sound with terrifying speed. Knowledge is power—and you're gathering intel.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "open_for_stranger": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You unbarricade the door and open it a crack. A woman in a bloodied nurse's uniform stumbles in. 'Thank you—they're everywhere—the hospital fell—' She collapses from exhaustion.",
+                "label": "Let the nurse in and help her",
+                "targetScene": "nurse_survivor",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The nurse, Elena, tells you about the massacre at the hospital. She has a radio that picks up military frequencies. Together, you might find a way out."
+              },
+              {
+                "description": "You can't trust anyone right now. You stay silent, not moving. The voice keeps pleading, then slowly turns to a guttural snarl. It wasn't human at all.",
+                "label": "Stay silent and let the creature leave",
+                "targetScene": "creature_minics",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The thing outside eventually gives up and moves on. You've learned something terrifying—the creatures can mimic human voices. You can trust no one."
+              }
+            ],
+            "id": "open_for_stranger",
+            "isCheckpoint": false,
+            "location": "Apartment 3C",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The voice outside the door continues pleading. 'Please... I'm hurt... they're coming...' It sounds so human. So desperate.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "The Narrator",
+                "content": "But Marcus said the creatures wear human faces. Is this one of them? Or a real survivor?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "silent_refusal": {
+          "type": "stub",
+          "scene": {
+            "id": "silent_refusal",
+            "description": "It could be one of *them*, mimicking a human voice. You've read about creatures that do that. You stay silent, pressing yourself against the wall, hoping they go away."
+          }
+        },
+        "mysterious_canister": {
+          "type": "stub",
+          "scene": {
+            "id": "mysterious_canister",
+            "description": "You pick up the canister carefully. It's warm, and the blinking light suggests it's active. This might be important—maybe a signal device or something dropped by the creatures."
+          }
+        },
+        "flee_through_bedroom": {
+          "type": "stub",
+          "scene": {
+            "id": "flee_through_bedroom",
+            "description": "You don't know what that thing is, but the broken window means you're exposed. You grab your bag and climb out through the window onto the fire escape, leaving the canister behind."
+          }
+        },
+        "help_diana": {
+          "type": "stub",
+          "scene": {
+            "id": "help_diana",
+            "description": "Diana is injured and needs help. You decide to go to her. You unbarricade your door and slip into the hallway, hoping the stairwell is truly clear."
+          }
+        },
+        "use_intel_fire_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "use_intel_fire_escape",
+            "description": "Diana gave you valuable intel. You decide to use it and take the fire escape alone, heading down to find a way out of the city."
+          }
+        },
+        "shelter_in_place": {
+          "type": "stub",
+          "scene": {
+            "id": "shelter_in_place",
+            "description": "The broadcast said to shelter in place. You have supplies, a radio, and a fortified position. You settle in for a long wait."
+          }
+        },
+        "run_for_evacuation": {
+          "type": "stub",
+          "scene": {
+            "id": "run_for_evacuation",
+            "description": "The broadcast mentioned evacuation centers. You can't just sit here—you need to reach one. You grab your supplies and prepare to make a run for it."
+          }
+        },
+        "trapdoor_secret": {
+          "type": "stub",
+          "scene": {
+            "id": "trapdoor_secret",
+            "description": "A secret trapdoor in your apartment? This could be an escape route—or a way into the building's basement. You pry it open with the crowbar."
+          }
+        },
+        "armed_exit_front": {
+          "type": "stub",
+          "scene": {
+            "id": "armed_exit_front",
+            "description": "You're not ready to crawl into an unknown hole. You gather your tools and prepare to head out the front door, better armed than before."
+          }
+        },
+        "military_convoy": {
+          "type": "stub",
+          "scene": {
+            "id": "military_convoy",
+            "description": "You creep through the dark alley. A rusted fire escape rattles above you. At the end, you see the main road—carnage, but also a military convoy rolling through."
+          }
+        },
+        "basement_access": {
+          "type": "stub",
+          "scene": {
+            "id": "basement_access",
+            "description": "A side door marked 'BASEMENT ACCESS' catches your eye. It's slightly open. A potential hiding spot or a way into the building's underbelly."
+          }
+        },
+        "rooftop_trek": {
+          "type": "stub",
+          "scene": {
+            "id": "rooftop_trek",
+            "description": "The hospital roof is your destination. You navigate the rooftop maze, leaping gaps and climbing ventilation units, making your way toward the blinking lights."
+          }
+        },
+        "scavenge_hardware": {
+          "type": "stub",
+          "scene": {
+            "id": "scavenge_hardware",
+            "description": "Below, you spot a hardware store with a smashed window. A quick detour could yield more useful supplies."
+          }
+        },
+        "patterson_supplies": {
+          "type": "stub",
+          "scene": {
+            "id": "patterson_supplies",
+            "description": "The apartment is silent. Too silent. You creep through the living room, eyes adjusting to the dark. A shape in the corner—a body. Mrs. Patterson didn't make it."
+          }
+        },
+        "patterson_hallway": {
+          "type": "stub",
+          "scene": {
+            "id": "patterson_hallway",
+            "description": "You can't stay here. The open window behind you is an invitation for creatures to follow. You move toward the front door, hoping to reach the hallway."
+          }
+        },
+        "hospital_arrival": {
+          "type": "stub",
+          "scene": {
+            "id": "hospital_arrival",
+            "description": "You navigate the alleyways and side streets, keeping to the shadows. The hospital grows closer, its emergency lights a beacon in the smoke-filled night."
+          }
+        },
+        "office_detour": {
+          "type": "stub",
+          "scene": {
+            "id": "office_detour",
+            "description": "A group of creatures blocks the direct path. You need to circle around through an abandoned office building."
+          }
+        },
+        "helicopter_rescue": {
+          "type": "stub",
+          "scene": {
+            "id": "helicopter_rescue",
+            "description": "The helicopter circles back. You wave frantically, using your phone's screen as a signal. The pilot spots you and begins to descend toward your rooftop."
+          }
+        },
+        "hide_from_chopper": {
+          "type": "stub",
+          "scene": {
+            "id": "hide_from_chopper",
+            "description": "The helicopter is military. They might be evacuating civilians. But the roar might also attract the creatures. You hesitate, unsure if signaling is wise."
+          }
+        },
+        "stairwell_descent": {
+          "type": "stub",
+          "scene": {
+            "id": "stairwell_descent",
+            "description": "You grip the pipe and swing at the lock. It shatters after the third hit. The door swings open, revealing a dark stairwell descending into the building."
+          }
+        },
+        "voices_in_stairwell": {
+          "type": "stub",
+          "scene": {
+            "id": "voices_in_stairwell",
+            "description": "Halfway down the stairs, you hear voices. Other survivors are in the building. You call out to them."
+          }
+        },
+        "candlelight_house": {
+          "type": "stub",
+          "scene": {
+            "id": "candlelight_house",
+            "description": "You sprint through the gap and find yourself in a residential area. Houses sit dark and silent. One has a light on—candlelight, flickering in an upstairs window."
+          }
+        },
+        "street_to_highway": {
+          "type": "stub",
+          "scene": {
+            "id": "street_to_highway",
+            "description": "The next street over is clear. You follow it toward the sound of the highway, where military checkpoints might offer safety."
+          }
+        },
+        "child_survivor": {
+          "type": "stub",
+          "scene": {
+            "id": "child_survivor",
+            "description": "The child is terrified but alive. You kneel down. 'It's okay. I'm not one of them. What's your name?' The child stares at you with wide eyes."
+          }
+        },
+        "leave_child": {
+          "type": "stub",
+          "scene": {
+            "id": "leave_child",
+            "description": "A child is vulnerable and slow. As much as it hurts, you can't risk your own life for a stranger. You back away quietly, leaving the child behind."
+          }
+        },
+        "tunnel_forward": {
+          "type": "stub",
+          "scene": {
+            "id": "tunnel_forward",
+            "description": "The tunnel stretches ahead into absolute darkness. You use your phone's light to navigate. The walls are damp and covered in old graffiti. You hear water running somewhere ahead."
+          }
+        },
+        "climb_out_drain": {
+          "type": "stub",
+          "scene": {
+            "id": "climb_out_drain",
+            "description": "This was a mistake. The tunnels are where they came from. You turn back, climbing up the ladder as fast as you can."
+          }
+        },
+        "shadow_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "shadow_escape",
+            "description": "You and Marcus slip through the shadows, moving from dumpster to doorway. The alley opens onto a quieter side street. You're making progress."
+          }
+        },
+        "convenience_scavenge": {
+          "type": "stub",
+          "scene": {
+            "id": "convenience_scavenge",
+            "description": "Up ahead, a convenience store with a smashed window. Maybe there's food, water, or a working phone inside."
+          }
+        },
+        "escape_by_car": {
+          "type": "stub",
+          "scene": {
+            "id": "escape_by_car",
+            "description": "You navigate the two blocks to Mulberry Street, keeping to shadows. Marcus's car—a beat-up sedan—is still there, miraculously untouched."
+          }
+        },
+        "alternative_vehicle": {
+          "type": "stub",
+          "scene": {
+            "id": "alternative_vehicle",
+            "description": "The car is a trap—too obvious. Instead, you and Marcus find a delivery van with keys under the visor. Quieter, less noticeable."
+          }
+        },
+        "desperate_fight": {
+          "type": "stub",
+          "scene": {
+            "id": "desperate_fight",
+            "description": "The door explodes inward. You swing the knife, catching the first creature across the arm. It shrieks and recoils. Marcus brings the skillet down on another's head."
+          }
+        },
+        "last_second_flight": {
+          "type": "stub",
+          "scene": {
+            "id": "last_second_flight",
+            "description": "You grab Marcus and dive through the bedroom window onto the fire escape just as the door gives way. The creatures crash into the apartment as you flee."
+          }
+        },
+        "quiet_escape": {
+          "type": "stub",
+          "scene": {
+            "id": "quiet_escape",
+            "description": "While the creatures pound on the front door, you and Marcus slip out the kitchen window onto the fire escape. The noise covers your escape."
+          }
+        },
+        "escape_with_diana": {
+          "type": "stub",
+          "scene": {
+            "id": "escape_with_diana",
+            "description": "You find Diana in the bathroom, bleeding from a gash on her leg. You tear strips from a bedsheet and fashion a tourniquet. She gasps in pain but nods gratefully."
+          }
+        },
+        "hide_diana": {
+          "type": "stub",
+          "scene": {
+            "id": "hide_diana",
+            "description": "Diana is too injured to move quickly. You patch her up as best you can and hide her in a closet, promising to return with help."
+          }
+        },
+        "find_help": {
+          "type": "stub",
+          "scene": {
+            "id": "find_help",
+            "description": "You shout instructions to Diana through the wall—barricade the door, stay quiet, save your phone battery. She taps back: 'Understood.' You promise to return with help."
+          }
+        },
+        "car_chase": {
+          "type": "stub",
+          "scene": {
+            "id": "car_chase",
+            "description": "You climb into the car. Marcus turns the key. The engine roars to life—and every creature within a block turns toward the sound."
+          }
+        },
+        "on_foot_again": {
+          "type": "stub",
+          "scene": {
+            "id": "on_foot_again",
+            "description": "The car is too risky. You decide to stay on foot—quieter, more maneuverable."
+          }
+        },
+        "police_armory": {
+          "type": "stub",
+          "scene": {
+            "id": "police_armory",
+            "description": "You and Marcus approach the police station from the rear. A back door is unlocked. Inside, you find an armory—lockers full of rifles and shotguns."
+          }
+        },
+        "officers_on_roof": {
+          "type": "stub",
+          "scene": {
+            "id": "officers_on_roof",
+            "description": "The front of the station is overrun. You can see officers trapped on the roof, firing down at the creatures swarming the entrance."
+          }
+        },
+        "survivor_group": {
+          "type": "stub",
+          "scene": {
+            "id": "survivor_group",
+            "description": "You land on the rooftop and approach the survivors cautiously. There are four of them—a family with two kids. They have a radio and news of a safe zone."
+          }
+        },
+        "solo_info_exchange": {
+          "type": "stub",
+          "scene": {
+            "id": "solo_info_exchange",
+            "description": "The group looks trustworthy, but you decide to keep your distance. You exchange information and then continue alone."
+          }
+        },
+        "service_ladder": {
+          "type": "stub",
+          "scene": {
+            "id": "service_ladder",
+            "description": "You find a service ladder bolted to the side of the building. It descends to a delivery alley on the north side. A path opens up."
+          }
+        },
+        "roof_door_entry": {
+          "type": "stub",
+          "scene": {
+            "id": "roof_door_entry",
+            "description": "The roof access door is unlocked. You find a set of stairs leading back down into the building's upper floor."
+          }
+        },
+        "clear_path": {
+          "type": "stub",
+          "scene": {
+            "id": "clear_path",
+            "description": "From the roof, you spot a clear path through the back streets. You and Marcus descend and move quickly, avoiding the main roads."
+          }
+        },
+        "fire_station": {
+          "type": "stub",
+          "scene": {
+            "id": "fire_station",
+            "description": "A nearby fire station has its doors open. There might be emergency vehicles or communication equipment inside."
+          }
+        },
+        "alley_combat": {
+          "type": "stub",
+          "scene": {
+            "id": "alley_combat",
+            "description": "The creature rounds the corner and sees you. It lets out a shriek and lunges. You swing the lamp like a club, connecting with its head. It crumples."
+          }
+        },
+        "foam_and_flee": {
+          "type": "stub",
+          "scene": {
+            "id": "foam_and_flee",
+            "description": "You fire the extinguisher, filling the alley with a cloud of white foam. The creature shrieks and recoils, giving you time to run."
+          }
+        },
+        "military_safe_zone": {
+          "type": "stub",
+          "scene": {
+            "id": "military_safe_zone",
+            "description": "You approach the military checkpoint with your hands raised. Soldiers in full combat gear aim rifles at you before lowering them. 'You're safe now. Get in the truck.'"
+          }
+        },
+        "north_on_foot": {
+          "type": "stub",
+          "scene": {
+            "id": "north_on_foot",
+            "description": "The military is shooting everything that moves. You can't be sure they won't shoot you too. You bypass the checkpoint and continue north on foot."
+          }
+        },
+        "central_station_lab": {
+          "type": "stub",
+          "scene": {
+            "id": "central_station_lab",
+            "description": "You find the entrance to Central Station—an abandoned subway hub. The tunnels below are dark and cold. You descend, hoping to find answers."
+          }
+        },
+        "retreat_from_facility": {
+          "type": "stub",
+          "scene": {
+            "id": "retreat_from_facility",
+            "description": "The facility entrance is swarming with creatures. You can't get in. You retreat and look for another way to survive."
+          }
+        },
+        "fire_door_exit": {
+          "type": "stub",
+          "scene": {
+            "id": "fire_door_exit",
+            "description": "You descend the stairs, looking for another exit. The ground floor fire door leads to a side alley. You push through and emerge into the night."
+          }
+        },
+        "hospital_safe_room": {
+          "type": "stub",
+          "scene": {
+            "id": "hospital_safe_room",
+            "description": "You reach the hospital's emergency entrance. The doors are barricaded with gurneys, but a nurse spots you and opens a side door. 'Quick, inside!'"
+          }
+        },
+        "past_hospital": {
+          "type": "stub",
+          "scene": {
+            "id": "past_hospital",
+            "description": "The hospital is overflowing. You decide it's not safe—too many people, too many entrances for the creatures. You keep moving."
+          }
+        },
+        "escape_using_patterns": {
+          "type": "stub",
+          "scene": {
+            "id": "escape_using_patterns",
+            "description": "You watch from your window for an hour, tracking the creatures' movements. You notice a pattern—they move in packs of five to eight, patrolling in circuits. There's a ten-minute window between patrols on the east side."
+          }
+        },
+        "sound_distraction_plan": {
+          "type": "stub",
+          "scene": {
+            "id": "sound_distraction_plan",
+            "description": "The creatures seem to be drawn to sound. You test this by throwing a bottle down the alley. They converge on the noise instantly."
+          }
+        },
+        "nurse_survivor": {
+          "type": "stub",
+          "scene": {
+            "id": "nurse_survivor",
+            "description": "You unbarricade the door and open it a crack. A woman in a bloodied nurse's uniform stumbles in. 'Thank you—they're everywhere—the hospital fell—' She collapses from exhaustion."
+          }
+        },
+        "creature_minics": {
+          "type": "stub",
+          "scene": {
+            "id": "creature_minics",
+            "description": "You can't trust anyone right now. You stay silent, not moving. The voice keeps pleading, then slowly turns to a guttural snarl. It wasn't human at all."
+          }
+        },
+        "helicopter_evacuation": {
+          "type": "stub",
+          "scene": {
+            "id": "helicopter_evacuation",
+            "description": "You step onto the roof, hands raised. The soldier lowers his weapon. 'Get in. We're the last evacuation flight.' You climb aboard the helicopter."
+          }
+        },
+        "suspicious_soldier": {
+          "type": "stub",
+          "scene": {
+            "id": "suspicious_soldier",
+            "description": "Something feels wrong. The soldier's eyes are too wide, too glassy. You notice a wound on his neck. You back away slowly."
+          }
+        }
+      },
+      "locations": {
+        "Apartment 3C": {
+          "name": "Apartment 3C",
+          "vignette": "Your small, cluttered one-bedroom apartment on the third floor of an aging brick walk-up. The space is now plunged into darkness, lit only by the faint glow of the city's dying fires through the window.",
+          "appearanceDescription": "A modest apartment with worn hardwood floors, a kitchenette to the left, a small living area with a couch and coffee table, and a hallway leading to the bedroom and bathroom. The power is out, so everything is cast in deep shadows. The window overlooking the street shows an orange glow from distant fires.",
+          "backstoryDescription": "You've lived here for three years. It's not much, but it's been home. The walls are thin, and you know your neighbors by their footsteps and arguments."
+        },
+        "Building Hallway": {
+          "name": "Building Hallway",
+          "vignette": "The narrow, dim corridor of the third floor with faded floral wallpaper and a single emergency light flickering weakly. The air smells of old carpet and something metallic, like blood.",
+          "appearanceDescription": "A long, narrow hallway with doors to apartments 3A, 3B, and 3C (yours), plus the stairwell door at the end. The emergency light casts sickly yellow pools of light, and the wallpaper is peeling in places.",
+          "backstoryDescription": "You've walked this hallway hundreds of times, greeting neighbors you barely know. Tonight, it feels like a trap."
+        },
+        "City Streets": {
+          "name": "City Streets",
+          "vignette": "The chaotic urban landscape below your window. Cars are abandoned at odd angles, some still running with headlights cutting through smoke. Sirens wail in the distance, and shadows move between the wreckage.",
+          "appearanceDescription": "A city street in chaos. Overturned cars, flickering streetlights, shattered storefront windows. The sky is hazy with smoke, and the orange glow of fires paints everything in hellish hues. Strange, skittering shapes can be seen moving in the periphery.",
+          "backstoryDescription": "The city was once bustling and alive. Tonight, it's a war zone, though no one is sure who or what the enemy is."
+        },
+        "Fire Escape": {
+          "name": "Fire Escape",
+          "vignette": "The rusted metal ladder and platform attached to the building's exterior, accessible from your kitchen window. It leads down to the alleyway below, where the howling sound came from.",
+          "appearanceDescription": "A narrow, grated metal platform with a ladder descending into darkness. The metal is cold and rough with rust. From here, you can see into neighboring apartments and down into the shadow-choked alley.",
+          "backstoryDescription": "The fire escape has always been your emergency exit, though you never thought you'd actually need it. It groans under weight but holds."
+        }
+      },
+      "characters": {
+        "Marcus": {
+          "name": "Marcus",
+          "vignette": "Marcus Chen is your neighbor from apartment 3B, a graphic designer in his late twenties. He's always been friendly, if a bit nosy, and you've borrowed sugar from each other more than once.",
+          "appearanceDescription": "A man of average height with messy black hair, glasses, and a panicked expression. He's wearing a stained t-shirt and sweatpants, and his hands are trembling as he pounds on your door.",
+          "backstoryDescription": "Marcus has lived next door for about two years. He works freelance, so you often hear his keyboard clacking through the walls at odd hours. He has a cat named Pixel."
+        },
+        "The Narrator": {
+          "name": "The Narrator",
+          "vignette": "Your own inner voice, the survival instinct that's now screaming at you to make a decision before it's too late.",
+          "appearanceDescription": "No physical form. This is the voice in your head, the one that's keeping you alive.",
+          "backstoryDescription": "You are you. A regular person, maybe in your 20s or 30s, who was just trying to get through another evening when the world ended."
+        }
+      }
+    },
+    "minimumCheckpointsSpacing": 4,
+    "thresholdFrontierCheckpointsCount": 4,
+    "maximumDistanceFromCheckpoint": 6,
+    "minimumDistanceToFinalEnding": 2
+  }
+}

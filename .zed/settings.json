@@ -1,0 +1,10 @@
+{
+  "tab_size": 2,
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "onIgnoredFiles": "off"
+      }
+    }
+  }
+}

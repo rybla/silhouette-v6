@@ -1,0 +1,2816 @@
+{
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "impl",
+          "scene": {
+            "id": "start",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The emergency broadcast on your phone didn't end with instructions; it ended with a wet, choking scream that cut to static just as the power grid blew, plunging your apartment into an oppressive, heavy darkness. Outside your third-story window, the familiar hum of the city has mutated into a chaotic symphony of screeching tires, distant explosions, and an underlying, rhythmic scuffling sound that makes the hairs on your arms stand up.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A frantic, heavy pounding suddenly rattles your front door, accompanied by the panicked voice of your neighbor begging to be let in—but from the alleyway directly below your fire escape, you hear the unmistakable sound of breaking glass and a guttural, distinctly non-human howl.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "Two directions, two threats. Mrs. Castellano needs help, but whatever is in that alley... it sounds like it's getting closer. I need to make a choice, and fast.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Open the front door for Mrs. Castellano",
+                "description": "You rush to the front door, fumbling with the chain lock and deadbolt. Mrs. Castellano's terrified babbling grows more urgent as you work the locks. You can hear her gasping, pleading for you to hurry—and behind her voice, the sound of something heavy dragging itself up the stairs.",
+                "targetScene": "open_door_for_neighbor",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You throw the door open and pull Mrs. Castellano inside, slamming it shut behind her. The hallway beyond is dark, but you catch a glimpse of something impossibly long and pale disappearing around the corner of the stairwell."
+              },
+              {
+                "label": "Barricade the door and grab a weapon",
+                "description": "You ignore the pounding and start dragging furniture—the bookshelf, the heavy armchair—in front of the door. Your hands shake as you push the sofa against the barricade. You need a weapon. The kitchen drawer has knives. The fireplace poker. Something.",
+                "targetScene": "barricade_and_arm",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The apartment is now a makeshift fortress. The door groans under the weight of your barricade, and Mrs. Castellano's pounding has stopped. Instead, you hear a long, wet silence—followed by a single, deliberate knock."
+              },
+              {
+                "label": "Head to the fire escape to investigate the alley",
+                "description": "You creep toward the living room window, carefully pulling back the curtain. The fire escape platform is slick with rain. Below, in the alley, shadows writhe and shift. You need to see what you're dealing with before making any decisions about the door.",
+                "targetScene": "fire_escape_view",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Peering down into the alley from the fire escape, the scene below steals the breath from your lungs. The streetlights flicker, illuminating something that defies explanation."
+              },
+              {
+                "label": "Call out to Mrs. Castellano through the door first",
+                "description": "You press yourself against the door, your mouth near the wood grain. 'Mrs. Castellano? It's me! What's out there?' You need information before you commit to opening the door.",
+                "targetScene": "talk_through_door",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Mrs. Castellano's frantic whisper comes through the door, her voice hitching with terror. She tells you what she saw—and it's worse than you imagined."
+              }
+            ],
+            "isCheckpoint": true,
+            "checkpoint": "interior"
+          }
+        },
+        "open_door_for_neighbor": {
+          "type": "impl",
+          "scene": {
+            "id": "open_door_for_neighbor",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Ask Mrs. Castellano what she saw",
+                "description": "You kneel beside her, trying to calm her down. She's babbling in a mix of Italian and English, but between the sobs, there's information—valuable information about what's happening outside. You need to know what you're dealing with.",
+                "targetScene": "castellano_story",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Mrs. Castellano, between shaky breaths, tells you everything she witnessed before she ran to your door. The picture she paints is terrifyingly methodical."
+              },
+              {
+                "label": "Check the peephole to see if it followed us",
+                "description": "You press your eye to the peephole, heart hammering. The fisheye lens shows the hallway in distorted miniature. The flickering fluorescent light. The peeling wallpaper. And at the far end, near the stairwell—a patch of darkness that seems to be moving, shifting, growing closer.",
+                "targetScene": "peephole_view",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Through the peephole, you watch as the thing in the hallway begins to move. It doesn't walk—it unfolds, limb by limb, stretching toward your door."
+              },
+              {
+                "label": "Fortify the apartment with Mrs. Castellano's help",
+                "description": "You help the old woman to her feet. 'We need to block every entrance. The door, the windows, the fire escape. Can you help me?' She nods, wiping her eyes. Together, you start dragging furniture, working in desperate silence.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Working together, you and Mrs. Castellano turn the apartment into a fortress. Boards go up. Furniture stacks against doors. But as you work, you hear something tapping on the window glass—a slow, deliberate rhythm."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "Your fingers work the deadbolt with desperate urgency. The chain rattles as you slide it free. You yank the door open—",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano tumbles through the doorway, nearly collapsing into your arms. She's cold, trembling violently, her housecoat soaked with rain. Her eyes are wild, unfocused. Behind her, the hallway stretches into darkness—and at the far end, near the stairwell, you see it: a long, pale, impossibly thin limb curling around the corner, jointed in ways no human joint should bend, before it withdraws into the shadows.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Grazie a Dio! Grazie a Dio! Chiudi la porta, chiudi la porta, per favore! It—it was at my door. Scratching. It spoke to me. It said my name in my husband's voice. Marco's been dead for twelve years!",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You slam the door shut and throw the deadbolt. Mrs. Castellano slides down to the floor, sobbing quietly, clutching her crucifix. You're not alone anymore—but you've also seen what's out there. And you've trapped yourself in here with whatever else might be watching.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "sad" }
+                ]
+              }
+            ]
+          }
+        },
+        "barricade_and_arm": {
+          "type": "impl",
+          "scene": {
+            "id": "barricade_and_arm",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Arm yourself with a kitchen knife",
+                "description": "You dash to the kitchen, yanking open the drawer. The knife block is where it always is. You grab the largest chef's knife—it's not a weapon, but it's sharp. The weight of it in your hand is reassuring, if only slightly.",
+                "targetScene": "armed_with_knife",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Standing in your dark kitchen, chef's knife in hand, you hear the pounding at the door stop. The silence that follows is worse than the noise."
+              },
+              {
+                "label": "Grab the fireplace poker instead",
+                "description": "The fireplace hasn't been used in years, but the poker set is still beside the hearth. You grab the heavy iron poker—longer reach, more heft. It feels more like a real weapon. You swing it once, testing the weight.",
+                "targetScene": "armed_with_poker",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Iron poker in hand, you feel a sliver of confidence. But a new sound emerges from the hallway—a wet, rhythmic dragging, like something being pulled across the floor."
+              },
+              {
+                "label": "Listen at the door before deciding",
+                "description": "You freeze, holding your breath, and press your ear to the wood. The silence is absolute. No pounding. No breathing. No footsteps retreating. Just... nothing. Then, a whisper so faint you almost miss it: 'I know you're in there.'",
+                "targetScene": "listen_at_door",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The whisper comes through the door like a cold draft. It's not Mrs. Castellano's voice. It's something else, using human speech like a tool it doesn't quite understand."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You ignore the pounding and start dragging furniture—the heavy bookshelf first, then the armchair, scraping them across the floor toward the front door. Your hands shake as you pile them up, creating a makeshift barricade.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The sofa is the last piece. You heave it against the stack, praying it's enough. The door groans under the weight—and then, abruptly, the pounding stops.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A long, wet silence descends. You stand there, breathing hard, sweat dripping down your face. One second. Two. Ten. Then—a single, deliberate knock. *Knock.* Not frantic. Not desperate. Patient. And then a voice, muffled but unmistakably Mrs. Castellano's: 'Please... it hurts... please let me in...'",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "That's not her. That's not her voice. Mrs. Castellano wouldn't say 'it hurts' like that. She'd scream. She'd cry. She wouldn't sound so... hollow. I need a weapon. Now.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "fire_escape_view": {
+          "type": "impl",
+          "scene": {
+            "id": "fire_escape_view",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Climb down the fire escape to investigate",
+                "description": "Against every instinct screaming at you to stay inside, you slide the window open. The rain hits your face—cold, sharp. The fire escape groans under your weight as you step onto it. Below, the alley waits in darkness. You need to see what's making those sounds.",
+                "targetScene": "climb_down_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Descending the fire escape, each step a symphony of creaking metal, you peer into the alley below. The shadows shift, and you realize too late that you're not the hunter—you're the prey."
+              },
+              {
+                "label": "Close the curtain and go back to the door decision",
+                "description": "What you saw in the alley chills your blood. You let the curtain fall back and step away from the window. The fire escape is not an option. Your only path forward is through the front door. You turn back toward the sound of Mrs. Castellano's frantic pounding.",
+                "targetScene": "back_to_door_or_alley_knowledge",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Armed with knowledge of what lurks below, you return to the front door dilemma. But the pounding has stopped. The hallway is silent. Whatever was at your door—and whatever is in the alley—they seem to be working in concert."
+              },
+              {
+                "label": "Try to signal for help from the fire escape",
+                "description": "You step onto the fire escape platform, raising your arms to wave at the distant glow of fires—maybe there are rescue crews, police, anyone. You shout into the darkness, your voice swallowed by the rain. But something below answers.",
+                "targetScene": "signal_from_fire_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Your shout echoes off the alley walls. From below, a response comes—not a voice, but a sound. A wet, clicking chitter, like a mouth full of needles. It's climbing."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You creep toward the living room window, your footsteps muffled by the worn carpet. Your hand trembles as you reach for the curtain, pulling it back a fraction of an inch.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The fire escape platform glistens with rain, its iron gridwork slick and treacherous. You peer down into the narrow alley below, and your blood turns to ice.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "There are figures in the alley—three of them. They stand unnaturally still, facing away from each other at angles that suggest they're... listening. Their limbs are too long, their posture too wrong. One of them tilts its head back, and despite the distance and the rain, you see its face—or rather, the absence of one. A smooth, pale oval where features should be. It opens a mouth that unhinges like a snake's and lets out a low, clicking call that echoes off the buildings.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "Oh God. Oh God, no. Those aren't people. They never were. I need to get away from that window before they sense me watching.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ]
+              }
+            ]
+          }
+        },
+        "talk_through_door": {
+          "type": "impl",
+          "scene": {
+            "id": "talk_through_door",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Believe her and open the door",
+                "description": "Her story is terrifying but coherent. If they're mimicking voices, if they can imitate the dead—you need to stick together. You reach for the lock.",
+                "targetScene": "open_door_for_neighbor",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Don't open the door—tell her to hide in her own apartment",
+                "description": "Your heart goes out to her, but opening the door could doom you both. You tell her, as quietly as you can, to go back to her apartment, lock the door, and stay silent. She protests, sobs, but eventually you hear her shuffling away.",
+                "targetScene": "send_neighbor_away",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You listen as Mrs. Castellano's footsteps retreat down the hall. You're alone now. The guilt gnaws at you, but the silence that follows is its own kind of terror."
+              },
+              {
+                "label": "Ask her for more details—what did the creature look like?",
+                "description": "You press for specifics. The more you know, the better your chances. She describes something that sounds impossible—a creature that moved like a spider, that wore a stolen face, that spoke in languages it shouldn't know.",
+                "targetScene": "detailed_description",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Mrs. Castellano's description is vivid, detailed, and horrifying. She saw these creatures up close. She survived. But as she speaks, you notice her voice growing distant—and the sound of wet footsteps on the stairs grows louder."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press yourself against the door, your cheek touching the cool wood. 'Mrs. Castellano? It's me! What's out there?' you hiss through the gap.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "For a moment, only ragged breathing answers. Then her voice comes through—low, urgent, terrified: 'They came from the sky. I saw them from my window. They fell like rain—pale, thin, wrong. They landed on people in the street. On the roof. They... they wear people. Like clothes. I saw Mr. Henderson from 2B walking, but it wasn't him. It smiled with his face and his eyes were gone.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Please, you have to let me in. I can't go back to my apartment. It's on my ceiling. I saw it crawling. Just waiting. Please, I'm begging you.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Her words paint a nightmare. Creatures falling like rain. Wearing people like clothes. And one of them is in her apartment, waiting on her ceiling.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "castellano_story": {
+          "type": "impl",
+          "scene": {
+            "id": "castellano_story",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "We need to escape through the building's roof",
+                "description": "Mrs. Castellano says the creatures came from the sky—but they fell down. Maybe the roof is clear. Maybe you can get to another building. A desperate plan, but staying here feels like a death sentence.",
+                "targetScene": "roof_escape_plan",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Mrs. Castellano formulate a plan to reach the roof and cross to the neighboring building. But to get there, you'll have to go through the hallway—where something is waiting."
+              },
+              {
+                "label": "Stay put and wait for dawn",
+                "description": "Whatever these things are, they might be nocturnal. You decide to wait it out. Dawn is only a few hours away. You and Mrs. Castellano hole up in the bathroom—the smallest room, the most defensible—and wait in silence.",
+                "targetScene": "wait_for_dawn",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The bathroom becomes your bunker. You sit in the dark, listening to the sounds of the city dying around you. Mrs. Castellano prays silently. The hours crawl by."
+              },
+              {
+                "label": "Try to make a run for the street level",
+                "description": "Staying here is suicide. You need to get out of the building entirely. Maybe if you move fast and quiet, you can make it to the street and find other survivors, a working vehicle, anything.",
+                "targetScene": "run_for_street",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "With Mrs. Castellano in tow, you prepare to descend the stairs to the ground floor. It's a gamble, but staying put feels like waiting to die."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You help Mrs. Castellano to the couch, wrapping a blanket around her trembling shoulders. She takes a few deep breaths, clutching her crucifix, and begins to speak.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "I was watching the news when the broadcast cut out. I went to my window—I saw them falling. Like pale raindrops, but wrong. They hit the street and... unfolded. Legs too long. Arms that bent backwards. They moved so fast—faster than anything I've ever seen.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "They don't kill everyone. Some people they... take. I saw them carry a man into a sewer grate. He was still moving. Still alive. And the ones they don't take, they wear. Like costumes. I saw a woman walking down the street with a creature inside her skin, practicing how to smile.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "The one in your apartment—on the ceiling. Did it see you?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "It was in my bedroom. I heard a noise—a wet sound, like someone wringing out a cloth. I opened the door and it was there, spread across the ceiling like a spider. It turned its head all the way around to look at me. I ran. I didn't look back.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The information settles in your stomach like a stone. Parasites. Mimics. And they're everywhere now.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "peephole_view": {
+          "type": "impl",
+          "scene": {
+            "id": "peephole_view",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Back away slowly and stay quiet",
+                "description": "The thing is coming toward the door. You step back, putting distance between yourself and the threshold. Maybe if you're silent, it'll lose interest. Maybe it'll move on.",
+                "targetScene": "silent_hide",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You retreat into the darkness of your apartment, pressing yourself against the wall. The sound of scraping draws nearer. Then—a sniffing sound at the base of the door."
+              },
+              {
+                "label": "Mrs. Castellano sees it too—brace for impact",
+                "description": "You grab Mrs. Castellano's arm and pull her back. 'It's coming,' you whisper. Together, you brace—ready for whatever comes through that door.",
+                "targetScene": "brace_for_impact",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Mrs. Castellano stand together, facing the door. The lock rattles. Something is trying to get in."
+              },
+              {
+                "label": "Grab a weapon and prepare to attack when it enters",
+                "description": "You snatch a heavy lamp from the side table, yanking the cord from the wall. If it comes through that door, you'll be ready. You position yourself beside the doorframe, weapon raised.",
+                "targetScene": "ambush_at_door",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You press yourself against the wall beside the door, the lamp raised like a club. The lock clicks. The door begins to swing open."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press your eye to the cold brass of the peephole. The fisheye lens distorts the hallway into a curved tunnel of shadows and flickering light.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "At the far end, near the stairwell, the darkness seems to pulse. Then it moves. The thing in the hallway begins to unfold itself—limb after limb extending from a central mass that was hidden in the shadows. It has too many joints. It moves like a marionette being operated by someone who doesn't understand human anatomy.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "It takes a step. Then another. It's coming toward your door. As it passes under the flickering fluorescent light, you see it clearly for just a moment—a thing that wears the approximation of a human body, pale and hairless, with a face that has a mouth but no nose, eyes that are too large and too dark, and a smile that doesn't move like a smile should.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Behind you, Mrs. Castellano whispers: 'Madre di Dio... it's coming this way.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "fortify_together": {
+          "type": "impl",
+          "scene": {
+            "id": "fortify_together",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Ignore the tapping—focus on reinforcing the windows",
+                "description": "Whatever is tapping, you can't afford to be distracted. You grab more furniture, more boards. You nail plywood over the window frames. The tapping continues, patient and unhurried.",
+                "targetScene": "reinforce_windows",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The apartment becomes a wooden cage. Plywood covers every window. But as you hammer the last nail, you realize you've sealed yourself in with the tapping thing—and it's already inside."
+              },
+              {
+                "label": "Investigate the tapping at the window",
+                "description": "Slowly, you approach the window. The tapping is rhythmic. Deliberate. Like someone knocking to be let in. You pull back the curtain just enough to see.",
+                "targetScene": "window_tapping",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "At the window, a figure perches on the fire escape platform. It's not trying to break in. It's just... watching. Tapping. Waiting."
+              },
+              {
+                "label": "Whisper a plan to Mrs. Castellano—escape through the bathroom window",
+                "description": "The bathroom window faces the other side of the building—a different alley, maybe a different fate. You whisper your plan to Mrs. Castellano. It's risky, but it might be your only way out.",
+                "targetScene": "bathroom_window_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You creep toward the bathroom with Mrs. Castellano. The tapping at the living room window continues, oblivious—or unconcerned—that its prey is slipping away."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You help Mrs. Castellano to her feet, her legs shaky but functional. 'We need to block every entrance,' you tell her. 'The door, the windows—everything.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "I have boards in my apartment—my late husband Marco, he was always preparing for hurricanes. I have nails too.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "happy" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Together, you work in desperate efficiency. She retrieves the supplies from her apartment while you clear the hallway, heart pounding each second she's out of sight. She returns, arms full of pine boards and a rusty hammer. You start nailing them across the front door frame.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As you drive the last nail into the door frame, a new sound freezes your blood. From the living room window—*tap. Tap. Tap.* Slow. Deliberate. The sound of something knuckle-deep on the other side of the glass.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "It's at the window. It watched us fortify the door and just... walked around. They're herding us.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "armed_with_knife": {
+          "type": "impl",
+          "scene": {
+            "id": "armed_with_knife",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Open the door and strike first",
+                "description": "You can't wait for it to break through. You steady the knife, unlock the door, and prepare to attack whatever is on the other side. Surprise is your only advantage.",
+                "targetScene": "strike_first",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You throw the door open, knife raised—and find nothing. The hallway is empty. But a trail of wet footprints leads from the stairwell to your door, and then... up the wall."
+              },
+              {
+                "label": "Hold your position and wait",
+                "description": "You stand in the center of the room, knife in hand, facing the door. Let it come to you. You're ready.",
+                "targetScene": "hold_position",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Minutes pass. The silence stretches. Your arm grows tired from holding the knife. And then—a creak from behind you. The bedroom door is swinging open on its own."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You yank open the kitchen drawer and grab the chef's knife. It gleams dully in the dark—good steel, well-maintained. It's not a weapon, but it'll do.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The weight of the knife steadies your nerves. You take a breath. The voice outside has stopped—replaced by a sound like wet fabric dragging across the floor. Something is circling the apartment. You can hear it pass the door, pause at the window, return to the door. Testing. Learning.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "It's smart. It's figuring out the layout. If I wait too long, it'll find a way in that I'm not watching.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "armed_with_poker": {
+          "type": "impl",
+          "scene": {
+            "id": "armed_with_poker",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Open the door and confront whatever is there",
+                "description": "Iron poker in hand, you feel a surge of aggressive courage. You're done being hunted. You unlock the door and step into the hallway.",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You step into the hallway, poker raised. The fluorescent light buzzes. The hallway is empty—except for a single figure standing at the far end, silhouetted against the emergency exit light. It's human-shaped. But it's too still."
+              },
+              {
+                "label": "Stay inside and test the poker on the door",
+                "description": "You grip the poker and approach the door. You tap it against the wood—a challenge. The response comes immediately: a crash against the door, so violent the frame shakes, followed by a hiss like escaping steam.",
+                "targetScene": "challenge_response",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "The door buckles but holds. Whatever is out there is stronger than it looks. And it's angry now."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The fireplace poker is heavier than you remember. Cast iron, blackened with age, curled at the end into a sharp hook. You swing it once—the weight feels good. It has reach. It has heft. It could do real damage.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A new sound emerges from the hallway: a wet, rhythmic dragging, like something being pulled across the linoleum. It starts at the stairwell and moves slowly toward your door. Whatever it is, it's not bothering to hide its approach.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "It knows I'm here. It's not even trying to be quiet. Either it's stupid... or it knows I can't hurt it.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "listen_at_door": {
+          "type": "impl",
+          "scene": {
+            "id": "listen_at_door",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Run to the fire escape",
+                "description": "That voice—it knows you're alone. It knows your name. The door isn't safe anymore. You bolt for the living room window, fumbling with the lock.",
+                "targetScene": "fire_escape_view",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Answer it back",
+                "description": "Your voice shakes, but you force words out. 'Who are you? What do you want?' Perhaps if it's talking, you can buy time. Perhaps you can negotiate.",
+                "targetScene": "answer_the_whisper",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Your question hangs in the air. For a long moment, there's only silence. Then the voice responds—and it's coming from inside your apartment."
+              },
+              {
+                "label": "Stay perfectly silent and still",
+                "description": "You don't move. You barely breathe. Maybe if you pretend you didn't hear it, it'll go away. Maybe it'll think the apartment is empty.",
+                "targetScene": "perfect_silence",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Minutes crawl by in absolute silence. Just when you think it might have worked, you hear the front door unlock. The deadbolt turns by itself."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You freeze, holding your breath, pressing your ear to the wood. The silence is absolute. No pounding. No breathing. No footsteps.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Then—a whisper. So faint you almost miss it. It comes through the wood like a cold draft, curling around the edges of the door frame.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "'I know you're in there.'",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The voice is wrong. It's using human speech, but the cadence is off—like someone who learned language from a book and never quite mastered the rhythm. It continues, growing slightly louder:",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "(whispering) It's not Mrs. Castellano. It's not even human.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              }
+            ]
+          }
+        },
+        "climb_down_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "climb_down_fire_escape",
+            "location": "Alleyway Below Fire Escape",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Fight back",
+                "description": "You have no choice. You swing the weapon you brought—or your fists—at the creature. It's you or it.",
+                "targetScene": "fight_creature_alley",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Your blow lands, but the creature barely reacts. It tilts its head, curious, as if wondering why the food is fighting back."
+              },
+              {
+                "label": "Run—sprint for the street",
+                "description": "You drop from the ladder the last few feet, landing hard, and bolt for the mouth of the alley. Feet slapping on wet pavement, you run for your life.",
+                "targetScene": "sprint_from_alley",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You burst out of the alley into the street. The city is a nightmare—wrecked cars, fires, and shapes moving in the smoke. But you're alive. For now."
+              },
+              {
+                "label": "Freeze—maybe it hasn't seen you",
+                "description": "You press yourself against the brick wall, holding your breath. The creature below continues its slow patrol. If you don't move, if you don't make a sound, maybe it'll pass right beneath you.",
+                "targetScene": "freeze_on_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Pinned against the wall, you watch the creature pass below. It stops directly under you. The rain runs down its pale, hairless scalp. And then, slowly, it tilts its face up toward you."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "The fire escape groans under your weight as you step onto it. Cold rain lashes your face. The metal rungs are slick, treacherous. You descend one step at a time, each footfall a potential announcement of your presence.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Halfway down, you stop. Below you, the alley is a pit of shadows. You can hear movement—the scrape of something on concrete, the wet click of joints. It's directly below you.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "A pale hand reaches out from the darkness and grips the bottom rung of the ladder. Long fingers, too many joints, wrap around the metal. It's climbing up to meet you.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "back_to_door_or_alley_knowledge": {
+          "type": "impl",
+          "scene": {
+            "id": "back_to_door_or_alley_knowledge",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Open the door and try to reach the roof",
+                "description": "You know there are creatures in the alley and at the door. But maybe the roof is the only way out. You steel yourself and approach the door.",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You open the door carefully. The hallway is dark, silent. You can hear the creatures in the alley below, but the stairwell up to the roof is clear. For now."
+              },
+              {
+                "label": "Stay put and wait them out",
+                "description": "They're coordinating. Trapping you. Your best bet might be to do nothing. Wait. Watch. Survive until dawn.",
+                "targetScene": "wait_them_out",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You retreat to the center of your apartment, away from doors and windows. It's a waiting game now. You just hope you're better at it than they are."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You let the curtain fall back, stepping away from the window. Your heart pounds. The things in the alley—you saw them clearly. Pale. Limb-jointed wrong. Moving with a purpose that felt almost military.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You turn back toward the front door, your mind racing. The pounding has stopped. The hallway is silent. You press your ear to the door—nothing. They've gone quiet. Both the door and the alley. As if they're waiting for you to make a move.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "They're herding me. The ones in the alley and the one at the door—they're working together. They want me to panic. To do something stupid. I need to think.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "signal_from_fire_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "signal_from_fire_escape",
+            "location": "Alleyway Below Fire Escape",
+            "passiveLocationEffects": ["dark", "rain", "wind"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Climb back up—fast",
+                "description": "The clicking is getting closer. You scramble back up the fire escape, your hands slipping on the wet metal. You have to get back inside before it reaches you.",
+                "targetScene": "scramble_back_inside",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You crash back through the window, landing hard on the living room floor. You slam the window shut just as something impacts the glass from the other side—a pale hand, pressed flat against the pane."
+              },
+              {
+                "label": "Drop to the ground and run",
+                "description": "Too late to go back. You let go of the ladder, dropping the remaining distance. Your ankles scream at the impact, but you're on your feet. You run.",
+                "targetScene": "drop_and_run",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You sprint through the rain-slicked alley, the clicking growing louder behind you. The street ahead is a warzone of abandoned cars and flickering fires."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "You step onto the rain-slicked platform of the fire escape, raising your arms to wave at the distant glow of fires. 'HELP!' you shout into the darkness. 'OVER HERE! I NEED—'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Your voice echoes off the alley walls, swallowed by the rain. For a moment, nothing. Then, from below, a response. Not a voice. A sound. A wet, clicking chitter, like a mouth full of needles snapping together in rhythm.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The clicking is answered by another sound—closer. And another. The creatures in the alley are communicating. And they know exactly where you are.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Below, you hear the scrape of claws on metal. They're climbing the fire escape.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "send_neighbor_away": {
+          "type": "impl",
+          "scene": {
+            "id": "send_neighbor_away",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Regret gnaws at you—go after her",
+                "description": "You can't live with yourself if something happens to her. You unlock the door and step into the hallway, calling her name.",
+                "targetScene": "go_after_castellano",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You step into the hallway. Mrs. Castellano's door is ajar. From inside, you hear a wet, pulsing sound—and her soft, terrified sobbing."
+              },
+              {
+                "label": "Stay—you made the hard choice, now survive it",
+                "description": "Your guilt is a heavy weight, but opening the door would have doomed you both. You retreat deeper into your apartment, alone, and focus on the next threat.",
+                "targetScene": "alone_and_surviving",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Alone in your apartment, the silence is deafening. You've survived this moment, but the night is far from over."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "Your heart aches as you speak through the door. 'Mrs. Castellano... I can't open the door. It's not safe. You need to go back to your apartment. Lock the door. Stay quiet. Please.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "For a moment, silence. Then her voice, small and broken: 'Please... I'm scared. Please don't leave me out here.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "I'm sorry. I'm so sorry. But I can't. Go. Now. Quietly.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You hear her sob once, then silence. Footsteps—slow, shuffling—retreat down the hallway. A door opens and closes. You're alone now. The guilt is a physical weight in your chest. But you're alive.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "detailed_description": {
+          "type": "impl",
+          "scene": {
+            "id": "detailed_description",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [],
+            "isCheckpoint": false,
+            "choices": [
+              {
+                "label": "Pull her inside now—you know enough",
+                "description": "Her description is terrifying, but she's a survivor. She's valuable. You unlock the door and pull her inside.",
+                "targetScene": "open_door_for_neighbor",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Close the chain and prepare for the coming threat",
+                "description": "The wet footsteps are close now. You slide the chain lock closed, step back from the door, and prepare. Mrs. Castellano's information might be the key to surviving this night.",
+                "targetScene": "brace_with_knowledge",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "Armed with the knowledge of what these creatures are and how they operate, you prepare your defense. But Mrs. Castellano's voice has gone quiet on the other side of the door."
+              }
+            ],
+            "script": [
+              {
+                "type": "narration",
+                "content": "'Tell me everything,' you whisper through the door. 'What did it look like? How did it move?'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "It was on my ceiling. Spread out like a starfish—arms and legs bent at angles that shouldn't exist. Its skin is pale, like something that's never seen the sun. It has no eyes, just dark pits, but it saw me. I know it saw me. And its mouth—when it opened its mouth, it had rows of teeth like a lamprey, spiraling down into darkness.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "They mimic voices. I heard it practicing my husband's voice while it waited. Soft. Loving. Calling me to come closer. They learn from what they hear.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "As she speaks, you hear it—wet footsteps on the stairs. Slow. Deliberate. Coming closer.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano's voice drops to a terrified whisper: 'It's coming. Please. Please let me in.'",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ]
+          }
+        },
+        "roof_escape_plan": {
+          "type": "impl",
+          "scene": {
+            "id": "roof_escape_plan",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You outline the plan to Mrs. Castellano in hushed, frantic whispers. The roof access hatch is in the stairwell at the end of the hall. If you can reach it, you might be able to cross the rooftops—find another building, another way down, another chance.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano nods, fear warring with determination in her eyes. 'Marco kept rope in our storage closet. Thick绳—for climbing. I can get it.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "happy" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "You creep to the door and press your ear against it. The hallway is silent. Too silent. The creature that was at the door—it's either retreated or it's waiting. You can't tell. The uncertainty is the worst part.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "internal_dialogue",
+                "character": "You",
+                "content": "The roof is our best shot. But to get there, we have to go through the hallway—right past where that thing was. If it's still there...",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Sneak out together — use the rope to reach the roof",
+                "description": "You and Mrs. Castellano will creep into the hallway, use the rope from her storage closet to reach the roof via the fire escape ladder extension, and try to cross to the next building.",
+                "targetScene": "roof_sneak_together",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Mrs. Castellano creep into the hallway, hearts pounding, moving toward the storage closet to get Marco's climbing rope."
+              },
+              {
+                "label": "Go alone — tell Mrs. Castellano to stay barricaded inside",
+                "description": "It's too dangerous for both of you. You'll go alone, find a route off the roof, and come back for her with help.",
+                "targetScene": "roof_go_alone",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You leave Mrs. Castellano barricaded in the apartment and venture into the hallway alone, heading for the roof access."
+              },
+              {
+                "label": "Abandon the roof plan — it's too exposed",
+                "description": "The roof is too visible. Those things fell from the sky—they'll be watching the skyline. Better to stay low.",
+                "targetScene": "wait_for_dawn",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "wait_for_dawn": {
+          "type": "impl",
+          "scene": {
+            "id": "wait_for_dawn",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You make the call. You're staying put. Dawn is maybe four hours away. You can last four hours.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Four hours? In the dark? With those things out there?",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "We block the windows. We block the door. We stay quiet and wait. Daylight changes things.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You and Mrs. Castellano work in desperate silence, moving furniture against every possible entry point. The rain drums against the windows. You settle into the darkest corner, your back to the wall, a knife in one hand.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Keep watch while Mrs. Castellano sleeps",
+                "description": "She's exhausted. Let her rest while you keep vigil through the dark hours.",
+                "targetScene": "vigil_watch",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You stand watch over a sleeping Mrs. Castellano as the night deepens."
+              },
+              {
+                "label": "Try to make contact with other survivors",
+                "description": "There might be other people still alive. You could try tapping on the walls.",
+                "targetScene": "contact_survivors",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You begin tapping on the walls in a coded pattern, hoping someone will answer back."
+              }
+            ]
+          }
+        },
+        "run_for_street": {
+          "type": "impl",
+          "scene": {
+            "id": "run_for_street",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "'We're getting out,' you say, the words tasting like a decision you might regret. 'Front door. Stairwell. Street level. We go fast, we go quiet, and we don't stop for anything.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "The street is where they are. I saw them. They're everywhere down there.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "We find a car. We find a police station. We find anywhere that has walls and lights and other people with guns. Staying here is a death sentence—we both know it.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano takes a shaky breath and nods. She picks up a heavy cast-iron skillet from your kitchen—a makeshift weapon. Together, you approach the front door. Your hand hovers over the deadbolt. Somewhere in the building, a floorboard groans. Then another. Something is moving in the hallway.",
+                "instantLocationEffects": ["shake"],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Open the door and charge through",
+                "description": "Speed is your only advantage. Throw the door open and run before whatever is out there can react.",
+                "targetScene": "charge_hallway",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You throw open the door and sprint into the hallway, Mrs. Castellano close behind, racing for the stairwell."
+              },
+              {
+                "label": "Check the peephole first before committing",
+                "description": "One quick look before you go. You need to know what you're running toward.",
+                "targetScene": "peephole_street_run",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You press your eye to the peephole to survey the hallway before making your desperate run for the street."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "silent_hide": {
+          "type": "impl",
+          "scene": {
+            "id": "silent_hide",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": true,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab Mrs. Castellano's arm and pull her back from the door, pressing a finger to your lips. 'Quiet,' you whisper. 'Don't move. Don't breathe.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The two of you retreat into the deepest shadow of the apartment—a narrow alcove by the bathroom where two walls meet. Mrs. Castellano is trembling so hard you can hear her teeth chattering. You clamp your hand over her mouth, gently.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The creature in the hallway stops moving. You hear it breathing—a wet, rattling sound, like air moving through fluid. It's right outside. You can smell it now: ozone and copper and something rotting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Then, impossibly, you hear it speak. Not in the voice of Mrs. Castellano. Not in any voice you recognize. It says three words, perfectly pronounced, in a tone as flat as a frozen lake: 'I... hear... you.'",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" },
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Stay hidden — wait until absolute silence",
+                "description": "You press yourself against the shadows, barely breathing. The creature scratches once and moves away. Minutes pass. When you finally dare to move, the hallway is empty.",
+                "targetScene": "silent_survive",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You remain motionless for what feels like hours, listening to the creature move through the building."
+              },
+              {
+                "label": "Arm yourself and prepare for a fight",
+                "description": "You can't just hide. Mrs. Castellano trembles behind you. You grab a marble bookend and press yourself against the wall beside the door.",
+                "targetScene": "peephole_arm_and_ambush",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You arm yourself with a heavy object and prepare to ambush whatever comes through the door."
+              }
+            ],
+            "checkpoint": "interior"
+          }
+        },
+        "brace_for_impact": {
+          "type": "impl",
+          "scene": {
+            "id": "brace_for_impact",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano sees it through the peephole too—her gasp is sharp, her hand flying to her mouth. 'Madre di Dio,' she whispers. 'It's coming.'",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You step back from the door, your heart hammering so loud you're sure it can hear you. The footsteps in the hallway are slow. Deliberate.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The footsteps stop outside your door. A soft knock. A young girl's voice: 'Let me in, mister. I'm scared.'",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Mrs. Castellano crosses herself. 'That's the Rossi child from 4B. She's seven years old. That's NOT her.'",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Retreat to the bathroom",
+                "description": "You grab Mrs. Castellano and run for the bathroom, barricading the door behind you.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Stand your ground",
+                "description": "You position yourself between Mrs. Castellano and the door, ready to face whatever comes through.",
+                "targetScene": "ambush_at_door",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "ambush_at_door": {
+          "type": "impl",
+          "scene": {
+            "id": "ambush_at_door",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You make a decision. You're not going to wait to die. You grab the heavy brass umbrella stand by the door. It'll have to do.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "'What are you doing?' she hisses.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "'It's coming through that door one way or another. I'd rather meet it on my feet than on my knees.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "The scratching at the door intensifies. Wood splinters near the lock. You have seconds.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Ambush it at the door",
+                "description": "You position yourself beside the door, weapon raised. When the lock breaks, you strike.",
+                "targetScene": "strike_first",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Escape through the floor",
+                "description": "Mrs. Castellano remembers a loose floorboard. You lift it and find darkness below.",
+                "targetScene": "bathroom_window_escape",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "reinforce_windows": {
+          "type": "impl",
+          "scene": {
+            "id": "reinforce_windows",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You ignore the tapping at the window. It's a distraction. A lure. You grab the remaining boards and nails and start working on the windows.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Mrs. Castellano holds the boards steady while you hammer. Each blow of the hammer is a declaration: you will not go quietly. The tapping at the glass grows faster, more insistent—a furious staccato of knuckles on glass.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You drive the last nail home just as the window cracks. A pale, multi-jointed hand presses against the glass from outside, leaving a smear of dark fluid. The tapping stops. The hand withdraws.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "Silence. You've sealed the apartment tight. But as you stand there, breathing hard, you realize: you've also sealed yourself in. There's no way out now except through the front door.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Hold your position and wait",
+                "description": "You've fortified. Now you wait. The creatures have to leave eventually.",
+                "targetScene": "hold_position",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Check the front door",
+                "description": "The windows are secure. Now you need to make sure the front door is still safe.",
+                "targetScene": "listen_at_door",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "window_tapping": {
+          "type": "impl",
+          "scene": {
+            "id": "window_tapping",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark", "rain"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You creep toward the living room window, your bare feet silent on the cold floor. The tapping continues—rhythmic, almost musical. Tap. Tap-tap. Tap.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You part the curtain a fraction of an inch. Pressed against the glass is a face. Or what was once a face. The skin is pulled tight over too-sharp cheekbones. The eyes are black from edge to edge, no iris, no white. It smiles at you—a smile that splits its cheeks, revealing rows of needle-thin teeth.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" },
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "It taps again. Once. Slowly. As if to say: I see you. Then it begins to crawl away across the brick wall, moving like a spider, upside down and utterly wrong, disappearing into the rain-swept darkness above.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"]
+              },
+              {
+                "type": "narration",
+                "content": "You let the curtain fall, your hand trembling. It was on the third floor. Climbing the wall. They can climb.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Fortify harder",
+                "description": "If they can climb, windows are a death trap. You need to block them all. Now.",
+                "targetScene": "reinforce_windows",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Plan an escape",
+                "description": "Every second you stay is a second they use to surround you. You need a way out.",
+                "targetScene": "roof_escape_plan",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "bathroom_window_escape": {
+          "type": "impl",
+          "scene": {
+            "id": "bathroom_window_escape",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "The bathroom window is small—barely wide enough for a person to squeeze through—but it opens onto the building's side alley, a narrow gap between your building and the next. It's your best shot.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You struggle with the rusted latch. It's painted shut. Mrs. Castellano hands you a butter knife from the kitchen, and you work it into the seam, prying until the lock gives with a groan.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Mrs. Castellano peers out into the darkness. 'It's a three-story drop. We'll break our legs.'",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She's right. But you're already pulling the shower curtain rod free, tying bedsheets to it, fashioning a rope. It won't hold much weight, but it might slow the fall enough to survive.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Climb down the sheet rope",
+                "description": "It's risky, but staying is certain death. You tie the sheets to the radiator and start climbing down.",
+                "targetScene": "drop_and_run",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Abort the plan",
+                "description": "The rope won't hold both of you. You need a better plan.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "strike_first": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You slip the chain and open the door a crack. The hallway is empty, but you hear movement from the stairwell. This is it. Your one chance. You step out, weapon raised, and move toward the sound.",
+                "label": "Step into the hallway to confront it",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "No. Charging out is suicide. You hold your position, knife ready, back to the wall. Let it come to you. Let it make the first move.",
+                "label": "Hold position and let it come to you",
+                "targetScene": "hold_position",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "strike_first",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "The knife feels solid in your hand. Real. The weight of it anchors you. You've made your choice—you're not going to cower in the dark, waiting for death to find you.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You approach the door, stepping over the barricade you've built. Your hand finds the deadbolt. The creature on the other side has gone quiet, as if it knows what you're about to do.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You take a breath. Then another. Your heart is a war drum in your chest.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "'I'm not dying tonight,' you whisper. And you open the door.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "angry" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "hold_position": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The waiting is agony. Every creak, every drip of water makes you flinch. But you stay. You hold. You listen to the sounds of the building settling around you, trying to distinguish between normal sounds and the sounds of things that hunt.",
+                "label": "Stay and wait it out",
+                "targetScene": "wait_them_out",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't take the waiting anymore. The suspense is worse than death. You grab your weapon and head for the door, determined to make your stand on your terms.",
+                "label": "Go on the offensive",
+                "targetScene": "strike_first",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "hold_position",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You press your back against the wall beside the doorframe, knife held low, breathing slow. The creature is out there. You can hear it—the wet slide of its limbs on the hallway floor. It's circling. Waiting.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Minutes pass. The sounds fade. The hallway goes quiet. But you don't move. You've read enough horror stories to know that silence is just another kind of trap.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Your legs begin to cramp. Your knuckles are white around the knife handle. Still, you hold. The night stretches on, an endless corridor of shadows and waiting.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "confront_hallway": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You throw the door open wide. The hallway is empty—but the air is wrong. Too cold. Too still. You take a step out, poker raised, and the door swings shut behind you with a click. You're in the hallway now. Committed.",
+                "label": "Step into the hallway and confront it",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You test the poker against the door, driving the hook into the wood with a satisfying thunk. If it comes through, it'll get a face full of iron.",
+                "label": "Drive the poker into the door frame as a defense",
+                "targetScene": "hold_position",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "confront_hallway",
+            "isCheckpoint": false,
+            "location": "Hallway Landing",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "The hallway stretches before you, a tunnel of flickering shadows. The fluorescent light at the far end buzzes and stutters, casting the world in sickly green pulses.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You take a step. Then another. The poker feels heavy in your hands. Somewhere in the building, a pipe groans. From the stairwell, you hear it—a wet, rhythmic sound. Breathing. Or something like breathing.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "A shape detaches itself from the shadows at the end of the hall. It's tall. Too tall. Its head brushes the ceiling as it moves toward you with a gait that doesn't quite match the rhythm of walking.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "content": "'Hello,' it says. Not a question. Not a greeting. Just the word, spoken in a voice that sounds like it's learning what a voice should be.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "challenge_response": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You answer back. 'Who are you? What do you want?' Your voice is steadier than you feel. For a long moment, nothing. Then a sound like dry leaves rustling—the creature's version of laughter.",
+                "label": "Answer it back — demand to know what it wants",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You answer... but not with words. You press the flat of the knife against the door and slide it down slowly, producing a sharp metallic scrape. Let it know you're armed.",
+                "label": "Answer with a threat — scrape the blade against the door",
+                "targetScene": "strike_first",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "challenge_response",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You grip the poker tighter, testing the weight of it. The creature in the hallway has gone silent, but you can feel it waiting. You could strike the door, let it know you're ready. Or you could speak to it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The silence stretches. You realize: it's studying you. Learning your patterns, your habits, your fears. Every moment you hesitate is a moment it gets smarter.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "answer_the_whisper": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You clear your throat and speak. 'I know you're not Mrs. Castellano. What are you?' The voice on the other side stops. For a moment, true silence. Then it speaks again—but this time in your own voice. Your exact tone, your exact inflection: 'I'm you. Let me in.'",
+                "label": "Speak to it — demand answers",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You don't speak. Instead, you sing. A lullaby your grandmother used to sing. Something human. Something warm. The creature goes silent, confused by the unexpected response.",
+                "label": "Sing — confuse it with something purely human",
+                "targetScene": "hold_position",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "answer_the_whisper",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "The whisper comes again, curling through the crack beneath the door: 'I know you're in there. I can smell you. I can taste your fear.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Your throat is dry. Your heart is a trapped bird in your chest. But you find your voice. You're not going to die silent.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "angry" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "perfect_silence": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You don't move. You don't breathe. The silence stretches until it becomes a physical presence, pressing against your eardrums. The creature waits. You wait. Minutes pass like hours. Finally, you hear it retreat—a soft drag of limbs on linoleum, fading away.",
+                "label": "Maintain perfect silence until it leaves",
+                "targetScene": "hold_position",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You hold your breath and count to sixty. When you finally exhale, the whispering has stopped. But you can feel it—something is still out there, waiting for you to make a sound.",
+                "label": "Wait in silence, then check the peephole",
+                "targetScene": "peephole_view",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "perfect_silence",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You freeze. Your lungs lock. Your heart tries to hammer its way out of your ribs, but you don't make a sound. Not a breath. Not a tremor.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The thing on the other side of the door waits. You can hear it breathing—a wet, rasping inhale and exhale, like bellows pumping through a swamp. It's listening.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "A long minute passes. Then another. The breathing stops. The floorboard outside your door creaks as weight shifts away from it. It's leaving.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You don't move for a full five minutes after the sounds fade. Only then do you allow yourself to exhale.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "fight_creature_alley": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The creature is climbing toward you. You can't go back up—it's between you and the window. You swing the knife as hard as you can, aiming for where its neck should be. The blade connects with something solid. The creature screeches—a sound like tearing metal—and falls.",
+                "label": "Fight back with your weapon",
+                "targetScene": "fight_creature_alley",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "There's no time to think. You let go of the ladder and drop the remaining fifteen feet, landing hard on the wet concrete. Your ankle screams in protest, but adrenaline pushes you forward.",
+                "label": "Drop and run",
+                "targetScene": "drop_and_run",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "fight_creature_alley",
+            "isCheckpoint": false,
+            "location": "Alleyway Below Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "The pale hand grips the ladder rung just below you. You see it now—a creature unfolding itself from the darkness of the alley, its limbs too long, its skin slick with rain. It tilts its head up and you see its face: a mouth where a mouth shouldn't be, opening in a silent scream.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You have seconds. The knife is in your hand. The creature is climbing. The rain is cold on your face.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "It reaches for you. Its fingers are too long, too many joints, tipped with black nails that gleam in the dark. You swing.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "angry" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "sprint_from_alley": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You hit the ground running, your feet slapping wet concrete. The mouth of the alley is twenty feet away. Fifteen. Ten. Behind you, you hear a wet, clicking chorus—they're chasing you. You burst out onto the street and—",
+                "label": "Sprint for the street",
+                "targetScene": "sprint_from_alley",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't outrun them. You duck behind a dumpster, pressing yourself into the shadows, praying the smell of garbage masks your scent.",
+                "label": "Hide behind the dumpster",
+                "targetScene": "freeze_on_escape",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "sprint_from_alley",
+            "isCheckpoint": false,
+            "location": "Alleyway Below Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "You hit the ground running. The impact jars your spine but you don't stop—can't stop. Your feet find the wet concrete and you sprint toward the dim glow at the mouth of the alley.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Behind you, the clicking intensifies. They're giving chase. You can hear them—multiple sets of limbs scraping concrete, moving faster than anything that size should be able to move.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The street is ten feet away. Five. You can see cars overturned, a fire burning in a dumpster, the silhouette of a bus slumped against a lamppost. The city has become a war zone.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You burst out of the alley and—",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "freeze_on_escape": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You freeze. The creature below hasn't seen you yet. But it's climbing. You press yourself flat against the fire escape platform, barely breathing, as it passes directly beneath you. If it looks up, you're dead.",
+                "label": "Freeze and hope it passes",
+                "targetScene": "freeze_on_escape",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You scramble back up the fire escape as fast as you can. The ladder groans beneath you. Below, the creature hisses and begins climbing faster.",
+                "label": "Scramble back up to the apartment",
+                "targetScene": "scramble_back_inside",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "freeze_on_escape",
+            "isCheckpoint": false,
+            "location": "Alleyway Below Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "You freeze. Every muscle in your body locks tight. The rain streams down your face as you press yourself against the cold metal of the fire escape, trying to become part of the structure.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Below you, the creature stops climbing. It tilts its head, listening. You can hear it sniffing the air—a wet, sucking sound. Your heart is so loud you're sure it can hear it.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The creature lets out a low, clicking call. From further down the alley, another answers. They're communicating. Coordinating.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Then, slowly, it begins to descend back into the shadows. It didn't see you. Not yet.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "roof_attempt": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You make a break for the roof access door at the end of the hallway. If you can get to the roof, you might be able to cross to the next building.",
+                "label": "Run for the roof access door",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You retreat back into your apartment and decide to wait. Maybe they'll leave. Maybe help will come.",
+                "label": "Retreat and wait",
+                "targetScene": "wait_them_out",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "roof_attempt",
+            "isCheckpoint": false,
+            "location": "Hallway Landing",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "The hallway is dark and silent. The emergency lights have died, leaving only the faint glow of distant fires filtering through the windows. You move quickly but quietly, sticking to the walls, avoiding the center of the hall where the floorboards creak.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The stairwell door is ahead. Beyond it, the roof access ladder. Your hand touches the cold metal of the door handle. You pause.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "From the other side of the door, you hear it. Scratching. Slow. Deliberate. Something is on the stairs. Waiting.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "wait_them_out": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You wait. Hours pass. The sounds outside slowly fade. When dawn finally breaks, pale gray light seeps through the curtains. You've survived the night. But now you have to face what's left of the world.",
+                "label": "Wait until dawn breaks",
+                "targetScene": "wait_for_dawn",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't wait anymore. The waiting is killing you slowly. You grab your weapon and head for the door.",
+                "label": "Stop waiting — go on the attack",
+                "targetScene": "strike_first",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "wait_them_out",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You settle in for a long wait. You drag a chair into the darkest corner of the room, where you can see both the door and the window. The knife is in your lap. Your back is against the wall.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Time becomes meaningless. The dark is absolute. Sounds drift through the walls—scraping, clicking, the occasional distant scream that cuts off abruptly. Each sound is a small death.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You think about Mrs. Castellano. About the Rossi child on the fourth floor. About all the people in the building. About the city beyond. Is anyone else alive? Or are you the last?",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "scramble_back_inside": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You scramble up the fire escape, heart pounding. You reach your window and practically fall through it, landing hard on the living room floor. You're back inside. Shaken. Alive.",
+                "label": "Climb back inside the apartment",
+                "targetScene": "back_to_door_or_alley_knowledge",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't go back inside. The creatures know where you live now. You climb to the roof instead, hoping to find another way down.",
+                "label": "Climb up to the roof instead",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "scramble_back_inside",
+            "isCheckpoint": false,
+            "location": "Alleyway Below Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "You scramble up the fire escape, your hands slipping on the rain-slicked metal. Below, the clicking grows louder—they're coming. Fast.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Your window is still open. You dive through it, landing hard on the floor, glass crunching beneath you. You spin and slam the window shut, fumbling with the lock.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              },
+              {
+                "content": "A pale hand slaps against the glass from outside. Then another. The window rattles in its frame. You scramble backward, reaching for anything you can use to barricade it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "drop_and_run": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You drop to the ground, landing hard. Your ankle twists but you force yourself up and run, limping toward the mouth of the alley. The creatures are right behind you.",
+                "label": "Run for the street",
+                "targetScene": "sprint_from_alley",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You hit the ground and roll, coming up behind a dumpster. You press yourself into the shadows, hoping they lose you in the maze of trash and debris.",
+                "label": "Hide in the shadows",
+                "targetScene": "freeze_on_escape",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "drop_and_run",
+            "isCheckpoint": false,
+            "location": "Alleyway Below Fire Escape",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain"],
+            "script": [
+              {
+                "content": "You let go of the ladder and drop. The ground rushes up and you hit hard—the impact slams through your legs, your spine. Pain lances up your ankle. But you're alive.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You force yourself to your feet. The alley spins around you. At the far end, shapes are moving—more of them, drawn by the noise. You need to move. Now.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "go_after_castellano": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "The guilt is unbearable. You open the door and run down the hallway, calling for her. You can't let her face this alone.",
+                "label": "Go after her",
+                "targetScene": "go_after_castellano",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You made your choice. It was the hard one, but it was the right one. You focus on survival now.",
+                "label": "Stay and survive alone",
+                "targetScene": "alone_and_surviving",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "go_after_castellano",
+            "isCheckpoint": false,
+            "location": "Hallway Landing",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You can't live with yourself. You throw open the door and run into the hallway. 'Mrs. Castellano!' you shout, your voice echoing off the walls.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "run" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The hallway is empty. Her door is ajar. From inside her apartment, you hear a wet, rhythmic sound—and a voice. Mrs. Castellano's voice, but wrong. Hollow. 'I'm in here,' it says. 'Come in. Please.'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You stand in the hallway, frozen. The door is open. The voice is wrong. But she might still be alive in there.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "alone_and_surviving": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You're alone now. You check your supplies, barricade the door tighter, and settle in for a long night. The weight of your decision presses down on you, but you're alive. For now.",
+                "label": "Alone and surviving",
+                "targetScene": "alone_and_surviving",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't stay here. Alone with your guilt and the sounds of things moving in the walls. You grab your keys and head for the rooftop.",
+                "label": "Head for the roof",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "alone_and_surviving",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You close the door and lean against it, sliding down to the floor. The silence of the apartment is deafening. It was always quiet here, but now the quiet is different. It's the quiet of a grave.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You think about Mrs. Castellano. Her biscotti. The way she always asked about your day. The way she said 'grazie' when you held the door for her. And now she's alone out there. With them.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You could go after her. Or you could stay. The choice is yours, and either way, you'll carry it forever.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "brace_with_knowledge": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You know enough. The creatures mimic voices, they have lamprey-like mouths, they wear people like costumes. You close the chain on the door and brace yourself for what's coming.",
+                "label": "Brace yourself — prepare for the creature at the door",
+                "targetScene": "brace_for_impact",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't face this alone. You open the door and pull her inside, hoping you haven't made a fatal mistake.",
+                "label": "Pull her inside",
+                "targetScene": "open_door_for_neighbor",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "brace_with_knowledge",
+            "isCheckpoint": false,
+            "location": "Hallway Landing",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "Mrs. Castellano's description burns itself into your mind. Creatures with spiral mouths. Mimics that learn voices. Things that fall from the sky like rain. You know what you're dealing with now. And it changes everything.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The wet footsteps on the stairs grow louder. Closer. Mrs. Castellano is still outside your door, whispering through the wood: 'Please. It's coming. Please let me in.'",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You have a choice: believe her bravery and open the door, or trust her horrifying description and prepare for the worst.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "roof_sneak_together": {
+          "type": "impl",
+          "scene": {
+            "id": "roof_sneak_together",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You and Mrs. Castellano creep into the hallway. She moves with surprising quiet—fear has made her light on her feet. The storage closet is her target. The rope is inside.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "She reaches the closet and pulls the door open. It groans. You both freeze. Nothing stirs. She pulls out a coil of thick climbing rope—Marco's.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You move toward the roof access ladder. You reach up, grab the chain, and pull. The ladder descends with a metallic rattle.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "From below, you hear a wet, eager clicking. They heard you.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" },
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Climb up quickly",
+                "description": "You push Mrs. Castellano toward the ladder. 'Go! Go now!'",
+                "targetScene": "roof_top_escape",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You and Mrs. Castellano scramble up the ladder onto the rain-swept roof."
+              },
+              {
+                "label": "Pull the ladder back and retreat",
+                "description": "Too loud. Too risky. You pull the ladder back up and retreat to the apartment.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "roof_go_alone": {
+          "type": "impl",
+          "scene": {
+            "id": "roof_go_alone",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "'I'll go alone,' you tell Mrs. Castellano. 'You stay here. Barricade the door. If I find a way out, I'll come back for you.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "She grabs your arm, her eyes wet. 'Please. Don't leave me here alone.'",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "dialogue",
+                "character": "You",
+                "content": "'I'll be back. I promise.' You don't know if you're lying.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "You slip out the door before you can change your mind. The hallway is empty. The roof access is at the end. You move quickly, keeping to the shadows, leaving Mrs. Castellano behind.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Climb to the roof",
+                "description": "You reach the roof access ladder and climb. The roof is your only hope.",
+                "targetScene": "roof_top_alone",
+                "targetSceneMode": "create-new-scene-stub",
+                "targetSceneDescription": "You emerge onto the rain-swept roof, alone, the city burning below you."
+              },
+              {
+                "label": "Turn back",
+                "description": "Halfway to the roof, you stop. You can't abandon her. You go back.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "charge_hallway": {
+          "type": "impl",
+          "scene": {
+            "id": "charge_hallway",
+            "location": "Hallway Landing",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You throw the door open and charge into the hallway, Mrs. Castellano close behind. Speed is your only ally. The stairwell is ahead—fifteen feet, maybe less.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "run" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You make it halfway before you see it. The creature at the far end of the hall turns to face you. It's too tall, its limbs too long. It tilts its head and smiles with a mouth that splits its face in half.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "It doesn't charge. It just watches. And you realize: you're running toward it. Into its territory. Into the dark.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"]
+              }
+            ],
+            "choices": [
+              {
+                "label": "Keep charging — run past it",
+                "description": "There's no stopping now. You sprint past the creature, praying it doesn't catch you.",
+                "targetScene": "sprint_from_alley",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Stop and fight",
+                "description": "You can't outrun it. You stop and raise your weapon, ready to meet it head-on.",
+                "targetScene": "confront_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "peephole_street_run": {
+          "type": "impl",
+          "scene": {
+            "id": "peephole_street_run",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You press your eye to the peephole before committing to the run. The hallway stretches before you, empty and dark. At the far end, near the stairwell, a shadow moves—but it's hard to tell if it's real or just a trick of the light.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "You watch for a full minute. Nothing emerges. The stairwell door is closed. If you're fast and quiet, you might make it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "'Is it clear?' she whispers.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "You hesitate. The hallway looks clear now—but that doesn't mean it's safe.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "It looks clear — make a run for it",
+                "description": "You've waited long enough. You open the door and run with Mrs. Castellano toward the stairwell.",
+                "targetScene": "charge_hallway",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Too risky — stay put",
+                "description": "Something feels wrong. You step away from the door and decide to fortify instead.",
+                "targetScene": "fortify_together",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "silent_survive": {
+          "type": "impl",
+          "scene": {
+            "id": "silent_survive",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You remain motionless. Minutes pass. The creature's breathing fades. You hear it move away from the door, its wet footsteps retreating down the hall.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "An hour passes. Then two. Mrs. Castellano has fallen asleep against your shoulder, exhausted. You stay awake, watching the door, listening to the building settle around you.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Sometime in the deepest part of the night, the rain stops. The silence that follows is worse than the noise. You can hear your own heartbeat. You can hear the blood moving in your veins.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "narration",
+                "content": "Dawn comes slowly. Gray light seeps through the cracks in the curtains. You've survived the night. But the sounds from outside—the clicking, the scraping—haven't stopped. They're still out there. Waiting.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Venture out into the dawn",
+                "description": "Daylight gives you a chance. You leave the apartment to see what's left of the world.",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Stay hidden for another day",
+                "description": "One more day. One more night. You'll wait until you're sure they're gone.",
+                "targetScene": "wait_them_out",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "peephole_arm_and_ambush": {
+          "type": "impl",
+          "scene": {
+            "id": "peephole_arm_and_ambush",
+            "location": "Third-Story Apartment",
+            "passiveLocationEffects": ["dark"],
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "isCheckpoint": false,
+            "script": [
+              {
+                "type": "narration",
+                "content": "You grab the marble bookend from the shelf. It's heavy, solid, with sharp edges. Not ideal, but it'll break bone. You press yourself against the wall beside the door.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": []
+              },
+              {
+                "type": "dialogue",
+                "character": "Mrs. Castellano",
+                "content": "Mrs. Castellano picks up a heavy candlestick. 'I'm not helpless,' she whispers.",
+                "instantLocationEffects": [],
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "happy" }
+                ]
+              },
+              {
+                "type": "narration",
+                "content": "Together, you flank the door. The creature in the hallway scratches at the wood. You can hear it breathing. It's going to come through. And when it does, you'll be ready.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "angry" }
+                ],
+                "instantLocationEffects": []
+              }
+            ],
+            "choices": [
+              {
+                "label": "Wait until it breaks through",
+                "description": "You hold your breath, bookend raised, as the lock begins to splinter.",
+                "targetScene": "ambush_at_door",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "label": "Open the door and strike first",
+                "description": "You can't wait. You throw the door open and swing before it expects you.",
+                "targetScene": "strike_first",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ]
+          }
+        },
+        "vigil_watch": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You keep watch through the long night. Nothing tries to enter. When dawn breaks, pale and gray, you gently wake Mrs. Castellano. 'It's morning,' you say. 'We made it.' The sounds outside have quieted. Maybe the creatures fear the light.",
+                "label": "Survive the night — emerge at dawn",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "Halfway through the night, you hear footsteps in the hallway. Something is coming. You nudge Mrs. Castellano awake and prepare for the worst.",
+                "label": "Something is coming — prepare to fight",
+                "targetScene": "ambush_at_door",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "vigil_watch",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "Mrs. Castellano curls up on the floor, using her folded arms as a pillow. Within minutes, her breathing evens out. She's asleep. You don't know how she can sleep at a time like this, but you're glad she can.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You settle into a chair facing the door, knife in hand. The night creeps by. Every creak, every groan of the building makes you flinch. But nothing comes.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Your eyelids grow heavy. You fight it. You can't fall asleep. You can't. But the darkness is warm and the rain is rhythmic and—",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You jerk awake. How long were you out? Seconds? Minutes? The room is unchanged. Mrs. Castellano is still asleep. The door is still closed. But the tapping at the window has stopped.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "contact_survivors": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "A tap comes back. Three slow knocks from the apartment next to Mrs. Castellano's. Someone is alive in there. You press your mouth to the wall and whisper: 'Stay quiet. Stay alive. We'll find you.' Whether they heard you or not, you've made a connection. You're not alone.",
+                "label": "Keep tapping — establish communication",
+                "targetScene": "silent_survive",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "The response tap gives you hope. You signal that you're moving to the roof and will try to come back for them.",
+                "label": "Signal your plan and move out",
+                "targetScene": "roof_attempt",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "contact_survivors",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark"],
+            "script": [
+              {
+                "content": "You press your ear to the wall and tap. Once. Pause. Twice. The code you and your childhood friends used. A simple question: 'Anyone there?'",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Silence. You tap again, louder this time. Mrs. Castellano watches you, hope flickering in her eyes.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Then—a response. Three slow taps from somewhere in the building. Not from Mrs. Castellano's apartment. From deeper in. Someone else is alive.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "happy" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "roof_top_escape": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You make it to the roof of the next building. From there, you spot a police barricade three blocks away—survivors! But the streets between are crawling with creatures. The rope and your wits are all you have left.",
+                "label": "Cross the rooftops toward the barricade",
+                "targetScene": "roof_top_escape",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "The view from the roof is terrifying. The creatures are everywhere—climbing walls, moving through streets, perched on rooftops. You pull Mrs. Castellano down behind a ventilation unit. 'We wait,' you whisper. 'We watch. We learn their patterns.'",
+                "label": "Find cover on the roof and observe",
+                "targetScene": "silent_survive",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "roof_top_escape",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [
+              { "character": "Mrs. Castellano", "effect": "shake" }
+            ],
+            "passiveLocationEffects": ["dark", "rain", "wind"],
+            "script": [
+              {
+                "content": "You burst through the roof hatch into the cold night air. The rain hits you like a wall. The sky is the color of bruised fruit, lit from below by scattered fires. The city sprawls beneath you, wounded and burning.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "Mrs. Castellano follows, pulling the hatch closed behind her. The roof is flat and gravelly, dotted with ventilation units and satellite dishes. The next building is close—maybe eight feet of gap between you and it.",
+                "instantCharacterEffects": [
+                  { "character": "Mrs. Castellano", "effect": "shake" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You look down. The alley below is full of them. Dozens of pale shapes moving in the dark, their upturned faces like flowers turning toward the sun. They know you're up here.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "shake" }
+                ],
+                "instantLocationEffects": ["shake"],
+                "type": "narration"
+              }
+            ]
+          }
+        },
+        "roof_top_alone": {
+          "type": "impl",
+          "scene": {
+            "choices": [
+              {
+                "description": "You make a running leap across the gap between buildings. You land hard, rolling on the gravel of the next roof. Below, the creatures screech in fury. You're one building closer to freedom.",
+                "label": "Leap to the next building",
+                "targetScene": "roof_top_escape",
+                "targetSceneMode": "reference-existing-scene"
+              },
+              {
+                "description": "You can't leave Mrs. Castellano behind. You turn back—you have to warn her, to find her, to make this right.",
+                "label": "Go back for Mrs. Castellano",
+                "targetScene": "go_after_castellano",
+                "targetSceneMode": "reference-existing-scene"
+              }
+            ],
+            "id": "roof_top_alone",
+            "isCheckpoint": false,
+            "location": "Third-Story Apartment",
+            "passiveCharacterEffects": [],
+            "passiveLocationEffects": ["dark", "rain", "wind"],
+            "script": [
+              {
+                "content": "You emerge onto the roof alone. The wind whips at your clothes. The city is a patchwork of fire and shadow below you. You can see for miles—and everywhere you look, you see movement. Pale shapes crawling across every surface.",
+                "instantCharacterEffects": [
+                  { "character": "You", "effect": "sad" }
+                ],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "You think about Mrs. Castellano, alone in your apartment. You made a promise. You don't know if you can keep it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              },
+              {
+                "content": "The next rooftop is three feet away. A jump you could make in your sleep. Beyond it, another. And another. A path through the sky, if you're brave enough to take it.",
+                "instantCharacterEffects": [],
+                "instantLocationEffects": [],
+                "type": "narration"
+              }
+            ]
+          }
+        }
+      },
+      "locations": {
+        "Third-Story Apartment": {
+          "name": "Third-Story Apartment",
+          "appearanceDescription": "A cramped one-bedroom apartment in a pre-war building. The living room features a worn-out sofa, a coffee table with a dead laptop, and curtains drawn tight over the window. The kitchenette is small but functional, with cabinets and a pantry. A narrow hallway leads to a bathroom and a bedroom. The fire escape is accessible through the living room window.",
+          "backstoryDescription": "Your rented apartment on the third floor of an aging urban building. It's been your home for two years—a modest space filled with mismatched furniture and the accumulated detritus of a solitary life. Tonight, it's turned from a sanctuary into a potential death trap.",
+          "vignette": "The apartment is dark except for the faint glow of emergency lights from the street below. Shadows stretch and writhe across the walls with every flicker. The air smells of dust, stale cooking oil, and something faintly metallic—like blood."
+        },
+        "Hallway Landing": {
+          "name": "Hallway Landing",
+          "appearanceDescription": "A narrow, dimly lit hallway with peeling wallpaper and a threadbare carpet runner. Three apartment doors line the walls—yours, your neighbor Mrs. Castellano's, and the empty unit at the end. A single flickering fluorescent light struggles to push back the darkness. The stairwell leading down to the ground floor is visible at the far end.",
+          "backstoryDescription": "The building's second-floor hallway, normally mundane and unremarkable, has become a threshold between relative safety and the chaos unfolding outside and downstairs.",
+          "vignette": "The fluorescent light buzzes and stutters, casting everything in a sickly green pallor. The pounding on your door echoes like a heartbeat. From below, strange clicking and scraping sounds drift up the stairwell."
+        },
+        "Alleyway Below Fire Escape": {
+          "name": "Alleyway Below Fire Escape",
+          "appearanceDescription": "A narrow gap between two brick buildings, cluttered with dumpsters, cardboard boxes, and shattered glass. The fire escape ladder hangs down from above, its bottom rung dangling just out of reach. Puddles of unknown liquid reflect the distant glow of fires burning somewhere in the city.",
+          "backstoryDescription": "The alley below your fire escape—a shortcut you've used a hundred times to get to the bodega on the corner. Now it seems to be the hunting ground of something that sounds far from human.",
+          "vignette": "Shadows move in unpredictable patterns. The smell of rot and garbage mingles with the sharp tang of ozone. A low, guttural growl reverberates off the narrow walls, its source hidden in the darkness."
+        }
+      },
+      "characters": {
+        "Mrs. Castellano": {
+          "name": "Mrs. Castellano",
+          "appearanceDescription": "An elderly woman in her late 70s, small and frail with silver-white hair pulled into a tight bun. She wears a floral housecoat over her nightgown, and her eyes—wide with terror—are a pale, watery blue. Her hands tremble as she clutches a wooden crucifix.",
+          "backstoryDescription": "Your next-door neighbor for the past two years. A widow who bakes biscotti every Sunday and always asks about your day. She's kind, religious, and utterly terrified right now—she's pounding on your door, begging for help.",
+          "vignette": "Her voice cracks with desperation. Through the peephole, you can see her silhouette, small and trembling, casting anxious glances over her shoulder toward the stairwell."
+        },
+        "You": {
+          "name": "You",
+          "appearanceDescription": "Your reflection in the dark window shows a face etched with fear—someone ordinary, someone who was just living their life an hour ago. Whatever you look like, right now you look terrified, determined, and utterly alone.",
+          "backstoryDescription": "You are you—an ordinary person living in an apartment in a city that has just experienced something catastrophic. The emergency broadcast was cut short by screams. The power is out. Something is out there. And your neighbor is at your door, begging for her life.",
+          "vignette": "You stand in the dark of your own apartment, heart hammering against your ribs, caught between the desperate plea at your front door and the inhuman sounds from the alley below."
+        }
+      }
+    },
+    "minimumCheckpointsSpacing": 2,
+    "thresholdFrontierCheckpointsCount": 3,
+    "maximumDistanceFromCheckpoint": 2,
+    "minimumDistanceToFinalEnding": 2
+  }
+}
