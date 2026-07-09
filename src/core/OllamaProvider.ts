@@ -1,7 +1,15 @@
 import type {
+  ApiStreamOptions,
+  AssistantMessageEventStream,
+  Context,
   Model,
-  Provider
+  Provider,
+  SimpleStreamOptions,
 } from "@earendil-works/pi-ai";
+import {
+  stream as completionsStream,
+  streamSimple as completionsStreamSimple,
+} from "@earendil-works/pi-ai/api/openai-completions";
 
 export type OllamaApiType = "openai-completions";
 
@@ -44,11 +52,19 @@ export class OllamaProvider implements Provider<OllamaApiType> {
     ];
   }
 
-  stream(model, context, options) {
-    throw new Error("Function not implemented.");
+  stream<T extends OllamaApiType>(
+    model: Model<T>,
+    context: Context,
+    options?: ApiStreamOptions<T>
+  ): AssistantMessageEventStream {
+    return completionsStream(model, context, options);
   }
 
-  streamSimple(model, context, options) {
-    throw new Error("Function not implemented.");
+  streamSimple(
+    model: Model<OllamaApiType>,
+    context: Context,
+    options?: SimpleStreamOptions
+  ): AssistantMessageEventStream {
+    return completionsStreamSimple(model, context, options);
   }
 }
