@@ -1,4 +1,3 @@
-import readline from "readline/promises";
 import {
   Character,
   CharacterName,
@@ -6,11 +5,10 @@ import {
   GameDefinitionManager,
   Location,
   LocationName,
-  NewScene,
   printCharacterName,
   printLocationName,
   printSceneId,
-  SceneId,
+  SceneId
 } from "@/core/ontology";
 import {
   makeAgentTool,
@@ -18,12 +16,17 @@ import {
   type TialwfAgentImpl,
   type TialwfFeedback,
 } from "@/core/TialwfAgent";
+import { switchEnum } from "@/utilities";
 import type { ThinkingLevel } from "@earendil-works/pi-ai";
-import fs from "fs";
-import { Type } from "typebox";
-import Schema from "typebox/schema";
 import { argument, choice, object, or } from "@optique/core";
 import { run } from "@optique/run";
+import fs from "fs";
+import readline from "readline/promises";
+import { Type } from "typebox";
+import Schema from "typebox/schema";
+
+export type Interactivity = Type.Static<typeof Interactivity>;
+export const Interactivity = Type.Enum(["no", "yes"]);
 
 export type Init = Type.Static<typeof Init>;
 export const Init = Type.Object({
@@ -33,10 +36,6 @@ export const Init = Type.Object({
   thinkingLevel: Type.Optional(
     Type.Enum(["minimal", "low", "medium", "high", "xhigh"])
   ),
-  minimumCheckpointsSpacing: Type.Optional(Type.Integer()),
-  thresholdFrontierCheckpointsCount: Type.Optional(Type.Integer()),
-  maximumDistanceFromCheckpoint: Type.Optional(Type.Integer()),
-  minimumDistanceToFinalEnding: Type.Optional(Type.Integer()),
 });
 
 export type State = Type.Static<typeof StateSchema>;
@@ -57,7 +56,14 @@ export class BasicDesignerAgentImpl implements TialwfAgentImpl<StateSchema> {
   gameDefinitionManager: GameDefinitionManager;
   stateFilepath: string;
 
-  constructor(args: { init: Init; stateFilepath: string }) {
+  interactive: Interactivity;
+
+  constructor(args: {
+    interactive: Interactivity;
+    init: Init;
+    stateFilepath: string;
+  }) {
+    this.interactive = args.interactive;
     this.stateSchema = StateSchema;
     this.thinkingLevel =
       args.init.thinkingLevel !== undefined
@@ -125,22 +131,6 @@ ${args.init.storyInstructions}
           locations: {},
           characters: {},
         },
-        minimumCheckpointsSpacing:
-          args.init.minimumCheckpointsSpacing !== undefined
-            ? args.init.minimumCheckpointsSpacing
-            : 2,
-        thresholdFrontierCheckpointsCount:
-          args.init.thresholdFrontierCheckpointsCount !== undefined
-            ? args.init.thresholdFrontierCheckpointsCount
-            : 3,
-        maximumDistanceFromCheckpoint:
-          args.init.maximumDistanceFromCheckpoint !== undefined
-            ? args.init.maximumDistanceFromCheckpoint
-            : 2,
-        minimumDistanceToFinalEnding:
-          args.init.minimumDistanceToFinalEnding !== undefined
-            ? args.init.minimumDistanceToFinalEnding
-            : 6,
       },
     };
     this.stateFilepath = args.stateFilepath;
@@ -277,57 +267,6 @@ ${args.init.storyInstructions}
           },
         }),
         makeAgentTool({
-          name: "implement_scene_stub",
-          description:
-            "Implement an existing scene stub by replacing it with a full scene.",
-          parameters: NewScene,
-          execute: async (input) => {
-            const newScene = input;
-            const result = this.gameDefinitionManager.addNewScene(newScene);
-            let text = `Successfully implemented the scene stub ${printSceneId(newScene.id)} as a full scene.`;
-
-            const newSceneStubs = newScene.choices.flatMap((c) =>
-              c.targetSceneMode === "create-new-scene-stub"
-                ? [printSceneId(c.targetScene)]
-                : []
-            );
-            if (newSceneStubs.length > 0) {
-              text += ` The new scene implementation had choices that created the following scene stubs: ${newSceneStubs.join(", ")}.`;
-            }
-
-            if (result.refreshedCheckpoints) {
-              text += ` Since enough new checkpoints have been created and all other loose endings have been handled, the checkpoints have been refreshed. You can now use "implement_scene_stub" at any scene stub, and you may create ${this.gameDefinitionManager.gameDefinition.thresholdFrontierCheckpointsCount} more new checkpoints.`;
-            }
-
-            const rawNewSceneStubs = newScene.choices.flatMap((c) =>
-              c.targetSceneMode === "create-new-scene-stub"
-                ? [c.targetScene]
-                : []
-            );
-
-            const hasStubAtMaxDistance = rawNewSceneStubs.some(
-              (stubId) =>
-                this.gameDefinitionManager.getShortestDistanceFromCheckpoint(
-                  stubId
-                ) ===
-                this.gameDefinitionManager.gameDefinition
-                  .maximumDistanceFromCheckpoint
-            );
-
-            if (hasStubAtMaxDistance) {
-              text += ` Warning: Each of those new scene stubs must either (1) be checkpoints, (2) be endings, or (3) target only existing scenes.`;
-            }
-
-            if (newScene.isCheckpoint && !result.refreshedCheckpoints) {
-              text += ` Warning: Any new scene stubs just created are locked until all other non-locked scene stubs are implemented.`;
-            }
-
-            return {
-              text,
-            };
-          },
-        }),
-        makeAgentTool({
           name: "create_character",
           description: "Create a new character.",
           parameters: Character,
@@ -351,203 +290,74 @@ ${args.init.storyInstructions}
             };
           },
         }),
-        makeAgentTool({
-          name: "list_scene_stubs",
-          description:
-            "List all scene stubs, which have been sketched out but not yet implemented.",
-          parameters: Type.Object({}),
-          execute: async () => {
-            const stubs = Array.from(
-              this.gameDefinitionManager.getSceneStubs()
-            );
-
-            if (stubs.length === 0) {
-              return {
-                text: "There are no scene stubs.",
-              };
-            }
-
-            const lockedStubs = stubs.filter((id) =>
-              this.gameDefinitionManager.isTargetOfFrontierCheckpoint(id)
-            );
-
-            const openStubs = stubs.filter((id) => !lockedStubs.includes(id));
-
-            const threshold =
-              this.gameDefinitionManager.gameDefinition
-                .thresholdFrontierCheckpointsCount;
-            const current =
-              this.gameDefinitionManager.getFrontierCheckpointScenes().size;
-            const needed = Math.max(0, threshold - current);
-
-            const getStubDetails = (id: string): string => {
-              const distCheckpoint =
-                this.gameDefinitionManager.getShortestDistanceFromCheckpoint(
-                  id
-                );
-              const spacing =
-                this.gameDefinitionManager.gameDefinition
-                  .minimumCheckpointsSpacing;
-              const isFarEnough = distCheckpoint >= spacing;
-
-              const distStart =
-                this.gameDefinitionManager.getShortestDistanceFromStart(id);
-              const minEnding =
-                this.gameDefinitionManager.gameDefinition
-                  .minimumDistanceToFinalEnding;
-
-              const unmetEndingReqs: string[] = [];
-              if (distStart < minEnding) {
-                unmetEndingReqs.push(
-                  `must be at least ${minEnding} steps from start (currently ${distStart})`
-                );
-              }
-
-              if (distCheckpoint < spacing) {
-                unmetEndingReqs.push(
-                  `must be at least ${spacing} steps from nearest previous checkpoint (currently ${distCheckpoint})`
-                );
-              }
-
-              const checkpointStatus = isFarEnough
-                ? `Ready to be a checkpoint (distance from previous checkpoint: ${distCheckpoint} >= ${spacing})`
-                : `Too close to be a checkpoint (distance from previous checkpoint: ${distCheckpoint} < ${spacing})`;
-
-              const endingStatus =
-                unmetEndingReqs.length === 0
-                  ? `Ready to be implemented as a final ending`
-                  : `Cannot be implemented as a final ending yet (${unmetEndingReqs.join(", ")})`;
-
-              return [
-                `- **${printSceneId(id)}**`,
-                `  - *Checkpoint eligibility*: ${checkpointStatus}`,
-                `  - *Final ending eligibility*: ${endingStatus}`,
-              ].join("\n");
-            };
-
-            const lockedStubsList =
-              lockedStubs.length === 0
-                ? "There are no locked scene stubs."
-                : lockedStubs.map(getStubDetails).join("\n");
-
-            const openStubsList =
-              openStubs.length === 0
-                ? "There are no open stubs."
-                : openStubs.map(getStubDetails).join("\n");
-
-            return {
-              text: `
-## Frontier Checkpoints Progress
-
-- Current Frontier Checkpoints Count: ${current}
-- Threshold Frontier Checkpoints Count: ${threshold}
-- Frontier Checkpoints needed to reach threshold: ${needed}
-
-## Open Scene Stubs
-
-These scene stubs are *open*, meaning that they are ready to be implemented using "implement_scene_stub".
-
-${openStubsList}
-
-## Locked Scene Stubs
-
-These scene stubs are *locked*, meaning that they *cannot* be implemented until all open stubs are implemented and enough new checkpoints have been created.
-
-${lockedStubsList}
-`.trim(),
-            };
-          },
-        }),
-        makeAgentTool({
-          name: "inspect_scene_context",
-          description:
-            "Get the surrounding context of the specified scene in the story.",
-          parameters: Type.Object({
-            id: SceneId,
-          }),
-          execute: async (input) => {
-            try {
-              const context = this.gameDefinitionManager.printStoryUpToScene(
-                input.id
-              );
-              return {
-                text: context,
-              };
-            } catch (error) {
-              if (error instanceof Error) {
-                return {
-                  text: `Error getting context for scene ${printSceneId(input.id)}: ${error.message}`,
-                };
-              }
-              throw error;
-            }
-          },
-        }),
       ],
     };
   }
 
   async feedback(): Promise<TialwfFeedback> {
-    if (false) {
-      const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-      });
-      try {
-        while (true) {
-          const input = (await rl.question("Feedback: ")).trim();
-
-          if (input.startsWith("/")) {
-            const command = input.substring(1);
-            const feedbackCommandParser = or(
-              object({
-                name: argument(choice(["quit", "exit", "stop"])),
-              })
-            );
-            const args = run(feedbackCommandParser, {
-              args: command.split(" "),
-              help: "command",
-            });
-
-            switch (args.name) {
-              case "exit":
-              case "quit":
-              case "stop":
-                console.log("Stopping agent ...");
-                return { done: true };
-
-              default:
-                console.log(`Unimplemented command: ${args.name as string}`);
-                continue;
-            }
-          } else {
-            const prompt = input;
-            console.log("Submitting feedback ...");
-            return {
-              done: false,
-              prompt,
-            };
-          }
+    return await switchEnum(this.interactive, {
+      no: async () => {
+        const stubs = this.gameDefinitionManager.getSceneStubs();
+        if (stubs.size == 0) {
+          return {
+            done: true,
+          } as const;
         }
-      } finally {
-        rl.close();
-      }
-    } else {
-      const stubs = this.gameDefinitionManager.getSceneStubs();
-      if (stubs.size == 0) {
-        return {
-          done: true,
-        };
-      }
 
-      return {
-        done: false,
-        prompt: `There are still some scene stubs that need to be implemented: ${Array.from(
-          stubs
-        )
-          .map((stub) => printSceneId(stub))
-          .join(", ")}\n\nContinue flushing out the story.`,
-      };
-    }
+        return {
+          done: false,
+          prompt: `There are still some scene stubs that need to be implemented: ${Array.from(
+            stubs
+          )
+            .map((stub) => printSceneId(stub))
+            .join(", ")}\n\nContinue flushing out the story.`,
+        } as const;
+      },
+      yes: async () => {
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+        try {
+          while (true) {
+            const input = (await rl.question("Feedback: ")).trim();
+
+            if (input.startsWith("/")) {
+              const command = input.substring(1);
+              const feedbackCommandParser = or(
+                object({
+                  name: argument(choice(["quit", "exit", "stop"])),
+                })
+              );
+              const args = run(feedbackCommandParser, {
+                args: command.split(" "),
+                help: "command",
+              });
+
+              switch (args.name) {
+                case "exit":
+                case "quit":
+                case "stop":
+                  console.log("Stopping agent ...");
+                  return { done: true } as const;
+
+                default:
+                  console.log(`Unimplemented command: ${args.name as string}`);
+                  continue;
+              }
+            } else {
+              const prompt = input;
+              console.log("Submitting feedback ...");
+              return {
+                done: false,
+                prompt,
+              } as const;
+            }
+          }
+        } finally {
+          rl.close();
+        }
+      },
+    });
   }
 }

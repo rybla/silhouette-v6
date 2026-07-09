@@ -1,4 +1,8 @@
-import { BasicDesignerAgentImpl, Init } from "@/core/agents/DesignerAgentV1";
+import {
+  BasicDesignerAgentImpl,
+  Init,
+  Interactivity,
+} from "@/core/agents/DesignerAgentV1";
 import { OllamaProvider } from "@/core/OllamaProvider";
 import { TialwfAgent } from "@/core/TialwfAgent";
 import { switchEnum } from "@/utilities";
@@ -11,11 +15,11 @@ import fs from "fs";
 import Schema from "typebox/schema";
 
 const cliParser = object({
-  model: option("--model", choice([
-    "gemini-3.5-flash",
-    "deepseek-v4",
-    "gemma-4"
-  ])),
+  model: option(
+    "--model",
+    choice(["gemini-3.5-flash", "deepseek-v4", "gemma-4"])
+  ),
+  interactive: option("--interactive", choice(Interactivity.enum)),
   state: option(
     "--state",
     path({ extensions: [".json"], mustExist: false, allowCreate: true })
@@ -33,6 +37,7 @@ async function main() {
   );
 
   const impl = new BasicDesignerAgentImpl({
+    interactive: cliArgs.interactive,
     init,
     stateFilepath: cliArgs.state,
   });
@@ -45,10 +50,12 @@ async function main() {
     agent: new Agent({
       initialState: {
         model: switchEnum(cliArgs.model, {
-          "gemini-3.5-flash": () => models.getModel("google", "gemini-flash-latest"),
-          "deepseek-v4": () => models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
-          "gemma-4": () => models.getModel("ollama", "gemma4:26b-mlx")
-        })
+          "gemini-3.5-flash": () =>
+            models.getModel("google", "gemini-flash-latest"),
+          "deepseek-v4": () =>
+            models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
+          "gemma-4": () => models.getModel("ollama", "gemma4:26b-mlx"),
+        }),
       },
       getApiKey: (provider) => {
         switch (provider) {
