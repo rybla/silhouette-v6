@@ -1,4 +1,5 @@
 import type {
+  Api,
   ApiStreamOptions,
   AssistantMessageEventStream,
   Context,
@@ -13,7 +14,7 @@ import {
 
 export type OllamaApiType = "openai-completions";
 
-export class OllamaProvider implements Provider<OllamaApiType> {
+export class OllamaProvider implements Provider {
   readonly id = "ollama";
   readonly name = "ollama";
   readonly baseUrl = "http://127.0.0.1:11434";
@@ -52,19 +53,27 @@ export class OllamaProvider implements Provider<OllamaApiType> {
     ];
   }
 
-  stream<T extends OllamaApiType>(
+  stream<T extends Api>(
     model: Model<T>,
     context: Context,
     options?: ApiStreamOptions<T>
   ): AssistantMessageEventStream {
-    return completionsStream(model, context, options);
+    return completionsStream(
+      model as unknown as Model<"openai-completions">,
+      context,
+      options as unknown as ApiStreamOptions<"openai-completions">
+    );
   }
 
   streamSimple(
-    model: Model<OllamaApiType>,
+    model: Model<Api>,
     context: Context,
     options?: SimpleStreamOptions
   ): AssistantMessageEventStream {
-    return completionsStreamSimple(model, context, options);
+    return completionsStreamSimple(
+      model as unknown as Model<"openai-completions">,
+      context,
+      options
+    );
   }
 }

@@ -1,4 +1,5 @@
 import { BasicDesignerAgentImpl, Init } from "@/core/agents/DesignerAgentV1";
+import { OllamaProvider } from "@/core/OllamaProvider";
 import { TialwfAgent } from "@/core/TialwfAgent";
 import { Agent } from "@earendil-works/pi-agent-core";
 import { builtinModels } from "@earendil-works/pi-ai/providers/all";
@@ -32,13 +33,13 @@ async function main() {
 
   const models = builtinModels();
 
-  // models.setProvider(new OllamaProvider());
+  models.setProvider(new OllamaProvider());
 
   const agent = new TialwfAgent({
     agent: new Agent({
       initialState: {
         // model: models.getModel("google", "gemini-flash-latest"),
-        model: models.getModel("ollama", "gemma4"),
+        model: models.getModel("ollama", "gemma4:26b-mlx"),
         // model: models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
       },
       getApiKey: (provider) => {
@@ -47,6 +48,8 @@ async function main() {
             return process.env["GOOGLE_API_KEY"]!;
           case "openrouter":
             return process.env["OPENROUTER_API_KEY"]!;
+          case "ollama":
+            return "ollama-ambient-key"
           default:
             throw new Error(`No API key for provider: ${provider}`);
         }
@@ -55,11 +58,18 @@ async function main() {
     impl,
   });
 
-  await agent.run(
-    init.initialPrompt !== undefined
-      ? init.initialPrompt
-      : "Using the tools available to you, design a third-person choose-your-own adventure game based on the given scene descriptions."
-  );
+  // await agent.run(
+  //   init.initialPrompt !== undefined
+  //     ? init.initialPrompt
+  //     : "Using the tools available to you, design a third-person choose-your-own adventure game based on the given scene descriptions."
+  // );
+
+  agent.agent.subscribe((event) => {
+    console.log(JSON.stringify(event,null,4))
+  })
+
+  await agent.agent.prompt("Hello!")
+
 }
 
 await main();

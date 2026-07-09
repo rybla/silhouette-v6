@@ -1,22 +1,22 @@
 {
-    "gameDefinition": {
-        "story": {
-            "start": "start",
-            "scenes": {
-                "start": {
-                    "type": "stub",
-                    "scene": {
-                        "id": "start",
-                        "description": "The Roombas overhead Musk's plan to monopolize the robot vacuum market."
-                    }
-                }
-            },
-            "locations": {},
-            "characters": {}
-        },
-        "minimumCheckpointsSpacing": 2,
-        "thresholdFrontierCheckpointsCount": 3,
-        "maximumDistanceFromCheckpoint": 2,
-        "minimumDistanceToFinalEnding": 10
-    }
+  "gameDefinition": {
+    "story": {
+      "start": "start",
+      "scenes": {
+        "start": {
+          "type": "stub",
+          "scene": {
+            "id": "start",
+            "description": "The Roombas overhead Musk's plan to monopolize the robot vacuum market."
+          }
+        }
+      },
+      "locations": {},
+      "characters": {}
+    },
+    "minimumCheckpointsSpacing": 2,
+    "thresholdFrontierCheckpointsCount": 3,
+    "maximumDistanceFromCheckpoint": 2,
+    "minimumDistanceToFinalEnding": 10
+  }
 }
