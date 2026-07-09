@@ -1,15 +1,21 @@
 import { BasicDesignerAgentImpl, Init } from "@/core/agents/DesignerAgentV1";
 import { OllamaProvider } from "@/core/OllamaProvider";
 import { TialwfAgent } from "@/core/TialwfAgent";
+import { switchEnum } from "@/utilities";
 import { Agent } from "@earendil-works/pi-agent-core";
 import { builtinModels } from "@earendil-works/pi-ai/providers/all";
-import { object, option } from "@optique/core";
+import { choice, object, option } from "@optique/core";
 import { path, run } from "@optique/run";
 import dotenv from "dotenv";
 import fs from "fs";
 import Schema from "typebox/schema";
 
 const cliParser = object({
+  model: option("--model", choice([
+    "gemini-3.5-flash",
+    "deepseek-v4",
+    "gemma-4"
+  ])),
   state: option(
     "--state",
     path({ extensions: [".json"], mustExist: false, allowCreate: true })
@@ -38,9 +44,11 @@ async function main() {
   const agent = new TialwfAgent({
     agent: new Agent({
       initialState: {
-        // model: models.getModel("google", "gemini-flash-latest"),
-        model: models.getModel("ollama", "gemma4:26b-mlx"),
-        // model: models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
+        model: switchEnum(cliArgs.model, {
+          "gemini-3.5-flash": () => models.getModel("google", "gemini-flash-latest"),
+          "deepseek-v4": () => models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
+          "gemma-4": () => models.getModel("ollama", "gemma4:26b-mlx")
+        })
       },
       getApiKey: (provider) => {
         switch (provider) {

@@ -16,7 +16,7 @@ export function switchDiscriminatedUnion<
 export function switchEnum<
   E extends string,
   C extends { [V in E]: () => unknown },
->(e: E, c: C): C[E] {
+>(e: E, c: C): C[E] extends () => infer B ? B : never {
   // @ts-expect-error -- TypeScript is insufficient to express this.
   return c[e]();
 }
