@@ -49,7 +49,7 @@ async function main() {
           case "openrouter":
             return process.env["OPENROUTER_API_KEY"]!;
           case "ollama":
-            return "ollama-ambient-key"
+            return "ollama-ambient-key";
           default:
             throw new Error(`No API key for provider: ${provider}`);
         }
@@ -58,18 +58,11 @@ async function main() {
     impl,
   });
 
-  // await agent.run(
-  //   init.initialPrompt !== undefined
-  //     ? init.initialPrompt
-  //     : "Using the tools available to you, design a third-person choose-your-own adventure game based on the given scene descriptions."
-  // );
-
-  agent.agent.subscribe((event) => {
-    console.log(JSON.stringify(event,null,4))
-  })
-
-  await agent.agent.prompt("Hello!")
-
+  await agent.run(
+    init.initialPrompt !== undefined
+      ? init.initialPrompt
+      : "Using the tools available to you, design a third-person choose-your-own adventure game based on the given scene descriptions."
+  );
 }
 
 await main();

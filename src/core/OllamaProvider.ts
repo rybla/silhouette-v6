@@ -17,7 +17,7 @@ export type OllamaApiType = "openai-completions";
 export class OllamaProvider implements Provider {
   readonly id = "ollama";
   readonly name = "ollama";
-  readonly baseUrl = "http://127.0.0.1:11434";
+  readonly baseUrl = "http://127.0.0.1:11434/v1";
   readonly auth = {
     apiKey: {
       name: "ollama",
@@ -47,8 +47,8 @@ export class OllamaProvider implements Provider {
           cacheRead: 0,
           cacheWrite: 0,
         },
-        contextWindow: 131072,
-        maxTokens: 131072 * 2,
+        contextWindow: 256000,
+        maxTokens: 262144,
       },
     ];
   }
