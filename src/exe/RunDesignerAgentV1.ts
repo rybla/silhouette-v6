@@ -32,12 +32,14 @@ async function main() {
 
   const models = builtinModels();
 
+  // models.setProvider(new OllamaProvider());
+
   const agent = new TialwfAgent({
     agent: new Agent({
       initialState: {
         // model: models.getModel("google", "gemini-flash-latest"),
-        // model: models.getModel("ollama", "gemma4"),
-        model: models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
+        model: models.getModel("ollama", "gemma4"),
+        // model: models.getModel("openrouter", "deepseek/deepseek-v4-flash"),
       },
       getApiKey: (provider) => {
         switch (provider) {
