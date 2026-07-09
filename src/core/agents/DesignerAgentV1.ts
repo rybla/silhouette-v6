@@ -488,53 +488,66 @@ ${lockedStubsList}
   }
 
   async feedback(): Promise<TialwfFeedback> {
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
-    try {
-      while (true) {
-        const input = (await rl.question("Feedback: ")).trim();
+    if (false) {
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      try {
+        while (true) {
+          const input = (await rl.question("Feedback: ")).trim();
 
-        if (input.startsWith("/")) {
-          const command = input.substring(1);
-          const feedbackCommandParser = or(
-            object({
-              name: argument(choice(["quit", "exit", "stop"])),
-            })
-          );
-          const args = run(feedbackCommandParser, {
-            args: command.split(" "),
-            help: "command",
-          });
+          if (input.startsWith("/")) {
+            const command = input.substring(1);
+            const feedbackCommandParser = or(
+              object({
+                name: argument(choice(["quit", "exit", "stop"])),
+              })
+            );
+            const args = run(feedbackCommandParser, {
+              args: command.split(" "),
+              help: "command",
+            });
 
-          switch (args.name) {
-            case "exit":
-            case "quit":
-            case "stop":
-              console.log("Stopping agent ...");
-              return { done: true };
+            switch (args.name) {
+              case "exit":
+              case "quit":
+              case "stop":
+                console.log("Stopping agent ...");
+                return { done: true };
 
-            default:
-              console.log(`Unimplemented command: ${args.name as string}`);
-              continue;
+              default:
+                console.log(`Unimplemented command: ${args.name as string}`);
+                continue;
+            }
+          } else {
+            const prompt = input;
+            console.log("Submitting feedback ...");
+            return {
+              done: false,
+              prompt,
+            };
           }
-        } else {
-          const prompt = input;
-          console.log("Submitting feedback ...");
-          return {
-            done: false,
-            prompt,
-          };
         }
+      } finally {
+        rl.close();
       }
-    } finally {
-      rl.close();
-    }
+    } else {
+      const stubs = this.gameDefinitionManager.getSceneStubs();
+      if (stubs.size == 0) {
+        return {
+          done: true,
+        };
+      }
 
-    // // for testing, just set done to true immediately
-    // return {
-    //   done: true,
-    // };
+      return {
+        done: false,
+        prompt: `There are still some scene stubs that need to be implemented: ${Array.from(
+          stubs
+        )
+          .map((stub) => printSceneId(stub))
+          .join(", ")}\n\nContinue flushing out the story.`,
+      };
+    }
   }
 }
